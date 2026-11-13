@@ -35,6 +35,7 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
   const [copiedClause, setCopiedClause] = useState<string | null>(null);
   const [copiedAll, setCopiedAll] = useState(false);
   const [searchClause, setSearchClause] = useState('');
+  const [activeTab, setActiveTab] = useState<'clauses' | 'parties' | 'export'>('clauses');
 
   if (!isOpen || !document) return null;
 
@@ -190,17 +191,42 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
           </div>
         </div>
 
-        {/* Metadata Strip */}
+        {/* Metadata & Navigation Strip */}
         <div className="px-5 py-2.5 bg-[#0a0b0e] border-b border-white/[0.06] flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-zinc-400 shrink-0">
-          <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex items-center gap-1.5">
-              <Building2 className="w-3.5 h-3.5 text-amber-400" />
-              <span>Governing: <strong className="text-zinc-200">{document.governingLaw}</strong></span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-zinc-500" />
-              <span>Revision: <strong className="text-zinc-200">{document.lastUpdated}</strong></span>
-            </div>
+          <div className="flex items-center gap-1.5 p-1 bg-[#14161f] rounded-xl border border-white/10">
+            <button
+              type="button"
+              onClick={() => setActiveTab('clauses')}
+              className={`px-3 py-1 rounded-lg text-xs font-semibold cursor-pointer transition-all ${
+                activeTab === 'clauses'
+                  ? 'bg-white text-zinc-950 font-bold shadow-xs'
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              Clause Matrix ({document.totalClauses})
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab('parties')}
+              className={`px-3 py-1 rounded-lg text-xs font-semibold cursor-pointer transition-all ${
+                activeTab === 'parties'
+                  ? 'bg-white text-zinc-950 font-bold shadow-xs'
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              Parties & Signatures
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab('export')}
+              className={`px-3 py-1 rounded-lg text-xs font-semibold cursor-pointer transition-all ${
+                activeTab === 'export'
+                  ? 'bg-white text-zinc-950 font-bold shadow-xs'
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              Clean Plain Text
+            </button>
           </div>
 
           <div className="flex items-center gap-2">
@@ -225,7 +251,7 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
                 <span>Executive Summary & Commercial Context</span>
               </h3>
               <span className="text-[10px] font-mono text-zinc-500">
-                Parties: {document.parties.partyA} ⇄ {document.parties.partyB}
+                Governing: {document.governingLaw}
               </span>
             </div>
             <p className="text-xs text-zinc-300 leading-relaxed [text-wrap:pretty]">
@@ -233,116 +259,191 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
             </p>
           </div>
 
-          {/* Clauses List */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-400">
-                Enforceable Contract Sections ({filteredClauses.length} of {document.totalClauses})
-              </h3>
-              <span className="text-[11px] text-zinc-500 font-mono">
-                Click any section to copy individual provision
-              </span>
-            </div>
-
-            {filteredClauses.length === 0 ? (
-              <div className="py-12 text-center text-xs text-zinc-500 font-mono">
-                No contract clauses matched "{searchClause}".
+          {activeTab === 'clauses' && (
+            /* Clauses List */
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-400">
+                  Enforceable Contract Sections ({filteredClauses.length} of {document.totalClauses})
+                </h3>
+                <span className="text-[11px] text-zinc-500 font-mono">
+                  Click any section to copy individual provision
+                </span>
               </div>
-            ) : (
-              filteredClauses.map((clause) => {
-                const isCopied = copiedClause === clause.section;
-                return (
-                  <div 
-                    key={clause.section}
-                    className="rounded-xl border border-white/[0.08] bg-[#0e1015] hover:border-white/[0.16] transition-all p-4 space-y-2.5 group"
-                  >
-                    {/* Clause Header */}
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-mono font-bold px-1.5 py-0.5 rounded bg-white/[0.06] text-amber-300 border border-white/10">
-                            SECTION {clause.section}
-                          </span>
-                          <h4 className="text-sm font-bold text-white">
-                            {clause.title}
-                          </h4>
+
+              {filteredClauses.length === 0 ? (
+                <div className="py-12 text-center text-xs text-zinc-500 font-mono">
+                  No contract clauses matched "{searchClause}".
+                </div>
+              ) : (
+                filteredClauses.map((clause) => {
+                  const isCopied = copiedClause === clause.section;
+                  return (
+                    <div 
+                      key={clause.section}
+                      className="rounded-xl border border-white/[0.08] bg-[#0e1015] hover:border-white/[0.16] transition-all p-4 space-y-2.5 group"
+                    >
+                      {/* Clause Header */}
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-mono font-bold px-1.5 py-0.5 rounded bg-white/[0.06] text-amber-300 border border-white/10">
+                              SECTION {clause.section}
+                            </span>
+                            <h4 className="text-sm font-bold text-white">
+                              {clause.title}
+                            </h4>
+                          </div>
+                          <p className="text-[11px] text-zinc-400 mt-1 italic">
+                            Why this is here: {clause.explanation}
+                          </p>
                         </div>
-                        <p className="text-[11px] text-zinc-400 mt-1 italic">
-                          Why this is here: {clause.explanation}
-                        </p>
+
+                        <button
+                          type="button"
+                          onClick={() => handleCopyClause(clause.section, clause.enforceableText)}
+                          className={`px-2.5 py-1 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
+                            isCopied 
+                              ? 'bg-emerald-500 text-zinc-950' 
+                              : 'bg-[#181b22] hover:bg-[#20242e] text-zinc-300 border border-white/10'
+                          }`}
+                          title="Copy clause to clipboard"
+                        >
+                          {isCopied ? (
+                            <>
+                              <Check className="w-3 h-3" />
+                              <span>Copied</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-3 h-3 text-zinc-500 group-hover:text-zinc-200" />
+                              <span>Copy Clause</span>
+                            </>
+                          )}
+                        </button>
                       </div>
 
-                      <button
-                        type="button"
-                        onClick={() => handleCopyClause(clause.section, clause.enforceableText)}
-                        className={`px-2.5 py-1 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
-                          isCopied 
-                            ? 'bg-emerald-500 text-zinc-950' 
-                            : 'bg-[#181b22] hover:bg-[#20242e] text-zinc-300 border border-white/10'
-                        }`}
-                        title="Copy clause to clipboard"
-                      >
-                        {isCopied ? (
-                          <>
-                            <Check className="w-3 h-3" />
-                            <span>Copied</span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-3 h-3 text-zinc-500 group-hover:text-zinc-200" />
-                            <span>Copy Clause</span>
-                          </>
-                        )}
-                      </button>
+                      {/* Enforceable Legal Language Box */}
+                      <div className="p-3 rounded-lg bg-[#07080a] border border-white/[0.06] font-mono text-xs text-zinc-200 whitespace-pre-wrap leading-relaxed select-text">
+                        {clause.enforceableText}
+                      </div>
                     </div>
+                  );
+                })
+              )}
+            </div>
+          )}
 
-                    {/* Enforceable Legal Language Box */}
-                    <div className="p-3 rounded-lg bg-[#07080a] border border-white/[0.06] font-mono text-xs text-zinc-200 whitespace-pre-wrap leading-relaxed select-text">
-                      {clause.enforceableText}
+          {activeTab === 'parties' && (
+            <div className="space-y-4">
+              <div className="p-5 rounded-xl bg-[#0e1015] border border-white/[0.08] space-y-4">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-amber-300">
+                  Parties Bound Under Agreement
+                </h3>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-3.5 rounded-lg bg-[#07080a] border border-white/[0.06] space-y-1">
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase font-bold">Party A (Service Provider)</span>
+                    <p className="text-sm font-bold text-white font-mono">{document.parties.partyA}</p>
+                    <p className="text-xs text-zinc-400">Authorized technical consultancies, developers, and engineering firms.</p>
+                  </div>
+                  <div className="p-3.5 rounded-lg bg-[#07080a] border border-white/[0.06] space-y-1">
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase font-bold">Party B (Commercial Customer)</span>
+                    <p className="text-sm font-bold text-white font-mono">{document.parties.partyB}</p>
+                    <p className="text-xs text-zinc-400">Enterprise clients, project sponsors, and hiring organizations.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Execution & Signing Block */}
+              <div className="p-4 rounded-xl bg-[#0f1117] border border-white/[0.08] space-y-3">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
+                    Execution & Signature Block
+                  </h4>
+                </div>
+
+                <p className="text-xs text-zinc-400">
+                  {document.signingBlock.disclaimer}
+                </p>
+
+                <div className="grid sm:grid-cols-2 gap-4 pt-2">
+                  <div className="p-3 rounded-lg bg-[#07080a] border border-white/[0.06] space-y-2">
+                    <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase">
+                      {document.signingBlock.partyALabel}
+                    </span>
+                    <div className="h-px bg-white/10 my-2" />
+                    <div className="flex justify-between text-[11px] font-mono text-zinc-500">
+                      <span>Sign: ____________________</span>
+                      <span>Date: ___________</span>
                     </div>
                   </div>
-                );
-              })
-            )}
-          </div>
 
-          {/* Execution & Signing Block */}
-          <div className="p-4 rounded-xl bg-[#0f1117] border border-white/[0.08] space-y-3">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
-                Execution & Signature Block
-              </h4>
-            </div>
-
-            <p className="text-xs text-zinc-400">
-              {document.signingBlock.disclaimer}
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-4 pt-2">
-              <div className="p-3 rounded-lg bg-[#07080a] border border-white/[0.06] space-y-2">
-                <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase">
-                  {document.signingBlock.partyALabel}
-                </span>
-                <div className="h-px bg-white/10 my-2" />
-                <div className="flex justify-between text-[11px] font-mono text-zinc-500">
-                  <span>Sign: ____________________</span>
-                  <span>Date: ___________</span>
-                </div>
-              </div>
-
-              <div className="p-3 rounded-lg bg-[#07080a] border border-white/[0.06] space-y-2">
-                <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase">
-                  {document.signingBlock.partyBLabel}
-                </span>
-                <div className="h-px bg-white/10 my-2" />
-                <div className="flex justify-between text-[11px] font-mono text-zinc-500">
-                  <span>Sign: ____________________</span>
-                  <span>Date: ___________</span>
+                  <div className="p-3 rounded-lg bg-[#07080a] border border-white/[0.06] space-y-2">
+                    <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase">
+                      {document.signingBlock.partyBLabel}
+                    </span>
+                    <div className="h-px bg-white/10 my-2" />
+                    <div className="flex justify-between text-[11px] font-mono text-zinc-500">
+                      <span>Sign: ____________________</span>
+                      <span>Date: ___________</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
+
+          {activeTab === 'export' && (
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-400">
+                  Clean Markdown & Plain-Text Agreement
+                </h3>
+                <button
+                  type="button"
+                  onClick={handleCopyFullDocument}
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold cursor-pointer"
+                >
+                  {copiedAll ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                  <span>{copiedAll ? 'Copied' : 'Copy Plain Text'}</span>
+                </button>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#060709] border border-white/[0.08] font-mono text-xs text-zinc-300 whitespace-pre-wrap leading-relaxed select-all max-h-[460px] overflow-y-auto">
+                {`================================================================================
+${document.documentTitle}
+Version: ${document.version} | Last Updated: ${document.lastUpdated}
+Jurisdiction: ${document.jurisdiction}
+Governing Law: ${document.governingLaw}
+================================================================================
+
+PARTIES:
+Party A: ${document.parties.partyA}
+Party B: ${document.parties.partyB}
+
+EXECUTIVE SUMMARY:
+${document.summary}
+
+--------------------------------------------------------------------------------
+ENFORCEABLE TERMS & CONDITIONS:
+--------------------------------------------------------------------------------
+
+${document.clauses.map(c => `[SECTION ${c.section}] ${c.title.toUpperCase()}\n\nPlain-English Context:\n${c.explanation}\n\nEnforceable Provision:\n${c.enforceableText}\n\n`).join('')}
+================================================================================
+SIGNING & EXECUTION BLOCK
+================================================================================
+${document.signingBlock.disclaimer}
+
+Signatory A: _______________________________ Date: _______________
+(${document.signingBlock.partyALabel})
+
+Signatory B: _______________________________ Date: _______________
+(${document.signingBlock.partyBLabel})
+`}
+              </div>
+            </div>
+          )}
 
         </div>
 

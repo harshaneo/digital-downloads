@@ -57,6 +57,262 @@ export const STANDARD_LICENSE_TIERS: LicenseTier[] = [
 ];
 
 export const BUNDLE_MANIFESTS: Record<string, BundleManifest> = {
+  'msa-sow-master-kit': {
+    bundleId: 'msa-sow-master-kit',
+    version: '2026.2.0',
+    releaseDate: '2026-11-12',
+    totalFiles: 8,
+    totalSize: '4.8 MB',
+    sha256: '9a48f21b7ce3d011985fa4b18206d289e472098bc10521e89cf20188bb3e9102',
+    signature: 'ecdsa-p256-sha256:3045022100e4b8a21190cd...719f20',
+    fileTree: [
+      {
+        name: 'contracts',
+        type: 'folder',
+        children: [
+          {
+            name: 'Master_Services_Agreement_2026.docx',
+            size: '1.8 MB',
+            type: 'file',
+            extension: 'docx',
+            sampleAvailable: true,
+            sampleDownloadUrl: 'https://cdn.nexus-vault.network/samples/msa-preview.docx'
+          },
+          {
+            name: 'Statement_of_Work_Template.docx',
+            size: '1.2 MB',
+            type: 'file',
+            extension: 'docx',
+            sampleAvailable: true,
+            sampleDownloadUrl: 'https://cdn.nexus-vault.network/samples/sow-template.docx'
+          },
+          {
+            name: 'Change_Order_Rider.docx',
+            size: '420 KB',
+            type: 'file',
+            extension: 'docx'
+          }
+        ]
+      },
+      {
+        name: 'notion_and_markdown',
+        type: 'folder',
+        children: [
+          {
+            name: 'MSA_SOW_Notion_Workspace_Template.json',
+            size: '640 KB',
+            type: 'file',
+            extension: 'json'
+          },
+          {
+            name: 'FULL_AGREEMENT_MARKDOWN.md',
+            size: '48 KB',
+            type: 'file',
+            extension: 'md'
+          }
+        ]
+      },
+      {
+        name: 'guides_and_checklists',
+        type: 'folder',
+        children: [
+          {
+            name: 'Clause_By_Clause_Legal_Guide.pdf',
+            size: '1.4 MB',
+            type: 'file',
+            extension: 'pdf',
+            sampleAvailable: true,
+            sampleDownloadUrl: 'https://cdn.nexus-vault.network/samples/clause-guide.pdf'
+          },
+          {
+            name: 'Client_Negotiation_Playbook.pdf',
+            size: '820 KB',
+            type: 'file',
+            extension: 'pdf'
+          },
+          {
+            name: 'Execution_Checklist.txt',
+            size: '12 KB',
+            type: 'file',
+            extension: 'txt'
+          }
+        ]
+      }
+    ],
+    changelog: [
+      {
+        version: '2026.2.0',
+        releaseDate: '2026-11-12',
+        title: 'Release 2026.2: SOW Milestone Protection & IP Conveyance Update',
+        changes: [
+          'Added automatic deemed-acceptance 5-day review clause to eliminate client approval stalls',
+          'Updated limitation of liability caps strictly bounded by trailing 6-month fee payments',
+          'Integrated formal sprint milestone billing tables and electronic signature rider'
+        ]
+      },
+      {
+        version: '2026.1.0',
+        releaseDate: '2026-05-18',
+        title: 'Release 2026.1: Cross-Border Arbitration Framework',
+        changes: [
+          'Incorporated Delaware / New York commercial code standards for consulting agencies',
+          'Added mutual non-solicitation covenants spanning 18 months post-completion'
+        ]
+      }
+    ],
+    creatorTips: {
+      suggestedAmounts: [0, 10, 25, 50],
+      creatorHandle: '@vance_legal',
+      creatorName: 'Marcus Vance, Esq.',
+      messagePrompt: 'Tip Marcus Vance to support quarterly legal clause reviews and state compliance updates!'
+    }
+  },
+  'software-dev-ip-contract': {
+    bundleId: 'software-dev-ip-contract',
+    version: '3.1.0',
+    releaseDate: '2026-11-10',
+    totalFiles: 6,
+    totalSize: '3.6 MB',
+    sha256: '4b71e892cfa9801452ef71b0928374d9e018274619b8cf10928374619a018273',
+    signature: 'ecdsa-p256-sha256:30440220718293a...82910a',
+    fileTree: [
+      {
+        name: 'contracts',
+        type: 'folder',
+        children: [
+          {
+            name: 'Software_Development_Agreement.docx',
+            size: '1.4 MB',
+            type: 'file',
+            extension: 'docx',
+            sampleAvailable: true,
+            sampleDownloadUrl: 'https://cdn.nexus-vault.network/samples/software-agreement.docx'
+          },
+          {
+            name: 'Confidential_IP_Assignment_Rider.docx',
+            size: '920 KB',
+            type: 'file',
+            extension: 'docx'
+          },
+          {
+            name: 'Source_Code_Acceptance_Certificate.docx',
+            size: '380 KB',
+            type: 'file',
+            extension: 'docx'
+          }
+        ]
+      },
+      {
+        name: 'guidance',
+        type: 'folder',
+        children: [
+          {
+            name: 'Execution_Checklist.pdf',
+            size: '900 KB',
+            type: 'file',
+            extension: 'pdf',
+            sampleAvailable: true,
+            sampleDownloadUrl: 'https://cdn.nexus-vault.network/samples/execution-checklist.pdf'
+          },
+          {
+            name: 'Open_Source_GPL_Audit_Guide.md',
+            size: '34 KB',
+            type: 'file',
+            extension: 'md'
+          }
+        ]
+      }
+    ],
+    changelog: [
+      {
+        version: '3.1.0',
+        releaseDate: '2026-11-10',
+        title: 'Release 3.1: Clean Code & Viral GPL Exclusions',
+        changes: [
+          'Added affirmative warranty against GPL/AGPL copyleft contamination in commercial repos',
+          'Updated source code escrow protocol and automated test acceptance covenants'
+        ]
+      }
+    ],
+    creatorTips: {
+      suggestedAmounts: [0, 10, 25, 50],
+      creatorHandle: '@reed_techcounsel',
+      creatorName: 'Evelyn Reed',
+      messagePrompt: 'Tip Evelyn Reed to support ongoing VC diligence template maintenance!'
+    }
+  },
+  'b2b-saas-terms-privacy': {
+    bundleId: 'b2b-saas-terms-privacy',
+    version: '4.0.0',
+    releaseDate: '2026-11-08',
+    totalFiles: 7,
+    totalSize: '4.2 MB',
+    sha256: '7291a0c8b41928374619b028374619a018273645b1928374619a018273645e92',
+    signature: 'ecdsa-p256-sha256:30450221008192a...918273',
+    fileTree: [
+      {
+        name: 'terms_and_sla',
+        type: 'folder',
+        children: [
+          {
+            name: 'Enterprise_Terms_of_Service.docx',
+            size: '1.6 MB',
+            type: 'file',
+            extension: 'docx',
+            sampleAvailable: true,
+            sampleDownloadUrl: 'https://cdn.nexus-vault.network/samples/saas-terms.docx'
+          },
+          {
+            name: '99_9_Uptime_SLA_Matrix.docx',
+            size: '840 KB',
+            type: 'file',
+            extension: 'docx'
+          },
+          {
+            name: 'Data_Processing_Addendum_GDPR_DPA.docx',
+            size: '1.1 MB',
+            type: 'file',
+            extension: 'docx'
+          }
+        ]
+      },
+      {
+        name: 'privacy_and_security',
+        type: 'folder',
+        children: [
+          {
+            name: 'Website_Customer_Privacy_Policy.docx',
+            size: '420 KB',
+            type: 'file',
+            extension: 'docx'
+          },
+          {
+            name: 'Security_Audit_Whitepaper_Template.pdf',
+            size: '1.2 MB',
+            type: 'file',
+            extension: 'pdf'
+          }
+        ]
+      }
+    ],
+    changelog: [
+      {
+        version: '4.0.0',
+        releaseDate: '2026-11-08',
+        title: 'Release 4.0: GDPR Article 28 Standard Contractual Clauses',
+        changes: [
+          'Full DPA alignment with European Commission standard contractual clauses (SCCs)',
+          'Tiered monthly credit table for uptime degradation between 99.9% and 95.0%'
+        ]
+      }
+    ],
+    creatorTips: {
+      suggestedAmounts: [0, 15, 30, 60],
+      creatorHandle: '@marcus_counsel',
+      creatorName: 'Marcus Vance, Esq.',
+      messagePrompt: 'Tip Marcus Vance to support enterprise procurement clause updates!'
+    }
+  },
   'apex-design-system': {
     bundleId: 'apex-design-system',
     version: '3.2.0',
