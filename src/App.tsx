@@ -361,14 +361,14 @@ export function App() {
   const isFlagshipPurchased = purchases.some(item => item.product.id === flagshipProduct.id);
 
   return (
-    <div className="min-h-screen bg-[#FBFBF9] text-stone-800 flex flex-col font-sans selection:bg-amber-100 selection:text-stone-900">
+    <div className="min-h-screen bg-[#08090b] text-[#f4f5f6] flex flex-col font-sans selection:bg-white selection:text-black">
       
       {/* Toast Alert */}
       {toastMessage && (
         <div 
           role="status" 
           aria-live="polite"
-          className="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-2xl bg-stone-900 border border-stone-800 text-white text-xs font-semibold shadow-2xl flex items-center gap-2 animate-in slide-in-from-bottom-3 duration-200"
+          className="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-[#16181d] border border-white/[0.12] text-white text-xs font-semibold shadow-2xl flex items-center gap-2 animate-in slide-in-from-bottom-3 duration-200"
         >
           <Check className="w-4 h-4 text-emerald-400" />
           <span>{toastMessage}</span>
@@ -417,14 +417,11 @@ export function App() {
           {/* Asymmetric 60/40 Editorial Exhibition Plinth */}
           <section 
             aria-labelledby="banner-heading" 
-            className="relative rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-10 bg-white border border-stone-200/90 shadow-[0_4px_24px_-4px_rgba(28,25,23,0.04)] overflow-hidden border-t border-t-white max-w-full"
-            style={{
-              boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.95), 0 12px 32px -8px rgba(28, 25, 23, 0.05), 0 1px 3px 0 rgba(28, 25, 23, 0.02)'
-            }}
+            className="relative rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-10 bg-[#111317] border border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.6)] overflow-hidden border-t border-t-white/[0.14] max-w-full"
           >
-            {/* Ambient Warm Travertine & Gallery Light Pools */}
-            <div className="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-amber-100/40 via-stone-200/20 to-transparent blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-16 -left-16 w-80 h-80 rounded-full bg-gradient-to-tr from-stone-200/30 to-transparent blur-2xl pointer-events-none" />
+            {/* Ambient Dark Light Pools */}
+            <div className="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-amber-500/10 via-white/[0.02] to-transparent blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-16 -left-16 w-80 h-80 rounded-full bg-gradient-to-tr from-emerald-500/5 to-transparent blur-2xl pointer-events-none" />
 
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
@@ -432,21 +429,21 @@ export function App() {
               <div className="lg:col-span-7 space-y-5">
                 {/* Curatorial Index Stamp */}
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="curatorial-stamp px-2.5 py-1 rounded-md bg-stone-100/90 border border-stone-200/80 text-[10px]">
-                    [ EXHIBITION // ISSUE 2026.04 ]
+                  <span className="curatorial-stamp px-2.5 py-1 rounded-md bg-[#16181d] border border-white/10 text-[10px] text-zinc-300">
+                    [ EXECUTIVE // SUITE 2026 ]
                   </span>
-                  <span className="text-stone-300 font-mono text-xs">•</span>
-                  <span className="text-xs font-mono font-medium text-stone-500">
-                    PERMANENT COLLECTION
+                  <span className="text-zinc-600 font-mono text-xs">•</span>
+                  <span className="text-xs font-mono font-medium text-zinc-400">
+                    VERIFIED ARTIFACTS
                   </span>
-                  <span className="text-stone-300 font-mono text-xs">•</span>
-                  <span className="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/70 text-[10px] font-mono font-bold shadow-2xs">
-                    LIVE ATELIER
+                  <span className="text-zinc-600 font-mono text-xs">•</span>
+                  <span className="px-2 py-0.5 rounded-full bg-emerald-950/60 text-emerald-400 border border-emerald-500/30 text-[10px] font-mono font-bold shadow-2xs">
+                    INSTANT EXPORT
                   </span>
                 </div>
 
                 {/* Editorial Headline */}
-                <h1 id="banner-heading" className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-stone-950 tracking-tight leading-[1.12] font-sans [text-wrap:balance]">
+                <h1 id="banner-heading" className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.12] font-sans [text-wrap:balance]">
                   {filterState.category === 'all' && 'Executive Document Systems, Commercial Contracts & Models'}
                   {filterState.category === 'legal-contracts' && 'Master Services Agreements, SOWs & Legal Contract Suites'}
                   {filterState.category === 'sales-proposals' && 'Enterprise RFP Response Decks, Pitch Kits & Win Proposals'}
@@ -463,13 +460,13 @@ export function App() {
                 </h1>
 
                 {/* Curatorial Subtitle */}
-                <p className="text-stone-600 text-xs sm:text-sm leading-relaxed max-w-xl [text-wrap:pretty]">
+                <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-xl [text-wrap:pretty]">
                   Obsessively engineered commercial document templates and operational engines. Instant zero-egress delivery with signed cryptographic JSON licenses, clean file trees, and vetted business clauses.
                 </p>
 
                 {/* Floating Showcase Pill Tabs */}
                 <div className="pt-1">
-                  <div className="text-[9.5px] curatorial-stamp text-stone-400 mb-2">
+                  <div className="text-[9.5px] curatorial-stamp text-zinc-500 mb-2">
                     FOCUS DISCIPLINE // SELECTION
                   </div>
                   <div className="flex flex-wrap gap-1.5">
@@ -491,8 +488,8 @@ export function App() {
                           onClick={() => handleFilterChange({ category: tab.id as ProductCategory })}
                           className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer select-none active:scale-95 ${
                             isTabActive
-                              ? 'btn-plinth-primary text-white font-semibold'
-                              : 'bg-stone-100/90 text-stone-600 hover:text-stone-900 hover:bg-stone-200/70 border border-stone-200/60 shadow-2xs'
+                              ? 'bg-white text-zinc-950 font-bold shadow-sm'
+                              : 'bg-[#16181d] text-zinc-400 hover:text-white hover:bg-[#1a1d23] border border-white/10'
                           }`}
                         >
                           {tab.label}
@@ -503,18 +500,18 @@ export function App() {
                 </div>
 
                 {/* Curatorial Metrics Strip */}
-                <div className="pt-3 flex flex-wrap items-center gap-4 text-xs font-mono text-stone-500 border-t border-stone-100">
+                <div className="pt-3 flex flex-wrap items-center gap-4 text-xs font-mono text-zinc-400 border-t border-white/[0.08]">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                    <span className="font-bold text-stone-900">{filteredProducts.length}</span> Specimens
+                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                    <span className="font-bold text-white">{filteredProducts.length}</span> Specimens
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="text-stone-300">•</span>
-                    <span className="font-bold text-stone-900">100%</span> Verified Licenses
+                    <span className="text-zinc-600">•</span>
+                    <span className="font-bold text-white">100%</span> Verified Licenses
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="text-stone-300">•</span>
-                    <span className="font-bold text-stone-900">Zero</span> Egress Friction
+                    <span className="text-zinc-600">•</span>
+                    <span className="font-bold text-white">Zero</span> Egress Friction
                   </div>
                 </div>
               </div>
@@ -522,18 +519,15 @@ export function App() {
               {/* 40% Column: Dimensional Exhibition Plinth Card */}
               <div className="lg:col-span-5">
                 <div 
-                  className="group relative rounded-[22px] p-[10px] bg-gradient-to-b from-stone-50/90 via-white to-white border border-stone-200/90 shadow-[0_16px_36px_-6px_rgba(28,25,23,0.08),0_4px_12px_-2px_rgba(28,25,23,0.03)] border-t border-t-white hover:shadow-[0_24px_48px_-8px_rgba(28,25,23,0.12)] transition-all duration-300"
-                  style={{
-                    boxShadow: 'inset 0 1px 0 0 rgba(255, 255, 255, 0.95), 0 16px 36px -6px rgba(28, 25, 23, 0.08), 0 4px 12px -2px rgba(28, 25, 23, 0.03)'
-                  }}
+                  className="group relative rounded-[20px] p-[10px] bg-[#16181d] border border-white/[0.10] shadow-[0_16px_36px_-6px_rgba(0,0,0,0.8)] border-t border-t-white/[0.18] hover:border-white/[0.22] transition-all duration-300"
                 >
                   {/* Top Specimen Badge & Heart */}
-                  <div className="px-2.5 py-1.5 flex items-center justify-between gap-2 border-b border-stone-100/90 mb-2">
+                  <div className="px-2.5 py-1.5 flex items-center justify-between gap-2 border-b border-white/[0.08] mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-0.5 rounded-full bg-stone-900 text-amber-300 font-mono text-[9px] font-bold tracking-wider">
+                      <span className="px-2 py-0.5 rounded-full bg-amber-400 text-zinc-950 font-mono text-[9px] font-extrabold tracking-wider">
                         FEATURED EXHIBIT
                       </span>
-                      <span className="curatorial-stamp text-[9px] text-stone-400 hidden sm:inline">
+                      <span className="curatorial-stamp text-[9px] text-zinc-500 hidden sm:inline">
                         № {flagshipProduct.id.slice(0, 10).toUpperCase()}
                       </span>
                     </div>
@@ -543,24 +537,24 @@ export function App() {
                       onClick={() => handleToggleWishlist(flagshipProduct)}
                       className={`p-1.5 rounded-full border transition-all cursor-pointer ${
                         isFlagshipWishlisted
-                          ? 'bg-rose-50 text-rose-600 border-rose-200 shadow-2xs scale-105'
-                          : 'bg-white text-stone-400 border-stone-200 hover:text-stone-700'
+                          ? 'bg-rose-950/60 text-rose-400 border-rose-500/40 shadow-2xs scale-105'
+                          : 'bg-[#111317] text-zinc-400 border-white/10 hover:text-white'
                       }`}
                       title={isFlagshipWishlisted ? 'Remove from Wishlist' : 'Save to Wishlist'}
                       aria-label="Wishlist Flagship Specimen"
                     >
-                      <Heart className={`w-3.5 h-3.5 ${isFlagshipWishlisted ? 'fill-rose-500 text-rose-500' : ''}`} />
+                      <Heart className={`w-3.5 h-3.5 ${isFlagshipWishlisted ? 'fill-rose-400 text-rose-400' : ''}`} />
                     </button>
                   </div>
 
-                  {/* Concentric Media Preview Box (rounded-[12px] inside rounded-[22px] with p-[10px]) */}
-                  <div className="relative aspect-16/10 rounded-[12px] bg-gradient-to-br from-indigo-50/80 via-purple-50/40 to-amber-50/30 border border-stone-200/80 overflow-hidden p-4 flex flex-col justify-between">
+                  {/* Concentric Media Preview Box */}
+                  <div className="relative aspect-16/10 rounded-[12px] bg-[#0e1014] border border-white/[0.08] overflow-hidden p-4 flex flex-col justify-between">
                     <div className="flex items-center justify-between z-10">
-                      <span className="px-2 py-0.5 rounded-full bg-white/95 border border-indigo-200/90 text-[10px] font-mono font-bold text-indigo-700 shadow-2xs">
+                      <span className="px-2 py-0.5 rounded-full bg-[#16181d] border border-white/10 text-[10px] font-mono font-bold text-zinc-200">
                         {flagshipProduct.fileFormat} Specimen
                       </span>
-                      <div className="flex items-center gap-1 font-mono text-xs text-amber-700 bg-white/90 px-2 py-0.5 rounded-full border border-amber-200/80">
-                        <Star className="w-3 h-3 fill-amber-400 text-amber-500" />
+                      <div className="flex items-center gap-1 font-mono text-xs text-amber-400 bg-[#16181d] px-2 py-0.5 rounded-full border border-white/10">
+                        <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
                         <span className="font-bold">{flagshipProduct.rating}</span>
                       </div>
                     </div>
@@ -568,24 +562,24 @@ export function App() {
                     {/* 3D Multi-Plane Floating Aesthetic Showcase */}
                     <div className="flex items-center justify-center my-auto py-2">
                       <div className="relative w-44 h-20 perspective-500">
-                        <div className="absolute top-0 left-0 w-40 h-16 rounded-xl bg-white/80 border border-stone-200/80 shadow-xs rotate-[-5deg] group-hover:rotate-[-8deg] transition-transform duration-300" />
-                        <div className="absolute top-1.5 left-3 w-40 h-16 rounded-xl bg-gradient-to-r from-white via-indigo-50/90 to-amber-50/80 border border-indigo-200/90 shadow-[0_12px_24px_-4px_rgba(99,102,241,0.25)] flex items-center justify-between px-4 rotate-[3deg] group-hover:rotate-[5deg] group-hover:-translate-y-1 transition-all duration-300">
+                        <div className="absolute top-0 left-0 w-40 h-16 rounded-xl bg-[#1a1d23] border border-white/10 shadow-xs rotate-[-5deg] group-hover:rotate-[-8deg] transition-transform duration-300" />
+                        <div className="absolute top-1.5 left-3 w-40 h-16 rounded-xl bg-gradient-to-r from-[#1c1f26] via-[#222630] to-[#16181d] border border-white/15 shadow-[0_12px_24px_-4px_rgba(0,0,0,0.5)] flex items-center justify-between px-4 rotate-[3deg] group-hover:rotate-[5deg] group-hover:-translate-y-1 transition-all duration-300">
                           <div className="space-y-1.5">
-                            <div className="w-14 h-2.5 rounded-full bg-indigo-500/80 shadow-2xs" />
-                            <div className="w-9 h-1.5 rounded-full bg-stone-300" />
+                            <div className="w-14 h-2.5 rounded-full bg-amber-500/80 shadow-2xs" />
+                            <div className="w-9 h-1.5 rounded-full bg-zinc-600" />
                           </div>
                           <div className="flex gap-1.5">
-                            <div className="w-3 h-3 rounded-full bg-indigo-500 shadow-xs" />
-                            <div className="w-3 h-3 rounded-full bg-emerald-500 shadow-xs" />
-                            <div className="w-3 h-3 rounded-full bg-amber-500 shadow-xs" />
+                            <div className="w-3 h-3 rounded-full bg-amber-400 shadow-xs" />
+                            <div className="w-3 h-3 rounded-full bg-emerald-400 shadow-xs" />
+                            <div className="w-3 h-3 rounded-full bg-blue-400 shadow-xs" />
                           </div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between text-[10px] font-mono text-stone-500 z-10 pt-1">
-                      <span className="text-stone-700 font-semibold">{flagshipProduct.fileSize}</span>
-                      <span className="text-indigo-700 font-bold">Production Ready</span>
+                    <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500 z-10 pt-1">
+                      <span className="text-zinc-300 font-semibold">{flagshipProduct.fileSize}</span>
+                      <span className="text-amber-400 font-bold">Production Ready</span>
                     </div>
                   </div>
 
@@ -593,33 +587,33 @@ export function App() {
                   <div className="p-2.5 pt-3 space-y-2.5">
                     <div>
                       <div className="flex items-center justify-between">
-                        <h2 className="text-sm font-bold text-stone-950 truncate">
+                        <h2 className="text-sm font-bold text-white truncate">
                           {flagshipProduct.title}
                         </h2>
-                        <span className="text-sm font-extrabold text-stone-950 font-mono">
+                        <span className="text-sm font-extrabold text-white font-mono">
                           {formatPrice(flagshipProduct.price)}
                         </span>
                       </div>
-                      <p className="text-xs text-stone-600 line-clamp-1 mt-0.5">
+                      <p className="text-xs text-zinc-400 line-clamp-1 mt-0.5">
                         {flagshipProduct.subtitle}
                       </p>
                     </div>
 
                     {/* Interactive Action Buttons */}
-                    <div className="flex items-center gap-2 pt-1 border-t border-stone-100">
+                    <div className="flex items-center gap-2 pt-1 border-t border-white/[0.08]">
                       <button
                         type="button"
                         onClick={() => setInspectingBundleProduct(flagshipProduct)}
-                        className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200/90 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
+                        className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl bg-[#111317] hover:bg-[#1a1d23] text-amber-300 border border-amber-500/30 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
                       >
-                        <FileArchive className="w-3.5 h-3.5 text-amber-700" />
+                        <FileArchive className="w-3.5 h-3.5 text-amber-400" />
                         <span>Look Inside</span>
                       </button>
 
                       <button
                         type="button"
                         onClick={() => setActiveQuickLook(flagshipProduct)}
-                        className="p-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 border border-stone-200 cursor-pointer active:scale-95 transition-all"
+                        className="p-1.5 rounded-xl bg-[#111317] hover:bg-[#1a1d23] text-zinc-300 border border-white/10 cursor-pointer active:scale-95 transition-all"
                         title="Spec Overview"
                         aria-label="Spec Overview"
                       >
@@ -639,7 +633,7 @@ export function App() {
                         <button
                           type="button"
                           disabled
-                          className="flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl bg-stone-100 text-stone-500 border border-stone-200 text-xs font-medium cursor-default"
+                          className="flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl bg-zinc-800 text-zinc-400 border border-white/10 text-xs font-medium cursor-default"
                         >
                           <Check className="w-3.5 h-3.5" />
                           <span>In Bag</span>
@@ -648,9 +642,9 @@ export function App() {
                         <button
                           type="button"
                           onClick={() => handleAddToCart(flagshipProduct, 'standard')}
-                          className="btn-plinth-primary flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl text-xs font-semibold cursor-pointer"
+                          className="btn-primary flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl text-xs font-semibold cursor-pointer"
                         >
-                          <ShoppingBag className="w-3.5 h-3.5 text-amber-300" />
+                          <ShoppingBag className="w-3.5 h-3.5 text-zinc-950" />
                           <span>Add to Bag</span>
                         </button>
                       )}
@@ -665,61 +659,61 @@ export function App() {
 
           {/* Curated Trust & Feature Highlights Strip */}
           <section aria-label="Store guarantees" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 max-w-full">
-            <div className="group flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-stone-200/90 shadow-[0_2px_8px_-2px_rgba(28,25,23,0.03)] hover:border-amber-300 hover:shadow-xs transition-all border-t border-t-white min-w-0">
-              <div className="p-2 rounded-xl bg-amber-50/90 border border-amber-200/80 text-amber-600 shadow-[0_2px_8px_rgba(245,158,11,0.15)] group-hover:scale-105 transition-transform shrink-0">
-                <Zap className="w-4 h-4 fill-amber-400 text-amber-600" />
+            <div className="group flex items-center gap-3 p-3.5 rounded-2xl bg-[#111317] border border-white/[0.08] hover:border-amber-400/40 transition-all border-t border-t-white/[0.12] min-w-0">
+              <div className="p-2 rounded-xl bg-amber-950/40 border border-amber-500/30 text-amber-400 group-hover:scale-105 transition-transform shrink-0">
+                <Zap className="w-4 h-4 fill-amber-400 text-amber-400" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-bold text-stone-900 group-hover:text-amber-900 transition-colors truncate">Instant Delivery</div>
-                <div className="text-[11px] text-stone-500 truncate">Zero-egress direct CDN download</div>
+                <div className="text-xs font-bold text-white group-hover:text-amber-300 transition-colors truncate">Instant Delivery</div>
+                <div className="text-[11px] text-zinc-400 truncate">Zero-egress direct CDN download</div>
               </div>
             </div>
 
-            <div className="group flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-stone-200/90 shadow-[0_2px_8px_-2px_rgba(28,25,23,0.03)] hover:border-emerald-300 hover:shadow-xs transition-all border-t border-t-white min-w-0">
-              <div className="p-2 rounded-xl bg-emerald-50/90 border border-emerald-200/80 text-emerald-600 shadow-[0_2px_8px_rgba(16,185,129,0.15)] group-hover:scale-105 transition-transform shrink-0">
-                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            <div className="group flex items-center gap-3 p-3.5 rounded-2xl bg-[#111317] border border-white/[0.08] hover:border-emerald-400/40 transition-all border-t border-t-white/[0.12] min-w-0">
+              <div className="p-2 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 group-hover:scale-105 transition-transform shrink-0">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-bold text-stone-900 group-hover:text-emerald-900 transition-colors truncate">Verified Keys</div>
-                <div className="text-[11px] text-stone-500 truncate">Cryptographic JSON manifest</div>
+                <div className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors truncate">Verified Keys</div>
+                <div className="text-[11px] text-zinc-400 truncate">Cryptographic JSON manifest</div>
               </div>
             </div>
 
-            <div className="group flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-stone-200/90 shadow-[0_2px_8px_-2px_rgba(28,25,23,0.03)] hover:border-sky-300 hover:shadow-xs transition-all border-t border-t-white min-w-0">
-              <div className="p-2 rounded-xl bg-sky-50/90 border border-sky-200/80 text-sky-600 shadow-[0_2px_8px_rgba(14,165,233,0.15)] group-hover:scale-105 transition-transform shrink-0">
-                <RotateCcw className="w-4 h-4 text-sky-600" />
+            <div className="group flex items-center gap-3 p-3.5 rounded-2xl bg-[#111317] border border-white/[0.08] hover:border-sky-400/40 transition-all border-t border-t-white/[0.12] min-w-0">
+              <div className="p-2 rounded-xl bg-sky-950/40 border border-sky-500/30 text-sky-400 group-hover:scale-105 transition-transform shrink-0">
+                <RotateCcw className="w-4 h-4 text-sky-400" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-bold text-stone-900 group-hover:text-sky-900 transition-colors truncate">Lifetime Sync</div>
-                <div className="text-[11px] text-stone-500 truncate">Continuous patch releases</div>
+                <div className="text-xs font-bold text-white group-hover:text-sky-300 transition-colors truncate">Lifetime Sync</div>
+                <div className="text-[11px] text-zinc-400 truncate">Continuous patch releases</div>
               </div>
             </div>
 
-            <div className="group flex items-center gap-3 p-3.5 rounded-2xl bg-white border border-stone-200/90 shadow-[0_2px_8px_-2px_rgba(28,25,23,0.03)] hover:border-indigo-300 hover:shadow-xs transition-all border-t border-t-white min-w-0">
-              <div className="p-2 rounded-xl bg-indigo-50/90 border border-indigo-200/80 text-indigo-600 shadow-[0_2px_8px_rgba(99,102,241,0.15)] group-hover:scale-105 transition-transform shrink-0">
-                <BadgeCheck className="w-4 h-4 text-indigo-600" />
+            <div className="group flex items-center gap-3 p-3.5 rounded-2xl bg-[#111317] border border-white/[0.08] hover:border-indigo-400/40 transition-all border-t border-t-white/[0.12] min-w-0">
+              <div className="p-2 rounded-xl bg-indigo-950/40 border border-indigo-500/30 text-indigo-400 group-hover:scale-105 transition-transform shrink-0">
+                <BadgeCheck className="w-4 h-4 text-indigo-400" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-bold text-stone-900 group-hover:text-indigo-900 transition-colors truncate">100% Commercial</div>
-                <div className="text-[11px] text-stone-500 truncate">Royalty-free client usage</div>
+                <div className="text-xs font-bold text-white group-hover:text-indigo-300 transition-colors truncate">100% Commercial</div>
+                <div className="text-[11px] text-zinc-400 truncate">Royalty-free client usage</div>
               </div>
             </div>
           </section>
 
           {/* Controls Bar: Sort, View Switcher & Active Filter Tags */}
-          <div className="flex flex-wrap items-center justify-between gap-3 p-3 rounded-2xl bg-white border border-stone-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.02)] border-t border-t-white max-w-full">
+          <div className="flex flex-wrap items-center justify-between gap-3 p-3 rounded-2xl bg-[#111317] border border-white/[0.08] border-t border-t-white/[0.12] max-w-full">
             
             {/* Left: Active count and reset */}
             <div className="flex items-center gap-2 min-w-0">
-              <span className="text-xs font-mono text-stone-600 truncate">
-                Catalog: <strong className="text-stone-900 font-bold">{filteredProducts.length}</strong> specimens
+              <span className="text-xs font-mono text-zinc-400 truncate">
+                Catalog: <strong className="text-white font-bold">{filteredProducts.length}</strong> specimens
               </span>
 
               {(filterState.search || filterState.format || filterState.priceFilter !== 'all' || filterState.category !== 'all') && (
                 <button
                   type="button"
                   onClick={handleResetFilters}
-                  className="flex items-center gap-1 text-[11px] font-semibold text-[#e06344] hover:text-[#cb4d2e] pl-2 border-l border-stone-200 cursor-pointer shrink-0"
+                  className="flex items-center gap-1 text-[11px] font-semibold text-amber-400 hover:text-amber-300 pl-2 border-l border-white/10 cursor-pointer shrink-0"
                 >
                   <X className="w-3.5 h-3.5" />
                   <span>Reset</span>
@@ -730,14 +724,14 @@ export function App() {
             {/* Right: Sort & Layout toggles */}
             <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               
-              <div className="flex items-center gap-1.5 text-xs text-stone-600">
-                <ArrowUpDown className="w-3.5 h-3.5 text-stone-400 hidden sm:inline" />
+              <div className="flex items-center gap-1.5 text-xs text-zinc-400">
+                <ArrowUpDown className="w-3.5 h-3.5 text-zinc-500 hidden sm:inline" />
                 <label htmlFor="sort-select" className="hidden sm:inline font-medium">Sort:</label>
                 <select
                   id="sort-select"
                   value={filterState.sortBy}
                   onChange={(e) => handleFilterChange({ sortBy: e.target.value as FilterState['sortBy'] })}
-                  className="bg-stone-50 border border-stone-200 rounded-lg px-2 sm:px-2.5 py-1 sm:py-1.5 text-xs text-stone-800 focus:outline-none focus:border-stone-400 font-medium cursor-pointer"
+                  className="bg-[#16181d] border border-white/10 rounded-lg px-2 sm:px-2.5 py-1 sm:py-1.5 text-xs text-zinc-200 focus:outline-none focus:border-white/30 font-medium cursor-pointer"
                 >
                   <option value="popular">Popular</option>
                   <option value="rating">Rating</option>
@@ -748,12 +742,12 @@ export function App() {
               </div>
 
               {/* View Switcher */}
-              <div className="flex items-center bg-stone-100 border border-stone-200 rounded-lg p-0.5">
+              <div className="flex items-center bg-[#16181d] border border-white/10 rounded-lg p-0.5">
                 <button
                   type="button"
                   onClick={() => setViewMode('grid')}
                   className={`p-1.5 rounded-md transition-colors cursor-pointer ${
-                    viewMode === 'grid' ? 'bg-white text-stone-900 shadow-xs' : 'text-stone-600 hover:text-stone-700'
+                    viewMode === 'grid' ? 'bg-white text-zinc-950 font-bold' : 'text-zinc-400 hover:text-white'
                   }`}
                   aria-label="Grid View"
                   title="Grid View"
@@ -764,7 +758,7 @@ export function App() {
                   type="button"
                   onClick={() => setViewMode('compact')}
                   className={`p-1.5 rounded-md transition-colors cursor-pointer ${
-                    viewMode === 'compact' ? 'bg-white text-stone-900 shadow-xs' : 'text-stone-600 hover:text-stone-700'
+                    viewMode === 'compact' ? 'bg-white text-zinc-950 font-bold' : 'text-zinc-400 hover:text-white'
                   }`}
                   aria-label="Compact View"
                   title="Compact View"

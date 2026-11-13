@@ -103,7 +103,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
 
   return (
     <aside 
-      className={`relative lg:sticky top-0 lg:top-[61px] left-0 h-full lg:h-[calc(100vh-61px)] z-30 bg-[#FBFBF9]/95 backdrop-blur-md border-r border-stone-200/80 flex flex-col transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+      className={`relative lg:sticky top-0 lg:top-[61px] left-0 h-full lg:h-[calc(100vh-61px)] z-30 bg-[#0e1014]/95 backdrop-blur-md border-r border-white/[0.08] flex flex-col transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
         collapsed ? 'w-16' : 'w-64 max-w-[80vw]'
       }`}
     >
@@ -114,10 +114,10 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
         <div>
           {!collapsed && (
             <div className="px-2 mb-2.5 flex items-center justify-between">
-              <span className="curatorial-stamp text-[9.5px]">
+              <span className="curatorial-stamp text-[9.5px] text-zinc-400">
                 COLLECTION // INDEX
               </span>
-              <span className="text-[10px] font-mono text-stone-400">
+              <span className="text-[10px] font-mono text-zinc-500">
                 07 CATS
               </span>
             </div>
@@ -132,25 +132,25 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                   key={cat.id}
                   type="button"
                   onClick={() => onFilterChange({ category: cat.id })}
-                  className={`w-full flex items-center justify-between px-2.5 py-2 rounded-2xl text-xs font-medium transition-all group cursor-pointer border ${
+                  className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-xs font-medium transition-all group cursor-pointer border ${
                     isActive 
-                      ? 'bg-stone-900 text-white font-semibold shadow-md border-stone-800 border-t-stone-700/80' 
-                      : 'bg-transparent text-stone-700 hover:text-stone-950 hover:bg-stone-200/50 border-transparent hover:border-stone-200/60'
+                      ? 'bg-white text-zinc-950 font-semibold shadow-md border-white' 
+                      : 'bg-transparent text-zinc-400 hover:text-white hover:bg-white/[0.06] border-transparent'
                   }`}
                   title={cat.label}
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <span className={`w-7 h-7 rounded-xl flex items-center justify-center transition-all ${
+                    <span className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all ${
                       isActive 
-                        ? 'bg-stone-800 text-amber-300 shadow-inner' 
-                        : 'bg-white text-stone-600 border border-stone-200/80 shadow-2xs group-hover:scale-105 group-hover:border-stone-300'
+                        ? 'bg-zinc-950 text-white shadow-inner' 
+                        : 'bg-[#16181d] text-zinc-300 border border-white/10 group-hover:border-white/20'
                     }`}>
                       <Icon className="w-3.5 h-3.5" />
                     </span>
                     {!collapsed && (
                       <div className="flex flex-col text-left truncate">
                         <span className="truncate leading-tight text-xs">{cat.label}</span>
-                        <span className={`text-[9px] font-mono leading-none mt-0.5 ${isActive ? 'text-stone-400' : 'text-stone-400'}`}>
+                        <span className={`text-[9px] font-mono leading-none mt-0.5 ${isActive ? 'text-zinc-600' : 'text-zinc-500'}`}>
                           № {cat.index}
                         </span>
                       </div>
@@ -159,8 +159,8 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                   {!collapsed && (
                     <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${
                       isActive 
-                        ? 'bg-stone-800 text-amber-200 border border-stone-700' 
-                        : 'text-stone-500 bg-stone-100/80 border border-stone-200/50'
+                        ? 'bg-zinc-900 text-white' 
+                        : 'text-zinc-400 bg-[#16181d] border border-white/10'
                     }`}>
                       {count}
                     </span>
@@ -171,10 +171,10 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
           </nav>
         </div>
 
-        {/* Archival File Format Plinth Filter */}
+        {/* Archival File Format Filter */}
         {!collapsed && (
-          <div className="pt-4 border-t border-stone-200/70">
-            <span className="px-2 curatorial-stamp text-[9.5px] mb-2.5 block">
+          <div className="pt-4 border-t border-white/[0.08]">
+            <span className="px-2 curatorial-stamp text-[9.5px] text-zinc-400 mb-2.5 block">
               SPEC // ENCODING
             </span>
             <div className="flex flex-wrap gap-1.5 px-1">
@@ -187,8 +187,8 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                     onClick={() => onFilterChange({ format: fmt === 'All' ? '' : fmt })}
                     className={`px-2 py-1 rounded-lg text-[10px] font-mono font-medium border transition-all cursor-pointer ${
                       isSelected
-                        ? 'bg-stone-900 text-white border-stone-900 shadow-xs'
-                        : 'bg-white/90 text-stone-600 border-stone-200 hover:border-stone-300 hover:text-stone-900 shadow-2xs'
+                        ? 'bg-white text-zinc-950 border-white font-bold shadow-xs'
+                        : 'bg-[#16181d] text-zinc-300 border-white/10 hover:border-white/20 hover:text-white'
                     }`}
                   >
                     {fmt}
@@ -199,10 +199,10 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
           </div>
         )}
 
-        {/* Price Bracket Plinth */}
+        {/* Price Bracket Filter */}
         {!collapsed && (
-          <div className="pt-4 border-t border-stone-200/70">
-            <span className="px-2 curatorial-stamp text-[9.5px] mb-2.5 block">
+          <div className="pt-4 border-t border-white/[0.08]">
+            <span className="px-2 curatorial-stamp text-[9.5px] text-zinc-400 mb-2.5 block">
               VALUATION // RANGE
             </span>
             <div className="space-y-1">
@@ -221,12 +221,12 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                     onClick={() => onFilterChange({ priceFilter: p.id as any })}
                     className={`w-full text-left px-2.5 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer flex items-center justify-between ${
                       isSelected
-                        ? 'bg-stone-200/80 text-stone-950 font-semibold shadow-2xs'
-                        : 'text-stone-600 hover:text-stone-900 hover:bg-stone-200/40'
+                        ? 'bg-white/10 text-white font-semibold'
+                        : 'text-zinc-400 hover:text-white hover:bg-white/[0.04]'
                     }`}
                   >
                     <span className="truncate">{p.label}</span>
-                    {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-stone-900 shrink-0 ml-1" />}
+                    {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0 ml-1" />}
                   </button>
                 );
               })}
@@ -236,36 +236,36 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
 
         {/* Commercial License Filter */}
         {!collapsed && (
-          <div className="pt-4 border-t border-stone-200/70">
-            <label className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white border border-stone-200/80 shadow-2xs cursor-pointer hover:border-stone-300 transition-colors">
+          <div className="pt-4 border-t border-white/[0.08]">
+            <label className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-[#111317] border border-white/10 cursor-pointer hover:border-white/20 transition-colors">
               <input
                 type="checkbox"
                 checked={filterState.commercialOnly}
                 onChange={(e) => onFilterChange({ commercialOnly: e.target.checked })}
-                className="w-3.5 h-3.5 rounded border-stone-300 text-stone-900 focus:ring-0 accent-stone-900"
+                className="w-3.5 h-3.5 rounded border-zinc-600 text-white focus:ring-0 accent-white"
               />
-              <span className="text-xs text-stone-700 font-medium flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-stone-500" />
+              <span className="text-xs text-zinc-300 font-medium flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-zinc-400" />
                 Commercial License
               </span>
             </label>
           </div>
         )}
 
-        {/* Curatorial Atelier Onboarding Plinth */}
+        {/* Curatorial Atelier Onboarding */}
         {!collapsed && (
-          <div className="p-4 rounded-2xl bg-gradient-to-br from-stone-100 to-amber-50/60 border border-stone-200/90 shadow-2xs relative overflow-hidden">
-            <div className="flex items-center gap-1.5 text-stone-900 text-xs font-bold mb-1">
-              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+          <div className="p-4 rounded-2xl bg-[#111317] border border-white/10 relative overflow-hidden">
+            <div className="flex items-center gap-1.5 text-white text-xs font-bold mb-1">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               Exhibit on Nexus Vault
             </div>
-            <p className="text-[11px] text-stone-600 leading-relaxed mb-3">
-              Independent atelier creator program. Keep 90% royalties with instantaneous automated crypto/fiat payouts.
+            <p className="text-[11px] text-zinc-400 leading-relaxed mb-3">
+              Independent atelier creator program. Keep 90% royalties with automated crypto/fiat payouts.
             </p>
             <button 
               type="button"
               onClick={() => alert('Creator Studio: Exhibition submission portal opens here!')}
-              className="btn-plinth-primary w-full py-2 px-3 text-white text-xs font-semibold rounded-xl cursor-pointer"
+              className="btn-primary w-full py-2 px-3 text-xs font-semibold rounded-xl cursor-pointer"
             >
               Submit Asset Specimen
             </button>
@@ -274,12 +274,12 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
 
       </div>
 
-      {/* Footer Toggle Plinth */}
-      <div className="p-2.5 border-t border-stone-200/80 bg-stone-100/60 flex items-center justify-end">
+      {/* Footer Toggle */}
+      <div className="p-2.5 border-t border-white/[0.08] bg-[#08090b] flex items-center justify-end">
         <button
           type="button"
           onClick={onToggleCollapse}
-          className="p-1.5 rounded-xl text-stone-500 hover:text-stone-800 hover:bg-stone-200/60 transition-colors cursor-pointer w-full flex items-center justify-center gap-1.5 text-xs font-medium"
+          className="p-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.05] transition-colors cursor-pointer w-full flex items-center justify-center gap-1.5 text-xs font-medium"
           title={collapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
           aria-label={collapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
         >
