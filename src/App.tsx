@@ -15,6 +15,8 @@ import { LeftNavigation } from './components/LeftNavigation';
 import { ProductTile } from './components/ProductTile';
 import { QuickLookModal } from './components/QuickLookModal';
 import { AssetBundleInspectorModal } from './components/bundle-inspector/AssetBundleInspectorModal';
+import { LegalDocumentViewerModal } from './components/LegalDocumentViewerModal';
+import { LEGAL_DOCUMENTS_STORE, CompleteLegalDocument } from './data/legal-documents/store';
 import { CartDrawer } from './components/CartDrawer';
 import { WishlistDrawer } from './components/WishlistDrawer';
 import { CheckoutSuccessModal } from './components/CheckoutSuccessModal';
@@ -49,7 +51,8 @@ import {
   Download,
   ShoppingBag,
   Sparkles,
-  Heart
+  Heart,
+  FileText
 } from 'lucide-react';
 
 const CURRENCY_SYMBOLS: Record<Currency, string> = {
@@ -104,6 +107,7 @@ export function App() {
   // --- Modals & Drawers ---
   const [activeQuickLook, setActiveQuickLook] = useState<DigitalProduct | null>(null);
   const [inspectingBundleProduct, setInspectingBundleProduct] = useState<DigitalProduct | null>(null);
+  const [activeLegalDocument, setActiveLegalDocument] = useState<CompleteLegalDocument | null>(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isMyDownloadsOpen, setIsMyDownloadsOpen] = useState(false);
@@ -127,6 +131,11 @@ export function App() {
   const showToast = useCallback((msg: string) => {
     setToastMessage(msg);
     setTimeout(() => setToastMessage(null), 3000);
+  }, []);
+
+  const handleOpenLegalDocument = useCallback((product: DigitalProduct) => {
+    const doc = LEGAL_DOCUMENTS_STORE[product.id] || LEGAL_DOCUMENTS_STORE['msa-sow-master-kit'];
+    setActiveLegalDocument(doc);
   }, []);
 
   // Format Price with Currency Conversion
@@ -645,14 +654,26 @@ export function App() {
 
                     {/* Interactive Action Buttons */}
                     <div className="flex items-center gap-2 pt-1 border-t border-white/[0.08]">
-                      <button
-                        type="button"
-                        onClick={() => setInspectingBundleProduct(flagshipProduct)}
-                        className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl bg-[#111317] hover:bg-[#1a1d23] text-amber-300 border border-amber-500/30 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
-                      >
-                        <FileArchive className="w-3.5 h-3.5 text-amber-400" />
-                        <span>Look Inside</span>
-                      </button>
+      {/* Flagship Legal Document Full Reader Trigger */}
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          onClick={() => handleOpenLegalDocument(flagshipProduct)}
+          className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 text-xs font-bold cursor-pointer active:scale-95 transition-all shadow-sm"
+        >
+          <FileText className="w-3.5 h-3.5" />
+          <span>Read Full Agreement</span>
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setInspectingBundleProduct(flagshipProduct)}
+          className="flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl bg-[#111317] hover:bg-[#1a1d23] text-amber-300 border border-amber-500/30 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
+        >
+          <FileArchive className="w-3.5 h-3.5 text-amber-400" />
+          <span>Unpack .DOCX</span>
+        </button>
+      </div>
 
                       <button
                         type="button"
@@ -839,6 +860,7 @@ export function App() {
                   onAddToCart={(p) => handleAddToCart(p, 'standard')}
                   onQuickLook={setActiveQuickLook}
                   onInspectBundle={setInspectingBundleProduct}
+                  onOpenLegalDocument={handleOpenLegalDocument}
                   onInstantDownload={handleInstantDownload}
                   currency={currency}
                   formatPrice={formatPrice}
@@ -861,6 +883,7 @@ export function App() {
           setActiveQuickLook(null);
           setInspectingBundleProduct(p);
         }}
+        onOpenLegalDocument={handleOpenLegalDocument}
         onInstantDownload={handleInstantDownload}
         isInCart={activeQuickLook ? cart.some(i => i.product.id === activeQuickLook.id) : false}
         isPurchased={activeQuickLook ? purchases.some(i => i.product.id === activeQuickLook.id) : false}
@@ -876,6 +899,20 @@ export function App() {
         isInCart={inspectingBundleProduct ? cart.some(i => i.product.id === inspectingBundleProduct.id) : false}
         isPurchased={inspectingBundleProduct ? purchases.some(i => i.product.id === inspectingBundleProduct.id) : false}
         formatPrice={formatPrice}
+      />
+
+      {/* Complete Legal Document Viewer Modal */}
+      <LegalDocumentViewerModal
+        document={activeLegalDocument}
+        isOpen={!!activeLegalDocument}
+        onClose={() => setActiveLegalDocument(null)}
+        onAddToCart={() => {
+          if (activeLegalDocument) {
+            const product = DIGITAL_PRODUCTS.find(p => p.id === activeLegalDocument.id);
+            if (product) handleAddToCart(product, 'standard');
+          }
+        }}
+        isInCart={activeLegalDocument ? cart.some(i => i.product.id === activeLegalDocument.id) : false}
       />
 
       <CartDrawer

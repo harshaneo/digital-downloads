@@ -29,6 +29,7 @@ interface ProductTileProps {
   onAddToCart: (p: DigitalProduct) => void;
   onQuickLook: (p: DigitalProduct) => void;
   onInspectBundle?: (p: DigitalProduct) => void;
+  onOpenLegalDocument?: (p: DigitalProduct) => void;
   onInstantDownload: (p: DigitalProduct) => void;
   currency: Currency;
   formatPrice: (amountInUSD: number) => string;
@@ -44,6 +45,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
   onAddToCart,
   onQuickLook,
   onInspectBundle,
+  onOpenLegalDocument,
   onInstantDownload,
   formatPrice
 }) => {
@@ -450,22 +452,37 @@ export const ProductTile: React.FC<ProductTileProps> = ({
 
           {/* Quick Peek & Archive Inspection Action Buttons */}
           <div className="flex items-center gap-1.5 opacity-90 group-hover/preview:opacity-100 transition-opacity pointer-events-auto">
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                if (onInspectBundle) {
-                  onInspectBundle(product);
-                } else {
-                  onQuickLook(product);
-                }
-              }}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/80 hover:bg-black text-amber-300 text-[10.5px] font-mono font-bold cursor-pointer shadow-sm border border-amber-400/30 hover:border-amber-400 active:scale-95 transition-all"
-              title="Inspect ZIP archive contents & license manifest"
-            >
-              <FileArchive className="w-3 h-3 text-amber-400" />
-              <span>Unpack</span>
-            </button>
+            {product.category === 'legal-contracts' && onOpenLegalDocument ? (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenLegalDocument(product);
+                }}
+                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500 hover:bg-amber-400 text-zinc-950 text-[10.5px] font-mono font-bold cursor-pointer shadow-sm active:scale-95 transition-all"
+                title="Read full complete legal agreement with clauses"
+              >
+                <FileText className="w-3 h-3 text-zinc-950" />
+                <span>Read Clauses</span>
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (onInspectBundle) {
+                    onInspectBundle(product);
+                  } else {
+                    onQuickLook(product);
+                  }
+                }}
+                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/80 hover:bg-black text-amber-300 text-[10.5px] font-mono font-bold cursor-pointer shadow-sm border border-amber-400/30 hover:border-amber-400 active:scale-95 transition-all"
+                title="Inspect ZIP archive contents & license manifest"
+              >
+                <FileArchive className="w-3 h-3 text-amber-400" />
+                <span>Unpack</span>
+              </button>
+            )}
             <button
               type="button"
               onClick={(e) => {
@@ -524,22 +541,37 @@ export const ProductTile: React.FC<ProductTileProps> = ({
             </span>
           </div>
 
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              if (onInspectBundle) {
-                onInspectBundle(product);
-              } else {
-                onQuickLook(product);
-              }
-            }}
-            className="flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-[#161a22] hover:bg-[#1f2430] text-amber-300 border border-amber-500/30 text-[10px] font-mono font-bold cursor-pointer active:scale-95 transition-all shrink-0"
-            title="Inspect ZIP archive contents"
-          >
-            <FileArchive className="w-3 h-3 text-amber-400" />
-            <span>Folder Manifest</span>
-          </button>
+          {product.category === 'legal-contracts' && onOpenLegalDocument ? (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenLegalDocument(product);
+              }}
+              className="flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[10px] font-mono font-bold cursor-pointer active:scale-95 transition-all shrink-0"
+              title="Read full complete legal agreement with clauses"
+            >
+              <FileText className="w-3 h-3 text-amber-400" />
+              <span>Full Agreement</span>
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                if (onInspectBundle) {
+                  onInspectBundle(product);
+                } else {
+                  onQuickLook(product);
+                }
+              }}
+              className="flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-[#161a22] hover:bg-[#1f2430] text-amber-300 border border-amber-500/30 text-[10px] font-mono font-bold cursor-pointer active:scale-95 transition-all shrink-0"
+              title="Inspect ZIP archive contents"
+            >
+              <FileArchive className="w-3 h-3 text-amber-400" />
+              <span>Folder Manifest</span>
+            </button>
+          )}
         </div>
 
         {/* Valuation & Tactile Action Buttons */}

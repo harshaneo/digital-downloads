@@ -20,6 +20,7 @@ interface QuickLookModalProps {
   onAddToCart: (p: DigitalProduct, license: 'standard' | 'extended') => void;
   onInstantDownload: (p: DigitalProduct) => void;
   onInspectBundle?: (p: DigitalProduct) => void;
+  onOpenLegalDocument?: (p: DigitalProduct) => void;
   isInCart: boolean;
   isPurchased: boolean;
   formatPrice: (amountInUSD: number) => string;
@@ -31,6 +32,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
   onAddToCart,
   onInstantDownload,
   onInspectBundle,
+  onOpenLegalDocument,
   isInCart,
   isPurchased,
   formatPrice
@@ -161,19 +163,34 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 flex items-center justify-between">
               <span>Archive Contents</span>
-              {onInspectBundle ? (
-                <button
-                  type="button"
-                  onClick={() => onInspectBundle(product)}
-                  className="flex items-center gap-1 text-[11px] font-mono font-bold text-amber-300 hover:text-amber-200 bg-[#16181d] border border-amber-500/30 px-2 py-0.5 rounded-lg cursor-pointer active:scale-95 transition-all shadow-2xs"
-                >
-                  <FileArchive className="w-3 h-3 text-amber-400" />
-                  <span>Look Inside (.ZIP)</span>
-                  <ExternalLink className="w-2.5 h-2.5 ml-0.5 text-amber-400" />
-                </button>
-              ) : (
-                <span className="text-[11px] font-mono text-zinc-400 font-normal">{product.includedFiles.length} files included</span>
-              )}
+              <div className="flex items-center gap-1.5">
+                {product.category === 'legal-contracts' && onOpenLegalDocument && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onClose();
+                      onOpenLegalDocument(product);
+                    }}
+                    className="flex items-center gap-1 text-[11px] font-mono font-bold text-amber-300 hover:text-amber-200 bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-lg cursor-pointer active:scale-95 transition-all shadow-2xs"
+                  >
+                    <FileCheck className="w-3 h-3 text-amber-400" />
+                    <span>Read Full Agreement Clauses</span>
+                  </button>
+                )}
+                {onInspectBundle ? (
+                  <button
+                    type="button"
+                    onClick={() => onInspectBundle(product)}
+                    className="flex items-center gap-1 text-[11px] font-mono font-bold text-amber-300 hover:text-amber-200 bg-[#16181d] border border-amber-500/30 px-2 py-0.5 rounded-lg cursor-pointer active:scale-95 transition-all shadow-2xs"
+                  >
+                    <FileArchive className="w-3 h-3 text-amber-400" />
+                    <span>Look Inside (.ZIP)</span>
+                    <ExternalLink className="w-2.5 h-2.5 ml-0.5 text-amber-400" />
+                  </button>
+                ) : (
+                  <span className="text-[11px] font-mono text-zinc-400 font-normal">{product.includedFiles.length} files included</span>
+                )}
+              </div>
             </h4>
             <div className="border border-white/[0.08] rounded-2xl overflow-hidden divide-y divide-white/[0.06] bg-[#0e1014]">
               {product.includedFiles.map((file, i) => (
