@@ -1,5 +1,10 @@
 export type ProductCategory = 
   | 'all'
+  | 'legal-contracts'
+  | 'sales-proposals'
+  | 'ops-sops'
+  | 'financial-models'
+  | 'compliance-security'
   | 'websites-ui'
   | 'backends'
   | 'react-apps'

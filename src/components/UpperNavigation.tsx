@@ -98,7 +98,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
                 </span>
               </div>
               <p className="text-[10.5px] text-stone-500 hidden sm:block mt-0.5 font-medium tracking-tight">
-                Curated Digital Exhibition & Atelier
+                Executive Document Vault & Commercial Atelier
               </p>
             </div>
           </a>
@@ -112,7 +112,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
               type="text"
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              placeholder="Search assets, 3D, code..."
+              placeholder="Search contracts, RFPs, SOPs, financial models..."
               className="w-full pl-8 sm:pl-9 pr-8 sm:pr-16 py-1.5 sm:py-2 text-xs bg-white/80 hover:bg-white focus:bg-white border border-stone-200/80 focus:border-stone-400 rounded-full text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-200/50 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)] transition-all font-sans"
             />
             {searchQuery ? (

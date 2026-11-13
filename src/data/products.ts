@@ -2,7 +2,528 @@ import { DigitalProduct } from '../types';
 
 export const DIGITAL_PRODUCTS: DigitalProduct[] = [
   // ==========================================
-  // 1. WEBSITES & UI (Websites, UI Kits, Landing Pages)
+  // 1. LEGAL & COMMERCIAL CONTRACTS
+  // ==========================================
+  {
+    id: 'msa-sow-master-kit',
+    title: 'Master Services Agreement & SOW Kit',
+    subtitle: 'Dual MSA + SOW legal contract framework for tech agencies, consultancies & high-ticket contractors',
+    description: 'An attorney-drafted commercial agreement suite protecting IP ownership, limiting warranty liabilities, and establishing strict payment milestones with change-order governance. Formatted in Microsoft Word (.docx), Notion, and exportable PDF.',
+    category: 'legal-contracts',
+    price: 99,
+    originalPrice: 149,
+    rating: 4.99,
+    reviewCount: 284,
+    downloadsCount: 3120,
+    fileFormat: '.DOCX',
+    fileSize: '4.8 MB',
+    version: '2026.2',
+    updatedAt: 'Yesterday',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-amber-600 via-orange-600 to-stone-800',
+    iconName: 'FileText',
+    tags: ['Legal', 'MSA', 'SOW', 'Agency', 'Contract', 'Word'],
+    badge: 'BESTSELLER',
+    isTrending: true,
+    creator: {
+      name: 'Marcus Vance, Esq.',
+      handle: '@vance_legal',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 6420
+    },
+    features: [
+      'Comprehensive Master Services Agreement (MSA) with limitation of liability caps',
+      'Modular Statement of Work (SOW) template with sprint milestone billing',
+      'Formal Change Order Request (COR) rider with approval signatures',
+      'IP assignment & work-for-hire assignment clauses vetted across 50 states',
+      'Editable Word (.docx), Google Docs copy link, and annotated PDF manual'
+    ],
+    includedFiles: [
+      { name: 'Master_Services_Agreement_2026.docx', size: '1.8 MB', type: 'Word Document' },
+      { name: 'Statement_of_Work_Template.docx', size: '1.2 MB', type: 'Word Document' },
+      { name: 'Change_Order_Rider.docx', size: '420 KB', type: 'Word Document' },
+      { name: 'Clause_By_Clause_Legal_Guide.pdf', size: '1.4 MB', type: 'PDF Document' }
+    ]
+  },
+  {
+    id: 'software-dev-ip-contract',
+    title: 'Software Development & IP Assignment Suite',
+    subtitle: 'Ironclad contractor & team IP assignment contract with source code escrow & indemnification',
+    description: 'Protects software companies and founders against developer IP claims. Guarantees 100% transfer of copyright, patent rights, trade secrets, and source code upon compensation with strict non-solicitation protections.',
+    category: 'legal-contracts',
+    price: 129,
+    originalPrice: 199,
+    rating: 4.97,
+    reviewCount: 168,
+    downloadsCount: 1840,
+    fileFormat: '.DOCX',
+    fileSize: '3.6 MB',
+    version: '3.1.0',
+    updatedAt: '3 days ago',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-slate-700 via-stone-800 to-amber-900',
+    iconName: 'FileText',
+    tags: ['Software', 'IP Assignment', 'Developer Contract', 'Legal', 'SaaS'],
+    badge: 'FEATURED',
+    isTrending: true,
+    creator: {
+      name: 'Evelyn Reed',
+      handle: '@reed_techcounsel',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 4210
+    },
+    features: [
+      'Irrevocable copyright and patent assignment covering past and future deliverables',
+      'Source code delivery protocols with clean build warranty warranties',
+      'Non-disclosure, non-disparagement, and 2-year client non-solicitation covenants',
+      'Explicit exclusion of third-party open-source liability from proprietary code',
+      'Ready-to-sign templates for contractors, full-time hires, and technical advisors'
+    ],
+    includedFiles: [
+      { name: 'Software_Development_Agreement.docx', size: '1.4 MB', type: 'Word Document' },
+      { name: 'Confidential_IP_Assignment_Rider.docx', size: '920 KB', type: 'Word Document' },
+      { name: 'Source_Code_Acceptance_Certificate.docx', size: '380 KB', type: 'Word Document' },
+      { name: 'Execution_Checklist.pdf', size: '900 KB', type: 'PDF Document' }
+    ]
+  },
+  {
+    id: 'b2b-saas-terms-privacy',
+    title: 'B2B SaaS Terms of Service & SLA Suite',
+    subtitle: 'Enterprise subscription terms, 99.9% uptime SLA matrix, DPA & customer privacy policy',
+    description: 'Enterprise-grade B2B SaaS terms engineered to pass procurement audits. Covers multi-seat seat licensing, fair-use API limits, service credits for downtime, data retention protocols, and mutual indemnification.',
+    category: 'legal-contracts',
+    price: 149,
+    originalPrice: 249,
+    rating: 4.96,
+    reviewCount: 142,
+    downloadsCount: 1530,
+    fileFormat: '.DOCX',
+    fileSize: '5.2 MB',
+    version: '4.0.0',
+    updatedAt: 'Last week',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-stone-900 via-blue-950 to-indigo-900',
+    iconName: 'FileText',
+    tags: ['SaaS', 'Terms of Service', 'Privacy Policy', 'SLA', 'GDPR', 'Legal'],
+    badge: 'HOT',
+    isTrending: true,
+    creator: {
+      name: 'David Sterling',
+      handle: '@sterling_legal',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 3890
+    },
+    features: [
+      'Comprehensive Cloud Subscription Agreement (CSA) for enterprise procurement',
+      'Standard Service Level Agreement (SLA) with clear credit calculation tables',
+      'Data Processing Agreement (DPA) matching EU/UK GDPR and California CCPA',
+      'Clear acceptable use policy (AUP) prohibiting reverse engineering and automated scraping',
+      'Includes Markdown (.md) and HTML copy for instant web deployment'
+    ],
+    includedFiles: [
+      { name: 'B2B_SaaS_Terms_of_Service.docx', size: '1.9 MB', type: 'Word Document' },
+      { name: 'Service_Level_Agreement_SLA.docx', size: '1.1 MB', type: 'Word Document' },
+      { name: 'Customer_Data_Processing_Addendum.docx', size: '1.4 MB', type: 'Word Document' },
+      { name: 'Web_Deploy_Ready_Terms.md', size: '800 KB', type: 'Markdown Document' }
+    ]
+  },
+
+  // ==========================================
+  // 2. SALES, RFPS & DEAL PROPOSALS
+  // ==========================================
+  {
+    id: 'enterprise-rfp-framework',
+    title: 'Enterprise RFP Winning Response Kit',
+    subtitle: '60-slide corporate proposal deck, technical capability matrices & security compliance boilerplate',
+    description: 'A battle-tested corporate proposal architecture designed to win high-ticket tenders ($50k–$500k). Includes executive briefing layouts, compliance response tables, pricing options, implementation timelines, and case study frameworks.',
+    category: 'sales-proposals',
+    price: 89,
+    originalPrice: 159,
+    rating: 4.98,
+    reviewCount: 215,
+    downloadsCount: 2740,
+    fileFormat: '.PPTX',
+    fileSize: '42 MB',
+    version: '3.0.0',
+    updatedAt: '4 days ago',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-orange-600 via-amber-700 to-stone-900',
+    iconName: 'Presentation',
+    tags: ['RFP', 'Proposal', 'B2B Sales', 'PowerPoint', 'Keynote', 'Pitch'],
+    badge: 'BESTSELLER',
+    isTrending: true,
+    creator: {
+      name: 'Sophia Chen',
+      handle: '@chen_proposals',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 5120
+    },
+    features: [
+      '60 Modular slide designs in 16:9 widescreen format (PowerPoint & Keynote)',
+      'Pre-written executive summary narratives and methodology descriptions',
+      'Technical architecture diagrams and phased project delivery Gantt charts',
+      'Security questionnaire response boilerplate (SOC2, ISO, data residency)',
+      'Interactive pricing scenario comparison matrices'
+    ],
+    includedFiles: [
+      { name: 'Enterprise_RFP_Response_Deck.pptx', size: '28 MB', type: 'PowerPoint Deck' },
+      { name: 'Enterprise_RFP_Response_Deck.key', size: '12 MB', type: 'Keynote Deck' },
+      { name: 'Security_Boilerplate_Responses.docx', size: '1.2 MB', type: 'Word Document' },
+      { name: 'Proposal_Scoring_Rubric_Guide.pdf', size: '800 KB', type: 'PDF Guide' }
+    ]
+  },
+  {
+    id: 'high-ticket-agency-proposal',
+    title: 'High-Ticket Agency Pitch & Scope Deck',
+    subtitle: '3-tier pricing tables, interactive milestone roadmap & high-converting client proposal deck',
+    description: 'A refined presentation template engineered for design, branding, and dev consultancies closing $20k+ retainers. Emphasizes business outcomes over hourly billing with anchored tier psychology.',
+    category: 'sales-proposals',
+    price: 59,
+    originalPrice: 99,
+    rating: 4.95,
+    reviewCount: 184,
+    downloadsCount: 2210,
+    fileFormat: '.FIG',
+    fileSize: '24 MB',
+    version: '2.4.0',
+    updatedAt: '5 days ago',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-amber-500 via-rose-600 to-purple-800',
+    iconName: 'Presentation',
+    tags: ['Pitch Deck', 'Agency', 'Proposal', 'Figma', 'Keynote', 'Sales'],
+    badge: 'HOT',
+    isTrending: false,
+    creator: {
+      name: 'Julian Croft',
+      handle: '@croft_advisory',
+      avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 3950
+    },
+    features: [
+      '38 High-craft slides in Figma and Apple Keynote',
+      'Anchored 3-tier Good/Better/Best pricing breakdown slides',
+      'Sprint deliverable roadmaps with milestones and sign-off gates',
+      'Impact metrics and before/after ROI case study templates',
+      'Vector typographic layouts with subtle stone-textured aesthetics'
+    ],
+    includedFiles: [
+      { name: 'HighTicket_Proposal_Template.fig', size: '14 MB', type: 'Figma Document' },
+      { name: 'HighTicket_Proposal_Template.key', size: '9.2 MB', type: 'Keynote Presentation' },
+      { name: 'Pricing_Strategy_Guide.pdf', size: '800 KB', type: 'PDF Document' }
+    ]
+  },
+  {
+    id: 'saas-investor-pitch-kit',
+    title: 'Seed & Series A Pitch Deck Kit',
+    subtitle: '18-slide institutional VC deck, financial runway slides & due diligence data room structure',
+    description: 'Modeled after decks that raised over $80M in venture capital from Tier-1 Silicon Valley funds. Features concise problem-solution framing, market sizing (TAM/SAM/SOM), product demo teardowns, and unit economics slides.',
+    category: 'sales-proposals',
+    price: 79,
+    originalPrice: 129,
+    rating: 4.97,
+    reviewCount: 156,
+    downloadsCount: 1980,
+    fileFormat: '.KEY',
+    fileSize: '36 MB',
+    version: '2026.1',
+    updatedAt: 'Yesterday',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-emerald-700 via-teal-800 to-stone-900',
+    iconName: 'Presentation',
+    tags: ['VC Deck', 'Pitch', 'Startups', 'Fundraising', 'Keynote', 'PowerPoint'],
+    badge: 'FEATURED',
+    isTrending: true,
+    creator: {
+      name: 'Aaron Mercer',
+      handle: '@mercer_vc',
+      avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 4120
+    },
+    features: [
+      'Strict 18-slide core institutional VC deck structure',
+      'Dynamic TAM / SAM / SOM market sizing diagrams',
+      'MRR growth, cohort retention, and burn rate visualization templates',
+      'Due Diligence Data Room directory checklist and tracker',
+      'Available in Apple Keynote, PowerPoint, and Figma formats'
+    ],
+    includedFiles: [
+      { name: 'Institutional_VC_Pitch_Deck.key', size: '16 MB', type: 'Keynote Deck' },
+      { name: 'Institutional_VC_Pitch_Deck.pptx', size: '18 MB', type: 'PowerPoint Deck' },
+      { name: 'Due_Diligence_Data_Room_Checklist.xlsx', size: '1.2 MB', type: 'Excel Spreadsheet' },
+      { name: 'Pitch_Narrative_Script.pdf', size: '800 KB', type: 'PDF Document' }
+    ]
+  },
+
+  // ==========================================
+  // 3. OPERATIONS & SOP LIBRARIES
+  // ==========================================
+  {
+    id: 'agency-sop-master-library',
+    title: 'Turnkey Digital Agency SOP Manual (45+ SOPs)',
+    subtitle: 'Standard operating procedures for client intake, sprint QA, scope creep defense & offboarding',
+    description: 'An exhaustive operational operating system built for digital agencies, software studios, and boutique consultancies. Provides step-by-step checklists, responsibility assignment matrices (RACI), and client communication email templates.',
+    category: 'ops-sops',
+    price: 119,
+    originalPrice: 199,
+    rating: 4.99,
+    reviewCount: 312,
+    downloadsCount: 3840,
+    fileFormat: '.NOTION',
+    fileSize: '8.4 MB',
+    version: '4.2.0',
+    updatedAt: '2 days ago',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-emerald-600 via-stone-800 to-amber-900',
+    iconName: 'FolderGit2',
+    tags: ['SOP', 'Agency Operations', 'Notion', 'Checklists', 'Processes', 'Management'],
+    badge: 'BESTSELLER',
+    isTrending: true,
+    creator: {
+      name: 'Clara Oswald',
+      handle: '@clara_ops',
+      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 7850
+    },
+    features: [
+      '45+ Fully documented, step-by-step standard operating procedures',
+      'Turnkey Notion workspace duplicate link + editable Google Docs/Word backups',
+      'RACI accountability matrices for designers, developers, and project leads',
+      'Scope-creep defense scripts and formal client deviation notices',
+      'Complete post-launch warranty, QA checkoff, and handoff protocols'
+    ],
+    includedFiles: [
+      { name: 'Agency_SOP_Workspace_Notion_Archive.zip', size: '4.2 MB', type: 'Notion Workspace Export' },
+      { name: 'All_45_SOPs_Standard_Docx.zip', size: '3.1 MB', type: 'Word Document Archive' },
+      { name: 'RACI_Responsibility_Matrix.xlsx', size: '650 KB', type: 'Excel Spreadsheet' },
+      { name: 'Operations_Implementation_Guide.pdf', size: '450 KB', type: 'PDF Document' }
+    ]
+  },
+  {
+    id: 'remote-employee-handbook',
+    title: 'Modern People Ops & Remote Employee Handbook',
+    subtitle: 'Remote work policies, async communication guidelines, 30-60-90 onboarding & review rubrics',
+    description: 'A modern, non-bureaucratic employee handbook designed for distributed tech companies. Clearly defines equipment stipends, flexible hours, async documentation etiquette, PTO tracking, security obligations, and performance improvement procedures.',
+    category: 'ops-sops',
+    price: 69,
+    originalPrice: 119,
+    rating: 4.96,
+    reviewCount: 192,
+    downloadsCount: 2310,
+    fileFormat: '.DOCX',
+    fileSize: '4.2 MB',
+    version: '3.0.0',
+    updatedAt: '3 days ago',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-stone-800 via-teal-900 to-stone-900',
+    iconName: 'FolderGit2',
+    tags: ['People Ops', 'Employee Handbook', 'Remote Work', 'HR', 'Onboarding'],
+    badge: 'HOT',
+    isTrending: false,
+    creator: {
+      name: 'Liam Kester',
+      handle: '@kester_peopleops',
+      avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 4620
+    },
+    features: [
+      '68-page comprehensive remote-first employee policy handbook',
+      'Structured 30-60-90 day new hire onboarding checklists',
+      'Bi-annual performance review rubrics with level-based skill expectations',
+      'Modern security, password manager, and Bring-Your-Own-Device (BYOD) policies',
+      'Available in Notion, Word (.docx), and web-publishable Markdown'
+    ],
+    includedFiles: [
+      { name: 'Remote_Employee_Handbook_2026.docx', size: '2.1 MB', type: 'Word Document' },
+      { name: 'New_Hire_30_60_90_Checklist.docx', size: '850 KB', type: 'Word Document' },
+      { name: 'Performance_Review_Evaluation_Rubric.xlsx', size: '720 KB', type: 'Excel Spreadsheet' },
+      { name: 'Quick_Start_HR_Checklist.pdf', size: '530 KB', type: 'PDF Document' }
+    ]
+  },
+
+  // ==========================================
+  // 4. FINANCIAL MODELS & ANALYTICAL SPREADSHEETS
+  // ==========================================
+  {
+    id: 'saas-5year-financial-model',
+    title: 'SaaS 5-Year Dynamic Financial Model',
+    subtitle: 'Institutional 3-statement model, MRR cohort retention curves, hiring burn & cap table dilution',
+    description: 'An audit-tested financial model built by former tech investment bankers. Seamlessly models monthly revenue expansion, churn cohorts, CAC payback periods, headcount ramp-ups, and prospective fundraising rounds.',
+    category: 'financial-models',
+    price: 129,
+    originalPrice: 199,
+    rating: 4.99,
+    reviewCount: 384,
+    downloadsCount: 4520,
+    fileFormat: '.XLSX',
+    fileSize: '8.6 MB',
+    version: '5.1.0',
+    updatedAt: 'Yesterday',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-emerald-700 via-green-800 to-stone-900',
+    iconName: 'FileSpreadsheet',
+    tags: ['SaaS Model', 'Financial Model', 'Excel', 'Cap Table', 'Valuation', 'Runway'],
+    badge: 'BESTSELLER',
+    isTrending: true,
+    creator: {
+      name: 'Viktor Lind',
+      handle: '@lind_modeling',
+      avatar: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 8910
+    },
+    features: [
+      'Fully linked 3-statement model (Income Statement, Balance Sheet, Cash Flow)',
+      'Dynamic SaaS metrics dashboard: ARR, MRR, NRR, LTV, CAC, and Rule of 40',
+      'Monthly hiring plan matrix calculating taxes, benefits, and equipment ramp-ups',
+      'Cap Table dilution simulator supporting SAFEs, convertible notes, and priced rounds',
+      'Formatted in Microsoft Excel (.xlsx) and 100% compatible with Google Sheets'
+    ],
+    includedFiles: [
+      { name: 'SaaS_5Year_Institutional_Model_v5.1.xlsx', size: '5.4 MB', type: 'Excel Workbook' },
+      { name: 'Cap_Table_Dilution_Simulator.xlsx', size: '1.8 MB', type: 'Excel Workbook' },
+      { name: 'Model_Assumption_Documentation.pdf', size: '1.4 MB', type: 'PDF Guide' }
+    ]
+  },
+  {
+    id: 'multifamily-cre-proforma',
+    title: 'Commercial Real Estate Multifamily Pro-Forma',
+    subtitle: 'Acquisition underwriting model, DSCR debt coverage, renovation IRR sensitivity & cap rates',
+    description: 'Institutional-grade real estate underwriting workbook for 10 to 200+ unit multifamily acquisitions. Automatically calculates leveraged/unleveraged IRRs, equity multiples, debt service coverage ratios, and cash-on-cash returns.',
+    category: 'financial-models',
+    price: 89,
+    originalPrice: 149,
+    rating: 4.97,
+    reviewCount: 178,
+    downloadsCount: 2190,
+    fileFormat: '.XLSX',
+    fileSize: '6.2 MB',
+    version: '3.3.0',
+    updatedAt: '4 days ago',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-teal-700 via-stone-800 to-amber-950',
+    iconName: 'FileSpreadsheet',
+    tags: ['Real Estate', 'Pro-Forma', 'Multifamily', 'Excel', 'IRR', 'Underwriting'],
+    badge: 'FEATURED',
+    isTrending: true,
+    creator: {
+      name: 'Nathan Drake',
+      handle: '@skyline_cre',
+      avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 3670
+    },
+    features: [
+      '10-Year cash flow forecasting with dynamic rent roll analysis',
+      'Value-add renovation budget tracking with unit turn ROI projections',
+      'Dual-tranche debt sizing with senior loan, mezzanine debt, and refi assumptions',
+      '2-Way Sensitivity tables for exit cap rates and market rent growth rates',
+      'Print-ready Executive Investment Committee memo summary tab'
+    ],
+    includedFiles: [
+      { name: 'Multifamily_Acquisition_ProForma_v3.3.xlsx', size: '4.8 MB', type: 'Excel Workbook' },
+      { name: 'Investment_Committee_Deck_Summary.xlsx', size: '1.1 MB', type: 'Excel Workbook' },
+      { name: 'Underwriting_Cheat_Sheet.pdf', size: '300 KB', type: 'PDF Guide' }
+    ]
+  },
+
+  // ==========================================
+  // 5. COMPLIANCE, SECURITY & AUDIT PACKS
+  // ==========================================
+  {
+    id: 'soc2-policy-evidence-pack',
+    title: 'SOC 2 Type II Complete Policy & Audit Suite',
+    subtitle: '18 core security policies, risk assessment registers & auditor evidence tracking matrix',
+    description: 'Save hundreds of hours and tens of thousands of dollars in consulting fees when preparing for SOC 2 Type I or Type II audits. Includes battle-tested policies for access control, cryptography, incident response, change management, and vendor oversight.',
+    category: 'compliance-security',
+    price: 249,
+    originalPrice: 399,
+    rating: 4.99,
+    reviewCount: 228,
+    downloadsCount: 2650,
+    fileFormat: '.DOCX',
+    fileSize: '14.2 MB',
+    version: '2026.1',
+    updatedAt: 'Yesterday',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-rose-800 via-stone-900 to-indigo-950',
+    iconName: 'ShieldCheck',
+    tags: ['SOC 2', 'Security', 'Compliance', 'Audit', 'Policies', 'InfoSec'],
+    badge: 'BESTSELLER',
+    isTrending: true,
+    creator: {
+      name: 'Gregory Thorne, CISSP',
+      handle: '@cyberguard_soc2',
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 4890
+    },
+    features: [
+      '18 Modular, auditor-approved Information Security Policies',
+      'Complete Risk Assessment Register and Business Impact Analysis workbook',
+      'Disaster Recovery (DR) & Business Continuity Plan (BCP) with test templates',
+      'Vendor Security Assessment matrix & third-party risk review forms',
+      'Auditor Evidence Collection Tracker mapping controls to Trust Services Criteria'
+    ],
+    includedFiles: [
+      { name: 'All_18_SOC2_Policies_Docx_Bundle.zip', size: '8.4 MB', type: 'Policy Archive' },
+      { name: 'SOC2_Evidence_Collection_Tracker.xlsx', size: '2.8 MB', type: 'Excel Workbook' },
+      { name: 'Risk_Assessment_Register.xlsx', size: '1.9 MB', type: 'Excel Workbook' },
+      { name: 'Auditor_Readiness_Playbook.pdf', size: '1.1 MB', type: 'PDF Document' }
+    ]
+  },
+  {
+    id: 'gdpr-ccpa-data-governance',
+    title: 'GDPR & CCPA Data Governance Pack',
+    subtitle: 'Data Processing Agreements (DPA), Record of Processing (ROPA) & DSAR response workflows',
+    description: 'Ensure full global compliance across EU GDPR, UK GDPR, and California Privacy Rights Act (CPRA). Includes customer-facing DPAs with standard contractual clauses (SCCs), internal data inventory templates, and breach notification playbooks.',
+    category: 'compliance-security',
+    price: 119,
+    originalPrice: 189,
+    rating: 4.96,
+    reviewCount: 148,
+    downloadsCount: 1720,
+    fileFormat: '.DOCX',
+    fileSize: '7.8 MB',
+    version: '3.1.0',
+    updatedAt: '3 days ago',
+    license: 'Commercial & Personal',
+    previewGradient: 'from-blue-800 via-indigo-900 to-stone-900',
+    iconName: 'ShieldCheck',
+    tags: ['GDPR', 'CCPA', 'Data Privacy', 'DPA', 'ROPA', 'Compliance'],
+    badge: 'FEATURED',
+    isTrending: false,
+    creator: {
+      name: 'Hannah Morris',
+      handle: '@global_privacy',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+      verified: true,
+      salesCount: 3240
+    },
+    features: [
+      'Enterprise Data Processing Agreement (DPA) incorporating EU standard contractual clauses',
+      'Record of Processing Activities (ROPA) workbook conforming to GDPR Article 30',
+      'Data Subject Access Request (DSAR) intake procedures and 30-day response scripts',
+      '72-Hour Data Breach Notification protocol with template supervisory notices',
+      'Transfer Impact Assessment (TIA) questionnaire for international data flows'
+    ],
+    includedFiles: [
+      { name: 'Global_Data_Processing_Agreement_DPA.docx', size: '2.4 MB', type: 'Word Document' },
+      { name: 'Article_30_ROPA_Data_Inventory.xlsx', size: '2.2 MB', type: 'Excel Workbook' },
+      { name: 'DSAR_Response_Script_Playbook.docx', size: '1.6 MB', type: 'Word Document' },
+      { name: 'Data_Breach_Notification_Kit.pdf', size: '1.6 MB', type: 'PDF Document' }
+    ]
+  },
+
+  // ==========================================
+  // 6. WEBSITES, UI KITS & DESIGN SYSTEMS
   // ==========================================
   {
     id: 'apex-design-system',

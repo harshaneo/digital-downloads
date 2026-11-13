@@ -287,6 +287,11 @@ export function App() {
   const categoryCounts = useMemo(() => {
     const counts: Record<ProductCategory, number> = {
       all: DIGITAL_PRODUCTS.length,
+      'legal-contracts': 0,
+      'sales-proposals': 0,
+      'ops-sops': 0,
+      'financial-models': 0,
+      'compliance-security': 0,
       'websites-ui': 0,
       'backends': 0,
       'react-apps': 0,
@@ -442,7 +447,12 @@ export function App() {
 
                 {/* Editorial Headline */}
                 <h1 id="banner-heading" className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-stone-950 tracking-tight leading-[1.12] font-sans [text-wrap:balance]">
-                  {filterState.category === 'all' && 'Curated Production Software, Websites & Executive Documents'}
+                  {filterState.category === 'all' && 'Executive Document Systems, Commercial Contracts & Models'}
+                  {filterState.category === 'legal-contracts' && 'Master Services Agreements, SOWs & Legal Contract Suites'}
+                  {filterState.category === 'sales-proposals' && 'Enterprise RFP Response Decks, Pitch Kits & Win Proposals'}
+                  {filterState.category === 'ops-sops' && 'Turnkey Agency SOPs, Employee Handbooks & Onboarding Kits'}
+                  {filterState.category === 'financial-models' && 'SaaS Unit Economics, Cap Tables & Real Estate Pro-Formas'}
+                  {filterState.category === 'compliance-security' && 'SOC 2 Type II, ISO 27001 & GDPR Data Governance Suites'}
                   {filterState.category === 'websites-ui' && 'Websites, UI Kits & High-Conversion Frontends'}
                   {filterState.category === 'backends' && 'Serverless Edge Workers, Scrapers & Microservice APIs'}
                   {filterState.category === 'react-apps' && 'Production React Web Apps & Real-time Terminals'}
@@ -454,7 +464,7 @@ export function App() {
 
                 {/* Curatorial Subtitle */}
                 <p className="text-stone-600 text-xs sm:text-sm leading-relaxed max-w-xl [text-wrap:pretty]">
-                  Obsessively engineered digital downloads. Instant zero-egress delivery with signed cryptographic JSON licenses, clean codebases, and production-tested patterns.
+                  Obsessively engineered commercial document templates and operational engines. Instant zero-egress delivery with signed cryptographic JSON licenses, clean file trees, and vetted business clauses.
                 </p>
 
                 {/* Floating Showcase Pill Tabs */}
@@ -465,13 +475,13 @@ export function App() {
                   <div className="flex flex-wrap gap-1.5">
                     {[
                       { id: 'all', label: 'All Artifacts' },
+                      { id: 'legal-contracts', label: 'Contracts & Legal' },
+                      { id: 'sales-proposals', label: 'RFPs & Proposals' },
+                      { id: 'ops-sops', label: 'SOPs & Operations' },
+                      { id: 'financial-models', label: 'Financial Models' },
+                      { id: 'compliance-security', label: 'Security & Compliance' },
                       { id: 'websites-ui', label: 'Websites & UI' },
-                      { id: 'backends', label: 'Backends' },
-                      { id: 'react-apps', label: 'React Apps' },
-                      { id: 'mobile-apps', label: 'Mobile' },
-                      { id: 'documents-pdf', label: 'PDF Docs' },
-                      { id: 'spreadsheets', label: 'Excel Models' },
-                      { id: 'resumes', label: 'Resumes' },
+                      { id: 'resumes', label: 'Resumes & Exec' },
                     ].map(tab => {
                       const isTabActive = filterState.category === tab.id;
                       return (

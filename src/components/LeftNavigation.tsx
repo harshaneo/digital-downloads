@@ -12,7 +12,10 @@ import {
   ChevronLeft, 
   ChevronRight, 
   ShieldCheck, 
-  Sparkles
+  Sparkles,
+  Scale,
+  Presentation,
+  FolderGit2
 } from 'lucide-react';
 
 interface LeftNavigationProps {
@@ -46,57 +49,57 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
       accentColor: 'indigo'
     },
     { 
-      id: 'websites-ui', 
-      label: 'Websites & UI', 
+      id: 'legal-contracts', 
+      label: 'Legal & Contracts', 
       index: '01',
-      icon: Layout,
+      icon: Scale,
       accentColor: 'amber'
     },
     { 
-      id: 'backends', 
-      label: 'Backends & APIs', 
+      id: 'sales-proposals', 
+      label: 'Sales & Proposals', 
       index: '02',
-      icon: Server,
+      icon: Presentation,
       accentColor: 'orange'
     },
     { 
-      id: 'react-apps', 
-      label: 'React Web Apps', 
+      id: 'ops-sops', 
+      label: 'SOPs & Operations', 
       index: '03',
-      icon: Code2,
+      icon: FolderGit2,
       accentColor: 'emerald'
     },
     { 
-      id: 'mobile-apps', 
-      label: 'Mobile Apps', 
+      id: 'financial-models', 
+      label: 'Financial Models', 
       index: '04',
-      icon: Smartphone,
-      accentColor: 'blue'
-    },
-    { 
-      id: 'documents-pdf', 
-      label: 'PDF Documents', 
-      index: '05',
-      icon: FileText,
-      accentColor: 'rose'
-    },
-    { 
-      id: 'spreadsheets', 
-      label: 'Excel Sheets', 
-      index: '06',
       icon: FileSpreadsheet,
       accentColor: 'teal'
     },
     { 
+      id: 'compliance-security', 
+      label: 'Compliance & Audit', 
+      index: '05',
+      icon: ShieldCheck,
+      accentColor: 'rose'
+    },
+    { 
+      id: 'websites-ui', 
+      label: 'Websites & UI Kits', 
+      index: '06',
+      icon: Layout,
+      accentColor: 'indigo'
+    },
+    { 
       id: 'resumes', 
-      label: 'Resumes & CVs', 
+      label: 'Exec Resumes & CVs', 
       index: '07',
       icon: Briefcase,
       accentColor: 'stone'
     },
   ];
 
-  const formats = ['All', '.TSX', '.ZIP', '.FIG', '.PDF', '.XLSX', '.DOCX'];
+  const formats = ['All', '.DOCX', '.XLSX', '.PDF', '.NOTION', '.PPTX', '.FIG', '.ZIP', '.TSX'];
 
   return (
     <aside 
