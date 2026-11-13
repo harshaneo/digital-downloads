@@ -444,12 +444,24 @@ export function App() {
 
                 {/* Editorial Headline */}
                 <h1 id="banner-heading" className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.12] font-sans [text-wrap:balance]">
-                  {filterState.category === 'all' && 'Executive Document Systems, Commercial Contracts & Models'}
-                  {filterState.category === 'legal-contracts' && 'Master Services Agreements, SOWs & Legal Contract Suites'}
-                  {filterState.category === 'sales-proposals' && 'Enterprise RFP Response Decks, Pitch Kits & Win Proposals'}
-                  {filterState.category === 'ops-sops' && 'Turnkey Agency SOPs, Employee Handbooks & Onboarding Kits'}
-                  {filterState.category === 'financial-models' && 'SaaS Unit Economics, Cap Tables & Real Estate Pro-Formas'}
-                  {filterState.category === 'compliance-security' && 'SOC 2 Type II, ISO 27001 & GDPR Data Governance Suites'}
+                  {filterState.category === 'all' && (
+                    <>Executive <span className="gold-sheen-text">Dossier Folders</span>, Contracts & Models</>
+                  )}
+                  {filterState.category === 'legal-contracts' && (
+                    <>Master Services Agreements, <span className="gold-sheen-text">SOWs & Legal Pockets</span></>
+                  )}
+                  {filterState.category === 'sales-proposals' && (
+                    <>Enterprise RFP Response Decks, <span className="gold-sheen-text">Pitch Kits & Win Decks</span></>
+                  )}
+                  {filterState.category === 'ops-sops' && (
+                    <>Turnkey Agency SOPs, <span className="gold-sheen-text">Operations Runbooks & Handbooks</span></>
+                  )}
+                  {filterState.category === 'financial-models' && (
+                    <>SaaS Unit Economics, <span className="gold-sheen-text">Cap Tables & Pro-Formas</span></>
+                  )}
+                  {filterState.category === 'compliance-security' && (
+                    <>SOC 2 Type II, <span className="gold-sheen-text">ISO 27001 & Compliance Vaults</span></>
+                  )}
                   {filterState.category === 'websites-ui' && 'Websites, UI Kits & High-Conversion Frontends'}
                   {filterState.category === 'backends' && 'Serverless Edge Workers, Scrapers & Microservice APIs'}
                   {filterState.category === 'react-apps' && 'Production React Web Apps & Real-time Terminals'}
@@ -547,39 +559,71 @@ export function App() {
                     </button>
                   </div>
 
-                  {/* Concentric Media Preview Box */}
-                  <div className="relative aspect-16/10 rounded-[12px] bg-[#0e1014] border border-white/[0.08] overflow-hidden p-4 flex flex-col justify-between">
-                    <div className="flex items-center justify-between z-10">
-                      <span className="px-2 py-0.5 rounded-full bg-[#16181d] border border-white/10 text-[10px] font-mono font-bold text-zinc-200">
-                        {flagshipProduct.fileFormat} Specimen
-                      </span>
-                      <div className="flex items-center gap-1 font-mono text-xs text-amber-400 bg-[#16181d] px-2 py-0.5 rounded-full border border-white/10">
-                        <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
-                        <span className="font-bold">{flagshipProduct.rating}</span>
-                      </div>
-                    </div>
+                  {/* Tucked Pocket Flagship Container */}
+                  <div className="relative aspect-16/10 rounded-[14px] bg-[#090a0d] border border-white/[0.08] overflow-hidden group/preview shadow-inner">
+                    {/* Folder Chamber Lining */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#14161f] to-[#08090c]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:12px_12px] opacity-40 pointer-events-none" />
 
-                    {/* 3D Multi-Plane Floating Aesthetic Showcase */}
-                    <div className="flex items-center justify-center my-auto py-2">
-                      <div className="relative w-44 h-20 perspective-500">
-                        <div className="absolute top-0 left-0 w-40 h-16 rounded-xl bg-[#1a1d23] border border-white/10 shadow-xs rotate-[-5deg] group-hover:rotate-[-8deg] transition-transform duration-300" />
-                        <div className="absolute top-1.5 left-3 w-40 h-16 rounded-xl bg-gradient-to-r from-[#1c1f26] via-[#222630] to-[#16181d] border border-white/15 shadow-[0_12px_24px_-4px_rgba(0,0,0,0.5)] flex items-center justify-between px-4 rotate-[3deg] group-hover:rotate-[5deg] group-hover:-translate-y-1 transition-all duration-300">
-                          <div className="space-y-1.5">
-                            <div className="w-14 h-2.5 rounded-full bg-amber-500/80 shadow-2xs" />
-                            <div className="w-9 h-1.5 rounded-full bg-zinc-600" />
-                          </div>
-                          <div className="flex gap-1.5">
-                            <div className="w-3 h-3 rounded-full bg-amber-400 shadow-xs" />
-                            <div className="w-3 h-3 rounded-full bg-emerald-400 shadow-xs" />
-                            <div className="w-3 h-3 rounded-full bg-blue-400 shadow-xs" />
+                    {/* 1. Tucked Flagship Specimen Document */}
+                    <div className="absolute inset-x-2.5 top-2 bottom-4 tucked-specimen-sheet z-10 rounded-xl overflow-hidden border border-white/[0.16] shadow-2xl bg-gradient-to-b from-[#1c1f28] to-[#0e1015] p-3 flex flex-col justify-between">
+                      <div className="flex items-center justify-between z-10 pb-1 border-b border-white/[0.08]">
+                        <span className="px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-[9.5px] font-mono font-bold text-amber-300">
+                          {flagshipProduct.fileFormat} MASTER KIT
+                        </span>
+                        <div className="flex items-center gap-1 font-mono text-xs text-amber-400 bg-black/50 px-2 py-0.5 rounded-full border border-white/10">
+                          <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                          <span className="font-bold">{flagshipProduct.rating}</span>
+                        </div>
+                      </div>
+
+                      {/* 3D Multi-Plane Floating Aesthetic Showcase */}
+                      <div className="flex items-center justify-center my-auto py-1">
+                        <div className="relative w-44 h-18 perspective-500">
+                          <div className="absolute top-0 left-0 w-40 h-14 rounded-xl bg-[#141720] border border-white/10 shadow-xs rotate-[-5deg]" />
+                          <div className="absolute top-1 left-2.5 w-40 h-14 rounded-xl bg-gradient-to-r from-[#202430] via-[#1a1d26] to-[#12141a] border border-amber-400/30 shadow-[0_12px_24px_rgba(0,0,0,0.8)] flex items-center justify-between px-3.5 rotate-[2deg]">
+                            <div className="space-y-1">
+                              <div className="w-16 h-2 rounded-full bg-amber-400/80" />
+                              <div className="w-10 h-1 rounded-full bg-zinc-600" />
+                            </div>
+                            <div className="flex gap-1">
+                              <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
+                              <div className="w-2.5 h-2.5 rounded-full bg-blue-400" />
+                            </div>
                           </div>
                         </div>
                       </div>
+
+                      <div className="flex items-center justify-between text-[9.5px] font-mono text-zinc-400 z-10 pt-1 border-t border-white/[0.06]">
+                        <span className="text-zinc-300 font-semibold">{flagshipProduct.fileSize} • 4 Files</span>
+                        <span className="text-amber-400 font-bold">Attorney Verified</span>
+                      </div>
                     </div>
 
-                    <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500 z-10 pt-1">
-                      <span className="text-zinc-300 font-semibold">{flagshipProduct.fileSize}</span>
-                      <span className="text-amber-400 font-bold">Production Ready</span>
+                    {/* 2. Physical Front Pocket Overlay Sleeve with Gold Stitch Accent */}
+                    <div className="absolute inset-x-0 bottom-0 h-14 tucked-pocket-sleeve z-20 flex items-center justify-between px-3 pointer-events-none">
+                      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
+                      
+                      <div className="flex items-center gap-1.5 pointer-events-auto">
+                        <span className="text-[9px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-black/70 border border-amber-400/30 text-amber-300 font-bold">
+                          FLAGSHIP POCKET
+                        </span>
+                        <span className="text-[9px] font-mono text-zinc-400">
+                          INSTANT ACCESS
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-1.5 pointer-events-auto">
+                        <button
+                          type="button"
+                          onClick={() => setInspectingBundleProduct(flagshipProduct)}
+                          className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/80 hover:bg-black text-amber-300 text-[10.5px] font-mono font-bold cursor-pointer shadow-sm border border-amber-400/40 active:scale-95 transition-all"
+                        >
+                          <FileArchive className="w-3 h-3 text-amber-400" />
+                          <span>Unpack</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
 
