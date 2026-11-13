@@ -1,0 +1,14 @@
+# NEXUS VAULT
+
+> Curated marketplace for production-grade digital assets: 3D models, code libraries, audio stems, typography, and UI systems with instant cryptographic key verification.
+
+## Core Asset Categories
+- [UI & Systems](http://localhost:5175/?category=ui-ux): Figma design kits, Tailwind v4 design tokens, and React components.
+- [3D & Spatial](http://localhost:5175/?category=3d-models): Clay shaders, GLTF/FBX low-poly and high-poly geometry with PBR maps.
+- [Code & Packages](http://localhost:5175/?category=code-templates): Micro-SaaS skeletons, SQLite vector tools, and edge worker boilerplates.
+- [Audio & Acoustics](http://localhost:5175/?category=audio-sound): 24-bit 96kHz lossless stems and cinematic ambient textures.
+- [Typography](http://localhost:5175/?category=fonts): Variable fonts with OpenType stylistic sets and tabular figures.
+
+## Licensing
+- Individual Commercial License: 1 end-product, unlimited personal use.
+- Extended Enterprise License: Unlimited commercial products, redistributable SaaS integrations, lifetime cryptographic updates.
