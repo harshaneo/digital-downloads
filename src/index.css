@@ -235,29 +235,29 @@
     inset 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* 3. Bronze-Gold Obsidian Plinth (Legal Clauses & Contract Actions) */
+/* 3. Obsidian Action Plinth (Legal Clauses & Contract Actions - Pure Dark Base) */
 .btn-tactile-amber, .btn-metal-bronze {
-  background: linear-gradient(180deg, #201a10 0%, #100d08 100%);
-  color: #fef08a;
-  font-weight: 700;
+  background: linear-gradient(180deg, #181b22 0%, #0d0f14 100%);
+  color: #e2e8f0;
+  font-weight: 600;
   border-radius: 8px;
-  border: 1px solid rgba(212, 175, 55, 0.20);
-  border-top: 1px solid rgba(254, 240, 138, 0.40);
+  border: 1px solid rgba(226, 232, 240, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.30);
   box-shadow: 
     0 3px 8px rgba(0, 0, 0, 0.7),
-    inset 0 1px 0 rgba(254, 240, 138, 0.20);
-  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.15s ease;
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 .btn-tactile-amber:hover, .btn-metal-bronze:hover {
-  background: linear-gradient(180deg, #2a2215 0%, #15110a 100%);
-  border-color: rgba(212, 175, 55, 0.35);
-  border-top-color: rgba(254, 240, 138, 0.55);
+  background: linear-gradient(180deg, #202430 0%, #12141a 100%);
+  border-color: rgba(226, 232, 240, 0.22);
+  border-top-color: rgba(255, 255, 255, 0.45);
   color: #ffffff;
   transform: translateY(-1px);
   box-shadow: 
     0 5px 12px rgba(0, 0, 0, 0.85),
-    inset 0 1px 0 rgba(254, 240, 138, 0.30);
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 .btn-tactile-amber:active, .btn-metal-bronze:active {
@@ -265,29 +265,29 @@
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* 4. Emerald Obsidian Plinth (Download & Free Product Actions) */
+/* 4. Obsidian Action Plinth (Download & Free Product Actions - Pure Dark Base) */
 .btn-plinth-emerald, .btn-tactile-emerald, .btn-metal-emerald {
-  background: linear-gradient(180deg, #10281e 0%, #081610 100%);
-  color: #6ee7b7;
+  background: linear-gradient(180deg, #181b22 0%, #0d0f14 100%);
+  color: #ffffff;
   font-weight: 700;
   border-radius: 10px;
-  border: 1px solid rgba(52, 211, 153, 0.24);
-  border-top: 1px solid rgba(167, 243, 208, 0.42);
+  border: 1px solid rgba(226, 232, 240, 0.14);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow: 
     0 4px 12px rgba(0, 0, 0, 0.8),
-    inset 0 1px 0 rgba(167, 243, 208, 0.22);
-  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.15s ease;
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 .btn-plinth-emerald:hover, .btn-tactile-emerald:hover, .btn-metal-emerald:hover {
-  background: linear-gradient(180deg, #163628 0%, #0c1e16 100%);
-  border-color: rgba(52, 211, 153, 0.38);
-  border-top-color: rgba(167, 243, 208, 0.60);
+  background: linear-gradient(180deg, #222632 0%, #13161c 100%);
+  border-color: rgba(226, 232, 240, 0.25);
+  border-top-color: rgba(255, 255, 255, 0.50);
   color: #ffffff;
   transform: translateY(-1px);
   box-shadow: 
     0 6px 16px rgba(0, 0, 0, 0.9),
-    inset 0 1px 0 rgba(167, 243, 208, 0.35);
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .btn-plinth-emerald:active, .btn-tactile-emerald:active, .btn-metal-emerald:active {
@@ -295,22 +295,25 @@
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* 5. Refined Silver Spec Button */
+/* 5. Refined Spec Button */
 .btn-tactile-white {
-  background: rgba(255, 255, 255, 0.94);
-  color: #07090d;
-  font-weight: 700;
+  background: linear-gradient(180deg, #181b22 0%, #0d0f14 100%);
+  color: #e2e8f0;
+  font-weight: 600;
   border-radius: 8px;
-  border: 1px solid #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.30);
   box-shadow: 
     0 3px 8px rgba(0, 0, 0, 0.7),
-    inset 0 1px 0 #ffffff;
-  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.15s ease;
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease;
 }
 
 .btn-tactile-white:hover {
-  background: #ffffff;
-  box-shadow: 0 5px 12px rgba(255, 255, 255, 0.25), inset 0 1px 0 #ffffff;
+  background: linear-gradient(180deg, #202430 0%, #12141a 100%);
+  color: #ffffff;
+  border-top-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.22);
   transform: translateY(-1px);
 }
 
@@ -321,7 +324,7 @@
 
 /* ======================================================== */
 /*  Tactile 3D Badges & Labels with Silver Specular Rims   */
-/*  (Zero Neon Outlines, Preserving Brand Colors Coherently)*/
+/*  (100% Pure Obsidian Background - Zero Colored Fills)    */
 /* ======================================================== */
 
 .badge-3d, .badge-metal {
@@ -333,12 +336,14 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border-radius: 6px;
+  background: linear-gradient(180deg, #181b22 0%, #0d0f14 100%);
   border: 1px solid rgba(226, 232, 240, 0.10);
   border-top: 1px solid rgba(255, 255, 255, 0.30);
   box-shadow: 
-    0 2px 6px rgba(0, 0, 0, 0.6),
+    0 2px 6px rgba(0, 0, 0, 0.7),
     inset 0 1px 0 rgba(255, 255, 255, 0.14);
   padding: 2px 8px;
+  color: #cbd5e1;
 }
 
 /* Neutral Slate Obsidian Badge (Format / Architecture) */
@@ -349,49 +354,49 @@
   color: #cbd5e1;
 }
 
-/* Warm Gold / Bestseller Badge (Preserving Amber Identity) */
+/* Warm Gold / Bestseller Badge (Monochromatic Obsidian Base) */
 .badge-3d-amber, .badge-metal-bronze {
-  background: linear-gradient(180deg, rgba(234, 179, 8, 0.18) 0%, rgba(202, 138, 4, 0.06) 100%), #141006;
-  border-color: rgba(234, 179, 8, 0.28);
-  border-top-color: rgba(254, 240, 138, 0.50);
-  color: #fde047;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(254, 240, 138, 0.25);
+  background: linear-gradient(180deg, #181b22 0%, #0d0f14 100%);
+  border-color: rgba(226, 232, 240, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  color: #fef08a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 /* Solid Bestseller Stamp */
 .badge-3d-gold-solid, .badge-metal-gold-solid {
-  background: linear-gradient(180deg, rgba(234, 179, 8, 0.22) 0%, rgba(202, 138, 4, 0.08) 100%), #161208;
-  border-color: rgba(234, 179, 8, 0.35);
-  border-top-color: rgba(254, 240, 138, 0.60);
+  background: linear-gradient(180deg, #181b22 0%, #0d0f14 100%);
+  border-color: rgba(226, 232, 240, 0.14);
+  border-top-color: rgba(255, 255, 255, 0.40);
   color: #fef08a;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(254, 240, 138, 0.30);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
-/* Emerald Free / Verified Badge (Preserving Green Identity) */
+/* Emerald Free / Verified Badge (Monochromatic Obsidian Base) */
 .badge-3d-emerald, .badge-metal-emerald {
-  background: linear-gradient(180deg, rgba(16, 185, 129, 0.18) 0%, rgba(5, 150, 105, 0.06) 100%), #06140e;
-  border-color: rgba(16, 185, 129, 0.28);
-  border-top-color: rgba(167, 243, 208, 0.45);
-  color: #6ee7b7;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(167, 243, 208, 0.22);
+  background: linear-gradient(180deg, #181b22 0%, #0d0f14 100%);
+  border-color: rgba(226, 232, 240, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  color: #a7f3d0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
-/* Rose / Hot Badge (Preserving Red Identity) */
+/* Rose / Hot Badge (Monochromatic Obsidian Base) */
 .badge-3d-rose, .badge-metal-ruby {
-  background: linear-gradient(180deg, rgba(244, 63, 94, 0.18) 0%, rgba(225, 29, 72, 0.06) 100%), #14080a;
-  border-color: rgba(244, 63, 94, 0.28);
-  border-top-color: rgba(254, 205, 211, 0.45);
-  color: #fda4af;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(254, 205, 211, 0.22);
+  background: linear-gradient(180deg, #181b22 0%, #0d0f14 100%);
+  border-color: rgba(226, 232, 240, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  color: #fecdd3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
-/* Indigo / Pro Badge (Preserving Indigo Identity) */
+/* Indigo / Pro Badge (Monochromatic Obsidian Base) */
 .badge-3d-indigo, .badge-metal-cobalt {
-  background: linear-gradient(180deg, rgba(99, 102, 241, 0.18) 0%, rgba(79, 70, 229, 0.06) 100%), #0a0d18;
-  border-color: rgba(99, 102, 241, 0.28);
-  border-top-color: rgba(199, 210, 254, 0.45);
-  color: #a5b4fc;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(199, 210, 254, 0.22);
+  background: linear-gradient(180deg, #181b22 0%, #0d0f14 100%);
+  border-color: rgba(226, 232, 240, 0.12);
+  border-top-color: rgba(255, 255, 255, 0.35);
+  color: #c7d2fe;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.14);
 }
 
 /* ============================================ */

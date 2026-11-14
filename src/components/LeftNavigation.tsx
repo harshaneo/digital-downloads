@@ -170,7 +170,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                     }`}
                   >
                     <span className="truncate">{p.label}</span>
-                    {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0 ml-1" />}
+                    {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-white/80 shrink-0 ml-1" />}
                   </button>
                 );
               })}

@@ -304,7 +304,7 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
                           onClick={() => handleCopyClause(clause.section, clause.enforceableText)}
                           className={`px-2.5 py-1 rounded-lg text-xs font-mono font-bold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
                             isCopied 
-                              ? 'bg-emerald-500 text-zinc-950' 
+                              ? 'btn-primary text-zinc-950 shadow-sm' 
                               : 'bg-[var(--bg-surface-elevated)] hover:bg-[var(--bg-hover)] text-zinc-300 border border-white/10'
                           }`}
                           title="Copy clause to clipboard"

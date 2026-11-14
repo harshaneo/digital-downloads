@@ -384,7 +384,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
               alt={product.creator.name}
               className="w-5 h-5 rounded-full object-cover border border-white/20 shrink-0" 
             />
-            <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-amber-400 border border-black" />
+            <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-slate-300 border border-black" />
           </div>
           <span className="truncate text-xs font-semibold text-zinc-200">
             {product.creator.name}

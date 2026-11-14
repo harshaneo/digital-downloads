@@ -298,7 +298,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
               >
                 {sampleDownloadingName === item.name ? (
                   <>
-                    <Check className="w-3 h-3 text-emerald-400 animate-bounce" />
+                    <Check className="w-3 h-3 text-emerald-400" />
                     <span>Saving...</span>
                   </>
                 ) : (
@@ -678,8 +678,8 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                     onClick={handleCopySha256}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 shrink-0 cursor-pointer active:scale-95 ${
                       copiedHash 
-                        ? 'bg-emerald-500 text-[var(--bg-base)] shadow-[0_0_15px_rgba(16,185,129,0.5)] scale-105' 
-                        : 'bg-white hover:bg-zinc-200 text-[var(--bg-base)]'
+                        ? 'btn-primary text-zinc-950 scale-105' 
+                        : 'btn-secondary text-zinc-200'
                     }`}
                   >
                     {copiedHash ? (
@@ -827,18 +827,18 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                 <button
                   type="button"
                   onClick={() => onInstantDownload(product)}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[var(--bg-base)] text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
+                  className="btn-primary flex items-center gap-2 px-5 py-2.5 rounded-xl text-zinc-950 text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
                 >
-                  <Download className="w-4 h-4" />
+                  <Download className="w-4 h-4 text-zinc-950" />
                   <span>Download Bundle</span>
                 </button>
               ) : isFree ? (
                 <button
                   type="button"
                   onClick={() => onInstantDownload(product)}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[var(--bg-base)] text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
+                  className="btn-primary flex items-center gap-2 px-5 py-2.5 rounded-xl text-zinc-950 text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
                 >
-                  <Download className="w-4 h-4" />
+                  <Download className="w-4 h-4 text-zinc-950" />
                   <span>Download Free Asset</span>
                 </button>
               ) : isInCart ? (
