@@ -493,7 +493,7 @@ export function App() {
                   {/* Top Specimen Badge & Heart */}
                   <div className="px-2.5 py-1.5 flex items-center justify-between gap-2 border-b border-white/[0.08] mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="px-2.5 py-0.5 rounded-md badge-3d badge-3d-gold-solid font-mono text-xs font-bold tracking-wide">
+                      <span className="px-2.5 py-0.5 rounded-md badge-3d font-mono text-xs font-bold tracking-wide text-slate-200">
                         FEATURED
                       </span>
                     </div>
@@ -525,8 +525,8 @@ export function App() {
                         <span className="px-2.5 py-0.5 rounded-md badge-3d text-xs font-mono font-bold text-slate-200">
                           {flagshipProduct.fileFormat} MASTER KIT
                         </span>
-                        <div className="flex items-center gap-1 font-mono text-xs text-amber-400 bg-black/70 px-2 py-0.5 rounded-full border border-white/10">
-                          <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                        <div className="flex items-center gap-1 font-mono text-xs text-white bg-black/70 px-2 py-0.5 rounded-full border border-white/10">
+                          <Star className="w-3 h-3 fill-white text-white" />
                           <span className="font-bold">{flagshipProduct.rating}</span>
                         </div>
                       </div>

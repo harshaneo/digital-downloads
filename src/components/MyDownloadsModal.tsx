@@ -161,7 +161,7 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
                 {/* License Key line */}
                 <div className="flex items-center justify-between gap-2 p-2 rounded-lg bg-[var(--bg-surface)] border border-white/[0.06] font-mono text-xs">
                   <div className="flex items-center gap-2 text-zinc-400 min-w-0">
-                    <Key className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    <Key className="w-3.5 h-3.5 text-slate-300 shrink-0" />
                     <span className="text-zinc-500 text-[11px] uppercase font-bold">Key:</span>
                     <span className="text-zinc-200 truncate text-[11px] font-semibold">{item.licenseKey}</span>
                   </div>

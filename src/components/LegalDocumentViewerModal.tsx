@@ -119,10 +119,10 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* Main Luxury Modal Surface */}
-      <div className="relative w-full max-w-4xl max-h-[92vh] bg-[var(--bg-surface)] border border-white/[0.12] rounded-2xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] flex flex-col z-10 text-zinc-100 border-t border-t-amber-400/40">
+      <div className="relative w-full max-w-4xl max-h-[92vh] bg-[var(--bg-surface)] border border-white/[0.12] rounded-2xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] flex flex-col z-10 text-zinc-100 border-t border-t-white/30">
         
-        {/* Top Specular Gold Edge Light */}
-        <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-amber-400/60 to-transparent pointer-events-none z-20" />
+        {/* Top Specular Silver Edge Light */}
+        <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/50 to-transparent pointer-events-none z-20" />
 
         {/* Modal Header */}
         <div className="px-5 py-4 border-b border-white/[0.08] bg-[var(--bg-surface-elevated)] flex items-center justify-between gap-3 shrink-0">

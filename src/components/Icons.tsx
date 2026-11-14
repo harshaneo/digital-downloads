@@ -21,7 +21,7 @@ export const UiKitsIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', ...prop
     <rect x="2.5" y="4" width="19" height="16" rx="2.5" />
     <path d="M2.5 8.5h19" />
     <path d="M8.5 8.5v11.5" />
-    <rect x="11.5" y="11.5" width="7" height="5.5" rx="1" className="fill-amber-500/10 stroke-amber-600/70" />
+    <rect x="11.5" y="11.5" width="7" height="5.5" rx="1" className="fill-white/10 stroke-white/40" />
     <circle cx="5.5" cy="6.25" r="0.75" fill="currentColor" />
   </svg>
 );
@@ -33,7 +33,7 @@ export const ThreeDAssetsIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', .
     <path d="M12 2.5v19" />
     <path d="M12 12l8.5-4.6" />
     <path d="M12 12L3.5 7.4" />
-    <circle cx="12" cy="12" r="1.5" className="fill-cyan-500/80 stroke-none" />
+    <circle cx="12" cy="12" r="1.5" className="fill-white/80 stroke-none" />
   </svg>
 );
 
@@ -42,7 +42,7 @@ export const CodeTemplatesIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', 
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true" {...props}>
     <polyline points="7 8 3 12 7 16" />
     <polyline points="17 8 21 12 17 16" />
-    <line x1="14" y1="4" x2="10" y2="20" className="stroke-emerald-600" />
+    <line x1="14" y1="4" x2="10" y2="20" className="stroke-white/60" />
   </svg>
 );
 
@@ -60,7 +60,7 @@ export const AudioStemsIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', ...
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true" {...props}>
     <path d="M3 10v4" />
     <path d="M7 6v12" />
-    <path d="M11 3v18" className="stroke-fuchsia-600" />
+    <path d="M11 3v18" className="stroke-white/40" />
     <path d="M15 7v10" />
     <path d="M19 10v4" />
     <path d="M22 11v2" />
@@ -70,30 +70,30 @@ export const AudioStemsIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', ...
 // 7. Vector Glyphs & Icons Set
 export const VectorGlyphsIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', ...props }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true" {...props}>
-    <rect x="2.5" y="2.5" width="4" height="4" rx="0.5" className="fill-rose-500/20" />
+    <rect x="2.5" y="2.5" width="4" height="4" rx="0.5" className="fill-white/10" />
     <rect x="17.5" y="2.5" width="4" height="4" rx="0.5" />
-    <rect x="17.5" y="17.5" width="4" height="4" rx="0.5" className="fill-rose-500/20" />
+    <rect x="17.5" y="17.5" width="4" height="4" rx="0.5" className="fill-white/10" />
     <rect x="2.5" y="17.5" width="4" height="4" rx="0.5" />
     <path d="M6.5 4.5h11" strokeDasharray="2 2" />
     <path d="M19.5 6.5v11" strokeDasharray="2 2" />
     <path d="M17.5 19.5h-11" strokeDasharray="2 2" />
     <path d="M4.5 17.5v-11" strokeDasharray="2 2" />
-    <path d="M4.5 4.5C12 7 12 17 19.5 19.5" className="stroke-rose-600" />
+    <path d="M4.5 4.5C12 7 12 17 19.5 19.5" className="stroke-white/50" />
   </svg>
 );
 
 // 8. Instant Delivery / Cloud Bolt
 export const InstantDeliveryIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', ...props }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true" {...props}>
-    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" className="fill-amber-400/20 stroke-amber-600" />
+    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" className="fill-white/10 stroke-white/60" />
   </svg>
 );
 
 // 9. Verified Cryptographic License Shield
 export const VerifiedLicenseIcon: React.FC<IconProps> = ({ className = 'w-4 h-4', ...props }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true" {...props}>
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" className="fill-emerald-500/10 stroke-emerald-600" />
-    <path d="m9 12 2 2 4-4" className="stroke-emerald-600 stroke-[2]" />
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" className="fill-white/5 stroke-white/60" />
+    <path d="m9 12 2 2 4-4" className="stroke-white/80 stroke-[2]" />
   </svg>
 );
 

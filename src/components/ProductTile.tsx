@@ -390,7 +390,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
             {product.creator.name}
           </span>
           {product.creator.verified && (
-            <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-slate-300 shrink-0" />
           )}
         </div>
 
@@ -499,8 +499,8 @@ export const ProductTile: React.FC<ProductTileProps> = ({
         <div>
           {/* Catalog Rating */}
           <div className="flex items-center justify-between text-xs text-zinc-400 mb-1.5 font-mono">
-            <div className="flex items-center gap-1 font-medium text-amber-400">
-              <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+            <div className="flex items-center gap-1 font-medium text-white">
+              <Star className="w-3 h-3 fill-white text-white" />
               <span>{product.rating}</span>
               <span className="text-zinc-500">({product.reviewCount})</span>
             </div>

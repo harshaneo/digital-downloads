@@ -86,7 +86,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
                 v{product.version} • Updated {product.updatedAt}
               </span>
               {product.badge && (
-                <span className="px-3 py-1 rounded-full badge-3d badge-3d-gold-solid font-extrabold text-xs uppercase tracking-wider">
+                <span className="px-3 py-1 rounded-full badge-3d text-slate-200 font-extrabold text-xs uppercase tracking-wider">
                   {product.badge}
                 </span>
               )}
@@ -114,7 +114,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
 
             <div className="p-3.5 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08]">
               <div className="flex items-center gap-1.5 text-zinc-400 text-xs mb-1">
-                <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                <Star className="w-3.5 h-3.5 text-white fill-white" />
                 <span>Rating</span>
               </div>
               <div className="text-sm font-bold text-white">{product.rating} ({product.reviewCount})</div>
@@ -196,7 +196,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
               {product.includedFiles.map((file, i) => (
                 <div key={i} className="flex items-center justify-between px-3.5 py-2.5 text-xs">
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <FileCheck className="w-4 h-4 text-amber-400 shrink-0" />
+                    <FileCheck className="w-4 h-4 text-slate-300 shrink-0" />
                     <span className="font-mono text-zinc-200 truncate">{file.name}</span>
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
@@ -265,7 +265,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
               <div>
                 <div className="flex items-center gap-1.5 font-bold text-xs text-white">
                   <span>{product.creator.name}</span>
-                  {product.creator.verified && <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />}
+                  {product.creator.verified && <CheckCircle2 className="w-3.5 h-3.5 text-slate-300" />}
                 </div>
                 <span className="text-zinc-400 text-xs">{product.creator.handle}</span>
               </div>
