@@ -194,7 +194,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 )}
 
                 <div className="flex justify-between">
-                  <span>Instant Delivery</span>
+                  <span>Immediate Access</span>
                   <span className="text-emerald-400 font-bold">FREE DOWNLOAD</span>
                 </div>
 
@@ -216,7 +216,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
               <div className="flex items-center justify-center gap-2 text-[11px] text-zinc-400 text-center">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Instant cryptographically signed digital download token</span>
+                <span>Immediate perpetual license and file access</span>
               </div>
 
             </div>

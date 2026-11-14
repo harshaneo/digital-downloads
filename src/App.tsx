@@ -436,59 +436,55 @@ export function App() {
               
               {/* 60% Column: Curatorial Editorial Section */}
               <div className="lg:col-span-7 space-y-5">
-                {/* Curatorial Index Stamp */}
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="curatorial-stamp px-2.5 py-1 rounded-md bg-[#16181d] border border-white/10 text-[10px] text-zinc-300">
-                    [ EXECUTIVE // SUITE 2026 ]
+                {/* Refined Category / Status Indicator */}
+                <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
+                  <span className="px-2.5 py-1 rounded-md bg-[#16181d] border border-white/10 text-[11px] font-semibold text-zinc-300">
+                    2026 ARCHIVE
                   </span>
-                  <span className="text-zinc-600 font-mono text-xs">•</span>
-                  <span className="text-xs font-mono font-medium text-zinc-400">
-                    VERIFIED ARTIFACTS
-                  </span>
-                  <span className="text-zinc-600 font-mono text-xs">•</span>
-                  <span className="px-2 py-0.5 rounded-full bg-emerald-950/60 text-emerald-400 border border-emerald-500/30 text-[10px] font-mono font-bold shadow-2xs">
-                    INSTANT EXPORT
+                  <span className="text-zinc-600">•</span>
+                  <span className="text-xs font-medium text-zinc-400">
+                    VERIFIED LEGAL & CODE ASSETS
                   </span>
                 </div>
 
                 {/* Editorial Headline */}
-                <h1 id="banner-heading" className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-white tracking-tight leading-[1.12] font-sans [text-wrap:balance]">
+                <h1 id="banner-heading" className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-white tracking-tight leading-[1.1] font-sans [text-wrap:balance]">
                   {filterState.category === 'all' && (
-                    <>Executive <span className="gold-sheen-text">Dossier Folders</span>, Contracts & Models</>
+                    <>Executive <span className="gold-sheen-text">Contracts & System Kits</span></>
                   )}
                   {filterState.category === 'legal-contracts' && (
-                    <>Master Services Agreements, <span className="gold-sheen-text">SOWs & Legal Pockets</span></>
+                    <>Master Services Agreements, <span className="gold-sheen-text">SOWs & Agreements</span></>
                   )}
                   {filterState.category === 'sales-proposals' && (
-                    <>Enterprise RFP Response Decks, <span className="gold-sheen-text">Pitch Kits & Win Decks</span></>
+                    <>Enterprise RFP Responses, <span className="gold-sheen-text">Pitch Kits & Decks</span></>
                   )}
                   {filterState.category === 'ops-sops' && (
-                    <>Turnkey Agency SOPs, <span className="gold-sheen-text">Operations Runbooks & Handbooks</span></>
+                    <>Agency Operations, <span className="gold-sheen-text">Runbooks & Handbooks</span></>
                   )}
                   {filterState.category === 'financial-models' && (
                     <>SaaS Unit Economics, <span className="gold-sheen-text">Cap Tables & Pro-Formas</span></>
                   )}
                   {filterState.category === 'compliance-security' && (
-                    <>SOC 2 Type II, <span className="gold-sheen-text">ISO 27001 & Compliance Vaults</span></>
+                    <>SOC 2 Type II, <span className="gold-sheen-text">ISO 27001 & Compliance</span></>
                   )}
-                  {filterState.category === 'websites-ui' && 'Websites, UI Kits & High-Conversion Frontends'}
+                  {filterState.category === 'websites-ui' && 'Websites, UI Kits & Production Frontends'}
                   {filterState.category === 'backends' && 'Serverless Edge Workers, Scrapers & Microservice APIs'}
                   {filterState.category === 'react-apps' && 'Production React Web Apps & Real-time Terminals'}
                   {filterState.category === 'mobile-apps' && 'Cross-Platform React Native & Native Mobile Engines'}
                   {filterState.category === 'documents-pdf' && 'Technical Whitepapers, Architectural Specs & Manuals'}
                   {filterState.category === 'spreadsheets' && 'SaaS Unit Economics, Financial Models & Calculators'}
-                  {filterState.category === 'resumes' && 'ATS-Engineered Tech Lead Resumes & Portfolios'}
+                  {filterState.category === 'resumes' && 'Executive Resumes & Technical Portfolios'}
                 </h1>
 
-                {/* Curatorial Subtitle */}
+                {/* Subtitle */}
                 <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-xl [text-wrap:pretty]">
-                  Obsessively engineered commercial document templates and operational engines. Instant zero-egress delivery with signed cryptographic JSON licenses, clean file trees, and vetted business clauses.
+                  Production-grade commercial agreements, spreadsheets, code bases, and architectural assets. Direct download with verified commercial licenses.
                 </p>
 
-                {/* Floating Showcase Pill Tabs */}
+                {/* Clean Pill Tabs */}
                 <div className="pt-1">
-                  <div className="text-[9.5px] curatorial-stamp text-zinc-500 mb-2">
-                    FOCUS DISCIPLINE // SELECTION
+                  <div className="text-[11px] font-mono font-medium text-zinc-400 mb-2 uppercase tracking-wider">
+                    Browse Categories
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {[
@@ -520,19 +516,19 @@ export function App() {
                   </div>
                 </div>
 
-                {/* Curatorial Metrics Strip */}
+                {/* Metrics Strip */}
                 <div className="pt-3 flex flex-wrap items-center gap-4 text-xs font-mono text-zinc-400 border-t border-white/[0.08]">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                    <span className="font-bold text-white">{filteredProducts.length}</span> Specimens
+                    <span className="font-bold text-white">{filteredProducts.length}</span> Items
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="text-zinc-600">•</span>
-                    <span className="font-bold text-white">100%</span> Verified Licenses
+                    <span className="font-bold text-white">100%</span> Perpetual Commercial Licenses
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="text-zinc-600">•</span>
-                    <span className="font-bold text-white">Zero</span> Egress Friction
+                    <span className="font-bold text-white">Full Source</span> Included
                   </div>
                 </div>
               </div>
@@ -545,11 +541,11 @@ export function App() {
                   {/* Top Specimen Badge & Heart */}
                   <div className="px-2.5 py-1.5 flex items-center justify-between gap-2 border-b border-white/[0.08] mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-0.5 rounded-full bg-amber-400 text-zinc-950 font-mono text-[9px] font-extrabold tracking-wider">
-                        FEATURED EXHIBIT
+                      <span className="px-2 py-0.5 rounded-full bg-amber-400 text-zinc-950 font-mono text-[10px] font-bold tracking-wide">
+                        FEATURED
                       </span>
-                      <span className="curatorial-stamp text-[9px] text-zinc-500 hidden sm:inline">
-                        № {flagshipProduct.id.slice(0, 10).toUpperCase()}
+                      <span className="text-[10px] font-mono text-zinc-400 hidden sm:inline">
+                        ID: {flagshipProduct.id.slice(0, 10).toUpperCase()}
                       </span>
                     </div>
 
@@ -615,11 +611,11 @@ export function App() {
                       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
                       
                       <div className="flex items-center gap-1.5 pointer-events-auto">
-                        <span className="text-[9px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-black/70 border border-amber-400/30 text-amber-300 font-bold">
-                          FLAGSHIP POCKET
+                        <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-black/70 border border-amber-400/30 text-amber-300 font-bold">
+                          FEATURED ASSET
                         </span>
-                        <span className="text-[9px] font-mono text-zinc-400">
-                          INSTANT ACCESS
+                        <span className="text-[10px] font-mono text-zinc-400">
+                          DIRECT ACCESS
                         </span>
                       </div>
 
@@ -629,8 +625,8 @@ export function App() {
                           onClick={() => setInspectingBundleProduct(flagshipProduct)}
                           className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/80 hover:bg-black text-amber-300 text-[10.5px] font-mono font-bold cursor-pointer shadow-sm border border-amber-400/40 active:scale-95 transition-all"
                         >
-                          <FileArchive className="w-3 h-3 text-amber-400" />
-                          <span>Unpack</span>
+                          <FileText className="w-3 h-3 text-amber-400" />
+                          <span>View Files</span>
                         </button>
                       </div>
                     </div>
@@ -670,8 +666,8 @@ export function App() {
           onClick={() => setInspectingBundleProduct(flagshipProduct)}
           className="flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl bg-[#111317] hover:bg-[#1a1d23] text-amber-300 border border-amber-500/30 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
         >
-          <FileArchive className="w-3.5 h-3.5 text-amber-400" />
-          <span>Unpack .DOCX</span>
+          <FileText className="w-3.5 h-3.5 text-amber-400" />
+          <span>Inspect Files</span>
         </button>
       </div>
 
@@ -722,15 +718,15 @@ export function App() {
             </div>
           </section>
 
-          {/* Curated Trust & Feature Highlights Strip */}
-          <section aria-label="Store guarantees" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 max-w-full">
+          {/* Document Format & Compliance Highlights */}
+          <section aria-label="Format specifications" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 max-w-full">
             <div className="group flex items-center gap-3 p-3.5 rounded-2xl bg-[#111317] border border-white/[0.08] hover:border-amber-400/40 transition-all border-t border-t-white/[0.12] min-w-0">
               <div className="p-2 rounded-xl bg-amber-950/40 border border-amber-500/30 text-amber-400 group-hover:scale-105 transition-transform shrink-0">
-                <Zap className="w-4 h-4 fill-amber-400 text-amber-400" />
+                <FileText className="w-4 h-4 text-amber-400" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-bold text-white group-hover:text-amber-300 transition-colors truncate">Instant Delivery</div>
-                <div className="text-[11px] text-zinc-400 truncate">Zero-egress direct CDN download</div>
+                <div className="text-xs font-bold text-white group-hover:text-amber-300 transition-colors truncate">Native Formats</div>
+                <div className="text-[11px] text-zinc-400 truncate">Word, PDF, Excel & Markdown</div>
               </div>
             </div>
 
@@ -739,8 +735,8 @@ export function App() {
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors truncate">Verified Keys</div>
-                <div className="text-[11px] text-zinc-400 truncate">Cryptographic JSON manifest</div>
+                <div className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors truncate">Counsel Reviewed</div>
+                <div className="text-[11px] text-zinc-400 truncate">Standardized commercial terms</div>
               </div>
             </div>
 
@@ -749,8 +745,8 @@ export function App() {
                 <RotateCcw className="w-4 h-4 text-sky-400" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-bold text-white group-hover:text-sky-300 transition-colors truncate">Lifetime Sync</div>
-                <div className="text-[11px] text-zinc-400 truncate">Continuous patch releases</div>
+                <div className="text-xs font-bold text-white group-hover:text-sky-300 transition-colors truncate">Version Updates</div>
+                <div className="text-[11px] text-zinc-400 truncate">Quarterly clause revisions</div>
               </div>
             </div>
 
@@ -759,8 +755,8 @@ export function App() {
                 <BadgeCheck className="w-4 h-4 text-indigo-400" />
               </div>
               <div className="min-w-0">
-                <div className="text-xs font-bold text-white group-hover:text-indigo-300 transition-colors truncate">100% Commercial</div>
-                <div className="text-[11px] text-zinc-400 truncate">Royalty-free client usage</div>
+                <div className="text-xs font-bold text-white group-hover:text-indigo-300 transition-colors truncate">Commercial Rights</div>
+                <div className="text-[11px] text-zinc-400 truncate">Perpetual client usage rights</div>
               </div>
             </div>
           </section>
@@ -771,7 +767,7 @@ export function App() {
             {/* Left: Active count and reset */}
             <div className="flex items-center gap-2 min-w-0">
               <span className="text-xs font-mono text-zinc-400 truncate">
-                Catalog: <strong className="text-white font-bold">{filteredProducts.length}</strong> specimens
+                Catalog: <strong className="text-white font-bold">{filteredProducts.length}</strong> items
               </span>
 
               {(filterState.search || filterState.format || filterState.priceFilter !== 'all' || filterState.category !== 'all') && (

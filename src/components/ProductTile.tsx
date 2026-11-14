@@ -281,7 +281,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 <Code2 className="w-3 h-3 text-emerald-400" />
                 React 19 App
               </span>
-              <span className="curatorial-stamp text-[9px] text-zinc-400">60 FPS CANVAS</span>
+              <span className="text-[10px] font-mono text-zinc-400">60 FPS</span>
             </div>
 
             <div className="my-auto py-2 flex items-center justify-center">
@@ -313,7 +313,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 <Briefcase className="w-3 h-3 text-amber-400" />
                 ATS 98% SCORE
               </span>
-              <span className="curatorial-stamp text-[9px] text-zinc-500">EXECUTIVE</span>
+              <span className="text-[10px] font-mono text-zinc-400">EXECUTIVE</span>
             </div>
 
             <div className="my-auto py-1 px-3 bg-[#0a0c10] rounded-lg border border-white/[0.08] shadow-xs max-w-[200px] mx-auto w-full">
@@ -343,7 +343,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 <Layout className="w-3 h-3 text-indigo-400" />
                 Artifact Specimen
               </span>
-              <span className="curatorial-stamp text-[9px] text-zinc-500">ARCHIVE READY</span>
+              <span className="text-[10px] font-mono text-zinc-400">PRODUCTION</span>
             </div>
 
             {/* Dimensional Floating Specimen Sheet */}
@@ -365,7 +365,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
 
             <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400 z-10 pt-1 border-t border-white/[0.06]">
               <span className="text-zinc-300 font-bold">{product.fileFormat} Archive</span>
-              <span>Instant Unpack</span>
+              <span>Available Now</span>
             </div>
           </div>
         );
@@ -477,10 +477,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                   }
                 }}
                 className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/80 hover:bg-black text-amber-300 text-[10.5px] font-mono font-bold cursor-pointer shadow-sm border border-amber-400/30 hover:border-amber-400 active:scale-95 transition-all"
-                title="Inspect ZIP archive contents & license manifest"
+                title="Inspect package contents & file tree"
               >
-                <FileArchive className="w-3 h-3 text-amber-400" />
-                <span>Unpack</span>
+                <FileText className="w-3 h-3 text-amber-400" />
+                <span>Files</span>
               </button>
             )}
             <button
@@ -510,8 +510,8 @@ export const ProductTile: React.FC<ProductTileProps> = ({
               <span>{product.rating}</span>
               <span className="text-zinc-500">({product.reviewCount})</span>
             </div>
-            <span className="text-[9px] curatorial-stamp text-amber-400/80 font-bold tracking-widest">
-              PKT // {product.id.slice(0, 10).toUpperCase()}
+            <span className="text-[10px] font-mono text-zinc-400 font-medium">
+              REF #{product.id.slice(0, 8).toUpperCase()}
             </span>
           </div>
 

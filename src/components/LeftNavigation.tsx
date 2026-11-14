@@ -110,15 +110,15 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
       {/* Scrollable Plinth Navigation Sections */}
       <div className="flex-1 overflow-y-auto px-3 py-4 space-y-6 scrollbar-thin">
         
-        {/* Archival Categories Section */}
+        {/* Categories Section */}
         <div>
           {!collapsed && (
             <div className="px-2 mb-2.5 flex items-center justify-between">
-              <span className="curatorial-stamp text-[9.5px] text-zinc-400">
-                COLLECTION // INDEX
+              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-semibold">
+                Categories
               </span>
               <span className="text-[10px] font-mono text-zinc-500">
-                07 CATS
+                07 Total
               </span>
             </div>
           )}
@@ -171,11 +171,11 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
           </nav>
         </div>
 
-        {/* Archival File Format Filter */}
+        {/* File Format Filter */}
         {!collapsed && (
           <div className="pt-4 border-t border-white/[0.08]">
-            <span className="px-2 curatorial-stamp text-[9.5px] text-zinc-400 mb-2.5 block">
-              SPEC // ENCODING
+            <span className="px-2 text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-2.5 block font-semibold">
+              Format
             </span>
             <div className="flex flex-wrap gap-1.5 px-1">
               {formats.map((fmt) => {
@@ -202,13 +202,13 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
         {/* Price Bracket Filter */}
         {!collapsed && (
           <div className="pt-4 border-t border-white/[0.08]">
-            <span className="px-2 curatorial-stamp text-[9.5px] text-zinc-400 mb-2.5 block">
-              VALUATION // RANGE
+            <span className="px-2 text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-2.5 block font-semibold">
+              Price Range
             </span>
             <div className="space-y-1">
               {[
                 { id: 'all', label: 'All Catalog' },
-                { id: 'free', label: '100% Free / Open Specimen' },
+                { id: 'free', label: 'Free Assets' },
                 { id: 'under-25', label: 'Under $25' },
                 { id: '25-50', label: '$25 to $50' },
                 { id: '50-plus', label: '$50+' },
@@ -252,22 +252,22 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
           </div>
         )}
 
-        {/* Curatorial Atelier Onboarding */}
+        {/* Creator Onboarding */}
         {!collapsed && (
           <div className="p-4 rounded-2xl bg-[#111317] border border-white/10 relative overflow-hidden">
             <div className="flex items-center gap-1.5 text-white text-xs font-bold mb-1">
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              Exhibit on Nexus Vault
+              Publish on Nexus Vault
             </div>
             <p className="text-[11px] text-zinc-400 leading-relaxed mb-3">
-              Independent atelier creator program. Keep 90% royalties with automated crypto/fiat payouts.
+              Creator partner program. Keep 90% royalties with instant automated payouts.
             </p>
             <button 
               type="button"
-              onClick={() => alert('Creator Studio: Exhibition submission portal opens here!')}
+              onClick={() => alert('Creator Studio: Submission portal opens here!')}
               className="btn-primary w-full py-2 px-3 text-xs font-semibold rounded-xl cursor-pointer"
             >
-              Submit Asset Specimen
+              Submit Asset
             </button>
           </div>
         )}

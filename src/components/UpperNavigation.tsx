@@ -90,15 +90,12 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
 
             <div>
               <div className="flex items-center gap-2 leading-none">
-                <span className="font-extrabold text-[15px] tracking-tight text-[#f4f5f6]">
+                <span className="font-extrabold text-[15px] tracking-tight text-white font-sans">
                   Nexus<span className="text-amber-400">.</span>Vault
                 </span>
-                <span className="curatorial-stamp px-1.5 py-0.5 rounded-md bg-[#16181d] border border-white/10 text-[9px] tracking-widest text-zinc-400 hidden sm:inline-block">
-                  [ EXEC // ATELIER ]
-                </span>
               </div>
-              <p className="text-[10.5px] text-zinc-400 hidden sm:block mt-0.5 font-medium tracking-tight">
-                Executive Document Vault & Commercial Atelier
+              <p className="text-[11px] text-zinc-400 hidden sm:block mt-0.5 font-medium tracking-tight">
+                Production Artifacts & Executive Legal Kits
               </p>
             </div>
           </a>

@@ -403,7 +403,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
               }`}
             >
               <Scale className="w-3.5 h-3.5 text-indigo-400" />
-              <span>License Matrix</span>
+              <span>Licensing & Usage</span>
             </button>
 
             <button
@@ -525,7 +525,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
             </div>
           )}
 
-          {/* TAB 2: Plain-English License Matrix */}
+          {/* TAB 2: Plain-English Licensing & Usage */}
           {activeTab === 'licenses' && (
             <div className="space-y-5">
               <div>
@@ -639,7 +639,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
               <div className="p-3 bg-[#16181d] rounded-xl border border-white/[0.08] flex items-center gap-3 text-xs text-zinc-400">
                 <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
                 <span>
-                  All Nexus Vault licenses carry perpetual, irrevocable rights with verified cryptographic authorship chain-of-custody.
+                  All Nexus Vault licenses carry perpetual, irrevocable rights with verified commercial terms.
                 </span>
               </div>
             </div>
@@ -664,7 +664,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                 </div>
 
                 <p className="text-xs text-zinc-400 mb-2 leading-relaxed">
-                  Verify the archive tamper-resistance before extracting. Every asset in Nexus Vault is signed by its verified creator.
+                  Official package archive verified directly by the author and publisher.
                 </p>
 
                 <div className="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-[#0e1014] border border-white/[0.06]">
@@ -817,7 +817,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                 </span>
               </div>
               <p className="text-[10px] text-zinc-500">
-                Instant cryptographic download + lifetime version updates
+                Immediate digital download + included version updates
               </p>
             </div>
 
