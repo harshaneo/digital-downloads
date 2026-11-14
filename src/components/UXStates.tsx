@@ -74,8 +74,8 @@ export const ErrorState: React.FC<{
 }> = ({ errorMessage, onRetry }) => {
   return (
     <div className="py-20 text-center space-y-4 max-w-md mx-auto">
-      <div className="w-16 h-16 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mx-auto text-rose-400 shadow-sm">
-        <AlertTriangle className="w-8 h-8" />
+      <div className="w-16 h-16 rounded-2xl bg-white/[0.08] border border-white/20 flex items-center justify-center mx-auto text-white shadow-sm">
+        <AlertTriangle className="w-8 h-8 text-white" />
       </div>
 
       <div className="space-y-1.5">

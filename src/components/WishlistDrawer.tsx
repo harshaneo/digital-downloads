@@ -48,8 +48,8 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
           {/* Header */}
           <div className="px-5 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[var(--bg-surface)]">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg badge-3d badge-3d-rose flex items-center justify-center text-rose-300">
-                <Heart className="w-4 h-4 fill-rose-400" />
+              <div className="w-8 h-8 rounded-lg badge-3d flex items-center justify-center text-white">
+                <Heart className="w-4 h-4 fill-white text-white" />
               </div>
               <div>
                 <h2 className="font-bold text-base text-white">Saved Wishlist</h2>
@@ -108,7 +108,7 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
                             onQuickLook(product);
                             onClose();
                           }}
-                          className="text-xs font-bold text-white hover:text-amber-400 transition-colors truncate cursor-pointer"
+                          className="text-xs font-bold text-white hover:text-slate-300 transition-colors truncate cursor-pointer"
                         >
                           {product.title}
                         </h4>
@@ -127,7 +127,7 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
                       <button
                         type="button"
                         onClick={() => onRemoveFromWishlist(product)}
-                        className="p-1.5 text-zinc-400 hover:text-rose-400 hover:bg-rose-950/40 rounded-lg transition-colors cursor-pointer"
+                        className="p-1.5 text-zinc-400 hover:text-white rounded-lg transition-colors cursor-pointer"
                         title="Remove from wishlist"
                       >
                         <Trash2 className="w-4 h-4" />

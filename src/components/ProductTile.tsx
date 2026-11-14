@@ -396,29 +396,24 @@ export const ProductTile: React.FC<ProductTileProps> = ({
 
         <div className="flex items-center gap-1.5 shrink-0">
           {product.badge && (
-            <span className={`px-2.5 py-0.5 text-[11px] font-mono font-bold tracking-wider uppercase ${
-              product.badge === 'HOT' ? 'badge-3d badge-3d-rose' :
-              product.badge === 'BESTSELLER' ? 'badge-3d badge-3d-gold-solid' :
-              product.badge === 'FREE' ? 'badge-3d badge-3d-emerald' :
-              'badge-3d badge-3d-indigo'
-            }`}>
+            <span className="px-2.5 py-0.5 text-[11px] font-mono font-bold tracking-wider uppercase badge-3d text-slate-200">
               {product.badge}
             </span>
           )}
 
-          {/* Tactile Wishlist Toggle Pill */}
+          {/* Debossed Wishlist Toggle Pill */}
           <button
             type="button"
             onClick={() => onToggleWishlist(product)}
             className={`p-1.5 rounded-lg transition-all cursor-pointer ${
               isWishlisted 
-                ? 'badge-3d badge-3d-rose text-rose-300 scale-105' 
+                ? 'badge-3d text-white scale-105' 
                 : 'btn-tactile-dark text-zinc-400 hover:text-white'
             } active:scale-75 transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]`}
             aria-label="Save to Wishlist"
             title={isWishlisted ? 'Remove from Wishlist' : 'Save to Wishlist'}
           >
-            <Heart className={`w-3.5 h-3.5 ${isWishlisted ? 'fill-rose-500 text-rose-500' : ''}`} />
+            <Heart className={`w-3.5 h-3.5 ${isWishlisted ? 'fill-white text-white' : ''}`} />
           </button>
         </div>
       </div>
@@ -517,7 +512,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
           {/* Title & Subtitle */}
           <h3 
             onClick={() => onQuickLook(product)}
-            className="text-sm font-semibold text-[#f4f5f6] group-hover:text-amber-300 transition-colors cursor-pointer line-clamp-1 [text-wrap:balance]"
+            className="text-sm font-semibold text-[#f4f5f6] group-hover:text-white transition-colors cursor-pointer line-clamp-1 [text-wrap:balance]"
           >
             {product.title}
           </h3>
@@ -526,13 +521,13 @@ export const ProductTile: React.FC<ProductTileProps> = ({
           </p>
         </div>
 
-{/* Valuation & Tactile Action Buttons */}
+        {/* Valuation & Tactile Action Buttons */}
         <div className="pt-2.5 border-t border-white/[0.08] flex items-center justify-between gap-2 mt-auto">
           <div>
             <div className="flex items-baseline gap-1.5">
               <span className="text-base font-extrabold text-white font-mono tracking-tight">
                 {isFree ? (
-                  <span className="text-emerald-400 font-black">FREE</span>
+                  <span className="text-white font-black">FREE</span>
                 ) : (
                   formatPrice(product.price)
                 )}

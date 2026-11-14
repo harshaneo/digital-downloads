@@ -122,7 +122,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
 
             <div className="p-3.5 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08]">
               <div className="flex items-center gap-1.5 text-zinc-400 text-xs mb-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <ShieldCheck className="w-3.5 h-3.5 text-slate-300" />
                 <span>License</span>
               </div>
               <div className="text-xs font-bold text-white truncate">{product.license}</div>
@@ -130,7 +130,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
 
             <div className="p-3.5 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08]">
               <div className="flex items-center gap-1.5 text-zinc-400 text-xs mb-1">
-                <Download className="w-3.5 h-3.5 text-cyan-400" />
+                <Download className="w-3.5 h-3.5 text-slate-300" />
                 <span>Downloads</span>
               </div>
               <div className="text-sm font-bold text-white font-mono">{product.downloadsCount.toLocaleString()}</div>
@@ -151,7 +151,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
               <ul className="grid sm:grid-cols-2 gap-2 text-xs text-zinc-300">
                 {product.features.map((feat, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-slate-300 shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -286,7 +286,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
             <div className="text-[11px] text-zinc-400">Digital Archive Package</div>
             <div className="text-xl font-extrabold text-white font-mono">
               {isFree ? (
-                <span className="text-emerald-400 font-black">FREE DOWNLOAD</span>
+                <span className="text-white font-black">FREE DOWNLOAD</span>
               ) : (
                 formatPrice(finalPrice)
               )}

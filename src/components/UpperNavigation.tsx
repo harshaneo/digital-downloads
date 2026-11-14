@@ -104,7 +104,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
         {/* Center: Tactile Pill Search Bar */}
         <div className="flex-1 min-w-0 max-w-lg mx-1 sm:mx-6">
           <div className="relative group w-full">
-            <Search className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-zinc-400 group-focus-within:text-amber-400 absolute left-3 sm:left-3.5 top-1/2 -translate-y-1/2 transition-colors pointer-events-none" />
+            <Search className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-zinc-400 group-focus-within:text-white absolute left-3 sm:left-3.5 top-1/2 -translate-y-1/2 transition-colors pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
@@ -140,7 +140,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           
           {/* Subtle Currency Selector Pill */}
-          <div className="hidden md:flex items-center bg-[#0e1015] border border-white/10 rounded-lg p-0.5 text-[11px] font-medium text-zinc-300">
+          <div className="hidden md:flex items-center bg-[#000000] border border-white/10 rounded-lg p-0.5 text-[11px] font-medium text-zinc-300">
             {(['USD', 'EUR', 'GBP'] as Currency[]).map((c) => (
               <button
                 key={c}
@@ -163,15 +163,15 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
             onClick={onOpenWishlist}
             className={`hidden sm:inline-flex relative p-2 rounded-lg transition-all cursor-pointer active:scale-95 ${
               wishlistCount > 0 
-                ? 'badge-3d badge-3d-rose text-rose-300' 
-                : 'btn-tactile-dark text-zinc-400 hover:text-rose-400'
+                ? 'badge-3d text-white' 
+                : 'btn-tactile-dark text-zinc-400 hover:text-white'
             }`}
             title="Open Curated Wishlist"
             aria-label="Open Curated Wishlist"
           >
-            <Heart className={`w-4 h-4 ${wishlistCount > 0 ? 'fill-rose-300 text-rose-300' : 'text-zinc-400'}`} />
+            <Heart className={`w-4 h-4 ${wishlistCount > 0 ? 'fill-white text-white' : 'text-zinc-400'}`} />
             {wishlistCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full badge-3d badge-3d-rose text-white font-mono font-bold text-[11px] flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full badge-3d text-white font-mono font-bold text-[11px] flex items-center justify-center">
                 {wishlistCount}
               </span>
             )}
@@ -187,7 +187,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
           >
             <DownloadCloud className="w-4 h-4" />
             {purchasedCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full badge-3d badge-3d-emerald text-white font-mono font-bold text-[11px] flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full badge-3d text-white font-mono font-bold text-[11px] flex items-center justify-center">
                 {purchasedCount}
               </span>
             )}

@@ -52,12 +52,12 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
         {/* Header */}
         <div className="p-6 bg-[var(--bg-surface-elevated)] border-b border-white/[0.08] flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-              <CheckCircle2 className="w-5 h-5" />
+            <div className="w-10 h-10 rounded-xl bg-white/[0.08] border border-white/20 flex items-center justify-center text-white">
+              <CheckCircle2 className="w-5 h-5 text-white" />
             </div>
             <div>
               <h2 className="text-base font-bold text-white tracking-tight">Order Confirmed & Ready</h2>
-              <p className="text-xs text-emerald-400 font-mono font-medium">
+              <p className="text-xs text-slate-300 font-mono font-medium">
                 {purchases.length} digital {purchases.length === 1 ? 'asset' : 'assets'} unlocked
               </p>
             </div>
@@ -124,7 +124,7 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
                     title="Copy License Key"
                   >
                     {copiedKey === item.licenseKey ? (
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
+                      <Check className="w-3.5 h-3.5 text-white" />
                     ) : (
                       <Copy className="w-3.5 h-3.5" />
                     )}
@@ -135,8 +135,8 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
             ))}
           </div>
 
-          <div className="p-3.5 rounded-xl badge-3d badge-3d-emerald flex items-center gap-2.5 text-xs text-emerald-200">
-            <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+          <div className="p-3.5 rounded-xl badge-3d flex items-center gap-2.5 text-xs text-slate-200">
+            <ShieldCheck className="w-4 h-4 text-slate-300 shrink-0" />
             <span>Perpetual commercial rights included with free lifetime version updates.</span>
           </div>
         </div>
@@ -149,7 +149,7 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
               onClose();
               onOpenMyDownloads();
             }}
-            className="text-xs text-emerald-400 hover:text-emerald-300 font-bold cursor-pointer transition-colors"
+            className="text-xs text-slate-300 hover:text-white font-bold cursor-pointer transition-colors"
           >
             Go to My Downloads Vault →
           </button>

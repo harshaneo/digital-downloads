@@ -172,8 +172,8 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
                     className="p-1 text-zinc-400 hover:text-white transition-colors cursor-pointer shrink-0 flex items-center gap-1 text-[11px]"
                   >
                     {copiedKey === item.licenseKey ? (
-                      <span className="text-emerald-400 font-sans font-bold flex items-center gap-1">
-                        <Check className="w-3 h-3" /> Copied
+                      <span className="text-white font-sans font-bold flex items-center gap-1">
+                        <Check className="w-3 h-3 text-white" /> Copied
                       </span>
                     ) : (
                       <span className="hover:text-white flex items-center gap-1">

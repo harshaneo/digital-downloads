@@ -127,16 +127,16 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
         {/* Modal Header */}
         <div className="px-5 py-4 border-b border-white/[0.08] bg-[var(--bg-surface-elevated)] flex items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-10 h-10 rounded-xl badge-3d badge-3d-amber text-amber-300 flex items-center justify-center shrink-0">
-              <Scale className="w-5 h-5" />
+            <div className="w-10 h-10 rounded-xl badge-3d text-slate-200 flex items-center justify-center shrink-0">
+              <Scale className="w-5 h-5 text-slate-300" />
             </div>
 
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md badge-3d badge-3d-amber">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md badge-3d text-slate-200">
                   Full Document Preview
                 </span>
-                <span className="text-[11px] font-mono text-emerald-300 font-bold px-2.5 py-0.5 rounded-md badge-3d badge-3d-emerald">
+                <span className="text-[11px] font-mono text-slate-300 font-bold px-2.5 py-0.5 rounded-md badge-3d">
                   v{document.version}
                 </span>
                 <span className="text-xs text-zinc-400 hidden sm:inline font-mono">
@@ -159,8 +159,8 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
             >
               {copiedAll ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400">Copied Full Doc</span>
+                  <Check className="w-3.5 h-3.5 text-white" />
+                  <span className="text-white">Copied Full Doc</span>
                 </>
               ) : (
                 <>
@@ -246,7 +246,7 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
           {/* Executive Overview Callout */}
           <div className="p-4 rounded-xl bg-[var(--bg-surface-elevated)] border border-white/[0.08] space-y-2">
             <div className="flex items-center justify-between">
-              <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
+              <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
                 <BookOpen className="w-3.5 h-3.5" />
                 <span>Executive Summary & Commercial Context</span>
               </h3>
@@ -287,7 +287,7 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
                       <div className="flex items-start justify-between gap-3">
                         <div>
                           <div className="flex items-center gap-2">
-                            <span className="text-xs font-mono font-bold px-1.5 py-0.5 rounded bg-white/[0.06] text-amber-300 border border-white/10">
+                            <span className="text-xs font-mono font-bold px-1.5 py-0.5 rounded bg-white/[0.06] text-slate-300 border border-white/10">
                               SECTION {clause.section}
                             </span>
                             <h4 className="text-sm font-bold text-white">
@@ -337,7 +337,7 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
           {activeTab === 'parties' && (
             <div className="space-y-4">
               <div className="p-5 rounded-xl bg-[var(--bg-surface)] border border-white/[0.08] space-y-4">
-                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-amber-300">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-300">
                   Parties Bound Under Agreement
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -357,7 +357,7 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
               {/* Execution & Signing Block */}
               <div className="p-4 rounded-xl bg-[var(--bg-surface)] border border-white/[0.08] space-y-3">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  <ShieldCheck className="w-4 h-4 text-slate-300" />
                   <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-white">
                     Execution & Signature Block
                   </h4>

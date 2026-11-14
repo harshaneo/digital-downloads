@@ -45,7 +45,7 @@ export const MobileDock: React.FC<MobileDockProps> = ({
           className="flex flex-col items-center justify-center w-11 h-11 rounded-full text-zinc-400 hover:text-white hover:bg-white/[0.06] active:scale-90 transition-all cursor-pointer"
           aria-label="Scroll to top"
         >
-          <Compass className="w-5 h-5 text-indigo-400" />
+          <Compass className="w-5 h-5 text-slate-300" />
         </button>
 
         {/* 2. Categories Drawer */}
@@ -55,7 +55,7 @@ export const MobileDock: React.FC<MobileDockProps> = ({
           className="flex flex-col items-center justify-center w-11 h-11 rounded-full text-zinc-400 hover:text-white hover:bg-white/[0.06] active:scale-90 transition-all cursor-pointer"
           aria-label="Browse categories"
         >
-          <Layers className="w-5 h-5 text-emerald-400" />
+          <Layers className="w-5 h-5 text-slate-300" />
         </button>
 
         <div className="w-px h-6 bg-white/[0.08] mx-0.5" />
@@ -67,9 +67,9 @@ export const MobileDock: React.FC<MobileDockProps> = ({
           className="relative flex flex-col items-center justify-center w-11 h-11 rounded-full text-zinc-400 hover:text-white hover:bg-white/[0.06] active:scale-90 transition-all cursor-pointer"
           aria-label="View Wishlist"
         >
-          <Heart className={`w-5 h-5 ${wishlistCount > 0 ? 'fill-rose-500 text-rose-500' : 'text-zinc-400'}`} />
+          <Heart className={`w-5 h-5 ${wishlistCount > 0 ? 'fill-white text-white' : 'text-zinc-400'}`} />
           {wishlistCount > 0 && (
-            <span className="absolute top-1 right-1 w-4 h-4 rounded-full badge-3d badge-3d-rose text-white font-mono font-bold text-[11px] flex items-center justify-center">
+            <span className="absolute top-1 right-1 w-4 h-4 rounded-full badge-3d text-white font-mono font-bold text-[11px] flex items-center justify-center">
               {wishlistCount}
             </span>
           )}
