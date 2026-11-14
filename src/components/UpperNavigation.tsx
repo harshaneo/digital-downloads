@@ -51,7 +51,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
           <button 
             type="button"
             onClick={onToggleSidebarMobile}
-            className="lg:hidden p-2 rounded-xl bg-[#16181d] hover:bg-[#1a1d23] text-zinc-300 border border-white/10 transition-colors cursor-pointer"
+            className="lg:hidden p-2 rounded-xl bg-[var(--bg-surface-elevated)] hover:bg-[#1a1d23] text-zinc-300 border border-white/10 transition-colors cursor-pointer"
             aria-label="Toggle navigation"
           >
             <Menu className="w-4 h-4" />
@@ -110,7 +110,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Search contracts, RFPs, SOPs, financial models..."
-              className="w-full pl-8 sm:pl-9 pr-8 sm:pr-16 py-1.5 sm:py-2 text-xs bg-[#111317] hover:bg-[#16181d] focus:bg-[#16181d] border border-white/10 focus:border-white/30 rounded-full text-[#f4f5f6] placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/10 shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] transition-all font-sans"
+              className="w-full pl-8 sm:pl-9 pr-8 sm:pr-16 py-1.5 sm:py-2 text-xs bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] focus:bg-[var(--bg-surface-elevated)] border border-white/10 focus:border-white/30 rounded-full text-[var(--text-primary)] placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/10 shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] transition-all font-sans"
             />
             {searchQuery ? (
               <button 
@@ -124,11 +124,11 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
               </button>
             ) : (
               <div className="hidden md:flex items-center gap-1 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none select-none">
-                <kbd className="px-1.5 py-0.5 text-[9px] font-mono text-zinc-400 bg-[#16181d] border border-white/10 rounded">
+                <kbd className="px-1.5 py-0.5 text-[9px] font-mono text-zinc-400 bg-[var(--bg-surface-elevated)] border border-white/10 rounded">
                   ⌘K
                 </kbd>
                 <span className="text-zinc-600 text-[9px] font-mono">/</span>
-                <kbd className="px-1.5 py-0.5 text-[9px] font-mono text-zinc-400 bg-[#16181d] border border-white/10 rounded">
+                <kbd className="px-1.5 py-0.5 text-[9px] font-mono text-zinc-400 bg-[var(--bg-surface-elevated)] border border-white/10 rounded">
                   /
                 </kbd>
               </div>
@@ -140,7 +140,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           
           {/* Subtle Currency Selector Pill */}
-          <div className="hidden md:flex items-center bg-[#111317] border border-white/10 rounded-full p-0.5 text-[11px] font-medium text-zinc-300">
+          <div className="hidden md:flex items-center bg-[var(--bg-surface)] border border-white/10 rounded-full p-0.5 text-[11px] font-medium text-zinc-300">
             {(['USD', 'EUR', 'GBP'] as Currency[]).map((c) => (
               <button
                 key={c}
@@ -164,7 +164,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
             className={`hidden sm:inline-flex relative p-2 rounded-full border transition-all cursor-pointer active:scale-95 ${
               wishlistCount > 0 
                 ? 'bg-rose-950/40 border-rose-500/40 text-rose-400 hover:bg-rose-900/60' 
-                : 'bg-[#111317] border-white/10 text-zinc-400 hover:text-rose-400 hover:bg-[#16181d]'
+                : 'bg-[var(--bg-surface)] border-white/10 text-zinc-400 hover:text-rose-400 hover:bg-[var(--bg-surface-elevated)]'
             }`}
             title="Open Curated Wishlist"
             aria-label="Open Curated Wishlist"
@@ -181,7 +181,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
           <button
             type="button"
             onClick={onOpenPurchases}
-            className="hidden sm:inline-flex relative p-2 rounded-full bg-[#111317] border border-white/10 text-zinc-400 hover:text-white hover:bg-[#16181d] shadow-2xs transition-all cursor-pointer active:scale-95"
+            className="hidden sm:inline-flex relative p-2 rounded-full bg-[var(--bg-surface)] border border-white/10 text-zinc-400 hover:text-white hover:bg-[var(--bg-surface-elevated)] shadow-2xs transition-all cursor-pointer active:scale-95"
             title="Archive Vault & Downloads"
             aria-label="Archive Vault & Downloads"
           >

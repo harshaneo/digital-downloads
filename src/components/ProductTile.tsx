@@ -397,7 +397,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
 
         <div className="flex items-center gap-1.5 shrink-0">
           {product.badge && (
-            <span className={`px-2 py-0.5 rounded-full text-[9px] font-mono font-bold tracking-wider uppercase shadow-2xs ${
+            <span className={`px-2 py-0.5 rounded-full text-[11px] font-mono font-bold tracking-wider uppercase shadow-2xs ${
               product.badge === 'HOT' ? 'bg-rose-950/70 text-rose-300 border border-rose-500/40' :
               product.badge === 'BESTSELLER' ? 'gold-rim-badge font-black' :
               product.badge === 'FREE' ? 'bg-emerald-950/70 text-emerald-300 border border-emerald-500/40 font-black' :
@@ -425,11 +425,11 @@ export const ProductTile: React.FC<ProductTileProps> = ({
       </div>
 
       {/* Tucked Pocket Container with Slide-Out File Thumbnail Sheet */}
-      <div className="relative w-full aspect-16/10 rounded-[14px] overflow-hidden group/preview bg-[#090a0d] border border-white/[0.08] shadow-inner">
+      <div className="relative w-full aspect-16/10 rounded-[14px] overflow-hidden group/preview bg-[#060709] border border-white/[0.08] shadow-inner">
         
         {/* Back Chamber of the Folder (Interior lining pattern) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#14161d] to-[#07080a] opacity-90" />
-        <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:12px_12px] opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0d10] to-[#050607] opacity-95" />
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:12px_12px] opacity-60 pointer-events-none" />
 
         {/* 1. Tucked Document/Asset Sheet (Peeks out from the pocket, slides up on hover) */}
         <div className="absolute inset-x-2.5 top-2 bottom-4 tucked-specimen-sheet z-10 rounded-xl overflow-hidden border border-white/[0.14] shadow-[0_8px_20px_rgba(0,0,0,0.8)]">
@@ -437,15 +437,15 @@ export const ProductTile: React.FC<ProductTileProps> = ({
         </div>
 
         {/* 2. Physical Front Pocket Overlay Sleeve (Tucked Pocket with Angled Lip) */}
-        <div className="absolute inset-x-0 bottom-0 h-14 tucked-pocket-sleeve z-20 flex items-center justify-between px-3 pointer-events-none">
+        <div className="absolute inset-x-0 bottom-0 h-16 tucked-pocket-sleeve z-20 flex items-center justify-between px-3 pointer-events-none">
           {/* Subtle gold stitch line along the top of the pocket */}
-          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent" />
+          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-400/20 to-transparent" />
           
           <div className="flex items-center gap-1.5 pointer-events-auto">
-            <span className="text-[9px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-black/60 border border-white/10 text-zinc-300 font-bold">
-              {product.fileFormat} POCKET
+            <span className="text-[11px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-black/75 border border-white/10 text-zinc-300 font-bold">
+              {product.fileFormat}
             </span>
-            <span className="text-[9px] font-mono text-zinc-500">
+            <span className="text-[11px] font-mono text-zinc-400">
               {product.fileSize}
             </span>
           </div>
@@ -459,7 +459,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                   e.stopPropagation();
                   onOpenLegalDocument(product);
                 }}
-                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500 hover:bg-amber-400 text-zinc-950 text-[10.5px] font-mono font-bold cursor-pointer shadow-sm active:scale-95 transition-all"
+                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500 hover:bg-amber-400 text-zinc-950 text-xs font-mono font-bold cursor-pointer shadow-sm active:scale-95 transition-all"
                 title="Read full complete legal agreement with clauses"
               >
                 <FileText className="w-3 h-3 text-zinc-950" />
@@ -476,7 +476,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                     onQuickLook(product);
                   }
                 }}
-                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/80 hover:bg-black text-amber-300 text-[10.5px] font-mono font-bold cursor-pointer shadow-sm border border-amber-400/30 hover:border-amber-400 active:scale-95 transition-all"
+                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/80 hover:bg-black text-amber-300 text-xs font-mono font-bold cursor-pointer shadow-sm border border-amber-400/30 hover:border-amber-400 active:scale-95 transition-all"
                 title="Inspect package contents & file tree"
               >
                 <FileText className="w-3 h-3 text-amber-400" />
@@ -489,7 +489,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 e.stopPropagation();
                 onQuickLook(product);
               }}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-white hover:bg-zinc-200 text-zinc-950 text-[10.5px] font-semibold cursor-pointer shadow-sm active:scale-95 transition-all"
+              className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-semibold cursor-pointer shadow-sm active:scale-95 transition-all"
               title="Quick preview spec"
             >
               <Eye className="w-3 h-3 text-zinc-950" />
@@ -503,22 +503,22 @@ export const ProductTile: React.FC<ProductTileProps> = ({
       {/* 3. Folder Footer Dossier Details */}
       <div className="p-2.5 pt-3 flex-1 flex flex-col justify-between space-y-3">
         <div>
-          {/* Catalog Accession Serial & Star Rating */}
+          {/* Catalog Rating */}
           <div className="flex items-center justify-between text-xs text-zinc-400 mb-1.5 font-mono">
             <div className="flex items-center gap-1 font-medium text-amber-400">
               <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
               <span>{product.rating}</span>
               <span className="text-zinc-500">({product.reviewCount})</span>
             </div>
-            <span className="text-[10px] font-mono text-zinc-400 font-medium">
-              REF #{product.id.slice(0, 8).toUpperCase()}
+            <span className="text-xs font-mono text-zinc-500">
+              v{product.version}
             </span>
           </div>
 
           {/* Title & Subtitle */}
           <h3 
             onClick={() => onQuickLook(product)}
-            className="text-[13.5px] font-bold text-[#f4f5f6] group-hover:text-amber-300 transition-colors cursor-pointer line-clamp-1 [text-wrap:balance]"
+            className="text-sm font-semibold text-[#f4f5f6] group-hover:text-amber-300 transition-colors cursor-pointer line-clamp-1 [text-wrap:balance]"
           >
             {product.title}
           </h3>
@@ -530,14 +530,11 @@ export const ProductTile: React.FC<ProductTileProps> = ({
         {/* Archival Spec Micro-Tags & Look Inside Trigger */}
         <div className="flex items-center justify-between gap-1.5 pt-1">
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded-md font-bold border bg-[#14171f] text-zinc-200 border-white/10">
+            <span className="text-xs font-mono px-2 py-0.5 rounded-md font-bold border bg-[#14171f] text-zinc-200 border-white/10">
               {product.fileFormat}
             </span>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-[#14171f] text-zinc-400 border border-white/10">
+            <span className="text-xs font-mono px-2 py-0.5 rounded-md bg-[#14171f] text-zinc-400 border border-white/10">
               {product.fileSize}
-            </span>
-            <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-[#14171f] text-zinc-400 border border-white/10 hidden sm:inline">
-              v{product.version}
             </span>
           </div>
 
@@ -548,7 +545,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 e.stopPropagation();
                 onOpenLegalDocument(product);
               }}
-              className="flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[10px] font-mono font-bold cursor-pointer active:scale-95 transition-all shrink-0"
+              className="flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-mono font-bold cursor-pointer active:scale-95 transition-all shrink-0"
               title="Read full complete legal agreement with clauses"
             >
               <FileText className="w-3 h-3 text-amber-400" />
@@ -565,7 +562,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                   onQuickLook(product);
                 }
               }}
-              className="flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-[#161a22] hover:bg-[#1f2430] text-amber-300 border border-amber-500/30 text-[10px] font-mono font-bold cursor-pointer active:scale-95 transition-all shrink-0"
+              className="flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-[#161a22] hover:bg-[#1f2430] text-amber-300 border border-amber-500/30 text-xs font-mono font-bold cursor-pointer active:scale-95 transition-all shrink-0"
               title="Inspect ZIP archive contents"
             >
               <FileArchive className="w-3 h-3 text-amber-400" />
@@ -591,7 +588,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 </span>
               )}
             </div>
-            <span className="text-[10px] text-zinc-500 block font-mono">
+            <span className="text-xs text-zinc-500 block font-mono">
               {product.downloadsCount.toLocaleString()} downloads
             </span>
           </div>

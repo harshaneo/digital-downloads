@@ -334,13 +334,13 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* Main Container with Concentric Radii and Specular Sheen */}
-      <div className="relative w-full max-w-4xl max-h-[92vh] bg-[#111317] border border-white/[0.08] rounded-2xl overflow-hidden shadow-2xl flex flex-col z-10 text-[#f4f5f6]">
+      <div className="relative w-full max-w-4xl max-h-[92vh] bg-[var(--bg-surface)] border border-white/[0.08] rounded-2xl overflow-hidden shadow-2xl flex flex-col z-10 text-[var(--text-primary)]">
         
         {/* Specular Edge Top Highlight */}
         <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none z-20" />
 
         {/* 1. Top Header Bar */}
-        <div className="px-5 py-4 border-b border-white/[0.08] bg-[#16181d] flex items-center justify-between gap-3 shrink-0">
+        <div className="px-5 py-4 border-b border-white/[0.08] bg-[var(--bg-surface-elevated)] flex items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-3 min-w-0">
             <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/[0.08] text-white flex items-center justify-center font-black text-sm shrink-0">
               <Layers className="w-5 h-5 text-white" />
@@ -379,13 +379,13 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
 
         {/* 2. Apple-Grade Segmented Navigation Tabs */}
         <div className="px-5 py-2.5 bg-[#0e1014] border-b border-white/[0.08] flex items-center justify-between gap-2 shrink-0 overflow-x-auto">
-          <div className="flex items-center p-1 bg-[#16181d] rounded-xl border border-white/[0.06] gap-1">
+          <div className="flex items-center p-1 bg-[var(--bg-surface-elevated)] rounded-xl border border-white/[0.06] gap-1">
             <button
               type="button"
               onClick={() => setActiveTab('files')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 activeTab === 'files'
-                  ? 'bg-white text-[#08090b] shadow-sm'
+                  ? 'bg-white text-[var(--bg-base)] shadow-sm'
                   : 'text-zinc-400 hover:text-white'
               }`}
             >
@@ -398,7 +398,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
               onClick={() => setActiveTab('licenses')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 activeTab === 'licenses'
-                  ? 'bg-white text-[#08090b] shadow-sm'
+                  ? 'bg-white text-[var(--bg-base)] shadow-sm'
                   : 'text-zinc-400 hover:text-white'
               }`}
             >
@@ -411,7 +411,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
               onClick={() => setActiveTab('security')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 activeTab === 'security'
-                  ? 'bg-white text-[#08090b] shadow-sm'
+                  ? 'bg-white text-[var(--bg-base)] shadow-sm'
                   : 'text-zinc-400 hover:text-white'
               }`}
             >
@@ -428,7 +428,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
         </div>
 
         {/* 3. Tab Body Container */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-[#111317] min-h-[340px]">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-[var(--bg-surface)] min-h-[340px]">
           
           {/* TAB 1: Look Inside File Tree */}
           {activeTab === 'files' && (
@@ -443,7 +443,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search files by name or extension (e.g. .fig, .json)..."
-                    className="w-full pl-9 pr-4 py-2 bg-[#16181d] border border-white/[0.08] rounded-xl text-xs font-mono text-white placeholder-zinc-500 focus:outline-none focus:border-white/20 transition-all"
+                    className="w-full pl-9 pr-4 py-2 bg-[var(--bg-surface-elevated)] border border-white/[0.08] rounded-xl text-xs font-mono text-white placeholder-zinc-500 focus:outline-none focus:border-white/20 transition-all"
                   />
                   {searchQuery && (
                     <button
@@ -460,14 +460,14 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                   <button
                     type="button"
                     onClick={() => setAllFolders(true)}
-                    className="px-2.5 py-1.5 rounded-lg bg-[#16181d] hover:bg-white/[0.06] text-zinc-300 border border-white/[0.06] text-xs font-medium cursor-pointer transition-colors"
+                    className="px-2.5 py-1.5 rounded-lg bg-[var(--bg-surface-elevated)] hover:bg-white/[0.06] text-zinc-300 border border-white/[0.06] text-xs font-medium cursor-pointer transition-colors"
                   >
                     Expand All
                   </button>
                   <button
                     type="button"
                     onClick={() => setAllFolders(false)}
-                    className="px-2.5 py-1.5 rounded-lg bg-[#16181d] hover:bg-white/[0.06] text-zinc-300 border border-white/[0.06] text-xs font-medium cursor-pointer transition-colors"
+                    className="px-2.5 py-1.5 rounded-lg bg-[var(--bg-surface-elevated)] hover:bg-white/[0.06] text-zinc-300 border border-white/[0.06] text-xs font-medium cursor-pointer transition-colors"
                   >
                     Collapse All
                   </button>
@@ -496,7 +496,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                     const firstSample = manifest.fileTree.find(f => f.sampleAvailable) || manifest.fileTree[0];
                     handleDownloadSample(firstSample);
                   }}
-                  className="px-3 py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-[#08090b] text-xs font-bold shrink-0 transition-colors cursor-pointer"
+                  className="px-3 py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-[var(--bg-base)] text-xs font-bold shrink-0 transition-colors cursor-pointer"
                 >
                   Download Free Sample
                 </button>
@@ -549,7 +549,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                       onClick={() => setSelectedLicense(tier.id)}
                       className={`relative rounded-xl p-4.5 border transition-all cursor-pointer flex flex-col justify-between ${
                         isSelected 
-                          ? 'border-white bg-[#16181d] shadow-lg -translate-y-0.5' 
+                          ? 'border-white bg-[var(--bg-surface-elevated)] shadow-lg -translate-y-0.5' 
                           : 'border-white/[0.08] hover:border-white/[0.16] bg-[#0e1014]'
                       }`}
                     >
@@ -557,7 +557,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                         <div className="absolute -top-2.5 right-3.5">
                           <span className={`text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-2xs border ${
                             isSelected 
-                              ? 'bg-white text-[#08090b] border-white' 
+                              ? 'bg-white text-[var(--bg-base)] border-white' 
                               : 'bg-white/[0.08] text-zinc-300 border-white/[0.12]'
                           }`}>
                             {tier.badge}
@@ -572,7 +572,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                             {tier.name}
                           </h4>
                           <div className={`w-4 h-4 rounded-full border flex items-center justify-center transition-all ${
-                            isSelected ? 'border-white bg-white text-[#08090b]' : 'border-white/[0.2]'
+                            isSelected ? 'border-white bg-white text-[var(--bg-base)]' : 'border-white/[0.2]'
                           }`}>
                             {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
                           </div>
@@ -624,8 +624,8 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                         }}
                         className={`w-full mt-4 py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                           isSelected
-                            ? 'bg-white text-[#08090b]'
-                            : 'bg-[#16181d] hover:bg-white/[0.06] text-white border border-white/[0.08]'
+                            ? 'bg-white text-[var(--bg-base)]'
+                            : 'bg-[var(--bg-surface-elevated)] hover:bg-white/[0.06] text-white border border-white/[0.08]'
                         }`}
                       >
                         {isSelected ? 'Current Selection' : 'Select Tier'}
@@ -636,7 +636,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
               </div>
 
               {/* Legal Indemnity Guarantee Banner */}
-              <div className="p-3 bg-[#16181d] rounded-xl border border-white/[0.08] flex items-center gap-3 text-xs text-zinc-400">
+              <div className="p-3 bg-[var(--bg-surface-elevated)] rounded-xl border border-white/[0.08] flex items-center gap-3 text-xs text-zinc-400">
                 <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
                 <span>
                   All Nexus Vault licenses carry perpetual, irrevocable rights with verified commercial terms.
@@ -650,7 +650,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
             <div className="space-y-5">
               
               {/* One-Click SHA-256 Checksum Card with Tactile Emerald Feedback */}
-              <div className="p-4 rounded-xl bg-[#16181d] text-zinc-100 border border-white/[0.08]">
+              <div className="p-4 rounded-xl bg-[var(--bg-surface-elevated)] text-zinc-100 border border-white/[0.08]">
                 <div className="flex items-center justify-between pb-2 mb-2 border-b border-white/[0.06]">
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -677,8 +677,8 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                     onClick={handleCopySha256}
                     className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 shrink-0 cursor-pointer active:scale-95 ${
                       copiedHash 
-                        ? 'bg-emerald-500 text-[#08090b] shadow-[0_0_15px_rgba(16,185,129,0.5)] scale-105' 
-                        : 'bg-white hover:bg-zinc-200 text-[#08090b]'
+                        ? 'bg-emerald-500 text-[var(--bg-base)] shadow-[0_0_15px_rgba(16,185,129,0.5)] scale-105' 
+                        : 'bg-white hover:bg-zinc-200 text-[var(--bg-base)]'
                     }`}
                   >
                     {copiedHash ? (
@@ -722,7 +722,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                       }`} />
 
                       <div className="flex items-center gap-2">
-                        <span className="px-2 py-0.5 rounded-md bg-[#16181d] text-zinc-200 font-mono text-xs font-bold border border-white/[0.08]">
+                        <span className="px-2 py-0.5 rounded-md bg-[var(--bg-surface-elevated)] text-zinc-200 font-mono text-xs font-bold border border-white/[0.08]">
                           v{entry.version}
                         </span>
                         <span className="text-xs text-zinc-500 font-mono">
@@ -766,7 +766,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
         <div className="p-4 sm:p-5 bg-[#0e1014] border-t border-white/[0.08] shrink-0 space-y-3">
           
           {/* Creator Tip Quick Chips */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3 bg-[#16181d] rounded-xl border border-white/[0.06]">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3 bg-[var(--bg-surface-elevated)] rounded-xl border border-white/[0.06]">
             <div className="flex items-center gap-2.5">
               <img 
                 src={product.creator.avatar} 
@@ -794,7 +794,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                   onClick={() => setSelectedTip(amount)}
                   className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
                     selectedTip === amount
-                      ? 'bg-white text-[#08090b] shadow-sm'
+                      ? 'bg-white text-[var(--bg-base)] shadow-sm'
                       : 'bg-[#0e1014] hover:bg-white/[0.06] text-zinc-300 border border-white/[0.06]'
                   }`}
                 >
@@ -826,7 +826,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                 <button
                   type="button"
                   onClick={() => onInstantDownload(product)}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[#08090b] text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[var(--bg-base)] text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
                 >
                   <Download className="w-4 h-4" />
                   <span>Download Bundle</span>
@@ -835,7 +835,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                 <button
                   type="button"
                   onClick={() => onInstantDownload(product)}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[#08090b] text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[var(--bg-base)] text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
                 >
                   <Download className="w-4 h-4" />
                   <span>Download Free Asset</span>
@@ -847,7 +847,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                     onAddToCart(product, selectedLicense, selectedTip);
                     onClose();
                   }}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-[#08090b] text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-[var(--bg-base)] text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
                 >
                   <Check className="w-4 h-4 text-emerald-600" />
                   <span>Update in Bag • {formatPrice(finalPrice)}</span>
@@ -859,9 +859,9 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                     onAddToCart(product, selectedLicense, selectedTip);
                     onClose();
                   }}
-                  className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-[#08090b] text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
+                  className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-[var(--bg-base)] text-xs font-bold cursor-pointer shadow-md active:scale-95 transition-all"
                 >
-                  <ShoppingBag className="w-4 h-4 text-[#08090b]" />
+                  <ShoppingBag className="w-4 h-4 text-[var(--bg-base)]" />
                   <span>Add to Bag • {formatPrice(finalPrice)}</span>
                 </button>
               )}

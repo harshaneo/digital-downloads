@@ -103,7 +103,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
 
   return (
     <aside 
-      className={`relative lg:sticky top-0 lg:top-[61px] left-0 h-full lg:h-[calc(100vh-61px)] z-30 bg-[#0e1014]/95 backdrop-blur-md border-r border-white/[0.08] flex flex-col transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+      className={`relative lg:sticky top-0 lg:top-[61px] left-0 h-full lg:h-[calc(100vh-61px)] z-30 bg-[var(--bg-raised)]/95 backdrop-blur-md border-r border-white/[0.08] flex flex-col transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
         collapsed ? 'w-16' : 'w-64 max-w-[80vw]'
       }`}
     >
@@ -114,11 +114,11 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
         <div>
           {!collapsed && (
             <div className="px-2 mb-2.5 flex items-center justify-between">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400 font-semibold">
+              <span className="text-xs font-mono uppercase tracking-wider text-zinc-400 font-semibold">
                 Categories
               </span>
-              <span className="text-[10px] font-mono text-zinc-500">
-                07 Total
+              <span className="text-xs font-mono text-zinc-500">
+                {String(categories.length).padStart(2, '0')} Total
               </span>
             </div>
           )}
@@ -143,24 +143,19 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                     <span className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all ${
                       isActive 
                         ? 'bg-zinc-950 text-white shadow-inner' 
-                        : 'bg-[#16181d] text-zinc-300 border border-white/10 group-hover:border-white/20'
+                        : 'bg-[var(--bg-surface-elevated)] text-zinc-300 border border-white/10 group-hover:border-white/20'
                     }`}>
                       <Icon className="w-3.5 h-3.5" />
                     </span>
                     {!collapsed && (
-                      <div className="flex flex-col text-left truncate">
-                        <span className="truncate leading-tight text-xs">{cat.label}</span>
-                        <span className={`text-[9px] font-mono leading-none mt-0.5 ${isActive ? 'text-zinc-600' : 'text-zinc-500'}`}>
-                          № {cat.index}
-                        </span>
-                      </div>
+                      <span className="truncate leading-tight text-xs">{cat.label}</span>
                     )}
                   </div>
                   {!collapsed && (
-                    <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${
+                    <span className={`text-xs font-mono px-2 py-0.5 rounded-full ${
                       isActive 
                         ? 'bg-zinc-900 text-white' 
-                        : 'text-zinc-400 bg-[#16181d] border border-white/10'
+                        : 'text-zinc-400 bg-[var(--bg-surface-elevated)] border border-white/10'
                     }`}>
                       {count}
                     </span>
@@ -174,7 +169,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
         {/* File Format Filter */}
         {!collapsed && (
           <div className="pt-4 border-t border-white/[0.08]">
-            <span className="px-2 text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-2.5 block font-semibold">
+            <span className="px-2 text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2.5 block font-semibold">
               Format
             </span>
             <div className="flex flex-wrap gap-1.5 px-1">
@@ -185,10 +180,10 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                     key={fmt}
                     type="button"
                     onClick={() => onFilterChange({ format: fmt === 'All' ? '' : fmt })}
-                    className={`px-2 py-1 rounded-lg text-[10px] font-mono font-medium border transition-all cursor-pointer ${
+                    className={`px-2 py-1 rounded-lg text-xs font-mono font-medium border transition-all cursor-pointer ${
                       isSelected
                         ? 'bg-white text-zinc-950 border-white font-bold shadow-xs'
-                        : 'bg-[#16181d] text-zinc-300 border-white/10 hover:border-white/20 hover:text-white'
+                        : 'bg-[var(--bg-surface-elevated)] text-zinc-300 border-white/10 hover:border-white/20 hover:text-white'
                     }`}
                   >
                     {fmt}
@@ -202,7 +197,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
         {/* Price Bracket Filter */}
         {!collapsed && (
           <div className="pt-4 border-t border-white/[0.08]">
-            <span className="px-2 text-[10px] font-mono uppercase tracking-wider text-zinc-400 mb-2.5 block font-semibold">
+            <span className="px-2 text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2.5 block font-semibold">
               Price Range
             </span>
             <div className="space-y-1">
@@ -237,7 +232,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
         {/* Commercial License Filter */}
         {!collapsed && (
           <div className="pt-4 border-t border-white/[0.08]">
-            <label className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-[#111317] border border-white/10 cursor-pointer hover:border-white/20 transition-colors">
+            <label className="flex items-center gap-2.5 px-3 py-2 rounded-xl bg-[var(--bg-surface)] border border-white/10 cursor-pointer hover:border-white/20 transition-colors">
               <input
                 type="checkbox"
                 checked={filterState.commercialOnly}
@@ -254,12 +249,12 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
 
         {/* Creator Onboarding */}
         {!collapsed && (
-          <div className="p-4 rounded-2xl bg-[#111317] border border-white/10 relative overflow-hidden">
+          <div className="p-4 rounded-2xl bg-[var(--bg-surface)] border border-white/10 relative overflow-hidden">
             <div className="flex items-center gap-1.5 text-white text-xs font-bold mb-1">
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               Publish on Nexus Vault
             </div>
-            <p className="text-[11px] text-zinc-400 leading-relaxed mb-3">
+            <p className="text-xs text-zinc-400 leading-relaxed mb-3">
               Creator partner program. Keep 90% royalties with instant automated payouts.
             </p>
             <button 
@@ -275,7 +270,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
       </div>
 
       {/* Footer Toggle */}
-      <div className="p-2.5 border-t border-white/[0.08] bg-[#08090b] flex items-center justify-end">
+      <div className="p-2.5 border-t border-white/[0.08] bg-[var(--bg-base)] flex items-center justify-end">
         <button
           type="button"
           onClick={onToggleCollapse}
@@ -286,7 +281,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
           {collapsed ? <ChevronRight className="w-4 h-4" /> : (
             <>
               <ChevronLeft className="w-3.5 h-3.5" />
-              <span className="font-mono text-[11px]">COLLAPSE PANEL</span>
+              <span className="font-mono text-xs">COLLAPSE PANEL</span>
             </>
           )}
         </button>

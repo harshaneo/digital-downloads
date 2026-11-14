@@ -47,10 +47,10 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
     >
       <div className="absolute inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-2xl bg-[#111317] border border-white/[0.08] rounded-2xl overflow-hidden shadow-2xl flex flex-col z-10 max-h-[90vh] text-[#f4f5f6]">
+      <div className="relative w-full max-w-2xl bg-[var(--bg-surface)] border border-white/[0.08] rounded-2xl overflow-hidden shadow-2xl flex flex-col z-10 max-h-[90vh] text-[var(--text-primary)]">
         
         {/* Header */}
-        <div className="p-6 bg-[#16181d] border-b border-white/[0.08] flex items-center justify-between">
+        <div className="p-6 bg-[var(--bg-surface-elevated)] border-b border-white/[0.08] flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
               <CheckCircle2 className="w-5 h-5" />
@@ -82,7 +82,7 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
             {purchases.map((item) => (
               <div 
                 key={item.id} 
-                className="p-4 rounded-xl bg-[#16181d] border border-white/[0.06] space-y-3"
+                className="p-4 rounded-xl bg-[var(--bg-surface-elevated)] border border-white/[0.06] space-y-3"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3 min-w-0">
@@ -102,7 +102,7 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
                   <button
                     type="button"
                     onClick={() => handleDownload(item)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-[#08090b] font-semibold text-xs cursor-pointer shrink-0 transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-[var(--bg-base)] font-semibold text-xs cursor-pointer shrink-0 transition-colors"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Download</span>
@@ -157,7 +157,7 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2 rounded-xl bg-white hover:bg-zinc-200 text-[#08090b] text-xs font-bold transition-colors cursor-pointer"
+            className="px-5 py-2 rounded-xl bg-white hover:bg-zinc-200 text-[var(--bg-base)] text-xs font-bold transition-colors cursor-pointer"
           >
             Done
           </button>

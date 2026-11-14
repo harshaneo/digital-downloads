@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  /* System Typography (Plus Jakarta Sans + JetBrains Mono) */
+  /* System Typography (Plus Jakarta Sans + JetBrains Mono + Newsreader) */
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Newsreader', Georgia, Cambria, serif;
   --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
   
   /* Surface Hierarchy — 5-step neutral obsidian ramp */
@@ -11,6 +12,12 @@
   --bg-surface: #111317;
   --bg-surface-elevated: #16181d;
   --bg-surface-overlay: #1a1d23;
+  --bg-hover: #1e2028;
+  --bg-active: #22242c;
+
+  /* Accent ramp */
+  --accent-gold: #d4af37;
+  --accent-gold-muted: rgba(212, 175, 55, 0.12);
 
   /* Border hierarchy */
   --border-hairline: rgba(255, 255, 255, 0.04);
@@ -277,10 +284,10 @@
 .luxury-folder-envelope:hover {
   transform: translateY(-4px);
   border-color: rgba(255, 255, 255, 0.22);
-  border-top-color: rgba(212, 175, 55, 0.45);
+  border-top-color: rgba(212, 175, 55, 0.25);
   box-shadow: 
     0 24px 48px -10px rgba(0, 0, 0, 0.95),
-    0 0 25px rgba(212, 175, 55, 0.06),
+    0 0 25px rgba(212, 175, 55, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
@@ -299,7 +306,7 @@
 
 /* Tucked Pocket Sleeve Lip (Clipped angled geometric pocket) */
 .tucked-pocket-sleeve {
-  background: linear-gradient(180deg, rgba(24, 27, 34, 0.96) 0%, rgba(13, 15, 19, 0.98) 100%);
+  background: linear-gradient(180deg, rgba(20, 23, 29, 0.96) 0%, rgba(10, 11, 14, 0.99) 100%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid rgba(255, 255, 255, 0.16);
@@ -316,6 +323,6 @@
 }
 
 .group:hover .tucked-specimen-sheet {
-  transform: translateY(-16px) rotate(-1.5deg) scale(1.02);
+  transform: translateY(-20px) scale(1.03);
   box-shadow: 0 16px 32px -4px rgba(0, 0, 0, 0.9);
 }

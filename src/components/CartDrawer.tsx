@@ -64,7 +64,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
       <div className="absolute inset-0" onClick={onClose} />
 
       <div className="absolute inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[#111317] border-l border-white/10 shadow-2xl flex flex-col z-10 text-[#f4f5f6]">
+        <div className="w-screen max-w-md bg-[var(--bg-surface)] border-l border-white/10 shadow-2xl flex flex-col z-10 text-[var(--text-primary)]">
           
           {/* Mobile Sheet Grab Indicator */}
           <div className="w-10 h-1 bg-zinc-700 rounded-full mx-auto my-2 sm:hidden shrink-0" />
@@ -74,7 +74,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-amber-400" />
               <h2 className="font-extrabold text-base text-white">Your Cart</h2>
-              <span className="px-2 py-0.5 rounded-full bg-[#16181d] text-zinc-300 border border-white/10 font-mono text-xs font-bold">
+              <span className="px-2 py-0.5 rounded-full bg-[var(--bg-surface-elevated)] text-zinc-300 border border-white/10 font-mono text-xs font-bold">
                 {cart.length} {cart.length === 1 ? 'item' : 'items'}
               </span>
             </div>
@@ -92,7 +92,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           <div className="flex-1 overflow-y-auto p-5 space-y-3">
             {cart.length === 0 ? (
               <div className="py-16 text-center space-y-3">
-                <div className="w-16 h-16 rounded-2xl bg-[#16181d] border border-white/10 flex items-center justify-center mx-auto text-zinc-500">
+                <div className="w-16 h-16 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/10 flex items-center justify-center mx-auto text-zinc-500">
                   <ShoppingBag className="w-7 h-7" />
                 </div>
                 <h3 className="font-bold text-base text-white">Your cart is empty</h3>
@@ -111,7 +111,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               cart.map((item) => (
                 <div 
                   key={item.product.id} 
-                  className="p-3.5 rounded-2xl bg-[#16181d] border border-white/[0.08] flex items-start gap-3 group hover:border-white/20 transition-colors"
+                  className="p-3.5 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08] flex items-start gap-3 group hover:border-white/20 transition-colors"
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#0e1014] border border-white/10 flex items-center justify-center font-mono font-bold text-xs text-zinc-300 shrink-0">
                     {item.product.fileFormat}
@@ -158,7 +158,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       value={couponCode}
                       onChange={(e) => setCouponCode(e.target.value)}
                       placeholder="Coupon (e.g. PERFECTION)"
-                      className="w-full pl-8 pr-3 py-1.5 bg-[#16181d] border border-white/10 rounded-xl text-xs text-white placeholder-zinc-500 uppercase font-mono focus:outline-none focus:border-white/30"
+                      className="w-full pl-8 pr-3 py-1.5 bg-[var(--bg-surface-elevated)] border border-white/10 rounded-xl text-xs text-white placeholder-zinc-500 uppercase font-mono focus:outline-none focus:border-white/30"
                     />
                   </div>
                   <button

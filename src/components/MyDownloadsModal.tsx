@@ -56,10 +56,10 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
     >
       <div className="absolute inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-3xl bg-[#111317] border border-white/[0.08] rounded-2xl overflow-hidden shadow-2xl flex flex-col z-10 max-h-[90vh] text-[#f4f5f6]">
+      <div className="relative w-full max-w-3xl bg-[var(--bg-surface)] border border-white/[0.08] rounded-2xl overflow-hidden shadow-2xl flex flex-col z-10 max-h-[90vh] text-[var(--text-primary)]">
         
         {/* Header */}
-        <div className="px-6 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[#16181d]">
+        <div className="px-6 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[var(--bg-surface-elevated)]">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-white">
               <DownloadCloud className="w-4 h-4" />
@@ -91,7 +91,7 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search your library by asset name or license key..."
-                className="w-full pl-9 pr-4 py-2 bg-[#16181d] border border-white/[0.08] rounded-xl text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-white/20"
+                className="w-full pl-9 pr-4 py-2 bg-[var(--bg-surface-elevated)] border border-white/[0.08] rounded-xl text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-white/20"
               />
             </div>
           </div>
@@ -101,7 +101,7 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
         <div className="flex-1 overflow-y-auto p-6 space-y-3">
           {purchases.length === 0 ? (
             <div className="py-16 text-center space-y-3">
-              <div className="w-16 h-16 rounded-2xl bg-[#16181d] border border-white/[0.08] flex items-center justify-center mx-auto text-zinc-500">
+              <div className="w-16 h-16 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08] flex items-center justify-center mx-auto text-zinc-500">
                 <DownloadCloud className="w-7 h-7" />
               </div>
               <h3 className="font-bold text-base text-white">No downloads yet</h3>
@@ -111,7 +111,7 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="mt-2 px-4 py-2 bg-white hover:bg-zinc-200 text-[#08090b] rounded-xl text-xs font-bold transition-colors cursor-pointer"
+                className="mt-2 px-4 py-2 bg-white hover:bg-zinc-200 text-[var(--bg-base)] rounded-xl text-xs font-bold transition-colors cursor-pointer"
               >
                 Browse Catalog
               </button>
@@ -124,7 +124,7 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
             filtered.map((item) => (
               <div 
                 key={item.id} 
-                className="p-4 rounded-xl bg-[#16181d] border border-white/[0.06] hover:border-white/[0.12] transition-colors space-y-3"
+                className="p-4 rounded-xl bg-[var(--bg-surface-elevated)] border border-white/[0.06] hover:border-white/[0.12] transition-colors space-y-3"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3 min-w-0">
@@ -151,7 +151,7 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
                   <button
                     type="button"
                     onClick={() => handleDownload(item)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-[#08090b] text-xs font-bold transition-colors shrink-0 cursor-pointer"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-[var(--bg-base)] text-xs font-bold transition-colors shrink-0 cursor-pointer"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Download Bundle</span>
@@ -193,7 +193,7 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2 rounded-xl bg-white hover:bg-zinc-200 text-[#08090b] text-xs font-bold transition-colors cursor-pointer"
+            className="px-5 py-2 rounded-xl bg-white hover:bg-zinc-200 text-[var(--bg-base)] text-xs font-bold transition-colors cursor-pointer"
           >
             Close Library
           </button>
