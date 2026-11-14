@@ -12,7 +12,6 @@ import {
   ChevronLeft, 
   ChevronRight, 
   ShieldCheck, 
-  Sparkles,
   Scale,
   Presentation,
   FolderGit2
@@ -37,66 +36,16 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
   const categories: { 
     id: ProductCategory; 
     label: string; 
-    index: string;
     icon: React.ComponentType<{ className?: string }>;
-    accentColor: string;
   }[] = [
-    { 
-      id: 'all', 
-      label: 'All Artifacts', 
-      index: '00',
-      icon: LayoutGrid,
-      accentColor: 'indigo'
-    },
-    { 
-      id: 'legal-contracts', 
-      label: 'Legal & Contracts', 
-      index: '01',
-      icon: Scale,
-      accentColor: 'amber'
-    },
-    { 
-      id: 'sales-proposals', 
-      label: 'Sales & Proposals', 
-      index: '02',
-      icon: Presentation,
-      accentColor: 'orange'
-    },
-    { 
-      id: 'ops-sops', 
-      label: 'SOPs & Operations', 
-      index: '03',
-      icon: FolderGit2,
-      accentColor: 'emerald'
-    },
-    { 
-      id: 'financial-models', 
-      label: 'Financial Models', 
-      index: '04',
-      icon: FileSpreadsheet,
-      accentColor: 'teal'
-    },
-    { 
-      id: 'compliance-security', 
-      label: 'Compliance & Audit', 
-      index: '05',
-      icon: ShieldCheck,
-      accentColor: 'rose'
-    },
-    { 
-      id: 'websites-ui', 
-      label: 'Websites & UI Kits', 
-      index: '06',
-      icon: Layout,
-      accentColor: 'indigo'
-    },
-    { 
-      id: 'resumes', 
-      label: 'Exec Resumes & CVs', 
-      index: '07',
-      icon: Briefcase,
-      accentColor: 'stone'
-    },
+    { id: 'all', label: 'All Artifacts', icon: LayoutGrid },
+    { id: 'legal-contracts', label: 'Legal & Contracts', icon: Scale },
+    { id: 'sales-proposals', label: 'Sales & Proposals', icon: Presentation },
+    { id: 'ops-sops', label: 'SOPs & Operations', icon: FolderGit2 },
+    { id: 'financial-models', label: 'Financial Models', icon: FileSpreadsheet },
+    { id: 'compliance-security', label: 'Compliance & Audit', icon: ShieldCheck },
+    { id: 'websites-ui', label: 'Websites & UI Kits', icon: Layout },
+    { id: 'resumes', label: 'Exec Resumes & CVs', icon: Briefcase },
   ];
 
   const formats = ['All', '.DOCX', '.XLSX', '.PDF', '.NOTION', '.PPTX', '.FIG', '.ZIP', '.TSX'];
@@ -247,25 +196,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
           </div>
         )}
 
-        {/* Creator Onboarding */}
-        {!collapsed && (
-          <div className="p-4 rounded-2xl bg-[var(--bg-surface)] border border-white/10 relative overflow-hidden">
-            <div className="flex items-center gap-1.5 text-white text-xs font-bold mb-1">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              Publish on Nexus Vault
-            </div>
-            <p className="text-xs text-zinc-400 leading-relaxed mb-3">
-              Creator partner program. Keep 90% royalties with instant automated payouts.
-            </p>
-            <button 
-              type="button"
-              onClick={() => alert('Creator Studio: Submission portal opens here!')}
-              className="btn-primary w-full py-2 px-3 text-xs font-semibold rounded-xl cursor-pointer"
-            >
-              Submit Asset
-            </button>
-          </div>
-        )}
+
 
       </div>
 

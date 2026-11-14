@@ -56,7 +56,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
       <div className="relative w-full max-w-3xl max-h-[90vh] bg-[var(--bg-surface)] border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col z-10 text-[var(--text-primary)]">
         
         {/* Top Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.08] bg-[#0e1014]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.08] bg-[var(--bg-surface)]">
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-0.5 rounded-md bg-[var(--bg-surface-elevated)] text-zinc-200 border border-white/10 font-mono text-xs font-bold uppercase">
               {product.fileFormat}
@@ -82,7 +82,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
           {/* Hero Banner */}
           <div className="w-full rounded-2xl bg-[var(--bg-surface-elevated)] p-6 sm:p-8 border border-white/10 relative overflow-hidden flex flex-col justify-between min-h-[160px]">
             <div className="relative z-10 flex items-center justify-between">
-              <span className="px-2.5 py-1 rounded-full bg-[#0e1014] text-xs font-mono text-zinc-300 border border-white/10 shadow-2xs">
+              <span className="px-2.5 py-1 rounded-full bg-[var(--bg-surface)] text-xs font-mono text-zinc-300 border border-white/10 shadow-2xs">
                 v{product.version} • Updated {product.updatedAt}
               </span>
               {product.badge && (
@@ -192,7 +192,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
                 )}
               </div>
             </h4>
-            <div className="border border-white/[0.08] rounded-2xl overflow-hidden divide-y divide-white/[0.06] bg-[#0e1014]">
+            <div className="border border-white/[0.08] rounded-2xl overflow-hidden divide-y divide-white/[0.06] bg-[var(--bg-surface)]">
               {product.includedFiles.map((file, i) => (
                 <div key={i} className="flex items-center justify-between px-3.5 py-2.5 text-xs">
                   <div className="flex items-center gap-2.5 min-w-0">
@@ -274,14 +274,14 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
               <div className="text-xs font-bold text-white font-mono">
                 {product.creator.salesCount.toLocaleString()}
               </div>
-              <div className="text-[10px] text-zinc-400">Total Asset Sales</div>
+              <div className="text-[11px] text-zinc-400">Total Asset Sales</div>
             </div>
           </div>
 
         </div>
 
         {/* Modal Action Footer */}
-        <div className="px-6 py-4 bg-[#0e1014] border-t border-white/[0.08] flex items-center justify-between gap-4">
+        <div className="px-6 py-4 bg-[var(--bg-surface)] border-t border-white/[0.08] flex items-center justify-between gap-4">
           <div>
             <div className="text-[11px] text-zinc-400">Digital Archive Package</div>
             <div className="text-xl font-extrabold text-white font-mono">

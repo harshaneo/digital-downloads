@@ -86,7 +86,7 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-10 h-10 rounded-lg bg-[#0e1014] border border-white/[0.08] flex items-center justify-center font-mono font-bold text-xs text-zinc-300 shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-[var(--bg-surface)] border border-white/[0.08] flex items-center justify-center font-mono font-bold text-xs text-zinc-300 shrink-0">
                       {item.product.fileFormat}
                     </div>
                     <div className="min-w-0">
@@ -110,10 +110,10 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
                 </div>
 
                 {/* License Key Box */}
-                <div className="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-[#0e1014] border border-white/[0.06] font-mono text-xs">
+                <div className="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-[var(--bg-surface)] border border-white/[0.06] font-mono text-xs">
                   <div className="flex items-center gap-2 text-zinc-400 min-w-0">
                     <Key className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span className="text-zinc-500 text-[10px] uppercase font-bold">Key:</span>
+                    <span className="text-zinc-500 text-[11px] uppercase font-bold">Key:</span>
                     <span className="text-zinc-200 truncate font-semibold">{item.licenseKey}</span>
                   </div>
 
@@ -142,7 +142,7 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="p-5 bg-[#0e1014] border-t border-white/[0.08] flex items-center justify-between gap-3">
+        <div className="p-5 bg-[var(--bg-surface)] border-t border-white/[0.08] flex items-center justify-between gap-3">
           <button
             type="button"
             onClick={() => {

@@ -7,10 +7,10 @@ export const SkeletonTileGrid: React.FC<{ count?: number }> = ({ count = 6 }) =>
       {Array.from({ length: count }).map((_, i) => (
         <div 
           key={i} 
-          className="bg-[#111317] border border-white/[0.08] rounded-xl overflow-hidden p-4 space-y-4 animate-pulse"
+          className="bg-[var(--bg-surface)] border border-white/[0.08] rounded-xl overflow-hidden p-4 space-y-4 animate-pulse"
         >
           {/* Shimmer Preview Header */}
-          <div className="w-full aspect-16/10 rounded-lg bg-[#16181d] flex items-center justify-center">
+          <div className="w-full aspect-16/10 rounded-lg bg-[var(--bg-surface-elevated)] flex items-center justify-center">
             <div className="w-12 h-12 rounded-lg bg-white/[0.04]" />
           </div>
 
@@ -41,7 +41,7 @@ export const EmptyState: React.FC<{
 }> = ({ query, onResetFilters }) => {
   return (
     <div className="py-20 text-center space-y-4 max-w-md mx-auto">
-      <div className="w-16 h-16 rounded-2xl bg-[#16181d] border border-white/[0.08] flex items-center justify-center mx-auto text-zinc-500 shadow-sm">
+      <div className="w-16 h-16 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08] flex items-center justify-center mx-auto text-zinc-500 shadow-sm">
         <SearchX className="w-8 h-8 text-white" />
       </div>
 
@@ -58,7 +58,7 @@ export const EmptyState: React.FC<{
         <button
           type="button"
           onClick={onResetFilters}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-[#08090b] text-xs font-bold transition-all shadow-sm cursor-pointer"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-[var(--bg-base)] text-xs font-bold transition-all shadow-sm cursor-pointer"
         >
           <Filter className="w-3.5 h-3.5" />
           <span>Reset All Filters</span>
@@ -89,7 +89,7 @@ export const ErrorState: React.FC<{
         <button
           type="button"
           onClick={onRetry}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#16181d] border border-white/[0.12] text-white hover:bg-white/[0.06] text-xs font-bold transition-all cursor-pointer shadow-xs"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-white/[0.12] text-white hover:bg-white/[0.06] text-xs font-bold transition-all cursor-pointer shadow-xs"
         >
           <RefreshCw className="w-3.5 h-3.5" />
           <span>Retry Connection</span>

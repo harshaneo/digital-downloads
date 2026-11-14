@@ -46,7 +46,7 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
           <div className="w-10 h-1 bg-zinc-700 rounded-full mx-auto my-2 sm:hidden shrink-0" />
 
           {/* Header */}
-          <div className="px-5 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[#0e1014]">
+          <div className="px-5 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[var(--bg-surface)]">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-rose-950/40 border border-rose-500/40 flex items-center justify-center text-rose-400">
                 <Heart className="w-4 h-4 fill-rose-400" />
@@ -98,7 +98,7 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
                   >
                     <div className="flex items-start gap-3">
                       {/* Thumbnail badge */}
-                      <div className="w-12 h-12 rounded-xl bg-[#0e1014] border border-white/10 flex items-center justify-center font-mono font-bold text-xs text-zinc-300 shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-[var(--bg-surface)] border border-white/10 flex items-center justify-center font-mono font-bold text-xs text-zinc-300 shrink-0">
                         {product.fileFormat}
                       </div>
 
@@ -119,8 +119,8 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
                           <span className="text-xs font-extrabold text-white font-mono">
                             {isFree ? 'FREE' : formatPrice(product.price)}
                           </span>
-                          <span className="text-[10px] text-zinc-600">•</span>
-                          <span className="text-[10px] text-zinc-400">{product.fileSize}</span>
+                          <span className="text-[11px] text-zinc-600">•</span>
+                          <span className="text-[11px] text-zinc-400">{product.fileSize}</span>
                         </div>
                       </div>
 
@@ -168,7 +168,7 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
 
           {/* Footer */}
           {wishlistProducts.length > 0 && (
-            <div className="p-4 bg-[#0e1014] border-t border-white/[0.08] flex items-center justify-between">
+            <div className="p-4 bg-[var(--bg-surface)] border-t border-white/[0.08] flex items-center justify-between">
               <span className="text-xs text-zinc-400">
                 {wishlistProducts.length} items saved in your browser
               </span>

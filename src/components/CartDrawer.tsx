@@ -70,7 +70,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
           <div className="w-10 h-1 bg-zinc-700 rounded-full mx-auto my-2 sm:hidden shrink-0" />
 
           {/* Header */}
-          <div className="px-5 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[#0e1014]">
+          <div className="px-5 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[var(--bg-surface)]">
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-amber-400" />
               <h2 className="font-extrabold text-base text-white">Your Cart</h2>
@@ -113,7 +113,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   key={item.product.id} 
                   className="p-3.5 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08] flex items-start gap-3 group hover:border-white/20 transition-colors"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#0e1014] border border-white/10 flex items-center justify-center font-mono font-bold text-xs text-zinc-300 shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[var(--bg-surface)] border border-white/10 flex items-center justify-center font-mono font-bold text-xs text-zinc-300 shrink-0">
                     {item.product.fileFormat}
                   </div>
 
@@ -146,7 +146,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
           {/* Footer & Checkout Box */}
           {cart.length > 0 && (
-            <div className="p-5 bg-[#0e1014] border-t border-white/[0.08] space-y-4">
+            <div className="p-5 bg-[var(--bg-surface)] border-t border-white/[0.08] space-y-4">
               
               {/* Promo Coupon Input */}
               <form onSubmit={handleApplyCoupon} className="space-y-1.5">

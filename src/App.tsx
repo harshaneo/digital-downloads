@@ -481,51 +481,20 @@ export function App() {
                 </p>
 
                 {/* Metrics Strip */}
-                <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-zinc-400">
+                <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400">
                   <div className="flex items-center gap-1.5">
-                    <span className="font-bold text-white">{filteredProducts.length}</span> Items Available
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-zinc-600">•</span>
                     <span className="font-bold text-white">100%</span> Perpetual Commercial Licenses
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="text-zinc-600">•</span>
                     <span className="font-bold text-white">Full Source</span> Included
                   </div>
-                </div>
-
-                {/* Clean Pill Tabs */}
-                <div className="pt-2">
-                  <div className="flex flex-wrap gap-1.5">
-                    {[
-                      { id: 'all', label: 'All Artifacts' },
-                      { id: 'legal-contracts', label: 'Contracts & Legal' },
-                      { id: 'sales-proposals', label: 'RFPs & Proposals' },
-                      { id: 'ops-sops', label: 'SOPs & Operations' },
-                      { id: 'financial-models', label: 'Financial Models' },
-                      { id: 'compliance-security', label: 'Security & Compliance' },
-                      { id: 'websites-ui', label: 'Websites & UI' },
-                      { id: 'resumes', label: 'Resumes & Exec' },
-                    ].map(tab => {
-                      const isTabActive = filterState.category === tab.id;
-                      return (
-                        <button
-                          key={tab.id}
-                          type="button"
-                          onClick={() => handleFilterChange({ category: tab.id as ProductCategory })}
-                          className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer select-none active:scale-95 ${
-                            isTabActive
-                              ? 'bg-white text-zinc-950 font-bold shadow-sm'
-                              : 'bg-[var(--bg-surface-elevated)] text-zinc-400 hover:text-white hover:bg-[var(--bg-surface-overlay)] border border-white/10'
-                          }`}
-                        >
-                          {tab.label}
-                        </button>
-                      );
-                    })}
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-zinc-600">•</span>
+                    <span className="font-bold text-white">Direct</span> Instant Download
                   </div>
                 </div>
+
               </div>
 
               {/* 40% Column: Dimensional Exhibition Plinth Card */}
@@ -574,21 +543,18 @@ export function App() {
                         </div>
                       </div>
 
-                      {/* 3D Multi-Plane Floating Aesthetic Showcase */}
-                      <div className="flex items-center justify-center my-auto py-1">
-                        <div className="relative w-44 h-18 perspective-500">
-                          <div className="absolute top-0 left-0 w-40 h-14 rounded-xl bg-[#141720] border border-white/10 shadow-xs rotate-[-5deg]" />
-                          <div className="absolute top-1 left-2.5 w-40 h-14 rounded-xl bg-gradient-to-r from-[#202430] via-[#1a1d26] to-[#12141a] border border-amber-400/30 shadow-[0_12px_24px_rgba(0,0,0,0.8)] flex items-center justify-between px-3.5 rotate-[2deg]">
-                            <div className="space-y-1">
-                              <div className="w-16 h-2 rounded-full bg-amber-400/80" />
-                              <div className="w-10 h-1 rounded-full bg-zinc-600" />
-                            </div>
-                            <div className="flex gap-1">
-                              <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
-                              <div className="w-2.5 h-2.5 rounded-full bg-blue-400" />
-                            </div>
-                          </div>
+                      {/* Executive Specimen Preview */}
+                      <div className="my-auto py-2 px-3 bg-[var(--bg-base)]/90 rounded-lg border border-white/[0.08] space-y-1.5 font-mono">
+                        <div className="flex items-center justify-between text-xs font-semibold text-slate-200">
+                          <span className="font-serif italic text-white text-[13px]">{flagshipProduct.title}</span>
+                          <span className="text-[11px] text-slate-400 font-mono">EXECUTION READY</span>
+                        </div>
+                        <div className="text-[11px] text-slate-400 leading-snug line-clamp-2">
+                          {flagshipProduct.subtitle}
+                        </div>
+                        <div className="pt-1 flex items-center justify-between text-[11px] text-slate-400 border-t border-white/[0.05]">
+                          <span className="text-slate-300 font-medium">Jurisdiction: Delaware / NY / UK</span>
+                          <span>Enforceable Master Pack</span>
                         </div>
                       </div>
 

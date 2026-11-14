@@ -43,7 +43,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
   formatPrice
 }) => {
   return (
-    <header className="sticky top-0 z-40 w-full max-w-full overflow-hidden nav-frosted-capsule px-3 sm:px-6 lg:px-8 py-2.5 transition-all bg-[#0e1014]/90 border-b border-white/[0.08]">
+    <header className="sticky top-0 z-40 w-full max-w-full overflow-hidden nav-frosted-capsule px-3 sm:px-6 lg:px-8 py-2.5 transition-all bg-[var(--bg-raised)]/95 backdrop-blur-md border-b border-white/[0.08]">
       <div className="flex items-center justify-between gap-2 sm:gap-3 max-w-[1920px] mx-auto w-full min-w-0">
         
         {/* Left: Mobile Toggle & Curatorial Brand Stamp */}
@@ -51,7 +51,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
           <button 
             type="button"
             onClick={onToggleSidebarMobile}
-            className="lg:hidden p-2 rounded-xl bg-[var(--bg-surface-elevated)] hover:bg-[#1a1d23] text-zinc-300 border border-white/10 transition-colors cursor-pointer"
+            className="lg:hidden p-2 rounded-xl bg-[var(--bg-surface-elevated)] hover:bg-[var(--bg-hover)] text-zinc-300 border border-white/10 transition-colors cursor-pointer"
             aria-label="Toggle navigation"
           >
             <Menu className="w-4 h-4" />
@@ -83,7 +83,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
                   cx="16" 
                   cy="16" 
                   r="3.5" 
-                  className="fill-amber-500" 
+                  className="fill-slate-300" 
                 />
               </svg>
             </div>
@@ -124,11 +124,11 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
               </button>
             ) : (
               <div className="hidden md:flex items-center gap-1 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none select-none">
-                <kbd className="px-1.5 py-0.5 text-[9px] font-mono text-zinc-400 bg-[var(--bg-surface-elevated)] border border-white/10 rounded">
+                <kbd className="px-1.5 py-0.5 text-[11px] font-mono text-zinc-400 bg-[var(--bg-surface-elevated)] border border-white/10 rounded">
                   ⌘K
                 </kbd>
-                <span className="text-zinc-600 text-[9px] font-mono">/</span>
-                <kbd className="px-1.5 py-0.5 text-[9px] font-mono text-zinc-400 bg-[var(--bg-surface-elevated)] border border-white/10 rounded">
+                <span className="text-zinc-600 text-[11px] font-mono">/</span>
+                <kbd className="px-1.5 py-0.5 text-[11px] font-mono text-zinc-400 bg-[var(--bg-surface-elevated)] border border-white/10 rounded">
                   /
                 </kbd>
               </div>
@@ -171,7 +171,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
           >
             <Heart className={`w-4 h-4 ${wishlistCount > 0 ? 'fill-rose-400 text-rose-400' : 'text-zinc-400'}`} />
             {wishlistCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 text-white font-mono font-bold text-[9px] flex items-center justify-center shadow-xs">
+              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 text-white font-mono font-bold text-[11px] flex items-center justify-center shadow-xs">
                 {wishlistCount}
               </span>
             )}
@@ -187,7 +187,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
           >
             <DownloadCloud className="w-4 h-4" />
             {purchasedCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 text-zinc-950 font-mono font-bold text-[9px] flex items-center justify-center shadow-xs">
+              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 text-zinc-950 font-mono font-bold text-[11px] flex items-center justify-center shadow-xs">
                 {purchasedCount}
               </span>
             )}
@@ -203,7 +203,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
             <ShoppingBag className="w-3.5 h-3.5 text-zinc-950" />
             <span className="hidden xs:inline">Bag</span>
             {cartCount > 0 && (
-              <span className="px-1.5 py-0.2 rounded-full bg-zinc-950 text-white font-extrabold text-[10px]">
+              <span className="px-1.5 py-0.2 rounded-full bg-zinc-950 text-white font-extrabold text-[11px]">
                 {cartCount}
               </span>
             )}

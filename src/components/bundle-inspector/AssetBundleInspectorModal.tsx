@@ -208,26 +208,26 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
     const e = (ext || '').toLowerCase();
     switch (e) {
       case 'fig':
-        return <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200/70 font-semibold uppercase">fig</span>;
+        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200/70 font-semibold uppercase">fig</span>;
       case 'json':
-        return <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200/70 font-semibold uppercase">json</span>;
+        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200/70 font-semibold uppercase">json</span>;
       case 'tsx':
       case 'ts':
       case 'js':
-        return <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-50 text-cyan-700 border border-cyan-200/70 font-semibold uppercase">{e}</span>;
+        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-cyan-50 text-cyan-700 border border-cyan-200/70 font-semibold uppercase">{e}</span>;
       case 'svg':
-        return <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200/70 font-semibold uppercase">svg</span>;
+        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200/70 font-semibold uppercase">svg</span>;
       case 'pdf':
-        return <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20 font-semibold uppercase">pdf</span>;
+        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20 font-semibold uppercase">pdf</span>;
       case 'blend':
-        return <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20 font-semibold uppercase">blend</span>;
+        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20 font-semibold uppercase">blend</span>;
       case 'wav':
-        return <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20 font-semibold uppercase">wav</span>;
+        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20 font-semibold uppercase">wav</span>;
       case 'otf':
       case 'woff2':
-        return <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-violet-500/10 text-violet-400 border border-violet-500/20 font-semibold uppercase">{e}</span>;
+        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-violet-500/10 text-violet-400 border border-violet-500/20 font-semibold uppercase">{e}</span>;
       default:
-        return <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/[0.05] text-zinc-400 border border-white/[0.08] uppercase">{e || 'raw'}</span>;
+        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-white/[0.05] text-zinc-400 border border-white/[0.08] uppercase">{e || 'raw'}</span>;
     }
   };
 
@@ -292,7 +292,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                   handleDownloadSample(item);
                 }}
                 disabled={sampleDownloadingName === item.name}
-                className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold cursor-pointer active:scale-95 transition-all"
+                className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 text-[11px] font-bold cursor-pointer active:scale-95 transition-all"
                 title="Download verified free sample specimen"
               >
                 {sampleDownloadingName === item.name ? (
@@ -348,7 +348,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
 
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-white/[0.06] text-zinc-300 border border-white/[0.08]">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-white/[0.06] text-zinc-300 border border-white/[0.08]">
                   Bundle Inspector
                 </span>
                 <span className="text-[11px] font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
@@ -378,7 +378,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
         </div>
 
         {/* 2. Apple-Grade Segmented Navigation Tabs */}
-        <div className="px-5 py-2.5 bg-[#0e1014] border-b border-white/[0.08] flex items-center justify-between gap-2 shrink-0 overflow-x-auto">
+        <div className="px-5 py-2.5 bg-[var(--bg-surface)] border-b border-white/[0.08] flex items-center justify-between gap-2 shrink-0 overflow-x-auto">
           <div className="flex items-center p-1 bg-[var(--bg-surface-elevated)] rounded-xl border border-white/[0.06] gap-1">
             <button
               type="button"
@@ -503,7 +503,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
               </div>
 
               {/* Interactive Tree Box */}
-              <div className="border border-white/[0.08] rounded-xl p-3 bg-[#0e1014] max-h-[380px] overflow-y-auto space-y-0.5">
+              <div className="border border-white/[0.08] rounded-xl p-3 bg-[var(--bg-surface)] max-h-[380px] overflow-y-auto space-y-0.5">
                 {visibleFileTree.length === 0 ? (
                   <div className="py-8 text-center text-xs text-zinc-500 font-mono">
                     No files found matching "{searchQuery}"
@@ -550,12 +550,12 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                       className={`relative rounded-xl p-4.5 border transition-all cursor-pointer flex flex-col justify-between ${
                         isSelected 
                           ? 'border-white bg-[var(--bg-surface-elevated)] shadow-lg -translate-y-0.5' 
-                          : 'border-white/[0.08] hover:border-white/[0.16] bg-[#0e1014]'
+                          : 'border-white/[0.08] hover:border-white/[0.16] bg-[var(--bg-surface)]'
                       }`}
                     >
                       {tier.badge && (
                         <div className="absolute -top-2.5 right-3.5">
-                          <span className={`text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-2xs border ${
+                          <span className={`text-[11px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-2xs border ${
                             isSelected 
                               ? 'bg-white text-[var(--bg-base)] border-white' 
                               : 'bg-white/[0.08] text-zinc-300 border-white/[0.12]'
@@ -590,7 +590,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
 
                         {/* Affirmative Do's Checklist */}
                         <div className="space-y-1.5 pt-2 border-t border-white/[0.06]">
-                          <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wide">
+                          <div className="text-[11px] font-bold text-emerald-400 uppercase tracking-wide">
                             Included & Allowed:
                           </div>
                           {tier.allowedUses.map((use, i) => (
@@ -603,7 +603,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
 
                         {/* Affirmative Don'ts Checklist */}
                         <div className="space-y-1.5 pt-2.5 mt-2.5 border-t border-white/[0.06]">
-                          <div className="text-[10px] font-bold text-rose-400 uppercase tracking-wide">
+                          <div className="text-[11px] font-bold text-rose-400 uppercase tracking-wide">
                             Prohibited:
                           </div>
                           {tier.prohibitedUses.map((dont, i) => (
@@ -658,7 +658,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                       CRYPTOGRAPHIC INTEGRITY VERIFICATION
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-zinc-400 bg-white/[0.05] border border-white/[0.08] px-2 py-0.5 rounded">
+                  <span className="text-[11px] font-mono text-zinc-400 bg-white/[0.05] border border-white/[0.08] px-2 py-0.5 rounded">
                     SHA-256 ARCHIVE HASH
                   </span>
                 </div>
@@ -667,7 +667,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                   Official package archive verified directly by the author and publisher.
                 </p>
 
-                <div className="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-[#0e1014] border border-white/[0.06]">
+                <div className="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-[var(--bg-surface)] border border-white/[0.06]">
                   <span className="text-xs font-mono text-zinc-300 break-all select-all">
                     {manifest.sha256}
                   </span>
@@ -718,7 +718,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                     <div key={entry.version} className="relative">
                       {/* Timeline Dot */}
                       <div className={`absolute -left-[25px] top-1 w-3 h-3 rounded-full border ${
-                        index === 0 ? 'border-emerald-400 bg-emerald-400 ring-4 ring-emerald-500/20' : 'border-zinc-600 bg-[#0e1014]'
+                        index === 0 ? 'border-emerald-400 bg-emerald-400 ring-4 ring-emerald-500/20' : 'border-zinc-600 bg-[var(--bg-surface)]'
                       }`} />
 
                       <div className="flex items-center gap-2">
@@ -729,12 +729,12 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                           {entry.releaseDate}
                         </span>
                         {entry.breaking && (
-                          <span className="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-bold">
+                          <span className="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[11px] font-bold">
                             Breaking Changes
                           </span>
                         )}
                         {index === 0 && (
-                          <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold">
+                          <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[11px] font-bold">
                             Latest Production
                           </span>
                         )}
@@ -763,7 +763,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
         </div>
 
         {/* 4. Creator Tip Module & Dynamic Pricing Footer */}
-        <div className="p-4 sm:p-5 bg-[#0e1014] border-t border-white/[0.08] shrink-0 space-y-3">
+        <div className="p-4 sm:p-5 bg-[var(--bg-surface)] border-t border-white/[0.08] shrink-0 space-y-3">
           
           {/* Creator Tip Quick Chips */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3 bg-[var(--bg-surface-elevated)] rounded-xl border border-white/[0.06]">
@@ -795,7 +795,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                   className={`px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
                     selectedTip === amount
                       ? 'bg-white text-[var(--bg-base)] shadow-sm'
-                      : 'bg-[#0e1014] hover:bg-white/[0.06] text-zinc-300 border border-white/[0.06]'
+                      : 'bg-[var(--bg-surface)] hover:bg-white/[0.06] text-zinc-300 border border-white/[0.06]'
                   }`}
                 >
                   {amount === 0 ? '+$0' : `+$${amount}`}
@@ -816,7 +816,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                   {selectedTip > 0 && <span className="text-amber-400 font-mono font-bold"> (+${selectedTip} tip)</span>}
                 </span>
               </div>
-              <p className="text-[10px] text-zinc-500">
+              <p className="text-[11px] text-zinc-500">
                 Immediate digital download + included version updates
               </p>
             </div>
