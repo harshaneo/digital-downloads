@@ -426,10 +426,10 @@ export function App() {
           {/* Asymmetric 60/40 Editorial Exhibition Plinth */}
           <section 
             aria-labelledby="banner-heading" 
-            className="relative rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-10 bg-[var(--bg-surface)] border border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.6)] overflow-hidden border-t border-t-white/[0.14] max-w-full"
+            className="relative rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-10 bg-[var(--bg-surface)] border border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.7)] overflow-hidden border-t border-t-slate-200/[0.18] max-w-full"
           >
-            {/* Ambient Dark Light Pools */}
-            <div className="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-amber-500/5 to-transparent blur-3xl pointer-events-none" />
+            {/* Ambient Dark Platinum Light Pools */}
+            <div className="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-slate-200/5 via-white/[0.01] to-transparent blur-3xl pointer-events-none" />
 
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
@@ -437,11 +437,11 @@ export function App() {
               <div className="lg:col-span-7 space-y-4">
                 {/* Refined Category / Status Indicator */}
                 <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-                  <span className="px-2.5 py-1 rounded-md bg-[var(--bg-surface-elevated)] border border-white/10 text-xs font-semibold text-zinc-300">
+                  <span className="px-2.5 py-1 rounded-md bg-[var(--bg-surface-elevated)] border border-slate-300/15 text-xs font-semibold text-slate-200">
                     2026 ARCHIVE
                   </span>
                   <span className="text-zinc-600">•</span>
-                  <span className="text-xs font-medium text-zinc-400">
+                  <span className="text-xs font-medium text-slate-400">
                     VERIFIED LEGAL & CODE ASSETS
                   </span>
                 </div>
@@ -449,22 +449,22 @@ export function App() {
                 {/* Editorial Headline */}
                 <h1 id="banner-heading" className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-white tracking-tight leading-[1.15] font-serif [text-wrap:balance]">
                   {filterState.category === 'all' && (
-                    <>Executive <span className="gold-sheen-text">Contracts & System Kits</span></>
+                    <>Executive <span className="silver-sheen-text">Contracts & System Kits</span></>
                   )}
                   {filterState.category === 'legal-contracts' && (
-                    <>Master Services Agreements, <span className="gold-sheen-text">SOWs & Agreements</span></>
+                    <>Master Services Agreements, <span className="silver-sheen-text">SOWs & Agreements</span></>
                   )}
                   {filterState.category === 'sales-proposals' && (
-                    <>Enterprise RFP Responses, <span className="gold-sheen-text">Pitch Kits & Decks</span></>
+                    <>Enterprise RFP Responses, <span className="silver-sheen-text">Pitch Kits & Decks</span></>
                   )}
                   {filterState.category === 'ops-sops' && (
-                    <>Agency Operations, <span className="gold-sheen-text">Runbooks & Handbooks</span></>
+                    <>Agency Operations, <span className="silver-sheen-text">Runbooks & Handbooks</span></>
                   )}
                   {filterState.category === 'financial-models' && (
-                    <>SaaS Unit Economics, <span className="gold-sheen-text">Cap Tables & Pro-Formas</span></>
+                    <>SaaS Unit Economics, <span className="silver-sheen-text">Cap Tables & Pro-Formas</span></>
                   )}
                   {filterState.category === 'compliance-security' && (
-                    <>SOC 2 Type II, <span className="gold-sheen-text">ISO 27001 & Compliance</span></>
+                    <>SOC 2 Type II, <span className="silver-sheen-text">ISO 27001 & Compliance</span></>
                   )}
                   {filterState.category === 'websites-ui' && 'Websites, UI Kits & Production Frontends'}
                   {filterState.category === 'backends' && 'Serverless Edge Workers, Scrapers & Microservice APIs'}

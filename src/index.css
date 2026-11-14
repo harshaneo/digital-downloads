@@ -6,34 +6,40 @@
   --font-serif: 'Newsreader', Georgia, Cambria, serif;
   --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
   
-  /* Surface Hierarchy — 5-step neutral obsidian ramp */
-  --bg-base: #08090b;
-  --bg-raised: #0e1014;
-  --bg-surface: #111317;
-  --bg-surface-elevated: #16181d;
-  --bg-surface-overlay: #1a1d23;
-  --bg-hover: #1e2028;
-  --bg-active: #22242c;
+  /* Deep Luxury Jet Obsidian Ramp (More black with slight silver-platinum luster) */
+  --bg-base: #030405;
+  --bg-raised: #07080a;
+  --bg-surface: #0b0d10;
+  --bg-surface-elevated: #101217;
+  --bg-surface-overlay: #15181f;
+  --bg-hover: #171b23;
+  --bg-active: #1c202a;
 
-  /* Accent ramp */
+  /* Luxury Silver & Platinum Ramp */
+  --accent-silver: #e2e8f0;
+  --accent-silver-muted: rgba(226, 232, 240, 0.12);
+  --accent-silver-border: rgba(226, 232, 240, 0.18);
+  --accent-silver-glow: rgba(226, 232, 240, 0.05);
+
+  /* Warm Champagne Accent */
   --accent-gold: #d4af37;
-  --accent-gold-muted: rgba(212, 175, 55, 0.12);
+  --accent-gold-muted: rgba(212, 175, 55, 0.10);
 
-  /* Border hierarchy */
-  --border-hairline: rgba(255, 255, 255, 0.04);
-  --border-subtle: rgba(255, 255, 255, 0.07);
-  --border-default: rgba(255, 255, 255, 0.10);
-  --border-strong: rgba(255, 255, 255, 0.16);
+  /* Border hierarchy with silver-white specular precision */
+  --border-hairline: rgba(226, 232, 240, 0.04);
+  --border-subtle: rgba(226, 232, 240, 0.07);
+  --border-default: rgba(226, 232, 240, 0.11);
+  --border-strong: rgba(226, 232, 240, 0.18);
 
-  /* Text hierarchy */
-  --text-primary: #f4f5f6;
-  --text-secondary: #a1a1aa;
-  --text-tertiary: #71717a;
-  --text-muted: #52525b;
+  /* Text hierarchy (Crisp silver-white primary, cool platinum secondary) */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+  --text-muted: #475569;
 
-  /* Specular Top Rim Lights */
-  --specular-rim: inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
-  --specular-rim-strong: inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
+  /* Specular Top Rim Lights with Silver Shimmer */
+  --specular-rim: inset 0 1px 0 0 rgba(226, 232, 240, 0.14);
+  --specular-rim-strong: inset 0 1px 0 0 rgba(226, 232, 240, 0.24);
 
   /* Spring Physics */
   --spring-snappy: cubic-bezier(0.23, 1, 0.32, 1);
@@ -265,17 +271,17 @@
 /*  Luxury Obsidian Folder & Tucked Pocket FX   */
 /* ============================================ */
 
-/* Pocket Envelope Container with Deep Layered Shadows */
+/* Pocket Envelope Container with Deep Layered Shadows & Silver Specular Rim */
 .luxury-folder-envelope {
   position: relative;
-  background: linear-gradient(180deg, #12141a 0%, #0a0b0e 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, #0e1014 0%, #050608 100%);
+  border: 1px solid rgba(226, 232, 240, 0.08);
+  border-top: 1px solid rgba(226, 232, 240, 0.22);
   border-radius: 20px;
   box-shadow: 
-    0 16px 36px -8px rgba(0, 0, 0, 0.85),
-    0 2px 6px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    0 16px 36px -8px rgba(0, 0, 0, 0.92),
+    0 2px 6px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(226, 232, 240, 0.16);
   transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
               box-shadow 0.35s cubic-bezier(0.23, 1, 0.32, 1),
               border-color 0.25s ease;
@@ -283,36 +289,42 @@
 
 .luxury-folder-envelope:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.22);
-  border-top-color: rgba(212, 175, 55, 0.25);
+  border-color: rgba(226, 232, 240, 0.25);
+  border-top-color: rgba(226, 232, 240, 0.45);
   box-shadow: 
-    0 24px 48px -10px rgba(0, 0, 0, 0.95),
-    0 0 25px rgba(212, 175, 55, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    0 24px 48px -10px rgba(0, 0, 0, 0.98),
+    0 0 25px rgba(226, 232, 240, 0.05),
+    inset 0 1px 0 rgba(226, 232, 240, 0.3);
 }
 
-/* Gold/Champagne Micro-Accents for Luxury Polish */
+/* Silver-Platinum & Champagne Text Sheen */
+.silver-sheen-text {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .gold-sheen-text {
-  background: linear-gradient(135deg, #fff2db 0%, #d4af37 55%, #aa820a 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 45%, #d4af37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gold-rim-badge {
-  background: rgba(212, 175, 55, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.28);
-  color: #f6d878;
+  background: rgba(226, 232, 240, 0.06);
+  border: 1px solid rgba(226, 232, 240, 0.25);
+  color: #f1f5f9;
 }
 
-/* Tucked Pocket Sleeve Lip (Clipped angled geometric pocket) */
+/* Tucked Pocket Sleeve Lip (Clipped angled geometric pocket with silver top specular highlight) */
 .tucked-pocket-sleeve {
-  background: linear-gradient(180deg, rgba(20, 23, 29, 0.96) 0%, rgba(10, 11, 14, 0.99) 100%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(180deg, rgba(14, 17, 22, 0.97) 0%, rgba(6, 8, 10, 0.99) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(226, 232, 240, 0.18);
   box-shadow: 
-    0 -10px 24px -4px rgba(0, 0, 0, 0.75),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 -10px 24px -4px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 rgba(226, 232, 240, 0.22);
 }
 
 /* Specimen Document inside Pocket */

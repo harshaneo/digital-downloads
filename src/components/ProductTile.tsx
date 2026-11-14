@@ -425,27 +425,27 @@ export const ProductTile: React.FC<ProductTileProps> = ({
       </div>
 
       {/* Tucked Pocket Container with Slide-Out File Thumbnail Sheet */}
-      <div className="relative w-full aspect-16/10 rounded-[14px] overflow-hidden group/preview bg-[#060709] border border-white/[0.08] shadow-inner">
+      <div className="relative w-full aspect-16/10 rounded-[14px] overflow-hidden group/preview bg-[#020304] border border-white/[0.07] shadow-inner">
         
         {/* Back Chamber of the Folder (Interior lining pattern) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0d10] to-[#050607] opacity-95" />
-        <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:12px_12px] opacity-60 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#08090c] to-[#020203] opacity-98" />
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:12px_12px] opacity-50 pointer-events-none" />
 
         {/* 1. Tucked Document/Asset Sheet (Peeks out from the pocket, slides up on hover) */}
-        <div className="absolute inset-x-2.5 top-2 bottom-4 tucked-specimen-sheet z-10 rounded-xl overflow-hidden border border-white/[0.14] shadow-[0_8px_20px_rgba(0,0,0,0.8)]">
+        <div className="absolute inset-x-2.5 top-2 bottom-4 tucked-specimen-sheet z-10 rounded-xl overflow-hidden border border-white/[0.12] shadow-[0_8px_20px_rgba(0,0,0,0.9)]">
           {renderCategoryPreview()}
         </div>
 
         {/* 2. Physical Front Pocket Overlay Sleeve (Tucked Pocket with Angled Lip) */}
         <div className="absolute inset-x-0 bottom-0 h-16 tucked-pocket-sleeve z-20 flex items-center justify-between px-3 pointer-events-none">
-          {/* Subtle gold stitch line along the top of the pocket */}
-          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-400/20 to-transparent" />
+          {/* Subtle silver-white stitch line along the top of the pocket */}
+          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-300/25 to-transparent" />
           
           <div className="flex items-center gap-1.5 pointer-events-auto">
-            <span className="text-[11px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-black/75 border border-white/10 text-zinc-300 font-bold">
+            <span className="text-[11px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-black/85 border border-white/10 text-slate-200 font-bold shadow-xs">
               {product.fileFormat}
             </span>
-            <span className="text-[11px] font-mono text-zinc-400">
+            <span className="text-[11px] font-mono text-slate-400">
               {product.fileSize}
             </span>
           </div>
