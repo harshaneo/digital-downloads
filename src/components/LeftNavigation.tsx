@@ -131,7 +131,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                     onClick={() => onFilterChange({ format: fmt === 'All' ? '' : fmt })}
                     className={`px-2.5 py-1 rounded-lg text-xs font-mono font-medium transition-all cursor-pointer ${
                       isSelected
-                        ? 'btn-tactile-white font-bold'
+                        ? 'btn-primary font-bold shadow-sm'
                         : 'btn-tactile-dark text-slate-300 hover:text-white'
                     }`}
                   >

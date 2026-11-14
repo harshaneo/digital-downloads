@@ -171,9 +171,9 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
                       onClose();
                       onOpenLegalDocument(product);
                     }}
-                    className="btn-tactile-amber flex items-center gap-1.5 text-[11px] font-mono font-bold px-3 py-1 rounded-lg cursor-pointer active:scale-95 transition-all"
+                    className="btn-tactile-dark flex items-center gap-1.5 text-[11px] font-mono font-semibold px-3 py-1 rounded-lg cursor-pointer active:scale-95 transition-all text-zinc-200"
                   >
-                    <FileCheck className="w-3 h-3 text-amber-400" />
+                    <FileCheck className="w-3 h-3 text-slate-300" />
                     <span>Read Full Agreement Clauses</span>
                   </button>
                 )}
@@ -181,11 +181,11 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
                   <button
                     type="button"
                     onClick={() => onInspectBundle(product)}
-                    className="btn-tactile-dark flex items-center gap-1.5 text-[11px] font-mono font-bold text-amber-300 px-3 py-1 rounded-lg cursor-pointer active:scale-95 transition-all"
+                    className="btn-tactile-dark flex items-center gap-1.5 text-[11px] font-mono font-semibold text-zinc-200 px-3 py-1 rounded-lg cursor-pointer active:scale-95 transition-all"
                   >
-                    <FileArchive className="w-3 h-3 text-amber-400" />
+                    <FileArchive className="w-3 h-3 text-slate-300" />
                     <span>Look Inside (.ZIP)</span>
-                    <ExternalLink className="w-2.5 h-2.5 ml-0.5 text-amber-400" />
+                    <ExternalLink className="w-2.5 h-2.5 ml-0.5 text-slate-300" />
                   </button>
                 ) : (
                   <span className="text-[11px] font-mono text-zinc-400 font-normal">{product.includedFiles.length} files included</span>
@@ -301,9 +301,9 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
                   onInstantDownload(product);
                   onClose();
                 }}
-                className="btn-plinth-emerald flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs cursor-pointer"
+                className="btn-primary flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs cursor-pointer shadow-sm text-zinc-950 font-bold"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-4 h-4 text-zinc-950" />
                 <span>Download Bundle</span>
               </button>
             ) : isFree ? (
@@ -313,9 +313,9 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
                   onInstantDownload(product);
                   onClose();
                 }}
-                className="btn-plinth-emerald flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs cursor-pointer"
+                className="btn-primary flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs cursor-pointer shadow-sm text-zinc-950 font-bold"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-4 h-4 text-zinc-950" />
                 <span>Download Free</span>
               </button>
             ) : isInCart ? (

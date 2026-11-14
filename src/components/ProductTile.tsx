@@ -458,10 +458,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                   e.stopPropagation();
                   onOpenLegalDocument(product);
                 }}
-                className="btn-tactile-amber flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-bold cursor-pointer shadow-sm active:scale-95 transition-all"
+                className="btn-tactile-dark flex items-center gap-1.5 px-3 py-1 rounded-lg text-zinc-200 text-xs font-mono font-semibold cursor-pointer shadow-sm active:scale-95 transition-all"
                 title="Read full complete legal agreement with clauses"
               >
-                <FileText className="w-3.5 h-3.5 text-amber-200" />
+                <FileText className="w-3.5 h-3.5 text-slate-300" />
                 <span>Clauses</span>
               </button>
             ) : (
@@ -475,10 +475,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                     onQuickLook(product);
                   }
                 }}
-                className="btn-tactile-dark flex items-center gap-1.5 px-3 py-1 rounded-lg text-amber-300 text-xs font-mono font-bold cursor-pointer active:scale-95 transition-all"
+                className="btn-tactile-dark flex items-center gap-1.5 px-3 py-1 rounded-lg text-zinc-200 text-xs font-mono font-semibold cursor-pointer active:scale-95 transition-all"
                 title="Inspect package contents & file tree"
               >
-                <FileText className="w-3.5 h-3.5 text-amber-400" />
+                <FileText className="w-3.5 h-3.5 text-slate-300" />
                 <span>Files</span>
               </button>
             )}
@@ -488,10 +488,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 e.stopPropagation();
                 onQuickLook(product);
               }}
-              className="btn-tactile-white flex items-center gap-1.5 px-3 py-1 rounded-lg text-zinc-950 text-xs font-semibold cursor-pointer shadow-sm active:scale-95 transition-all"
+              className="btn-tactile-dark flex items-center gap-1.5 px-3 py-1 rounded-lg text-zinc-200 text-xs font-semibold cursor-pointer shadow-sm active:scale-95 transition-all"
               title="Quick preview spec"
             >
-              <Eye className="w-3.5 h-3.5 text-zinc-950" />
+              <Eye className="w-3.5 h-3.5 text-slate-300" />
               <span>Spec</span>
             </button>
           </div>
@@ -553,18 +553,18 @@ export const ProductTile: React.FC<ProductTileProps> = ({
             <button
               type="button"
               onClick={() => onInstantDownload(product)}
-              className="btn-plinth-emerald flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold cursor-pointer"
+              className="btn-primary flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-zinc-950 cursor-pointer shadow-sm"
             >
-              <Download className="w-3.5 h-3.5" />
+              <Download className="w-3.5 h-3.5 text-zinc-950" />
               <span>Download</span>
             </button>
           ) : isFree ? (
             <button
               type="button"
               onClick={() => onInstantDownload(product)}
-              className="btn-plinth-emerald flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold cursor-pointer"
+              className="btn-primary flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-zinc-950 cursor-pointer shadow-sm"
             >
-              <Download className="w-3.5 h-3.5" />
+              <Download className="w-3.5 h-3.5 text-zinc-950" />
               <span>Free Download</span>
             </button>
           ) : isInCart ? (

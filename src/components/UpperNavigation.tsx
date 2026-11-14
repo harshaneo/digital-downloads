@@ -91,7 +91,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
             <div>
               <div className="flex items-center gap-2 leading-none">
                 <span className="font-extrabold text-[15px] tracking-tight text-white font-sans">
-                  Nexus<span className="text-amber-400">.</span>Vault
+                  Nexus<span className="text-slate-400">.</span>Vault
                 </span>
               </div>
               <p className="text-[11px] text-zinc-400 hidden sm:block mt-0.5 font-medium tracking-tight">

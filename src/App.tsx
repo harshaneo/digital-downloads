@@ -601,20 +601,20 @@ export function App() {
                           <button
                             type="button"
                             onClick={() => handleOpenLegalDocument(flagshipProduct)}
-                            className="btn-tactile-amber flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-xs font-bold cursor-pointer active:scale-95 transition-all shadow-sm"
+                            className="btn-tactile-dark flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-xs font-semibold cursor-pointer active:scale-95 transition-all shadow-sm"
                             title="Read agreement clauses"
                           >
-                            <FileText className="w-3.5 h-3.5 text-amber-200" />
+                            <FileText className="w-3.5 h-3.5 text-slate-300" />
                             <span>Clauses</span>
                           </button>
                         ) : (
                           <button
                             type="button"
                             onClick={() => setInspectingBundleProduct(flagshipProduct)}
-                            className="btn-tactile-dark flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-amber-300 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
+                            className="btn-tactile-dark flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-zinc-200 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
                             title="Inspect package files"
                           >
-                            <FileText className="w-3.5 h-3.5 text-amber-400" />
+                            <FileText className="w-3.5 h-3.5 text-slate-300" />
                             <span>Files</span>
                           </button>
                         )}
@@ -635,9 +635,9 @@ export function App() {
                         <button
                           type="button"
                           onClick={() => handleInstantDownload(flagshipProduct)}
-                          className="btn-plinth-emerald flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl text-xs font-semibold cursor-pointer"
+                          className="btn-primary flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl text-xs font-bold text-zinc-950 cursor-pointer shadow-sm"
                         >
-                          <Download className="w-3.5 h-3.5" />
+                          <Download className="w-3.5 h-3.5 text-zinc-950" />
                           <span>Download</span>
                         </button>
                       ) : isFlagshipInCart ? (
