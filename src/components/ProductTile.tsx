@@ -414,7 +414,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
               isWishlisted 
                 ? 'badge-3d badge-3d-rose text-rose-300 scale-105' 
                 : 'btn-tactile-dark text-zinc-400 hover:text-white'
-            } active:scale-75 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]`}
+            } active:scale-75 transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]`}
             aria-label="Save to Wishlist"
             title={isWishlisted ? 'Remove from Wishlist' : 'Save to Wishlist'}
           >

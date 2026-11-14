@@ -140,7 +140,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           
           {/* Subtle Currency Selector Pill */}
-          <div className="hidden md:flex items-center bg-[var(--bg-surface)] border border-white/10 rounded-full p-0.5 text-[11px] font-medium text-zinc-300">
+          <div className="hidden md:flex items-center bg-[#0e1015] border border-white/10 rounded-lg p-0.5 text-[11px] font-medium text-zinc-300">
             {(['USD', 'EUR', 'GBP'] as Currency[]).map((c) => (
               <button
                 key={c}
@@ -148,7 +148,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
                 onClick={() => onCurrencyChange(c)}
                 className={`px-2.5 py-1 rounded-md transition-all cursor-pointer ${
                   currency === c 
-                    ? 'btn-tactile-white text-zinc-950 font-bold' 
+                    ? 'btn-primary text-zinc-950 font-bold shadow-sm' 
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >

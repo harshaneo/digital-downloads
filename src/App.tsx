@@ -448,24 +448,12 @@ export function App() {
 
                 {/* Editorial Headline */}
                 <h1 id="banner-heading" className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-white tracking-tight leading-[1.15] font-serif [text-wrap:balance]">
-                  {filterState.category === 'all' && (
-                    <>Executive <span className="silver-sheen-text">Contracts & System Kits</span></>
-                  )}
-                  {filterState.category === 'legal-contracts' && (
-                    <>Master Services Agreements, <span className="silver-sheen-text">SOWs & Agreements</span></>
-                  )}
-                  {filterState.category === 'sales-proposals' && (
-                    <>Enterprise RFP Responses, <span className="silver-sheen-text">Pitch Kits & Decks</span></>
-                  )}
-                  {filterState.category === 'ops-sops' && (
-                    <>Agency Operations, <span className="silver-sheen-text">Runbooks & Handbooks</span></>
-                  )}
-                  {filterState.category === 'financial-models' && (
-                    <>SaaS Unit Economics, <span className="silver-sheen-text">Cap Tables & Pro-Formas</span></>
-                  )}
-                  {filterState.category === 'compliance-security' && (
-                    <>SOC 2 Type II, <span className="silver-sheen-text">ISO 27001 & Compliance</span></>
-                  )}
+                  {filterState.category === 'all' && 'Executive Contracts & System Kits'}
+                  {filterState.category === 'legal-contracts' && 'Master Services Agreements, SOWs & Legal Kits'}
+                  {filterState.category === 'sales-proposals' && 'Enterprise RFP Responses, Pitch Kits & Decks'}
+                  {filterState.category === 'ops-sops' && 'Agency Operations, Runbooks & Operating Handbooks'}
+                  {filterState.category === 'financial-models' && 'SaaS Unit Economics, Cap Tables & Pro-Formas'}
+                  {filterState.category === 'compliance-security' && 'SOC 2 Type II, ISO 27001 & Compliance Kits'}
                   {filterState.category === 'websites-ui' && 'Websites, UI Kits & Production Frontends'}
                   {filterState.category === 'backends' && 'Serverless Edge Workers, Scrapers & Microservice APIs'}
                   {filterState.category === 'react-apps' && 'Production React Web Apps & Real-time Terminals'}
@@ -727,7 +715,7 @@ export function App() {
                   type="button"
                   onClick={() => setViewMode('grid')}
                   className={`p-1.5 rounded-md transition-all cursor-pointer ${
-                    viewMode === 'grid' ? 'btn-metal-platinum text-zinc-950 font-bold shadow-sm' : 'text-zinc-400 hover:text-white'
+                    viewMode === 'grid' ? 'btn-primary text-zinc-950 font-bold shadow-sm' : 'text-zinc-400 hover:text-white'
                   }`}
                   aria-label="Grid View"
                   title="Grid View"
@@ -738,7 +726,7 @@ export function App() {
                   type="button"
                   onClick={() => setViewMode('compact')}
                   className={`p-1.5 rounded-md transition-all cursor-pointer ${
-                    viewMode === 'compact' ? 'btn-metal-platinum text-zinc-950 font-bold shadow-sm' : 'text-zinc-400 hover:text-white'
+                    viewMode === 'compact' ? 'btn-primary text-zinc-950 font-bold shadow-sm' : 'text-zinc-400 hover:text-white'
                   }`}
                   aria-label="Compact View"
                   title="Compact View"

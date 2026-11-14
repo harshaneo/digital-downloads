@@ -83,7 +83,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                   onClick={() => onFilterChange({ category: cat.id })}
                   className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-xs font-medium transition-all group cursor-pointer border ${
                     isActive 
-                      ? 'bg-gradient-to-b from-[#262b38] to-[#141721] text-white font-bold border border-white/20 border-t-white/35 shadow-[0_3px_10px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.22)]' 
+                      ? 'bg-gradient-to-b from-[#1c202a] to-[#0e1015] text-white font-bold border-white/15 border-t-white/35 shadow-[0_4px_12px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.18)]' 
                       : 'bg-transparent text-zinc-400 hover:text-white hover:bg-white/[0.05] border-transparent'
                   }`}
                   title={cat.label}

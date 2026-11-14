@@ -41,9 +41,9 @@
   --specular-rim: inset 0 1px 0 0 rgba(226, 232, 240, 0.14);
   --specular-rim-strong: inset 0 1px 0 0 rgba(226, 232, 240, 0.24);
 
-  /* Spring Physics */
-  --spring-snappy: cubic-bezier(0.23, 1, 0.32, 1);
-  --spring-tactile: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Spring Physics - Natural Exponential Deceleration */
+  --spring-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+  --spring-tactile: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
@@ -167,162 +167,161 @@
 }
 
 /* ======================================================== */
-/*  Luxury Machined Metal Ecosystem                         */
-/*  (Matching the Cards' Stunning Silver Specular Borders)   */
+/*  Tactile Obsidian & Silver Specular Design System         */
+/*  (100% Coherent with the Cards' Stunning Silver Borders) */
 /* ======================================================== */
 
-/* 1. Milled Platinum Ingot Button (Primary Actions) */
+/* 1. Luminous Pure White Plinth (Primary Flagship Actions) */
 .btn-primary, .btn-plinth-primary, .btn-metal-platinum {
-  background: linear-gradient(180deg, #ffffff 0%, #edf2f7 30%, #cbd5e1 65%, #94a3b8 100%);
-  color: #050608;
+  background: #ffffff;
+  color: #08090c;
   font-weight: 700;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
   border-top: 1px solid #ffffff;
-  border-bottom: 1px solid rgba(100, 116, 139, 0.8);
   box-shadow: 
-    0 4px 12px -2px rgba(0, 0, 0, 0.75),
-    0 1px 2px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 0 #ffffff,
-    inset 0 -1px 0 0 rgba(148, 163, 184, 0.5);
+    0 4px 14px rgba(0, 0, 0, 0.75),
+    0 0 20px rgba(255, 255, 255, 0.15),
+    inset 0 1px 0 #ffffff;
   letter-spacing: -0.01em;
-  transition: transform 0.12s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.12s ease, filter 0.12s ease;
+  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.15s ease;
 }
 
 .btn-primary:hover, .btn-plinth-primary:hover, .btn-metal-platinum:hover {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 35%, #e2e8f0 70%, #cbd5e1 100%);
-  box-shadow: 
-    0 6px 16px -2px rgba(255, 255, 255, 0.25),
-    0 2px 4px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 0 #ffffff;
+  background: #f8fafc;
   transform: translateY(-1px);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.85),
+    0 0 28px rgba(255, 255, 255, 0.28),
+    inset 0 1px 0 #ffffff;
 }
 
 .btn-primary:active, .btn-plinth-primary:active, .btn-metal-platinum:active {
-  transform: translateY(1px) scale(0.98);
+  transform: translateY(1px);
   box-shadow: 
-    0 1px 2px rgba(0, 0, 0, 0.9),
-    inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    0 1px 4px rgba(0, 0, 0, 0.9),
+    inset 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* 2. Bead-Blasted Gunmetal Titanium Button (Secondary / Dark Actions) */
+/* 2. Tactical Obsidian Plinth (Secondary Actions, Filters & Controls) */
 .btn-secondary, .btn-tactile-dark, .btn-metal-gunmetal {
-  background: linear-gradient(180deg, #222631 0%, #151820 40%, #0d0f14 75%, #181b24 100%);
+  background: linear-gradient(180deg, #181b22 0%, #0d0f14 100%);
   color: #e2e8f0;
   font-weight: 600;
-  border-radius: 8px;
-  border: 1px solid rgba(226, 232, 240, 0.14);
-  border-top: 1px solid rgba(226, 232, 240, 0.32);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.95);
+  border-radius: 10px;
+  border: 1px solid rgba(226, 232, 240, 0.10);
+  border-top: 1px solid rgba(226, 232, 240, 0.28);
   box-shadow: 
-    0 3px 8px rgba(0, 0, 0, 0.8),
-    0 1px 2px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 0 rgba(226, 232, 240, 0.20),
-    inset 0 -1px 0 0 rgba(0, 0, 0, 0.85);
-  transition: transform 0.12s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.12s ease, border-color 0.12s ease;
+    0 4px 12px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(226, 232, 240, 0.14);
+  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 .btn-secondary:hover, .btn-tactile-dark:hover, .btn-metal-gunmetal:hover {
-  background: linear-gradient(180deg, #2a2f3d 0%, #1c202a 40%, #12141a 75%, #202430 100%);
-  border-color: rgba(226, 232, 240, 0.28);
+  background: linear-gradient(180deg, #202430 0%, #12141a 100%);
+  border-color: rgba(226, 232, 240, 0.22);
   border-top-color: rgba(226, 232, 240, 0.45);
   color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.9), inset 0 1px 0 0 rgba(226, 232, 240, 0.3);
+  box-shadow: 
+    0 6px 16px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(226, 232, 240, 0.25);
 }
 
 .btn-secondary:active, .btn-tactile-dark:active, .btn-metal-gunmetal:active {
-  transform: translateY(1px) scale(0.98);
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.95);
+  transform: translateY(1px);
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.9),
+    inset 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* 3. Milled Champagne Bronze Button (Warm / Legal Action) */
+/* 3. Bronze-Gold Obsidian Plinth (Legal Clauses & Contract Actions) */
 .btn-tactile-amber, .btn-metal-bronze {
-  background: linear-gradient(180deg, #2b2518 0%, #1c180e 45%, #100e07 80%, #201b10 100%);
+  background: linear-gradient(180deg, #201a10 0%, #100d08 100%);
   color: #fef08a;
   font-weight: 700;
   border-radius: 8px;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(212, 175, 55, 0.20);
   border-top: 1px solid rgba(254, 240, 138, 0.40);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.95);
   box-shadow: 
-    0 3px 8px rgba(0, 0, 0, 0.8),
-    inset 0 1px 0 0 rgba(254, 240, 138, 0.22),
-    inset 0 -1px 0 0 rgba(0, 0, 0, 0.85);
-  transition: transform 0.12s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.12s ease;
+    0 3px 8px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(254, 240, 138, 0.20);
+  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.15s ease;
 }
 
 .btn-tactile-amber:hover, .btn-metal-bronze:hover {
-  background: linear-gradient(180deg, #383020 0%, #241e12 45%, #161208 80%, #2a2315 100%);
-  border-color: rgba(212, 175, 55, 0.40);
+  background: linear-gradient(180deg, #2a2215 0%, #15110a 100%);
+  border-color: rgba(212, 175, 55, 0.35);
+  border-top-color: rgba(254, 240, 138, 0.55);
   color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.9), inset 0 1px 0 0 rgba(254, 240, 138, 0.4);
+  box-shadow: 
+    0 5px 12px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 rgba(254, 240, 138, 0.30);
 }
 
 .btn-tactile-amber:active, .btn-metal-bronze:active {
-  transform: translateY(1px) scale(0.98);
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.95);
+  transform: translateY(1px);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* 4. Milled Dark Emerald Steel Button (Download / Completed Action) */
+/* 4. Emerald Obsidian Plinth (Download & Free Product Actions) */
 .btn-plinth-emerald, .btn-tactile-emerald, .btn-metal-emerald {
-  background: linear-gradient(180deg, #132a20 0%, #0a1c15 45%, #05100c 80%, #0f241b 100%);
-  color: #a7f3d0;
+  background: linear-gradient(180deg, #10281e 0%, #081610 100%);
+  color: #6ee7b7;
   font-weight: 700;
-  border-radius: 8px;
-  border: 1px solid rgba(52, 211, 153, 0.25);
-  border-top: 1px solid rgba(167, 243, 208, 0.40);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.95);
+  border-radius: 10px;
+  border: 1px solid rgba(52, 211, 153, 0.24);
+  border-top: 1px solid rgba(167, 243, 208, 0.42);
   box-shadow: 
-    0 3px 8px rgba(0, 0, 0, 0.8),
-    inset 0 1px 0 0 rgba(167, 243, 208, 0.25),
-    inset 0 -1px 0 0 rgba(0, 0, 0, 0.85);
-  transition: transform 0.12s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.12s ease;
+    0 4px 12px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(167, 243, 208, 0.22);
+  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.15s ease;
 }
 
 .btn-plinth-emerald:hover, .btn-tactile-emerald:hover, .btn-metal-emerald:hover {
-  background: linear-gradient(180deg, #1b3a2d 0%, #0f271e 45%, #081711 80%, #153226 100%);
-  border-color: rgba(52, 211, 153, 0.42);
+  background: linear-gradient(180deg, #163628 0%, #0c1e16 100%);
+  border-color: rgba(52, 211, 153, 0.38);
+  border-top-color: rgba(167, 243, 208, 0.60);
   color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.9), inset 0 1px 0 0 rgba(167, 243, 208, 0.4);
+  box-shadow: 
+    0 6px 16px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(167, 243, 208, 0.35);
 }
 
 .btn-plinth-emerald:active, .btn-tactile-emerald:active, .btn-metal-emerald:active {
-  transform: translateY(1px) scale(0.98);
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.95);
+  transform: translateY(1px);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
-/* 5. Brushed Silver Light Button */
+/* 5. Refined Silver Spec Button */
 .btn-tactile-white {
-  background: linear-gradient(180deg, #ffffff 0%, #edf2f7 35%, #cbd5e1 75%, #e2e8f0 100%);
+  background: rgba(255, 255, 255, 0.94);
   color: #07090d;
   font-weight: 700;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  border-top: 1px solid #ffffff;
+  border: 1px solid #ffffff;
   box-shadow: 
-    0 3px 8px rgba(0, 0, 0, 0.75),
-    inset 0 1px 0 0 #ffffff,
-    inset 0 -1px 0 0 #94a3b8;
-  transition: transform 0.12s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.12s ease;
+    0 3px 8px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 #ffffff;
+  transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.15s ease;
 }
 
 .btn-tactile-white:hover {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 40%, #e2e8f0 80%, #f1f5f9 100%);
-  box-shadow: 0 5px 14px rgba(255, 255, 255, 0.22), inset 0 1px 0 0 #ffffff;
+  background: #ffffff;
+  box-shadow: 0 5px 12px rgba(255, 255, 255, 0.25), inset 0 1px 0 #ffffff;
   transform: translateY(-1px);
 }
 
 .btn-tactile-white:active {
-  transform: translateY(1px) scale(0.98);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+  transform: translateY(1px);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* ======================================================== */
-/*  Precision Laser-Etched Metal Badges & Serial Plaques    */
-/*  (Zero Cartoon Outlines, Milled Metal Ingot)             */
+/*  Tactile 3D Badges & Labels with Silver Specular Rims   */
+/*  (Zero Neon Outlines, Preserving Brand Colors Coherently)*/
 /* ======================================================== */
 
 .badge-3d, .badge-metal {
@@ -331,80 +330,68 @@
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  border-radius: 5px;
-  border: 1px solid rgba(226, 232, 240, 0.12);
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 6px;
+  border: 1px solid rgba(226, 232, 240, 0.10);
+  border-top: 1px solid rgba(255, 255, 255, 0.30);
   box-shadow: 
-    0 2px 5px rgba(0, 0, 0, 0.75),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.14),
-    inset 0 -1px 0 0 rgba(0, 0, 0, 0.85);
+    0 2px 6px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
   padding: 2px 8px;
 }
 
-/* Neutral Titanium Ingot Plaque */
+/* Neutral Slate Obsidian Badge (Format / Architecture) */
 .badge-3d-neutral, .badge-metal-titanium {
-  background: linear-gradient(180deg, #222631 0%, #151821 50%, #0d0f14 100%);
+  background: linear-gradient(180deg, #181b22 0%, #0d0f14 100%);
+  border-color: rgba(226, 232, 240, 0.10);
+  border-top-color: rgba(255, 255, 255, 0.30);
   color: #cbd5e1;
 }
 
-/* Machined Bronze Serial Plaque */
+/* Warm Gold / Bestseller Badge (Preserving Amber Identity) */
 .badge-3d-amber, .badge-metal-bronze {
-  background: linear-gradient(180deg, #2a2315 0%, #1a150c 50%, #0e0b06 100%);
-  border-color: rgba(212, 175, 55, 0.24);
-  border-top-color: rgba(254, 240, 138, 0.35);
-  color: #fef08a;
+  background: linear-gradient(180deg, rgba(234, 179, 8, 0.18) 0%, rgba(202, 138, 4, 0.06) 100%), #141006;
+  border-color: rgba(234, 179, 8, 0.28);
+  border-top-color: rgba(254, 240, 138, 0.50);
+  color: #fde047;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(254, 240, 138, 0.25);
 }
 
-/* Solid Brushed Brass / Gold Bar (Featured Stamp) */
+/* Solid Bestseller Stamp */
 .badge-3d-gold-solid, .badge-metal-gold-solid {
-  background: linear-gradient(180deg, #fef08a 0%, #eab308 28%, #ca8a04 70%, #9a5806 100%);
-  color: #1a160d;
-  font-weight: 800;
-  border-radius: 5px;
-  border: 1px solid rgba(254, 240, 138, 0.5);
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #713f12;
-  box-shadow: 
-    0 3px 8px rgba(0, 0, 0, 0.75),
-    0 1px 2px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 0 #ffffff,
-    inset 0 -1px 0 0 #713f12;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  background: linear-gradient(180deg, rgba(234, 179, 8, 0.22) 0%, rgba(202, 138, 4, 0.08) 100%), #161208;
+  border-color: rgba(234, 179, 8, 0.35);
+  border-top-color: rgba(254, 240, 138, 0.60);
+  color: #fef08a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(254, 240, 138, 0.30);
 }
 
-/* Anodized Dark Emerald Plaque (Free / Verified) */
+/* Emerald Free / Verified Badge (Preserving Green Identity) */
 .badge-3d-emerald, .badge-metal-emerald {
-  background: linear-gradient(180deg, #10251c 0%, #0a1812 50%, #050e0a 100%);
-  border-color: rgba(52, 211, 153, 0.24);
-  border-top-color: rgba(167, 243, 208, 0.35);
-  color: #a7f3d0;
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.18) 0%, rgba(5, 150, 105, 0.06) 100%), #06140e;
+  border-color: rgba(16, 185, 129, 0.28);
+  border-top-color: rgba(167, 243, 208, 0.45);
+  color: #6ee7b7;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(167, 243, 208, 0.22);
 }
 
-/* Anodized Dark Ruby Titanium Plaque (Hot / Wishlist) */
+/* Rose / Hot Badge (Preserving Red Identity) */
 .badge-3d-rose, .badge-metal-ruby {
-  background: linear-gradient(180deg, #2a1118 0%, #1a0a0f 50%, #0d0407 100%);
-  border-color: rgba(244, 63, 94, 0.24);
-  border-top-color: rgba(254, 205, 211, 0.35);
-  color: #fecdd3;
+  background: linear-gradient(180deg, rgba(244, 63, 94, 0.18) 0%, rgba(225, 29, 72, 0.06) 100%), #14080a;
+  border-color: rgba(244, 63, 94, 0.28);
+  border-top-color: rgba(254, 205, 211, 0.45);
+  color: #fda4af;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(254, 205, 211, 0.22);
 }
 
-/* Anodized Dark Cobalt Plaque (Technical Architecture) */
+/* Indigo / Pro Badge (Preserving Indigo Identity) */
 .badge-3d-indigo, .badge-metal-cobalt {
-  background: linear-gradient(180deg, #141b2e 0%, #0d121e 50%, #07090f 100%);
-  border-color: rgba(129, 140, 248, 0.24);
-  border-top-color: rgba(199, 210, 254, 0.35);
-  color: #c7d2fe;
-}
-
-/* Subtle Dark Grid Background */
-.viewport-grid-dark {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 20px 20px;
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.18) 0%, rgba(79, 70, 229, 0.06) 100%), #0a0d18;
+  border-color: rgba(99, 102, 241, 0.28);
+  border-top-color: rgba(199, 210, 254, 0.45);
+  color: #a5b4fc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(199, 210, 254, 0.22);
 }
 
 /* ============================================ */
@@ -422,8 +409,8 @@
     0 16px 36px -8px rgba(0, 0, 0, 0.92),
     0 2px 6px rgba(0, 0, 0, 0.7),
     inset 0 1px 0 rgba(226, 232, 240, 0.16);
-  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
-              box-shadow 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.25s ease;
 }
 
@@ -435,19 +422,6 @@
     0 24px 48px -10px rgba(0, 0, 0, 0.98),
     0 0 25px rgba(226, 232, 240, 0.05),
     inset 0 1px 0 rgba(226, 232, 240, 0.3);
-}
-
-/* Silver-Platinum & Champagne Text Sheen */
-.silver-sheen-text {
-  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gold-sheen-text {
-  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 45%, #d4af37 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .gold-rim-badge {
@@ -470,7 +444,7 @@
 /* Specimen Document inside Pocket */
 .tucked-specimen-sheet {
   transform-origin: bottom center;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.3s ease;
 }
 
