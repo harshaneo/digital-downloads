@@ -483,7 +483,6 @@ export function App() {
                 {/* Metrics Strip */}
                 <div className="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-zinc-400">
                   <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                     <span className="font-bold text-white">{filteredProducts.length}</span> Items Available
                   </div>
                   <div className="flex items-center gap-1.5">
@@ -642,37 +641,41 @@ export function App() {
                     </div>
 
                     {/* Interactive Action Buttons */}
-                    <div className="flex items-center gap-2 pt-1 border-t border-white/[0.08]">
-      {/* Flagship Legal Document Full Reader Trigger */}
-      <div className="flex items-center gap-2">
-        <button
-          type="button"
-          onClick={() => handleOpenLegalDocument(flagshipProduct)}
-          className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 text-xs font-bold cursor-pointer active:scale-95 transition-all shadow-sm"
-        >
-          <FileText className="w-3.5 h-3.5" />
-          <span>Read Full Agreement</span>
-        </button>
+                    <div className="flex items-center justify-between gap-2 pt-2 border-t border-white/[0.08]">
+                      <div className="flex items-center gap-1.5">
+                        {flagshipProduct.category === 'legal-contracts' ? (
+                          <button
+                            type="button"
+                            onClick={() => handleOpenLegalDocument(flagshipProduct)}
+                            className="flex items-center gap-1.5 py-1.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 text-xs font-bold cursor-pointer active:scale-95 transition-all shadow-sm"
+                            title="Read agreement clauses"
+                          >
+                            <FileText className="w-3.5 h-3.5" />
+                            <span>Clauses</span>
+                          </button>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => setInspectingBundleProduct(flagshipProduct)}
+                            className="flex items-center gap-1.5 py-1.5 px-3 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] text-amber-300 border border-amber-500/30 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
+                            title="Inspect package files"
+                          >
+                            <FileText className="w-3.5 h-3.5 text-amber-400" />
+                            <span>Files</span>
+                          </button>
+                        )}
 
                         <button
                           type="button"
-                          onClick={() => setInspectingBundleProduct(flagshipProduct)}
-                          className="flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] text-amber-300 border border-amber-500/30 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
+                          onClick={() => setActiveQuickLook(flagshipProduct)}
+                          className="flex items-center gap-1.5 py-1.5 px-2.5 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] text-zinc-300 border border-white/10 text-xs font-medium cursor-pointer active:scale-95 transition-all"
+                          title="Spec Overview"
+                          aria-label="Spec Overview"
                         >
-                          <FileText className="w-3.5 h-3.5 text-amber-400" />
-                          <span>Inspect Files</span>
+                          <Eye className="w-3.5 h-3.5" />
+                          <span>Spec</span>
                         </button>
                       </div>
-
-                      <button
-                        type="button"
-                        onClick={() => setActiveQuickLook(flagshipProduct)}
-                        className="p-1.5 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] text-zinc-300 border border-white/10 cursor-pointer active:scale-95 transition-all"
-                        title="Spec Overview"
-                        aria-label="Spec Overview"
-                      >
-                        <Eye className="w-4 h-4" />
-                      </button>
 
                       {isFlagshipPurchased ? (
                         <button
@@ -689,14 +692,14 @@ export function App() {
                           disabled
                           className="flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl bg-zinc-800 text-zinc-400 border border-white/10 text-xs font-medium cursor-default"
                         >
-                          <Check className="w-3.5 h-3.5" />
+                          <Check className="w-3.5 h-3.5 text-zinc-400" />
                           <span>In Bag</span>
                         </button>
                       ) : (
                         <button
                           type="button"
                           onClick={() => handleAddToCart(flagshipProduct, 'standard')}
-                          className="btn-primary flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl text-xs font-semibold cursor-pointer"
+                          className="btn-primary flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl text-xs font-semibold cursor-pointer hover:shadow-[0_0_15px_rgba(255,255,255,0.25)]"
                         >
                           <ShoppingBag className="w-3.5 h-3.5 text-zinc-950" />
                           <span>Add to Bag</span>
@@ -708,26 +711,6 @@ export function App() {
                 </div>
               </div>
 
-            </div>
-          </section>
-
-          {/* Document Format & Compliance Highlights */}
-          <section aria-label="Format specifications" className="flex flex-wrap items-center justify-between gap-4 py-2 px-4 rounded-xl bg-[var(--bg-surface)] border border-white/[0.06] text-xs font-mono text-zinc-400">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400/80" />
-              <span>Native Formats: Word, PDF, Excel & Markdown</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80" />
-              <span>Counsel Reviewed commercial terms</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-400/80" />
-              <span>Quarterly clause revisions</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400/80" />
-              <span>Perpetual client usage rights</span>
             </div>
           </section>
 
