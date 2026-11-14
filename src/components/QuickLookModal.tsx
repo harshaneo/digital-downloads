@@ -86,7 +86,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
                 v{product.version} • Updated {product.updatedAt}
               </span>
               {product.badge && (
-                <span className="px-3 py-1 rounded-full bg-amber-400 text-zinc-950 font-extrabold text-xs uppercase tracking-wider shadow-sm">
+                <span className="px-3 py-1 rounded-full badge-3d badge-3d-gold-solid font-extrabold text-xs uppercase tracking-wider">
                   {product.badge}
                 </span>
               )}
@@ -171,7 +171,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
                       onClose();
                       onOpenLegalDocument(product);
                     }}
-                    className="flex items-center gap-1 text-[11px] font-mono font-bold text-amber-300 hover:text-amber-200 bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-lg cursor-pointer active:scale-95 transition-all shadow-2xs"
+                    className="btn-tactile-amber flex items-center gap-1.5 text-[11px] font-mono font-bold px-3 py-1 rounded-lg cursor-pointer active:scale-95 transition-all"
                   >
                     <FileCheck className="w-3 h-3 text-amber-400" />
                     <span>Read Full Agreement Clauses</span>
@@ -181,7 +181,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
                   <button
                     type="button"
                     onClick={() => onInspectBundle(product)}
-                    className="flex items-center gap-1 text-[11px] font-mono font-bold text-amber-300 hover:text-amber-200 bg-[var(--bg-surface-elevated)] border border-amber-500/30 px-2 py-0.5 rounded-lg cursor-pointer active:scale-95 transition-all shadow-2xs"
+                    className="btn-tactile-dark flex items-center gap-1.5 text-[11px] font-mono font-bold text-amber-300 px-3 py-1 rounded-lg cursor-pointer active:scale-95 transition-all"
                   >
                     <FileArchive className="w-3 h-3 text-amber-400" />
                     <span>Look Inside (.ZIP)</span>

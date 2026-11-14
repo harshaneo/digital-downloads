@@ -204,32 +204,33 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
   const visibleFileTree = filterFileTree(manifest.fileTree);
 
   // File extension badge styles
+  // File extension badge styles
   const getExtensionBadge = (ext?: string) => {
     const e = (ext || '').toLowerCase();
     switch (e) {
       case 'fig':
-        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200/70 font-semibold uppercase">fig</span>;
+        return <span className="text-[11px] font-mono px-2 py-0.5 rounded-md badge-3d badge-3d-amber text-amber-200 font-bold uppercase">fig</span>;
       case 'json':
-        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200/70 font-semibold uppercase">json</span>;
+        return <span className="text-[11px] font-mono px-2 py-0.5 rounded-md badge-3d badge-3d-emerald text-emerald-200 font-bold uppercase">json</span>;
       case 'tsx':
       case 'ts':
       case 'js':
-        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-cyan-50 text-cyan-700 border border-cyan-200/70 font-semibold uppercase">{e}</span>;
+        return <span className="text-[11px] font-mono px-2 py-0.5 rounded-md badge-3d badge-3d-indigo text-indigo-200 font-bold uppercase">{e}</span>;
       case 'svg':
-        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200/70 font-semibold uppercase">svg</span>;
       case 'pdf':
-        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20 font-semibold uppercase">pdf</span>;
+        return <span className="text-[11px] font-mono px-2 py-0.5 rounded-md badge-3d badge-3d-rose text-rose-200 font-bold uppercase">{e}</span>;
       case 'blend':
-        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20 font-semibold uppercase">blend</span>;
+        return <span className="text-[11px] font-mono px-2 py-0.5 rounded-md badge-3d badge-3d-amber text-amber-200 font-bold uppercase">blend</span>;
       case 'wav':
-        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20 font-semibold uppercase">wav</span>;
+        return <span className="text-[11px] font-mono px-2 py-0.5 rounded-md badge-3d badge-3d-neutral text-slate-200 font-bold uppercase">wav</span>;
       case 'otf':
       case 'woff2':
-        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-violet-500/10 text-violet-400 border border-violet-500/20 font-semibold uppercase">{e}</span>;
+        return <span className="text-[11px] font-mono px-2 py-0.5 rounded-md badge-3d badge-3d-indigo text-indigo-200 font-bold uppercase">{e}</span>;
       default:
-        return <span className="text-[11px] font-mono px-1.5 py-0.5 rounded bg-white/[0.05] text-zinc-400 border border-white/[0.08] uppercase">{e || 'raw'}</span>;
+        return <span className="text-[11px] font-mono px-2 py-0.5 rounded-md badge-3d badge-3d-neutral text-slate-300 font-bold uppercase">{e || 'raw'}</span>;
     }
   };
+
 
   // Render tree node recursively
   const renderTreeNode = (item: FileTreeItem, currentPath: string, depth = 0) => {
@@ -292,7 +293,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                   handleDownloadSample(item);
                 }}
                 disabled={sampleDownloadingName === item.name}
-                className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/20 text-[11px] font-bold cursor-pointer active:scale-95 transition-all"
+                className="btn-tactile-emerald flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg text-[11px] font-bold cursor-pointer active:scale-95 transition-all"
                 title="Download verified free sample specimen"
               >
                 {sampleDownloadingName === item.name ? (
@@ -351,7 +352,7 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                 <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-white/[0.06] text-zinc-300 border border-white/[0.08]">
                   Bundle Inspector
                 </span>
-                <span className="text-[11px] font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
+                <span className="text-[11px] font-mono text-emerald-300 font-bold px-2.5 py-0.5 rounded-md badge-3d badge-3d-emerald">
                   v{manifest.version}
                 </span>
                 <span className="text-xs text-zinc-400 hidden sm:inline">
@@ -729,12 +730,12 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
                           {entry.releaseDate}
                         </span>
                         {entry.breaking && (
-                          <span className="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[11px] font-bold">
+                          <span className="px-2.5 py-0.5 rounded-full badge-3d badge-3d-amber text-amber-200 text-[11px] font-bold">
                             Breaking Changes
                           </span>
                         )}
                         {index === 0 && (
-                          <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[11px] font-bold">
+                          <span className="px-2.5 py-0.5 rounded-full badge-3d badge-3d-emerald text-emerald-200 text-[11px] font-bold">
                             Latest Production
                           </span>
                         )}

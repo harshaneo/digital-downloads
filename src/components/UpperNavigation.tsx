@@ -146,9 +146,9 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
                 key={c}
                 type="button"
                 onClick={() => onCurrencyChange(c)}
-                className={`px-2.5 py-1 rounded-full transition-all cursor-pointer ${
+                className={`px-2.5 py-1 rounded-md transition-all cursor-pointer ${
                   currency === c 
-                    ? 'bg-white text-zinc-950 font-semibold shadow-xs' 
+                    ? 'btn-tactile-white text-zinc-950 font-bold' 
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
@@ -161,17 +161,17 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
           <button
             type="button"
             onClick={onOpenWishlist}
-            className={`hidden sm:inline-flex relative p-2 rounded-full border transition-all cursor-pointer active:scale-95 ${
+            className={`hidden sm:inline-flex relative p-2 rounded-lg transition-all cursor-pointer active:scale-95 ${
               wishlistCount > 0 
-                ? 'bg-rose-950/40 border-rose-500/40 text-rose-400 hover:bg-rose-900/60' 
-                : 'bg-[var(--bg-surface)] border-white/10 text-zinc-400 hover:text-rose-400 hover:bg-[var(--bg-surface-elevated)]'
+                ? 'badge-3d badge-3d-rose text-rose-300' 
+                : 'btn-tactile-dark text-zinc-400 hover:text-rose-400'
             }`}
             title="Open Curated Wishlist"
             aria-label="Open Curated Wishlist"
           >
-            <Heart className={`w-4 h-4 ${wishlistCount > 0 ? 'fill-rose-400 text-rose-400' : 'text-zinc-400'}`} />
+            <Heart className={`w-4 h-4 ${wishlistCount > 0 ? 'fill-rose-300 text-rose-300' : 'text-zinc-400'}`} />
             {wishlistCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 text-white font-mono font-bold text-[11px] flex items-center justify-center shadow-xs">
+              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full badge-3d badge-3d-rose text-white font-mono font-bold text-[11px] flex items-center justify-center">
                 {wishlistCount}
               </span>
             )}
@@ -181,13 +181,13 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
           <button
             type="button"
             onClick={onOpenPurchases}
-            className="hidden sm:inline-flex relative p-2 rounded-full bg-[var(--bg-surface)] border border-white/10 text-zinc-400 hover:text-white hover:bg-[var(--bg-surface-elevated)] shadow-2xs transition-all cursor-pointer active:scale-95"
+            className="hidden sm:inline-flex relative p-2 rounded-lg btn-tactile-dark text-zinc-400 hover:text-white transition-all cursor-pointer active:scale-95"
             title="Archive Vault & Downloads"
             aria-label="Archive Vault & Downloads"
           >
             <DownloadCloud className="w-4 h-4" />
             {purchasedCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 text-zinc-950 font-mono font-bold text-[11px] flex items-center justify-center shadow-xs">
+              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full badge-3d badge-3d-emerald text-white font-mono font-bold text-[11px] flex items-center justify-center">
                 {purchasedCount}
               </span>
             )}
@@ -197,7 +197,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
           <button
             type="button"
             onClick={onOpenCart}
-            className="btn-primary flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full text-xs font-semibold cursor-pointer select-none shrink-0"
+            className="btn-primary flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 rounded-lg text-xs font-bold cursor-pointer select-none shrink-0"
             aria-label="Open Shopping Bag"
           >
             <ShoppingBag className="w-3.5 h-3.5 text-zinc-950" />

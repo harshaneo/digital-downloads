@@ -135,7 +135,7 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
             ))}
           </div>
 
-          <div className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-2.5 text-xs text-emerald-300">
+          <div className="p-3.5 rounded-xl badge-3d badge-3d-emerald flex items-center gap-2.5 text-xs text-emerald-200">
             <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
             <span>Perpetual commercial rights included with free lifetime version updates.</span>
           </div>
@@ -157,7 +157,7 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="px-5 py-2 rounded-xl bg-white hover:bg-zinc-200 text-[var(--bg-base)] text-xs font-bold transition-colors cursor-pointer"
+            className="px-5 py-2 rounded-lg btn-primary text-xs font-bold cursor-pointer"
           >
             Done
           </button>

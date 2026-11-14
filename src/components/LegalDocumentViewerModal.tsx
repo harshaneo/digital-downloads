@@ -127,16 +127,16 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
         {/* Modal Header */}
         <div className="px-5 py-4 border-b border-white/[0.08] bg-[var(--bg-surface-elevated)] flex items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl badge-3d badge-3d-amber text-amber-300 flex items-center justify-center shrink-0">
               <Scale className="w-5 h-5" />
             </div>
 
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-md gold-rim-badge">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md badge-3d badge-3d-amber">
                   Full Document Preview
                 </span>
-                <span className="text-[11px] font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
+                <span className="text-[11px] font-mono text-emerald-300 font-bold px-2.5 py-0.5 rounded-md badge-3d badge-3d-emerald">
                   v{document.version}
                 </span>
                 <span className="text-xs text-zinc-400 hidden sm:inline font-mono">
@@ -154,7 +154,7 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
             <button
               type="button"
               onClick={handleCopyFullDocument}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--bg-surface-elevated)] hover:bg-[var(--bg-hover)] text-zinc-200 border border-white/10 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg btn-tactile-dark text-zinc-200 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
               title="Copy entire contract text to clipboard"
             >
               {copiedAll ? (
@@ -235,7 +235,7 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
               value={searchClause}
               onChange={(e) => setSearchClause(e.target.value)}
               placeholder="Search clauses (e.g. indemnity, IP)..."
-              className="px-2.5 py-1 rounded-lg bg-[var(--bg-surface-elevated)] border border-white/10 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-amber-400/50 w-48 sm:w-64"
+              className="px-2.5 py-1 rounded-lg bg-[var(--bg-surface-elevated)] border border-white/10 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-white/30 w-48 sm:w-64"
             />
           </div>
         </div>
@@ -476,7 +476,7 @@ Signatory B: _______________________________ Date: _______________
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-xl bg-[var(--bg-surface-elevated)] hover:bg-[var(--bg-hover)] text-zinc-300 border border-white/10 text-xs font-semibold cursor-pointer transition-all"
+              className="px-4 py-2 rounded-xl btn-tactile-dark text-zinc-300 text-xs font-semibold cursor-pointer transition-all"
             >
               Close Reader
             </button>

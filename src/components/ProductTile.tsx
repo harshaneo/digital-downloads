@@ -382,7 +382,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
             <img 
               src={product.creator.avatar} 
               alt={product.creator.name}
-              className="w-5 h-5 rounded-full object-cover border border-amber-400/30 shrink-0" 
+              className="w-5 h-5 rounded-full object-cover border border-white/20 shrink-0" 
             />
             <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-amber-400 border border-black" />
           </div>
@@ -396,11 +396,11 @@ export const ProductTile: React.FC<ProductTileProps> = ({
 
         <div className="flex items-center gap-1.5 shrink-0">
           {product.badge && (
-            <span className={`px-2 py-0.5 rounded-full text-[11px] font-mono font-bold tracking-wider uppercase shadow-2xs ${
-              product.badge === 'HOT' ? 'bg-rose-950/70 text-rose-300 border border-rose-500/40' :
-              product.badge === 'BESTSELLER' ? 'gold-rim-badge font-black' :
-              product.badge === 'FREE' ? 'bg-emerald-950/70 text-emerald-300 border border-emerald-500/40 font-black' :
-              'bg-indigo-950/70 text-indigo-300 border border-indigo-500/40'
+            <span className={`px-2.5 py-0.5 text-[11px] font-mono font-bold tracking-wider uppercase ${
+              product.badge === 'HOT' ? 'badge-3d badge-3d-rose' :
+              product.badge === 'BESTSELLER' ? 'badge-3d badge-3d-gold-solid' :
+              product.badge === 'FREE' ? 'badge-3d badge-3d-emerald' :
+              'badge-3d badge-3d-indigo'
             }`}>
               {product.badge}
             </span>
@@ -410,10 +410,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
           <button
             type="button"
             onClick={() => onToggleWishlist(product)}
-            className={`p-1.5 rounded-full border transition-all cursor-pointer ${
+            className={`p-1.5 rounded-lg transition-all cursor-pointer ${
               isWishlisted 
-                ? 'bg-rose-950/70 text-rose-400 border-rose-500/50 shadow-2xs scale-105' 
-                : 'bg-[var(--bg-surface-elevated)] text-zinc-400 border-white/10 hover:text-white hover:bg-[var(--bg-hover)]'
+                ? 'badge-3d badge-3d-rose text-rose-300 scale-105' 
+                : 'btn-tactile-dark text-zinc-400 hover:text-white'
             } active:scale-75 transition-transform duration-200 ease-[cubic-bezier(0.34,1.56,0.64,1)]`}
             aria-label="Save to Wishlist"
             title={isWishlisted ? 'Remove from Wishlist' : 'Save to Wishlist'}
@@ -441,7 +441,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-300/25 to-transparent" />
           
           <div className="flex items-center gap-1.5 pointer-events-auto">
-            <span className="text-[11px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-black/85 border border-white/10 text-slate-200 font-bold shadow-xs">
+            <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-md badge-3d badge-3d-neutral text-slate-200 font-bold">
               {product.fileFormat}
             </span>
             <span className="text-[11px] font-mono text-slate-400">
@@ -458,11 +458,11 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                   e.stopPropagation();
                   onOpenLegalDocument(product);
                 }}
-                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500 hover:bg-amber-400 text-zinc-950 text-xs font-mono font-bold cursor-pointer shadow-sm active:scale-95 transition-all"
+                className="btn-tactile-amber flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono font-bold cursor-pointer shadow-sm active:scale-95 transition-all"
                 title="Read full complete legal agreement with clauses"
               >
-                <FileText className="w-3 h-3 text-zinc-950" />
-                <span>Read Clauses</span>
+                <FileText className="w-3.5 h-3.5 text-amber-200" />
+                <span>Clauses</span>
               </button>
             ) : (
               <button
@@ -475,10 +475,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                     onQuickLook(product);
                   }
                 }}
-                className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/80 hover:bg-black text-amber-300 text-xs font-mono font-bold cursor-pointer shadow-sm border border-amber-400/30 hover:border-amber-400 active:scale-95 transition-all"
+                className="btn-tactile-dark flex items-center gap-1.5 px-3 py-1 rounded-lg text-amber-300 text-xs font-mono font-bold cursor-pointer active:scale-95 transition-all"
                 title="Inspect package contents & file tree"
               >
-                <FileText className="w-3 h-3 text-amber-400" />
+                <FileText className="w-3.5 h-3.5 text-amber-400" />
                 <span>Files</span>
               </button>
             )}
@@ -488,10 +488,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 e.stopPropagation();
                 onQuickLook(product);
               }}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-semibold cursor-pointer shadow-sm active:scale-95 transition-all"
+              className="btn-tactile-white flex items-center gap-1.5 px-3 py-1 rounded-lg text-zinc-950 text-xs font-semibold cursor-pointer shadow-sm active:scale-95 transition-all"
               title="Quick preview spec"
             >
-              <Eye className="w-3 h-3 text-zinc-950" />
+              <Eye className="w-3.5 h-3.5 text-zinc-950" />
               <span>Spec</span>
             </button>
           </div>

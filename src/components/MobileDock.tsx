@@ -69,7 +69,7 @@ export const MobileDock: React.FC<MobileDockProps> = ({
         >
           <Heart className={`w-5 h-5 ${wishlistCount > 0 ? 'fill-rose-500 text-rose-500' : 'text-zinc-400'}`} />
           {wishlistCount > 0 && (
-            <span className="absolute top-1 right-1 w-4 h-4 rounded-full bg-rose-500 text-white font-mono font-bold text-[11px] flex items-center justify-center shadow-xs">
+            <span className="absolute top-1 right-1 w-4 h-4 rounded-full badge-3d badge-3d-rose text-white font-mono font-bold text-[11px] flex items-center justify-center">
               {wishlistCount}
             </span>
           )}
@@ -84,7 +84,7 @@ export const MobileDock: React.FC<MobileDockProps> = ({
         >
           <DownloadCloud className="w-5 h-5 text-zinc-300" />
           {purchasedCount > 0 && (
-            <span className="absolute top-1 right-1 w-4 h-4 rounded-full bg-white text-[var(--bg-base)] font-mono font-bold text-[11px] flex items-center justify-center shadow-xs">
+            <span className="absolute top-1 right-1 w-4 h-4 rounded-full badge-3d badge-3d-emerald text-white font-mono font-bold text-[11px] flex items-center justify-center">
               {purchasedCount}
             </span>
           )}
@@ -94,10 +94,10 @@ export const MobileDock: React.FC<MobileDockProps> = ({
         <button
           type="button"
           onClick={onOpenCart}
-          className="flex items-center gap-1.5 pl-3 pr-4 py-2 rounded-full bg-white hover:bg-zinc-200 text-[var(--bg-base)] text-xs font-bold shadow-sm active:scale-95 transition-all cursor-pointer ml-1"
+          className="btn-primary flex items-center gap-1.5 pl-3.5 pr-4 py-2 rounded-lg text-xs font-bold active:scale-95 transition-all cursor-pointer ml-1"
           aria-label="View Cart"
         >
-          <ShoppingBag className="w-4 h-4 text-[var(--bg-base)]" />
+          <ShoppingBag className="w-4 h-4 text-zinc-950" />
           <span>{cartCount > 0 ? formatPrice(cartTotal) : 'Bag'}</span>
           {cartCount > 0 && (
             <span className="w-4 h-4 rounded-full bg-[var(--bg-base)] text-white font-mono font-bold text-[11px] flex items-center justify-center ml-0.5">

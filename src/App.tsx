@@ -505,7 +505,7 @@ export function App() {
                   {/* Top Specimen Badge & Heart */}
                   <div className="px-2.5 py-1.5 flex items-center justify-between gap-2 border-b border-white/[0.08] mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-0.5 rounded-full bg-amber-400 text-zinc-950 font-mono text-xs font-bold tracking-wide">
+                      <span className="px-2.5 py-0.5 rounded-md badge-3d badge-3d-gold-solid font-mono text-xs font-bold tracking-wide">
                         FEATURED
                       </span>
                     </div>
@@ -513,10 +513,10 @@ export function App() {
                     <button
                       type="button"
                       onClick={() => handleToggleWishlist(flagshipProduct)}
-                      className={`p-1.5 rounded-full border transition-all cursor-pointer ${
+                      className={`p-1.5 rounded-lg transition-all cursor-pointer ${
                         isFlagshipWishlisted
-                          ? 'bg-rose-950/60 text-rose-400 border-rose-500/40 shadow-2xs scale-105'
-                          : 'bg-[var(--bg-surface)] text-zinc-400 border-white/10 hover:text-white'
+                          ? 'badge-3d badge-3d-rose text-rose-300 scale-105'
+                          : 'btn-tactile-dark text-zinc-400 hover:text-white'
                       }`}
                       title={isFlagshipWishlisted ? 'Remove from Wishlist' : 'Save to Wishlist'}
                       aria-label="Wishlist Flagship Specimen"
@@ -534,7 +534,7 @@ export function App() {
                     {/* 1. Tucked Flagship Specimen Document */}
                     <div className="absolute inset-x-2.5 top-2 bottom-4 tucked-specimen-sheet z-10 rounded-xl overflow-hidden border border-white/[0.16] shadow-2xl bg-gradient-to-b from-[#1c1f28] to-[#0e1015] p-3 flex flex-col justify-between">
                       <div className="flex items-center justify-between z-10 pb-1 border-b border-white/[0.08]">
-                        <span className="px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-mono font-bold text-amber-300">
+                        <span className="px-2.5 py-0.5 rounded-md badge-3d badge-3d-amber text-xs font-mono font-bold text-amber-200">
                           {flagshipProduct.fileFormat} MASTER KIT
                         </span>
                         <div className="flex items-center gap-1 font-mono text-xs text-amber-400 bg-black/50 px-2 py-0.5 rounded-full border border-white/10">
@@ -569,7 +569,7 @@ export function App() {
                       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-400/20 to-transparent" />
                       
                       <div className="flex items-center gap-1.5 pointer-events-auto">
-                        <span className="text-xs font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-black/75 border border-amber-400/30 text-amber-300 font-bold">
+                        <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-md badge-3d badge-3d-amber text-amber-200 font-bold">
                           FEATURED ASSET
                         </span>
                         <span className="text-xs font-mono text-zinc-400">
@@ -581,9 +581,9 @@ export function App() {
                         <button
                           type="button"
                           onClick={() => setInspectingBundleProduct(flagshipProduct)}
-                          className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/80 hover:bg-black text-amber-300 text-xs font-mono font-bold cursor-pointer shadow-sm border border-amber-400/40 active:scale-95 transition-all"
+                          className="btn-tactile-dark flex items-center gap-1.5 px-3 py-1 rounded-lg text-amber-300 text-xs font-mono font-bold cursor-pointer active:scale-95 transition-all"
                         >
-                          <FileText className="w-3 h-3 text-amber-400" />
+                          <FileText className="w-3.5 h-3.5 text-amber-400" />
                           <span>View Files</span>
                         </button>
                       </div>
@@ -613,17 +613,17 @@ export function App() {
                           <button
                             type="button"
                             onClick={() => handleOpenLegalDocument(flagshipProduct)}
-                            className="flex items-center gap-1.5 py-1.5 px-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-zinc-950 text-xs font-bold cursor-pointer active:scale-95 transition-all shadow-sm"
+                            className="btn-tactile-amber flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-xs font-bold cursor-pointer active:scale-95 transition-all shadow-sm"
                             title="Read agreement clauses"
                           >
-                            <FileText className="w-3.5 h-3.5" />
+                            <FileText className="w-3.5 h-3.5 text-amber-200" />
                             <span>Clauses</span>
                           </button>
                         ) : (
                           <button
                             type="button"
                             onClick={() => setInspectingBundleProduct(flagshipProduct)}
-                            className="flex items-center gap-1.5 py-1.5 px-3 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] text-amber-300 border border-amber-500/30 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
+                            className="btn-tactile-dark flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-amber-300 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
                             title="Inspect package files"
                           >
                             <FileText className="w-3.5 h-3.5 text-amber-400" />
@@ -634,7 +634,7 @@ export function App() {
                         <button
                           type="button"
                           onClick={() => setActiveQuickLook(flagshipProduct)}
-                          className="flex items-center gap-1.5 py-1.5 px-2.5 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] text-zinc-300 border border-white/10 text-xs font-medium cursor-pointer active:scale-95 transition-all"
+                          className="btn-tactile-dark flex items-center gap-1.5 py-1.5 px-2.5 rounded-xl text-zinc-300 text-xs font-medium cursor-pointer active:scale-95 transition-all"
                           title="Spec Overview"
                           aria-label="Spec Overview"
                         >
@@ -711,7 +711,7 @@ export function App() {
                   id="sort-select"
                   value={filterState.sortBy}
                   onChange={(e) => handleFilterChange({ sortBy: e.target.value as FilterState['sortBy'] })}
-                  className="bg-[var(--bg-surface-elevated)] border border-white/10 rounded-lg px-2 sm:px-2.5 py-1 sm:py-1.5 text-xs text-zinc-200 focus:outline-none focus:border-white/30 font-medium cursor-pointer"
+                  className="btn-tactile-dark rounded-lg px-2.5 py-1.5 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-white/30 font-medium cursor-pointer"
                 >
                   <option value="popular">Popular</option>
                   <option value="rating">Rating</option>
@@ -722,12 +722,12 @@ export function App() {
               </div>
 
               {/* View Switcher */}
-              <div className="flex items-center bg-[var(--bg-surface-elevated)] border border-white/10 rounded-lg p-0.5">
+              <div className="flex items-center bg-[#0d0f14] border border-white/10 rounded-lg p-0.5 shadow-inner">
                 <button
                   type="button"
                   onClick={() => setViewMode('grid')}
-                  className={`p-1.5 rounded-md transition-colors cursor-pointer ${
-                    viewMode === 'grid' ? 'bg-white text-zinc-950 font-bold' : 'text-zinc-400 hover:text-white'
+                  className={`p-1.5 rounded-md transition-all cursor-pointer ${
+                    viewMode === 'grid' ? 'btn-metal-platinum text-zinc-950 font-bold shadow-sm' : 'text-zinc-400 hover:text-white'
                   }`}
                   aria-label="Grid View"
                   title="Grid View"
@@ -737,8 +737,8 @@ export function App() {
                 <button
                   type="button"
                   onClick={() => setViewMode('compact')}
-                  className={`p-1.5 rounded-md transition-colors cursor-pointer ${
-                    viewMode === 'compact' ? 'bg-white text-zinc-950 font-bold' : 'text-zinc-400 hover:text-white'
+                  className={`p-1.5 rounded-md transition-all cursor-pointer ${
+                    viewMode === 'compact' ? 'btn-metal-platinum text-zinc-950 font-bold shadow-sm' : 'text-zinc-400 hover:text-white'
                   }`}
                   aria-label="Compact View"
                   title="Compact View"

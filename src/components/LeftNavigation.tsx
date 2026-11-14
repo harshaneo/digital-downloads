@@ -83,8 +83,8 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                   onClick={() => onFilterChange({ category: cat.id })}
                   className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-xs font-medium transition-all group cursor-pointer border ${
                     isActive 
-                      ? 'bg-white text-zinc-950 font-semibold shadow-md border-white' 
-                      : 'bg-transparent text-zinc-400 hover:text-white hover:bg-white/[0.06] border-transparent'
+                      ? 'bg-gradient-to-b from-[#262b38] to-[#141721] text-white font-bold border border-white/20 border-t-white/35 shadow-[0_3px_10px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.22)]' 
+                      : 'bg-transparent text-zinc-400 hover:text-white hover:bg-white/[0.05] border-transparent'
                   }`}
                   title={cat.label}
                 >
@@ -101,10 +101,10 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                     )}
                   </div>
                   {!collapsed && (
-                    <span className={`text-xs font-mono px-2 py-0.5 rounded-full ${
+                    <span className={`text-[11px] font-mono px-2 py-0.5 rounded-full ${
                       isActive 
-                        ? 'bg-zinc-900 text-white' 
-                        : 'text-zinc-400 bg-[var(--bg-surface-elevated)] border border-white/10'
+                        ? 'bg-zinc-950 text-white shadow-inner font-bold' 
+                        : 'badge-3d badge-3d-neutral text-slate-300'
                     }`}>
                       {count}
                     </span>
@@ -129,10 +129,10 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                     key={fmt}
                     type="button"
                     onClick={() => onFilterChange({ format: fmt === 'All' ? '' : fmt })}
-                    className={`px-2 py-1 rounded-lg text-xs font-mono font-medium border transition-all cursor-pointer ${
+                    className={`px-2.5 py-1 rounded-lg text-xs font-mono font-medium transition-all cursor-pointer ${
                       isSelected
-                        ? 'bg-white text-zinc-950 border-white font-bold shadow-xs'
-                        : 'bg-[var(--bg-surface-elevated)] text-zinc-300 border-white/10 hover:border-white/20 hover:text-white'
+                        ? 'btn-tactile-white font-bold'
+                        : 'btn-tactile-dark text-slate-300 hover:text-white'
                     }`}
                   >
                     {fmt}
@@ -205,7 +205,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
         <button
           type="button"
           onClick={onToggleCollapse}
-          className="p-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.05] transition-colors cursor-pointer w-full flex items-center justify-center gap-1.5 text-xs font-medium"
+          className="btn-tactile-dark p-2 rounded-xl text-zinc-400 hover:text-white transition-colors cursor-pointer w-full flex items-center justify-center gap-1.5 text-xs font-medium"
           title={collapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
           aria-label={collapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
         >

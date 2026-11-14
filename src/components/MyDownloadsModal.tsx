@@ -151,7 +151,7 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
                   <button
                     type="button"
                     onClick={() => handleDownload(item)}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-[var(--bg-base)] text-xs font-bold transition-colors shrink-0 cursor-pointer"
+                    className="btn-primary flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold shrink-0 cursor-pointer"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Download Bundle</span>
