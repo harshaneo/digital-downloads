@@ -17,8 +17,11 @@ import {
   Scale,
   ShieldCheck,
   Presentation,
-  FolderGit2
+  FolderGit2,
+  Fingerprint,
+  Copy
 } from 'lucide-react';
+import { getBundleManifest } from '../data/bundle-manifests';
 
 interface ProductTileProps {
   product: DigitalProduct;
@@ -50,6 +53,18 @@ export const ProductTile: React.FC<ProductTileProps> = ({
   formatPrice
 }) => {
   const isFree = product.price === 0;
+  const [copiedHash, setCopiedHash] = React.useState(false);
+
+  const bundleManifest = React.useMemo(() => {
+    return getBundleManifest(product.id, product.title, product.creator.name, product.fileFormat, product.fileSize);
+  }, [product.id, product.title, product.creator.name, product.fileFormat, product.fileSize]);
+
+  const handleCopyHash = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    navigator.clipboard.writeText(bundleManifest.sha256).catch(() => {});
+    setCopiedHash(true);
+    setTimeout(() => setCopiedHash(false), 1500);
+  };
 
   // Category-Specific Luxury Document/Artifact Specimen Inside Tucked Pocket
   const renderCategoryPreview = () => {
@@ -375,8 +390,8 @@ export const ProductTile: React.FC<ProductTileProps> = ({
     <div 
       className="group luxury-folder-envelope relative p-[10px] flex flex-col h-full min-w-0 max-w-full overflow-hidden"
     >
-      {/* Folder Header Tab with Metallic Gold/Silver Rivet */}
-      <div className="px-2.5 py-2 flex items-center justify-between gap-2 border-b border-white/[0.08] mb-2 bg-[#14171e]/60 rounded-t-xl">
+      {/* Folder Header Tab with Laser-Engraved Edge */}
+      <div className="px-2.5 py-2 flex items-center justify-between gap-2 border-b border-white/[0.08] mb-2 bg-[#040404] rounded-t-xl">
         <div className="flex items-center gap-2 min-w-0">
           <div className="relative">
             <img 
@@ -519,6 +534,45 @@ export const ProductTile: React.FC<ProductTileProps> = ({
           <p className="text-xs text-zinc-400 line-clamp-2 mt-1 leading-relaxed [text-wrap:pretty]">
             {product.subtitle}
           </p>
+
+          {/* Atlas-Inspired Laser-Etched Cryptographic Telemetry Bezel */}
+          <div className="mt-2.5 px-2.5 py-1.5 rounded-lg bg-[#020202] border border-white/[0.08] shadow-[inset_0_2px_4px_rgba(0,0,0,0.95)] flex items-center justify-between gap-1.5 font-mono text-[10px]">
+            <div className="flex items-center gap-1.5 min-w-0">
+              <div className="flex items-center gap-1 text-zinc-400 shrink-0">
+                <Fingerprint className="w-3 h-3 text-slate-400" />
+                <span className="uppercase tracking-wider font-semibold text-zinc-300">
+                  VLT-{product.id.replace(/[^a-zA-Z0-9]/g, '').slice(0, 5).toUpperCase()}
+                </span>
+              </div>
+              <span className="text-zinc-700 select-none">|</span>
+              <button
+                type="button"
+                onClick={handleCopyHash}
+                className="flex items-center gap-1 text-zinc-400 hover:text-white transition-colors truncate cursor-pointer group/hash"
+                title={`Click to copy verified SHA-256 checksum: ${bundleManifest.sha256}`}
+              >
+                <span className="text-zinc-500 font-semibold group-hover/hash:text-zinc-300 transition-colors">SHA:</span>
+                <span className="truncate tracking-tight font-mono text-zinc-400 group-hover/hash:text-zinc-200">
+                  {bundleManifest.sha256.substring(0, 6)}...{bundleManifest.sha256.substring(60)}
+                </span>
+                {copiedHash ? (
+                  <Check className="w-2.5 h-2.5 text-white shrink-0 ml-0.5" />
+                ) : (
+                  <Copy className="w-2.5 h-2.5 text-zinc-600 group-hover/hash:text-zinc-300 shrink-0 ml-0.5 opacity-60 group-hover/hash:opacity-100 transition-opacity" />
+                )}
+              </button>
+            </div>
+
+            <div className="flex items-center gap-1 shrink-0">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-30"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-slate-300"></span>
+              </span>
+              <span className="text-[9px] uppercase tracking-wider font-semibold text-zinc-500">
+                256-BIT
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Valuation & Tactile Action Buttons */}
