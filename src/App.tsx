@@ -599,31 +599,15 @@ export function App() {
                           DIRECT ACCESS
                         </span>
                       </div>
-
-                      <div className="flex items-center gap-1.5 pointer-events-auto">
-                        <button
-                          type="button"
-                          onClick={() => setInspectingBundleProduct(flagshipProduct)}
-                          className="btn-secondary flex items-center gap-1.5 px-3 py-1 rounded-lg text-slate-200 text-xs font-mono font-medium cursor-pointer active:scale-95 transition-all"
-                        >
-                          <FileText className="w-3.5 h-3.5 text-slate-300" />
-                          <span>View Files</span>
-                        </button>
-                      </div>
                     </div>
                   </div>
 
                   {/* Flagship Body & Controls */}
                   <div className="p-2.5 pt-3 space-y-2.5">
                     <div>
-                      <div className="flex items-center justify-between">
-                        <h2 className="text-sm font-bold text-white truncate">
-                          {flagshipProduct.title}
-                        </h2>
-                        <span className="text-sm font-extrabold text-white font-mono">
-                          {formatPrice(flagshipProduct.price)}
-                        </span>
-                      </div>
+                      <h2 className="text-sm font-bold text-white truncate">
+                        {flagshipProduct.title}
+                      </h2>
                       <p className="text-xs text-zinc-400 line-clamp-1 mt-0.5">
                         {flagshipProduct.subtitle}
                       </p>
@@ -668,14 +652,23 @@ export function App() {
                       </div>
                     </div>
 
-                    {/* Interactive Action Buttons */}
+                    {/* Interactive Action Buttons & Valuation */}
                     <div className="flex items-center justify-between gap-2 pt-2 border-t border-white/[0.08]">
+                      <div>
+                        <span className="text-base font-bold text-white font-mono tracking-tight">
+                          {formatPrice(flagshipProduct.price)}
+                        </span>
+                        <span className="text-[11px] text-zinc-500 block font-mono">
+                          {flagshipProduct.downloadsCount.toLocaleString()} downloads
+                        </span>
+                      </div>
+
                       <div className="flex items-center gap-1.5">
                         {flagshipProduct.category === 'legal-contracts' ? (
                           <button
                             type="button"
                             onClick={() => handleOpenLegalDocument(flagshipProduct)}
-                            className="btn-secondary flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-xs font-semibold cursor-pointer active:scale-95 transition-all shadow-sm"
+                            className="btn-secondary h-9 px-3 rounded-xl text-xs font-semibold text-zinc-200 inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all"
                             title="Read agreement clauses"
                           >
                             <FileText className="w-3.5 h-3.5 text-slate-300" />
@@ -685,7 +678,7 @@ export function App() {
                           <button
                             type="button"
                             onClick={() => setInspectingBundleProduct(flagshipProduct)}
-                            className="btn-secondary flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-zinc-200 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
+                            className="btn-secondary h-9 px-3 rounded-xl text-zinc-200 text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all"
                             title="Inspect package files"
                           >
                             <FileText className="w-3.5 h-3.5 text-slate-300" />
@@ -696,43 +689,43 @@ export function App() {
                         <button
                           type="button"
                           onClick={() => setActiveQuickLook(flagshipProduct)}
-                          className="btn-secondary flex items-center gap-1.5 py-1.5 px-2.5 rounded-xl text-zinc-300 text-xs font-medium cursor-pointer active:scale-95 transition-all"
+                          className="btn-secondary h-9 px-3 rounded-xl text-zinc-200 text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all"
                           title="Spec Overview"
                           aria-label="Spec Overview"
                         >
-                          <Eye className="w-3.5 h-3.5" />
+                          <Eye className="w-3.5 h-3.5 text-slate-300" />
                           <span>Spec</span>
                         </button>
-                      </div>
 
-                      {isFlagshipPurchased ? (
-                        <button
-                          type="button"
-                          onClick={() => handleInstantDownload(flagshipProduct)}
-                          className="btn-primary flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl text-xs font-bold text-zinc-950 cursor-pointer shadow-sm"
-                        >
-                          <Download className="w-3.5 h-3.5 text-zinc-950" />
-                          <span>Download</span>
-                        </button>
-                      ) : isFlagshipInCart ? (
-                        <button
-                          type="button"
-                          disabled
-                          className="flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl bg-zinc-800 text-zinc-400 border border-white/10 text-xs font-medium cursor-default"
-                        >
-                          <Check className="w-3.5 h-3.5 text-zinc-400" />
-                          <span>In Bag</span>
-                        </button>
-                      ) : (
-                        <button
-                          type="button"
-                          onClick={() => handleAddToCart(flagshipProduct, 'standard')}
-                          className="btn-primary flex items-center gap-1.5 py-1.5 px-3.5 rounded-xl text-xs font-semibold cursor-pointer hover:shadow-[0_0_15px_rgba(255,255,255,0.25)]"
-                        >
-                          <ShoppingBag className="w-3.5 h-3.5 text-zinc-950" />
-                          <span>Add to Bag</span>
-                        </button>
-                      )}
+                        {isFlagshipPurchased ? (
+                          <button
+                            type="button"
+                            onClick={() => handleInstantDownload(flagshipProduct)}
+                            className="btn-primary h-9 px-4 rounded-xl text-xs font-bold text-zinc-950 inline-flex items-center gap-1.5 cursor-pointer shadow-sm active:scale-95 transition-all"
+                          >
+                            <Download className="w-3.5 h-3.5 text-zinc-950" />
+                            <span>Download</span>
+                          </button>
+                        ) : isFlagshipInCart ? (
+                          <button
+                            type="button"
+                            disabled
+                            className="h-9 px-4 rounded-xl bg-zinc-800 text-zinc-400 border border-white/10 text-xs font-semibold inline-flex items-center gap-1.5 cursor-default"
+                          >
+                            <Check className="w-3.5 h-3.5 text-zinc-400" />
+                            <span>In Bag</span>
+                          </button>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => handleAddToCart(flagshipProduct, 'standard')}
+                            className="btn-primary h-9 px-4 rounded-xl text-xs font-bold text-zinc-950 inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all hover:shadow-[0_0_15px_rgba(255,255,255,0.25)]"
+                          >
+                            <ShoppingBag className="w-3.5 h-3.5 text-zinc-950" />
+                            <span>Add to Bag</span>
+                          </button>
+                        )}
+                      </div>
                     </div>
 
                   </div>

@@ -125,10 +125,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 <span className="font-serif italic text-white text-[13px]">Scope & Commercial SOW</span>
                 <span className="text-slate-300 font-bold">Fixed Deliverables</span>
               </div>
-              <div className="grid grid-cols-3 gap-1.5 text-center font-mono text-[11px]">
-                <div className="py-1 bg-white/[0.04] rounded border border-white/[0.08] text-slate-300">Phase 1: Specs</div>
-                <div className="py-1 bg-white/[0.04] rounded border border-white/[0.08] text-slate-300">Phase 2: Build</div>
-                <div className="py-1 bg-white/[0.04] rounded border border-white/[0.08] text-slate-300">Phase 3: Deploy</div>
+              <div className="grid grid-cols-3 gap-1.5 font-mono text-[11px]">
+                <div className="py-1 px-1.5 bg-white/[0.04] rounded border border-white/[0.08] text-slate-300">Phase 1: Specs</div>
+                <div className="py-1 px-1.5 bg-white/[0.04] rounded border border-white/[0.08] text-slate-300">Phase 2: Build</div>
+                <div className="py-1 px-1.5 bg-white/[0.04] rounded border border-white/[0.08] text-slate-300">Phase 3: Deploy</div>
               </div>
             </div>
 
@@ -455,49 +455,9 @@ export const ProductTile: React.FC<ProductTileProps> = ({
           </div>
 
           <div className="flex items-center gap-1.5 opacity-90 group-hover/preview:opacity-100 transition-opacity pointer-events-auto">
-            {product.category === 'legal-contracts' && onOpenLegalDocument ? (
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onOpenLegalDocument(product);
-                }}
-                className="btn-secondary flex items-center gap-1 px-2.5 py-1 rounded-lg text-zinc-200 text-xs font-mono font-medium cursor-pointer active:scale-95 transition-all"
-                title="Read full agreement clauses"
-              >
-                <FileText className="w-3 h-3 text-slate-300" />
-                <span>Clauses</span>
-              </button>
-            ) : (
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (onInspectBundle) {
-                    onInspectBundle(product);
-                  } else {
-                    onQuickLook(product);
-                  }
-                }}
-                className="btn-secondary flex items-center gap-1 px-2.5 py-1 rounded-lg text-zinc-200 text-xs font-mono font-medium cursor-pointer active:scale-95 transition-all"
-                title="Inspect files"
-              >
-                <FileText className="w-3 h-3 text-slate-300" />
-                <span>Files</span>
-              </button>
-            )}
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                onQuickLook(product);
-              }}
-              className="btn-secondary flex items-center gap-1 px-2.5 py-1 rounded-lg text-zinc-200 text-xs font-medium cursor-pointer active:scale-95 transition-all"
-              title="Quick spec"
-            >
-              <Eye className="w-3 h-3 text-slate-300" />
-              <span>Spec</span>
-            </button>
+            <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500 font-semibold px-1.5 py-0.5">
+              VERIFIED
+            </span>
           </div>
         </div>
       </div>
@@ -585,49 +545,89 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 </span>
               )}
             </div>
-            <span className="text-xs text-zinc-500 block font-mono">
+            <span className="text-[11px] text-zinc-500 block font-mono">
               {product.downloadsCount.toLocaleString()} downloads
             </span>
           </div>
 
-          {/* Primary CTA */}
-          {isPurchased ? (
+          <div className="flex items-center gap-1.5">
+            {product.category === 'legal-contracts' && onOpenLegalDocument ? (
+              <button
+                type="button"
+                onClick={() => onOpenLegalDocument(product)}
+                className="btn-secondary h-9 px-3 rounded-xl text-xs font-semibold text-zinc-200 inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all"
+                title="Read full agreement clauses"
+              >
+                <FileText className="w-3.5 h-3.5 text-slate-300" />
+                <span>Clauses</span>
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => {
+                  if (onInspectBundle) {
+                    onInspectBundle(product);
+                  } else {
+                    onQuickLook(product);
+                  }
+                }}
+                className="btn-secondary h-9 px-3 rounded-xl text-zinc-200 text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all"
+                title="Inspect package files"
+              >
+                <FileText className="w-3.5 h-3.5 text-slate-300" />
+                <span>Files</span>
+              </button>
+            )}
+
             <button
               type="button"
-              onClick={() => onInstantDownload(product)}
-              className="btn-primary flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-black cursor-pointer"
+              onClick={() => onQuickLook(product)}
+              className="btn-secondary h-9 px-3 rounded-xl text-zinc-200 text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all"
+              title="Quick spec"
             >
-              <Download className="w-3.5 h-3.5 text-black" />
-              <span>Download</span>
+              <Eye className="w-3.5 h-3.5 text-slate-300" />
+              <span>Spec</span>
             </button>
-          ) : isFree ? (
-            <button
-              type="button"
-              onClick={() => onInstantDownload(product)}
-              className="btn-primary flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-black cursor-pointer"
-            >
-              <Download className="w-3.5 h-3.5 text-black" />
-              <span>Free Download</span>
-            </button>
-          ) : isInCart ? (
-            <button
-              type="button"
-              disabled
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-zinc-800 text-zinc-300 border border-white/10 text-xs font-semibold cursor-default"
-            >
-              <Check className="w-3.5 h-3.5 text-zinc-300" />
-              <span>In Bag</span>
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={() => onAddToCart(product)}
-              className="btn-primary flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-black cursor-pointer"
-            >
-              <ShoppingBag className="w-3.5 h-3.5 text-black" />
-              <span>Add to Bag</span>
-            </button>
-          )}
+
+            {/* Primary CTA */}
+            {isPurchased ? (
+              <button
+                type="button"
+                onClick={() => onInstantDownload(product)}
+                className="btn-primary h-9 px-4 rounded-xl text-xs font-bold text-black inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all"
+              >
+                <Download className="w-3.5 h-3.5 text-black" />
+                <span>Download</span>
+              </button>
+            ) : isFree ? (
+              <button
+                type="button"
+                onClick={() => onInstantDownload(product)}
+                className="btn-primary h-9 px-4 rounded-xl text-xs font-bold text-black inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all"
+              >
+                <Download className="w-3.5 h-3.5 text-black" />
+                <span>Free Download</span>
+              </button>
+            ) : isInCart ? (
+              <button
+                type="button"
+                disabled
+                className="h-9 px-4 rounded-xl bg-zinc-800 text-zinc-300 border border-white/10 text-xs font-semibold inline-flex items-center gap-1.5 cursor-default"
+              >
+                <Check className="w-3.5 h-3.5 text-zinc-300" />
+                <span>In Bag</span>
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => onAddToCart(product)}
+                className="btn-primary h-9 px-4 rounded-xl text-xs font-bold text-black inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all"
+              >
+                <ShoppingBag className="w-3.5 h-3.5 text-black" />
+                <span>Add to Bag</span>
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>
