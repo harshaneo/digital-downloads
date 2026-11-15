@@ -153,21 +153,15 @@
 }
 
 /* ======================================================== */
-/*  Tactile Obsidian & Negative Embossing (Debossed) System */
-/*  Buttons, Plaques, and Slots Cut Into Obsidian Block     */
+/*  Clean Neutral Surface & Tactile Button System          */
+/*  Crisp 1px Borders, Flat Precision Surfaces (No Deboss) */
 /* ======================================================== */
 
-/* Negative Embossing (Countersunk / Debossed Relief) Base */
+/* Flat Clean Neutral Container Base */
 .debossed-inset {
-  background: #030303;
-  border: 1px solid rgba(0, 0, 0, 0.95);
-  border-top: 1px solid rgba(0, 0, 0, 1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    inset 0 2px 5px rgba(0, 0, 0, 0.95),
-    inset 0 1px 2px rgba(0, 0, 0, 0.9),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
-    0 1px 0 rgba(255, 255, 255, 0.03);
+  background: #080808;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
 /* 1. Luminous Pure White Plinth (Primary Flagship Actions) */
@@ -180,10 +174,9 @@
   border-top: 1px solid #ffffff;
   box-shadow: 
     0 4px 14px rgba(0, 0, 0, 0.9),
-    0 0 24px rgba(255, 255, 255, 0.16),
-    inset 0 1px 0 #ffffff;
+    0 0 24px rgba(255, 255, 255, 0.16);
   letter-spacing: -0.01em;
-  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
 .btn-primary:hover, .btn-plinth-primary:hover, .btn-metal-platinum:hover {
@@ -191,88 +184,64 @@
   transform: translateY(-1px);
   box-shadow: 
     0 6px 20px rgba(0, 0, 0, 0.95),
-    0 0 32px rgba(255, 255, 255, 0.3),
-    inset 0 1px 0 #ffffff;
+    0 0 32px rgba(255, 255, 255, 0.3);
 }
 
 .btn-primary:active, .btn-plinth-primary:active, .btn-metal-platinum:active {
   transform: translateY(1px);
-  box-shadow: 
-    0 1px 4px rgba(0, 0, 0, 0.95),
-    inset 0 2px 4px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.95);
 }
 
-/* 2. Negative Embossed Neutral Buttons (Debossed / Sunken into obsidian surface) */
+/* 2. Clean Neutral Secondary Buttons (Flat Precision Surface, No Inset Deboss) */
 .btn-secondary, .btn-tactile-dark, .btn-metal-gunmetal, .btn-debossed {
-  background: #030303;
+  background: #0c0c0c;
   color: #cbd5e1;
   font-weight: 600;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.95);
-  border-top: 1px solid rgba(0, 0, 0, 1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    inset 0 2px 5px rgba(0, 0, 0, 0.95),
-    inset 0 1px 2px rgba(0, 0, 0, 0.85),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
-    0 1px 0 rgba(255, 255, 255, 0.03);
-  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .btn-secondary:hover, .btn-tactile-dark:hover, .btn-metal-gunmetal:hover, .btn-debossed:hover {
-  background: #080808;
+  background: #181818;
   color: #ffffff;
-  border-bottom-color: rgba(255, 255, 255, 0.24);
-  box-shadow: 
-    inset 0 1px 3px rgba(0, 0, 0, 0.8),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: none;
 }
 
 .btn-secondary:active, .btn-tactile-dark:active, .btn-metal-gunmetal:active, .btn-debossed:active {
-  background: #010101;
+  background: #080808;
   transform: translateY(1px);
-  box-shadow: 
-    inset 0 3px 8px rgba(0, 0, 0, 1),
-    inset 0 1px 3px rgba(0, 0, 0, 0.95);
+  box-shadow: none;
 }
 
-/* 3. Negative Embossed Secondary Controls (Tactile Specs & Legal Clauses) */
+/* 3. Clean Neutral Tertiary Controls (Specs & Legal Clauses) */
 .btn-tactile-amber, .btn-metal-bronze, .btn-tactile-white, .btn-plinth-emerald, .btn-tactile-emerald, .btn-metal-emerald {
-  background: #030303;
+  background: #0c0c0c;
   color: #cbd5e1;
   font-weight: 600;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.95);
-  border-top: 1px solid rgba(0, 0, 0, 1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    inset 0 2px 4px rgba(0, 0, 0, 0.92),
-    inset 0 1px 2px rgba(0, 0, 0, 0.85),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.04),
-    0 1px 0 rgba(255, 255, 255, 0.03);
-  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .btn-tactile-amber:hover, .btn-metal-bronze:hover, .btn-tactile-white:hover, .btn-plinth-emerald:hover, .btn-tactile-emerald:hover, .btn-metal-emerald:hover {
-  background: #080808;
+  background: #181818;
   color: #ffffff;
-  border-bottom-color: rgba(255, 255, 255, 0.24);
-  box-shadow: 
-    inset 0 1px 3px rgba(0, 0, 0, 0.8),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: none;
 }
 
 .btn-tactile-amber:active, .btn-metal-bronze:active, .btn-tactile-white:active, .btn-plinth-emerald:active, .btn-tactile-emerald:active, .btn-metal-emerald:active {
-  background: #010101;
+  background: #080808;
   transform: translateY(1px);
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 1);
+  box-shadow: none;
 }
 
 /* ======================================================== */
-/*  Tactile Debossed (Negative) Badges & Slots             */
-/*  (Carved Achromatic Cavity with Silver Text)             */
+/*  Clean Neutral Badges & Micro-Pills (No Negative Deboss) */
 /* ======================================================== */
 
 .badge-3d, .badge-metal, .badge-debossed {
@@ -280,37 +249,27 @@
   align-items: center;
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border-radius: 6px;
-  background: #030303;
-  border: 1px solid rgba(0, 0, 0, 0.95);
-  border-top: 1px solid rgba(0, 0, 0, 1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    inset 0 2px 4px rgba(0, 0, 0, 0.95),
-    inset 0 1px 2px rgba(0, 0, 0, 0.9),
-    0 1px 0 rgba(255, 255, 255, 0.03);
+  background: #0c0c0c;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
   padding: 2px 8px;
   color: #cbd5e1;
 }
 
-/* Specific Badge Variations (All strictly neutral negative debossed) */
+/* Specific Badge Variations (All strictly clean neutral) */
 .badge-3d-neutral, .badge-metal-titanium,
 .badge-3d-amber, .badge-metal-bronze,
 .badge-3d-gold-solid, .badge-metal-gold-solid,
 .badge-3d-emerald, .badge-metal-emerald,
 .badge-3d-rose, .badge-metal-ruby,
 .badge-3d-indigo, .badge-metal-cobalt {
-  background: #030303;
-  border: 1px solid rgba(0, 0, 0, 0.95);
-  border-top: 1px solid rgba(0, 0, 0, 1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    inset 0 2px 4px rgba(0, 0, 0, 0.95),
-    inset 0 1px 2px rgba(0, 0, 0, 0.9),
-    0 1px 0 rgba(255, 255, 255, 0.03);
+  background: #0c0c0c;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: none;
   color: #cbd5e1;
 }
 

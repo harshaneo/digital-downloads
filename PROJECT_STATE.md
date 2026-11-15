@@ -7,7 +7,7 @@
 
 ## Architectural Decisions
 1. **100% Achromatic Neutral Architecture**: Pure OLED void black (`#000000`) and pure neutral silver/platinum (`#ffffff`, `#cbd5e1`, `#94a3b8`, `#64748b`). Absolutely zero foreign hues or warm amber tints.
-2. **Neutral Negative Embossing (Debossed)**: All countersunk cavity buttons, filter capsules, badge slots, and specimen controls are debossed into pure neutral dark obsidian (`#030303` resting, `#080808` hover, `#010101` active) with crisp neutral white/silver bottom rim specular catches.
+2. **Clean Precision Controls (Negative Embossing Removed)**: Negative debossed/countersunk cavity inset shadows removed in favor of clean, flat, high-precision dark surfaces (`#0c0c0c` / `#181818`) with crisp uniform 1px silver hairline borders (`border-white/10` to `border-white/20`).
 3. **Monochromatic Ratings & Icons**: Rating stars, checkmarks, verify badges, and icons render in luminous white/silver (`fill-white text-white` / `text-slate-300`).
 4. **Card Integrity**: Original luxury folder cards with silver borders, obsidian sleeves, and monochromatic sheets completely preserved.
 5. **Atlas Laser-Etched Telemetry (Mobbin-Inspired)**: Product specimen cards and flagship showcase feature recessed laser-etched telemetry bezels with authentic `VLT-` serials, one-click copyable cryptographic SHA-256 fingerprints, and live archival beacons.

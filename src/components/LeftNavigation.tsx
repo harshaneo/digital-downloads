@@ -83,7 +83,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                   onClick={() => onFilterChange({ category: cat.id })}
                   className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-xs font-medium transition-all group cursor-pointer border ${
                     isActive 
-                      ? 'bg-gradient-to-b from-[#1c202a] to-[#0e1015] text-white font-bold border-white/15 border-t-white/35 shadow-[0_4px_12px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.18)]' 
+                      ? 'bg-[#121212] text-white font-bold border-white/20' 
                       : 'bg-transparent text-zinc-400 hover:text-white hover:bg-white/[0.05] border-transparent'
                   }`}
                   title={cat.label}
@@ -91,7 +91,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                   <div className="flex items-center gap-2.5 min-w-0">
                     <span className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all ${
                       isActive 
-                        ? 'bg-zinc-950 text-white shadow-inner' 
+                        ? 'bg-zinc-900 text-white border border-white/10' 
                         : 'bg-[var(--bg-surface-elevated)] text-zinc-300 border border-white/10 group-hover:border-white/20'
                     }`}>
                       <Icon className="w-3.5 h-3.5" />
@@ -103,7 +103,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                   {!collapsed && (
                     <span className={`text-[11px] font-mono px-2 py-0.5 rounded-full ${
                       isActive 
-                        ? 'bg-zinc-950 text-white shadow-inner font-bold' 
+                        ? 'bg-zinc-900 text-white border border-white/10 font-bold' 
                         : 'badge-3d badge-3d-neutral text-slate-300'
                     }`}>
                       {count}

@@ -529,7 +529,7 @@ export function App() {
                   </div>
 
                   {/* Tucked Pocket Flagship Container */}
-                  <div className="relative aspect-16/10 rounded-[14px] bg-[#000000] border border-white/[0.08] overflow-hidden group/preview shadow-inner">
+                  <div className="relative aspect-16/10 rounded-[14px] bg-[#000000] border border-white/[0.08] overflow-hidden group/preview">
                     {/* Folder Chamber Lining */}
                     <div className="absolute inset-0 bg-gradient-to-b from-[#06070a] to-[#000000] opacity-98" />
                     <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:12px_12px] opacity-60 pointer-events-none" />
@@ -609,7 +609,7 @@ export function App() {
                       </p>
 
                       {/* Atlas-Inspired Laser-Etched Telemetry Bezel */}
-                      <div className="mt-2 px-2.5 py-1.5 rounded-lg bg-[#020202] border border-white/[0.08] shadow-[inset_0_2px_4px_rgba(0,0,0,0.95)] flex items-center justify-between gap-1.5 font-mono text-[10px]">
+                      <div className="mt-2 px-2.5 py-1.5 rounded-lg bg-[#080808] border border-white/[0.08] flex items-center justify-between gap-1.5 font-mono text-[10px]">
                         <div className="flex items-center gap-1.5 min-w-0">
                           <div className="flex items-center gap-1 text-zinc-400 shrink-0">
                             <Fingerprint className="w-3 h-3 text-slate-400" />
@@ -764,7 +764,7 @@ export function App() {
               </div>
 
               {/* View Switcher */}
-              <div className="flex items-center bg-[#0d0f14] border border-white/10 rounded-lg p-0.5 shadow-inner">
+              <div className="flex items-center bg-[#0c0c0c] border border-white/10 rounded-lg p-0.5">
                 <button
                   type="button"
                   onClick={() => setViewMode('grid')}

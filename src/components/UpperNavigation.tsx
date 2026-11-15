@@ -110,7 +110,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Search contracts, RFPs, SOPs, financial models..."
-              className="w-full pl-8 sm:pl-9 pr-8 sm:pr-16 py-1.5 sm:py-2 text-xs bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] focus:bg-[var(--bg-surface-elevated)] border border-white/10 focus:border-white/30 rounded-full text-[var(--text-primary)] placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/10 shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)] transition-all font-sans"
+              className="w-full pl-8 sm:pl-9 pr-8 sm:pr-16 py-1.5 sm:py-2 text-xs bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] focus:bg-[var(--bg-surface-elevated)] border border-white/10 focus:border-white/30 rounded-full text-[var(--text-primary)] placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/10 transition-all font-sans"
             />
             {searchQuery ? (
               <button 

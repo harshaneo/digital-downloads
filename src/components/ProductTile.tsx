@@ -434,7 +434,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
       </div>
 
       {/* Tucked Pocket Container with Slide-Out File Thumbnail Sheet */}
-      <div className="relative w-full aspect-16/10 rounded-[14px] overflow-hidden group/preview bg-[#020304] border border-white/[0.07] shadow-inner">
+      <div className="relative w-full aspect-16/10 rounded-[14px] overflow-hidden group/preview bg-[#020304] border border-white/[0.07]">
         
         {/* Back Chamber of the Folder (Interior lining pattern) */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#08090c] to-[#020203] opacity-98" />
@@ -536,7 +536,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
           </p>
 
           {/* Atlas-Inspired Laser-Etched Cryptographic Telemetry Bezel */}
-          <div className="mt-2.5 px-2.5 py-1.5 rounded-lg bg-[#020202] border border-white/[0.08] shadow-[inset_0_2px_4px_rgba(0,0,0,0.95)] flex items-center justify-between gap-1.5 font-mono text-[10px]">
+          <div className="mt-2.5 px-2.5 py-1.5 rounded-lg bg-[#080808] border border-white/[0.08] flex items-center justify-between gap-1.5 font-mono text-[10px]">
             <div className="flex items-center gap-1.5 min-w-0">
               <div className="flex items-center gap-1 text-zinc-400 shrink-0">
                 <Fingerprint className="w-3 h-3 text-slate-400" />
