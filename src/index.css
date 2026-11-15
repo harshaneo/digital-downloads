@@ -153,98 +153,96 @@
 }
 
 /* ======================================================== */
-/*  Clean Neutral Surface & Tactile Button System          */
-/*  Crisp 1px Borders, Flat Precision Surfaces (No Deboss) */
+/*  Family iOS Native App Design System Tokens & Primitives  */
 /* ======================================================== */
 
-/* Flat Clean Neutral Container Base */
-.debossed-inset {
-  background: #080808;
+.card, .app-card, .plinth-card, .luxury-folder-envelope {
+  position: relative;
+  background: #090909;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: none;
+  border-radius: 18px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              background-color 0.2s ease,
+              box-shadow 0.2s ease;
 }
 
-/* 1. Luminous Pure White Plinth (Primary Flagship Actions) */
+.card:hover, .app-card:hover, .plinth-card:hover, .luxury-folder-envelope:hover {
+  background: #0e0e0e;
+  border-color: rgba(255, 255, 255, 0.20);
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.85);
+}
+
+.card-interactive {
+  background: #090909;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.card-interactive:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: #111111;
+}
+
+/* 1. Luminous Pure White Plinth (Primary Action CTA) */
 .btn-primary, .btn-plinth-primary, .btn-metal-platinum {
   background: #ffffff;
   color: #000000;
   font-weight: 700;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.95);
-  border-top: 1px solid #ffffff;
-  box-shadow: 
-    0 4px 14px rgba(0, 0, 0, 0.9),
-    0 0 24px rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.12);
   letter-spacing: -0.01em;
   transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
 .btn-primary:hover, .btn-plinth-primary:hover, .btn-metal-platinum:hover {
-  background: #f8fafc;
+  background: #f4f4f5;
   transform: translateY(-1px);
-  box-shadow: 
-    0 6px 20px rgba(0, 0, 0, 0.95),
-    0 0 32px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.22);
 }
 
 .btn-primary:active, .btn-plinth-primary:active, .btn-metal-platinum:active {
   transform: translateY(1px);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.95);
+  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.1);
 }
 
-/* 2. Clean Neutral Secondary Buttons (Flat Precision Surface, No Inset Deboss) */
-.btn-secondary, .btn-tactile-dark, .btn-metal-gunmetal, .btn-debossed {
-  background: #0c0c0c;
-  color: #cbd5e1;
-  font-weight: 600;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
-  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-}
-
-.btn-secondary:hover, .btn-tactile-dark:hover, .btn-metal-gunmetal:hover, .btn-debossed:hover {
-  background: #181818;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: none;
-}
-
-.btn-secondary:active, .btn-tactile-dark:active, .btn-metal-gunmetal:active, .btn-debossed:active {
-  background: #080808;
-  transform: translateY(1px);
-  box-shadow: none;
-}
-
-/* 3. Clean Neutral Tertiary Controls (Specs & Legal Clauses) */
+/* 2. Native Flat Obsidian Secondary Controls */
+.btn-secondary, .btn-tactile-dark, .btn-metal-gunmetal, .btn-debossed,
 .btn-tactile-amber, .btn-metal-bronze, .btn-tactile-white, .btn-plinth-emerald, .btn-tactile-emerald, .btn-metal-emerald {
-  background: #0c0c0c;
+  background: #111111;
   color: #cbd5e1;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: none;
   transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
+.btn-secondary:hover, .btn-tactile-dark:hover, .btn-metal-gunmetal:hover, .btn-debossed:hover,
 .btn-tactile-amber:hover, .btn-metal-bronze:hover, .btn-tactile-white:hover, .btn-plinth-emerald:hover, .btn-tactile-emerald:hover, .btn-metal-emerald:hover {
-  background: #181818;
+  background: #1c1c1c;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.25);
   box-shadow: none;
 }
 
+.btn-secondary:active, .btn-tactile-dark:active, .btn-metal-gunmetal:active, .btn-debossed:active,
 .btn-tactile-amber:active, .btn-metal-bronze:active, .btn-tactile-white:active, .btn-plinth-emerald:active, .btn-tactile-emerald:active, .btn-metal-emerald:active {
   background: #080808;
   transform: translateY(1px);
   box-shadow: none;
 }
 
-/* ======================================================== */
-/*  Clean Neutral Badges & Micro-Pills (No Negative Deboss) */
-/* ======================================================== */
-
-.badge-3d, .badge-metal, .badge-debossed {
+/* 3. Micro Badges & Telemetry Seals */
+.badge-3d, .badge-metal, .badge-debossed,
+.badge-3d-neutral, .badge-metal-titanium,
+.badge-3d-amber, .badge-metal-bronze,
+.badge-3d-gold-solid, .badge-metal-gold-solid,
+.badge-3d-emerald, .badge-metal-emerald,
+.badge-3d-rose, .badge-metal-ruby,
+.badge-3d-indigo, .badge-metal-cobalt {
   display: inline-flex;
   align-items: center;
   font-family: var(--font-mono);
@@ -253,81 +251,36 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   border-radius: 6px;
-  background: #0c0c0c;
+  background: #111111;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: none;
   padding: 2px 8px;
   color: #cbd5e1;
 }
 
-/* Specific Badge Variations (All strictly clean neutral) */
-.badge-3d-neutral, .badge-metal-titanium,
-.badge-3d-amber, .badge-metal-bronze,
-.badge-3d-gold-solid, .badge-metal-gold-solid,
-.badge-3d-emerald, .badge-metal-emerald,
-.badge-3d-rose, .badge-metal-ruby,
-.badge-3d-indigo, .badge-metal-cobalt {
-  background: #0c0c0c;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
-  color: #cbd5e1;
+/* 4. Native App Sheet Primitives */
+.sheet-grabber {
+  width: 40px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.20);
+  border-radius: 9999px;
+  margin: 12px auto;
+  flex-shrink: 0;
 }
 
-/* ============================================ */
-/*  Luxury Obsidian Folder & Tucked Pocket FX   */
-/* ============================================ */
-
-/* Pocket Envelope Container with Deep Layered Shadows & Silver Specular Rim */
-.luxury-folder-envelope {
-  position: relative;
-  background: linear-gradient(180deg, #0a0a0a 0%, #030303 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 20px;
-  box-shadow: 
-    0 16px 36px -8px rgba(0, 0, 0, 0.95),
-    0 2px 6px rgba(0, 0, 0, 0.7),
-    inset 0 1px 0 rgba(255, 255, 255, 0.14);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.25s ease;
-}
-
-.luxury-folder-envelope:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.22);
-  border-top-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 
-    0 24px 48px -10px rgba(0, 0, 0, 0.98),
-    0 0 25px rgba(255, 255, 255, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-
-.gold-rim-badge {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.20);
-  color: #f1f5f9;
-}
-
-/* Tucked Pocket Sleeve Lip (Clipped angled geometric pocket with silver top specular highlight) */
+/* 5. Tucked Specimen Micro-Animation (Physical Sheet Slide) */
 .tucked-pocket-sleeve {
-  background: linear-gradient(180deg, rgba(10, 10, 10, 0.97) 0%, rgba(4, 4, 4, 0.99) 100%);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 
-    0 -10px 24px -4px rgba(0, 0, 0, 0.85),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, rgba(14, 14, 14, 0.95) 0%, rgba(6, 6, 6, 0.99) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Specimen Document inside Pocket */
 .tucked-specimen-sheet {
   transform-origin: bottom center;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .group:hover .tucked-specimen-sheet {
-  transform: translateY(-20px) scale(1.03);
-  box-shadow: 0 16px 32px -4px rgba(0, 0, 0, 0.9);
+  transform: translateY(-12px) scale(1.02);
 }

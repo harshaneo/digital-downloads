@@ -388,10 +388,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
 
     return (
     <div 
-      className="group luxury-folder-envelope relative p-[10px] flex flex-col h-full min-w-0 max-w-full overflow-hidden"
+      className="group app-card relative p-3 sm:p-3.5 flex flex-col h-full min-w-0 max-w-full overflow-hidden bg-[#090909] hover:bg-[#0e0e0e] border border-white/[0.08] hover:border-white/[0.20] rounded-2xl transition-all duration-200"
     >
-      {/* Folder Header Tab with Laser-Engraved Edge */}
-      <div className="px-2.5 py-2 flex items-center justify-between gap-2 border-b border-white/[0.08] mb-2 bg-[#040404] rounded-t-xl">
+      {/* 1. Header Bar: Creator Identity & Wishlist Button */}
+      <div className="flex items-center justify-between gap-2 mb-2.5 px-0.5">
         <div className="flex items-center gap-2 min-w-0">
           <div className="relative">
             <img 
@@ -401,7 +401,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
             />
             <div className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-slate-300 border border-black" />
           </div>
-          <span className="truncate text-xs font-semibold text-zinc-200">
+          <span className="truncate text-xs font-semibold text-zinc-300">
             {product.creator.name}
           </span>
           {product.creator.verified && (
@@ -411,55 +411,49 @@ export const ProductTile: React.FC<ProductTileProps> = ({
 
         <div className="flex items-center gap-1.5 shrink-0">
           {product.badge && (
-            <span className="px-2.5 py-0.5 text-[11px] font-mono font-bold tracking-wider uppercase badge-3d text-slate-200">
+            <span className="px-2 py-0.5 text-[10px] font-mono font-bold tracking-wider uppercase badge-3d text-slate-200">
               {product.badge}
             </span>
           )}
 
-          {/* Debossed Wishlist Toggle Pill */}
+          {/* Wishlist Toggle Button */}
           <button
             type="button"
             onClick={() => onToggleWishlist(product)}
             className={`p-1.5 rounded-lg transition-all cursor-pointer ${
               isWishlisted 
-                ? 'badge-3d text-white scale-105' 
-                : 'btn-tactile-dark text-zinc-400 hover:text-white'
-            } active:scale-75 transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]`}
+                ? 'bg-white text-black font-bold scale-105' 
+                : 'bg-white/[0.04] text-zinc-400 hover:text-white border border-white/10 hover:border-white/20'
+            } active:scale-90 duration-150`}
             aria-label="Save to Wishlist"
             title={isWishlisted ? 'Remove from Wishlist' : 'Save to Wishlist'}
           >
-            <Heart className={`w-3.5 h-3.5 ${isWishlisted ? 'fill-white text-white' : ''}`} />
+            <Heart className={`w-3.5 h-3.5 ${isWishlisted ? 'fill-black text-black' : ''}`} />
           </button>
         </div>
       </div>
 
-      {/* Tucked Pocket Container with Slide-Out File Thumbnail Sheet */}
-      <div className="relative w-full aspect-16/10 rounded-[14px] overflow-hidden group/preview bg-[#020304] border border-white/[0.07]">
+      {/* 2. Visual Specimen Preview Viewport */}
+      <div className="relative w-full aspect-16/10 rounded-xl overflow-hidden group/preview bg-[#030303] border border-white/[0.08]">
+        {/* Preview Container */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0e0e0e] to-[#040404]" />
         
-        {/* Back Chamber of the Folder (Interior lining pattern) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#08090c] to-[#020203] opacity-98" />
-        <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:12px_12px] opacity-50 pointer-events-none" />
-
-        {/* 1. Tucked Document/Asset Sheet (Peeks out from the pocket, slides up on hover) */}
-        <div className="absolute inset-x-2.5 top-2 bottom-4 tucked-specimen-sheet z-10 rounded-xl overflow-hidden border border-white/[0.12] shadow-[0_8px_20px_rgba(0,0,0,0.9)]">
+        {/* Specimen Sheet */}
+        <div className="absolute inset-x-2 top-2 bottom-3 tucked-specimen-sheet z-10 rounded-lg overflow-hidden border border-white/[0.10] shadow-xl">
           {renderCategoryPreview()}
         </div>
 
-        {/* 2. Physical Front Pocket Overlay Sleeve (Tucked Pocket with Angled Lip) */}
-        <div className="absolute inset-x-0 bottom-0 h-16 tucked-pocket-sleeve z-20 flex items-center justify-between px-3 pointer-events-none">
-          {/* Subtle silver-white stitch line along the top of the pocket */}
-          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-300/25 to-transparent" />
-          
+        {/* Floating Quick Action Overlay Lip */}
+        <div className="absolute inset-x-0 bottom-0 h-14 tucked-pocket-sleeve z-20 flex items-center justify-between px-2.5 pointer-events-none">
           <div className="flex items-center gap-1.5 pointer-events-auto">
-            <span className="text-[11px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-md badge-3d badge-3d-neutral text-slate-200 font-bold">
+            <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-md badge-3d text-slate-200 font-bold">
               {product.fileFormat}
             </span>
-            <span className="text-[11px] font-mono text-slate-400">
+            <span className="text-[10px] font-mono text-slate-400">
               {product.fileSize}
             </span>
           </div>
 
-          {/* Quick Peek & Archive Inspection Action Buttons */}
           <div className="flex items-center gap-1.5 opacity-90 group-hover/preview:opacity-100 transition-opacity pointer-events-auto">
             {product.category === 'legal-contracts' && onOpenLegalDocument ? (
               <button
@@ -468,10 +462,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                   e.stopPropagation();
                   onOpenLegalDocument(product);
                 }}
-                className="btn-tactile-dark flex items-center gap-1.5 px-3 py-1 rounded-lg text-zinc-200 text-xs font-mono font-semibold cursor-pointer shadow-sm active:scale-95 transition-all"
-                title="Read full complete legal agreement with clauses"
+                className="btn-secondary flex items-center gap-1 px-2.5 py-1 rounded-lg text-zinc-200 text-xs font-mono font-medium cursor-pointer active:scale-95 transition-all"
+                title="Read full agreement clauses"
               >
-                <FileText className="w-3.5 h-3.5 text-slate-300" />
+                <FileText className="w-3 h-3 text-slate-300" />
                 <span>Clauses</span>
               </button>
             ) : (
@@ -485,10 +479,10 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                     onQuickLook(product);
                   }
                 }}
-                className="btn-tactile-dark flex items-center gap-1.5 px-3 py-1 rounded-lg text-zinc-200 text-xs font-mono font-semibold cursor-pointer active:scale-95 transition-all"
-                title="Inspect package contents & file tree"
+                className="btn-secondary flex items-center gap-1 px-2.5 py-1 rounded-lg text-zinc-200 text-xs font-mono font-medium cursor-pointer active:scale-95 transition-all"
+                title="Inspect files"
               >
-                <FileText className="w-3.5 h-3.5 text-slate-300" />
+                <FileText className="w-3 h-3 text-slate-300" />
                 <span>Files</span>
               </button>
             )}
@@ -498,22 +492,21 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 e.stopPropagation();
                 onQuickLook(product);
               }}
-              className="btn-tactile-dark flex items-center gap-1.5 px-3 py-1 rounded-lg text-zinc-200 text-xs font-semibold cursor-pointer shadow-sm active:scale-95 transition-all"
-              title="Quick preview spec"
+              className="btn-secondary flex items-center gap-1 px-2.5 py-1 rounded-lg text-zinc-200 text-xs font-medium cursor-pointer active:scale-95 transition-all"
+              title="Quick spec"
             >
-              <Eye className="w-3.5 h-3.5 text-slate-300" />
+              <Eye className="w-3 h-3 text-slate-300" />
               <span>Spec</span>
             </button>
           </div>
         </div>
-
       </div>
 
-      {/* 3. Folder Footer Dossier Details */}
-      <div className="p-2.5 pt-3 flex-1 flex flex-col justify-between space-y-3">
+      {/* 3. Card Body: Title, Subtitle & Cryptographic Telemetry */}
+      <div className="p-1 pt-3 flex-1 flex flex-col justify-between space-y-2.5">
         <div>
-          {/* Catalog Rating */}
-          <div className="flex items-center justify-between text-xs text-zinc-400 mb-1.5 font-mono">
+          {/* Rating & Version */}
+          <div className="flex items-center justify-between text-xs text-zinc-400 mb-1 font-mono">
             <div className="flex items-center gap-1 font-medium text-white">
               <Star className="w-3 h-3 fill-white text-white" />
               <span>{product.rating}</span>
@@ -527,16 +520,16 @@ export const ProductTile: React.FC<ProductTileProps> = ({
           {/* Title & Subtitle */}
           <h3 
             onClick={() => onQuickLook(product)}
-            className="text-sm font-semibold text-[#f4f5f6] group-hover:text-white transition-colors cursor-pointer line-clamp-1 [text-wrap:balance]"
+            className="text-sm sm:text-[15px] font-bold text-white group-hover:text-slate-100 transition-colors cursor-pointer line-clamp-1 tracking-tight"
           >
             {product.title}
           </h3>
-          <p className="text-xs text-zinc-400 line-clamp-2 mt-1 leading-relaxed [text-wrap:pretty]">
+          <p className="text-xs text-zinc-400 line-clamp-2 mt-1 leading-relaxed">
             {product.subtitle}
           </p>
 
-          {/* Atlas-Inspired Laser-Etched Cryptographic Telemetry Bezel */}
-          <div className="mt-2.5 px-2.5 py-1.5 rounded-lg bg-[#080808] border border-white/[0.08] flex items-center justify-between gap-1.5 font-mono text-[10px]">
+          {/* Precision Telemetry Bezel */}
+          <div className="mt-2.5 px-2.5 py-1.5 rounded-lg bg-[#050505] border border-white/[0.08] flex items-center justify-between gap-1.5 font-mono text-[10px]">
             <div className="flex items-center gap-1.5 min-w-0">
               <div className="flex items-center gap-1 text-zinc-400 shrink-0">
                 <Fingerprint className="w-3 h-3 text-slate-400" />
@@ -549,7 +542,7 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 type="button"
                 onClick={handleCopyHash}
                 className="flex items-center gap-1 text-zinc-400 hover:text-white transition-colors truncate cursor-pointer group/hash"
-                title={`Click to copy verified SHA-256 checksum: ${bundleManifest.sha256}`}
+                title={`Click to copy verified SHA-256: ${bundleManifest.sha256}`}
               >
                 <span className="text-zinc-500 font-semibold group-hover/hash:text-zinc-300 transition-colors">SHA:</span>
                 <span className="truncate tracking-tight font-mono text-zinc-400 group-hover/hash:text-zinc-200">
@@ -569,17 +562,17 @@ export const ProductTile: React.FC<ProductTileProps> = ({
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-slate-300"></span>
               </span>
               <span className="text-[9px] uppercase tracking-wider font-semibold text-zinc-500">
-                256-BIT
+                256B
               </span>
             </div>
           </div>
         </div>
 
-        {/* Valuation & Tactile Action Buttons */}
+        {/* 4. Action Row: Valuation & Main Button */}
         <div className="pt-2.5 border-t border-white/[0.08] flex items-center justify-between gap-2 mt-auto">
           <div>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-base font-extrabold text-white font-mono tracking-tight">
+              <span className="text-base font-bold text-white font-mono tracking-tight">
                 {isFree ? (
                   <span className="text-white font-black">FREE</span>
                 ) : (
@@ -597,49 +590,46 @@ export const ProductTile: React.FC<ProductTileProps> = ({
             </span>
           </div>
 
-          {/* Tactile Action Button */}
+          {/* Primary CTA */}
           {isPurchased ? (
             <button
               type="button"
               onClick={() => onInstantDownload(product)}
-              className="btn-primary flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-zinc-950 cursor-pointer shadow-sm"
+              className="btn-primary flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-black cursor-pointer"
             >
-              <Download className="w-3.5 h-3.5 text-zinc-950" />
+              <Download className="w-3.5 h-3.5 text-black" />
               <span>Download</span>
             </button>
           ) : isFree ? (
             <button
               type="button"
               onClick={() => onInstantDownload(product)}
-              className="btn-primary flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-zinc-950 cursor-pointer shadow-sm"
+              className="btn-primary flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-black cursor-pointer"
             >
-              <Download className="w-3.5 h-3.5 text-zinc-950" />
+              <Download className="w-3.5 h-3.5 text-black" />
               <span>Free Download</span>
             </button>
           ) : isInCart ? (
             <button
               type="button"
               disabled
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-zinc-800 text-zinc-400 border border-white/10 text-xs font-medium cursor-default"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-zinc-800 text-zinc-300 border border-white/10 text-xs font-semibold cursor-default"
             >
-              <Check className="w-3.5 h-3.5 text-zinc-400" />
+              <Check className="w-3.5 h-3.5 text-zinc-300" />
               <span>In Bag</span>
             </button>
           ) : (
             <button
               type="button"
               onClick={() => onAddToCart(product)}
-              className="btn-primary flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold cursor-pointer hover:shadow-[0_0_15px_rgba(255,255,255,0.25)]"
+              className="btn-primary flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold text-black cursor-pointer"
             >
-              <ShoppingBag className="w-3.5 h-3.5 text-zinc-950" />
+              <ShoppingBag className="w-3.5 h-3.5 text-black" />
               <span>Add to Bag</span>
             </button>
           )}
-
         </div>
-
       </div>
-
     </div>
   );
 };

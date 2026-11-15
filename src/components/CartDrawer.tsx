@@ -64,17 +64,17 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
       <div className="absolute inset-0" onClick={onClose} />
 
       <div className="absolute inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[var(--bg-surface)] border-l border-white/10 shadow-2xl flex flex-col z-10 text-[var(--text-primary)]">
+        <div className="w-screen max-w-md bg-[#090909] border-l border-white/10 shadow-2xl flex flex-col z-10 text-white">
           
           {/* Mobile Sheet Grab Indicator */}
-          <div className="w-10 h-1 bg-zinc-700 rounded-full mx-auto my-2 sm:hidden shrink-0" />
+          <div className="sheet-grabber sm:hidden" />
 
           {/* Header */}
-          <div className="px-5 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[var(--bg-surface)]">
+          <div className="px-5 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[#090909]">
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-white" />
               <h2 className="font-extrabold text-base text-white">Your Cart</h2>
-              <span className="px-2 py-0.5 rounded-full bg-[var(--bg-surface-elevated)] text-zinc-300 border border-white/10 font-mono text-xs font-bold">
+              <span className="px-2 py-0.5 rounded-full bg-[#181818] text-zinc-300 border border-white/10 font-mono text-xs font-bold">
                 {cart.length} {cart.length === 1 ? 'item' : 'items'}
               </span>
             </div>

@@ -49,16 +49,19 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
       role="dialog" 
       aria-modal="true" 
       aria-labelledby="modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/75 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/85 backdrop-blur-xl animate-in fade-in duration-200"
     >
       <div className="absolute inset-0" onClick={onClose} />
 
-      <div className="relative w-full max-w-3xl max-h-[90vh] bg-[var(--bg-surface)] border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col z-10 text-[var(--text-primary)]">
+      <div className="relative w-full max-w-3xl max-h-[92vh] bg-[#090909] border border-white/10 rounded-t-3xl sm:rounded-3xl overflow-hidden shadow-2xl flex flex-col z-10 text-white">
         
+        {/* Native Mobile Sheet Grabber */}
+        <div className="sheet-grabber sm:hidden" />
+
         {/* Top Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.08] bg-[var(--bg-surface)]">
+        <div className="flex items-center justify-between px-5 sm:px-6 py-3.5 border-b border-white/[0.08] bg-[#090909]">
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded-md bg-[var(--bg-surface-elevated)] text-zinc-200 border border-white/10 font-mono text-xs font-bold uppercase">
+            <span className="px-2.5 py-0.5 rounded-md bg-[#141414] text-zinc-200 border border-white/10 font-mono text-xs font-bold uppercase">
               {product.fileFormat}
             </span>
             <span className="text-xs text-zinc-400 capitalize font-medium">
@@ -69,7 +72,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.05] transition-colors cursor-pointer"
+            className="p-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.08] transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -80,9 +83,9 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
           
           {/* Hero Banner */}
-          <div className="w-full rounded-2xl bg-[var(--bg-surface-elevated)] p-6 sm:p-8 border border-white/10 relative overflow-hidden flex flex-col justify-between min-h-[160px]">
+          <div className="w-full rounded-2xl bg-[#0e0e0e] p-6 sm:p-8 border border-white/10 relative overflow-hidden flex flex-col justify-between min-h-[160px]">
             <div className="relative z-10 flex items-center justify-between">
-              <span className="px-2.5 py-1 rounded-full bg-[var(--bg-surface)] text-xs font-mono text-zinc-300 border border-white/10 shadow-2xs">
+              <span className="px-2.5 py-1 rounded-full bg-[#181818] text-xs font-mono text-zinc-300 border border-white/10 shadow-2xs">
                 v{product.version} • Updated {product.updatedAt}
               </span>
               {product.badge && (
@@ -104,7 +107,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
 
           {/* Quick Stat Chips */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="p-3.5 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08]">
+            <div className="p-3.5 rounded-2xl bg-[#0e0e0e] border border-white/[0.08]">
               <div className="flex items-center gap-1.5 text-zinc-400 text-xs mb-1">
                 <HardDrive className="w-3.5 h-3.5 text-zinc-400" />
                 <span>Archive Size</span>
@@ -112,7 +115,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
               <div className="text-sm font-bold text-white font-mono">{product.fileSize}</div>
             </div>
 
-            <div className="p-3.5 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08]">
+            <div className="p-3.5 rounded-2xl bg-[#0e0e0e] border border-white/[0.08]">
               <div className="flex items-center gap-1.5 text-zinc-400 text-xs mb-1">
                 <Star className="w-3.5 h-3.5 text-white fill-white" />
                 <span>Rating</span>
@@ -120,7 +123,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
               <div className="text-sm font-bold text-white">{product.rating} ({product.reviewCount})</div>
             </div>
 
-            <div className="p-3.5 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08]">
+            <div className="p-3.5 rounded-2xl bg-[#0e0e0e] border border-white/[0.08]">
               <div className="flex items-center gap-1.5 text-zinc-400 text-xs mb-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-slate-300" />
                 <span>License</span>
@@ -128,7 +131,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
               <div className="text-xs font-bold text-white truncate">{product.license}</div>
             </div>
 
-            <div className="p-3.5 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08]">
+            <div className="p-3.5 rounded-2xl bg-[#0e0e0e] border border-white/[0.08]">
               <div className="flex items-center gap-1.5 text-zinc-400 text-xs mb-1">
                 <Download className="w-3.5 h-3.5 text-slate-300" />
                 <span>Downloads</span>
@@ -281,7 +284,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
         </div>
 
         {/* Modal Action Footer */}
-        <div className="px-6 py-4 bg-[var(--bg-surface)] border-t border-white/[0.08] flex items-center justify-between gap-4">
+        <div className="px-6 py-4 bg-[#090909] border-t border-white/[0.08] flex items-center justify-between gap-4">
           <div>
             <div className="text-[11px] text-zinc-400">Digital Archive Package</div>
             <div className="text-xl font-extrabold text-white font-mono">

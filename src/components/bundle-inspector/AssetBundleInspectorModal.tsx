@@ -307,19 +307,19 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
       role="dialog" 
       aria-modal="true" 
       aria-labelledby="bundle-inspector-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/75 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/85 backdrop-blur-xl animate-in fade-in duration-200"
     >
       {/* Backdrop click dismiss */}
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* Main Container with Concentric Radii and Specular Sheen */}
-      <div className="relative w-full max-w-4xl max-h-[92vh] bg-[var(--bg-surface)] border border-white/[0.08] rounded-2xl overflow-hidden shadow-2xl flex flex-col z-10 text-[var(--text-primary)]">
+      <div className="relative w-full max-w-4xl max-h-[92vh] bg-[#090909] border border-white/10 rounded-t-3xl sm:rounded-3xl overflow-hidden shadow-2xl flex flex-col z-10 text-white">
         
-        {/* Specular Edge Top Highlight */}
-        <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none z-20" />
+        {/* Mobile Sheet Grab Indicator */}
+        <div className="sheet-grabber sm:hidden" />
 
         {/* 1. Top Header Bar */}
-        <div className="px-5 py-4 border-b border-white/[0.08] bg-[var(--bg-surface-elevated)] flex items-center justify-between gap-3 shrink-0">
+        <div className="px-5 py-4 border-b border-white/[0.08] bg-[#090909] flex items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-3 min-w-0">
             <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/[0.08] text-white flex items-center justify-center font-black text-sm shrink-0">
               <Layers className="w-5 h-5 text-white" />

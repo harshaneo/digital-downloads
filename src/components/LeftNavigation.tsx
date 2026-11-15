@@ -132,7 +132,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                     className={`px-2.5 py-1 rounded-lg text-xs font-mono font-medium transition-all cursor-pointer ${
                       isSelected
                         ? 'btn-primary font-bold shadow-sm'
-                        : 'btn-tactile-dark text-slate-300 hover:text-white'
+                        : 'btn-secondary text-slate-300 hover:text-white'
                     }`}
                   >
                     {fmt}

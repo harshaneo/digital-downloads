@@ -7,10 +7,10 @@ export const SkeletonTileGrid: React.FC<{ count?: number }> = ({ count = 6 }) =>
       {Array.from({ length: count }).map((_, i) => (
         <div 
           key={i} 
-          className="bg-[var(--bg-surface)] border border-white/[0.08] rounded-xl overflow-hidden p-4 space-y-4 animate-pulse"
+          className="bg-[#090909] border border-white/[0.08] rounded-2xl overflow-hidden p-4 space-y-4 animate-pulse"
         >
           {/* Shimmer Preview Header */}
-          <div className="w-full aspect-16/10 rounded-lg bg-[var(--bg-surface-elevated)] flex items-center justify-center">
+          <div className="w-full aspect-16/10 rounded-xl bg-[#141414] flex items-center justify-center">
             <div className="w-12 h-12 rounded-lg bg-white/[0.04]" />
           </div>
 

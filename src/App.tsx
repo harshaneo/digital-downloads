@@ -523,7 +523,7 @@ export function App() {
               {/* 40% Column: Dimensional Exhibition Plinth Card */}
               <div className="lg:col-span-5">
                 <div 
-                  className="group relative rounded-[20px] p-[10px] bg-[var(--bg-surface-elevated)] border border-white/[0.10] shadow-[0_16px_36px_-6px_rgba(0,0,0,0.8)] border-t border-t-white/[0.18] hover:border-white/[0.22] transition-all duration-300"
+                  className="group app-card relative rounded-2xl p-3 sm:p-3.5 bg-[#090909] hover:bg-[#0e0e0e] border border-white/[0.08] hover:border-white/[0.20] transition-all duration-200"
                 >
                   {/* Top Specimen Badge & Heart */}
                   <div className="px-2.5 py-1.5 flex items-center justify-between gap-2 border-b border-white/[0.08] mb-2">
@@ -538,13 +538,13 @@ export function App() {
                       onClick={() => handleToggleWishlist(flagshipProduct)}
                       className={`p-1.5 rounded-lg transition-all cursor-pointer ${
                         isFlagshipWishlisted
-                          ? 'badge-3d text-white scale-105'
-                          : 'btn-tactile-dark text-zinc-400 hover:text-white'
+                          ? 'bg-white text-black font-bold scale-105'
+                          : 'bg-white/[0.04] text-zinc-400 hover:text-white border border-white/10 hover:border-white/20'
                       }`}
                       title={isFlagshipWishlisted ? 'Remove from Wishlist' : 'Save to Wishlist'}
                       aria-label="Wishlist Flagship Specimen"
                     >
-                      <Heart className={`w-3.5 h-3.5 ${isFlagshipWishlisted ? 'fill-white text-white' : ''}`} />
+                      <Heart className={`w-3.5 h-3.5 ${isFlagshipWishlisted ? 'fill-black text-black' : ''}`} />
                     </button>
                   </div>
 
@@ -604,7 +604,7 @@ export function App() {
                         <button
                           type="button"
                           onClick={() => setInspectingBundleProduct(flagshipProduct)}
-                          className="btn-tactile-dark flex items-center gap-1.5 px-3 py-1 rounded-lg text-slate-200 text-xs font-mono font-bold cursor-pointer active:scale-95 transition-all"
+                          className="btn-secondary flex items-center gap-1.5 px-3 py-1 rounded-lg text-slate-200 text-xs font-mono font-medium cursor-pointer active:scale-95 transition-all"
                         >
                           <FileText className="w-3.5 h-3.5 text-slate-300" />
                           <span>View Files</span>
@@ -629,7 +629,7 @@ export function App() {
                       </p>
 
                       {/* Atlas-Inspired Laser-Etched Telemetry Bezel */}
-                      <div className="mt-2 px-2.5 py-1.5 rounded-lg bg-[#080808] border border-white/[0.08] flex items-center justify-between gap-1.5 font-mono text-[10px]">
+                      <div className="mt-2 px-2.5 py-1.5 rounded-lg bg-[#050505] border border-white/[0.08] flex items-center justify-between gap-1.5 font-mono text-[10px]">
                         <div className="flex items-center gap-1.5 min-w-0">
                           <div className="flex items-center gap-1 text-zinc-400 shrink-0">
                             <Fingerprint className="w-3 h-3 text-slate-400" />
@@ -675,7 +675,7 @@ export function App() {
                           <button
                             type="button"
                             onClick={() => handleOpenLegalDocument(flagshipProduct)}
-                            className="btn-tactile-dark flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-xs font-semibold cursor-pointer active:scale-95 transition-all shadow-sm"
+                            className="btn-secondary flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-xs font-semibold cursor-pointer active:scale-95 transition-all shadow-sm"
                             title="Read agreement clauses"
                           >
                             <FileText className="w-3.5 h-3.5 text-slate-300" />
@@ -685,7 +685,7 @@ export function App() {
                           <button
                             type="button"
                             onClick={() => setInspectingBundleProduct(flagshipProduct)}
-                            className="btn-tactile-dark flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-zinc-200 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
+                            className="btn-secondary flex items-center gap-1.5 py-1.5 px-3 rounded-xl text-zinc-200 text-xs font-semibold cursor-pointer active:scale-95 transition-all"
                             title="Inspect package files"
                           >
                             <FileText className="w-3.5 h-3.5 text-slate-300" />
@@ -696,7 +696,7 @@ export function App() {
                         <button
                           type="button"
                           onClick={() => setActiveQuickLook(flagshipProduct)}
-                          className="btn-tactile-dark flex items-center gap-1.5 py-1.5 px-2.5 rounded-xl text-zinc-300 text-xs font-medium cursor-pointer active:scale-95 transition-all"
+                          className="btn-secondary flex items-center gap-1.5 py-1.5 px-2.5 rounded-xl text-zinc-300 text-xs font-medium cursor-pointer active:scale-95 transition-all"
                           title="Spec Overview"
                           aria-label="Spec Overview"
                         >
@@ -773,7 +773,7 @@ export function App() {
                   id="sort-select"
                   value={filterState.sortBy}
                   onChange={(e) => handleFilterChange({ sortBy: e.target.value as FilterState['sortBy'] })}
-                  className="btn-tactile-dark rounded-lg px-2.5 py-1.5 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-white/30 font-medium cursor-pointer"
+                  className="btn-secondary rounded-xl px-3 py-1.5 text-xs text-zinc-200 focus:outline-none focus:ring-1 focus:ring-white/30 font-medium cursor-pointer"
                 >
                   <option value="popular">Popular</option>
                   <option value="rating">Rating</option>
