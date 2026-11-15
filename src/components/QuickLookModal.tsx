@@ -117,15 +117,18 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
 
             <div className="p-3.5 rounded-2xl bg-[#0e0e0e] border border-white/[0.08]">
               <div className="flex items-center gap-1.5 text-zinc-400 text-xs mb-1">
-                <Star className="w-3.5 h-3.5 text-white fill-white" />
+                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                 <span>Rating</span>
               </div>
-              <div className="text-sm font-bold text-white">{product.rating} ({product.reviewCount})</div>
+              <div className="text-sm font-bold text-white">
+                <span className="text-amber-300 font-bold">{product.rating}</span>{' '}
+                <span className="text-zinc-500 font-normal">({product.reviewCount})</span>
+              </div>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-[#0e0e0e] border border-white/[0.08]">
               <div className="flex items-center gap-1.5 text-zinc-400 text-xs mb-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-slate-300" />
+                <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
                 <span>License</span>
               </div>
               <div className="text-xs font-bold text-white truncate">{product.license}</div>
@@ -133,7 +136,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
 
             <div className="p-3.5 rounded-2xl bg-[#0e0e0e] border border-white/[0.08]">
               <div className="flex items-center gap-1.5 text-zinc-400 text-xs mb-1">
-                <Download className="w-3.5 h-3.5 text-slate-300" />
+                <Download className="w-3.5 h-3.5 text-sky-400" />
                 <span>Downloads</span>
               </div>
               <div className="text-sm font-bold text-white font-mono">{product.downloadsCount.toLocaleString()}</div>
@@ -154,7 +157,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
               <ul className="grid sm:grid-cols-2 gap-2 text-xs text-zinc-300">
                 {product.features.map((feat, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-slate-300 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -223,15 +226,15 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
                   onClick={() => setSelectedLicense('standard')}
                   className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
                     selectedLicense === 'standard'
-                      ? 'bg-white text-zinc-950 border-white shadow-sm font-semibold'
+                      ? 'bg-indigo-500/15 text-white border-indigo-500/40 shadow-sm font-semibold'
                       : 'bg-[var(--bg-surface-elevated)] border-white/10 text-zinc-300 hover:border-white/20'
                   }`}
                 >
                   <div className="flex items-center justify-between font-bold text-xs mb-1">
-                    <span>Standard Commercial</span>
-                    <span className="font-mono">{formatPrice(product.price)}</span>
+                    <span className={selectedLicense === 'standard' ? 'text-indigo-200' : ''}>Standard Commercial</span>
+                    <span className="font-mono text-emerald-400 font-bold">{formatPrice(product.price)}</span>
                   </div>
-                  <p className="text-[11px] opacity-80">
+                  <p className="text-[11px] opacity-80 text-zinc-400">
                     Single commercial project for yourself or a client.
                   </p>
                 </button>
@@ -241,15 +244,15 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
                   onClick={() => setSelectedLicense('extended')}
                   className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
                     selectedLicense === 'extended'
-                      ? 'bg-white text-zinc-950 border-white shadow-sm font-semibold'
+                      ? 'bg-indigo-500/15 text-white border-indigo-500/40 shadow-sm font-semibold'
                       : 'bg-[var(--bg-surface-elevated)] border-white/10 text-zinc-300 hover:border-white/20'
                   }`}
                 >
                   <div className="flex items-center justify-between font-bold text-xs mb-1">
-                    <span>Extended Agency</span>
-                    <span className="font-mono">{formatPrice(Math.round(product.price * 1.8))}</span>
+                    <span className={selectedLicense === 'extended' ? 'text-indigo-200' : ''}>Extended Agency</span>
+                    <span className="font-mono text-emerald-400 font-bold">{formatPrice(Math.round(product.price * 1.8))}</span>
                   </div>
-                  <p className="text-[11px] opacity-80">
+                  <p className="text-[11px] opacity-80 text-zinc-400">
                     Unlimited client projects & SaaS redistribution.
                   </p>
                 </button>
@@ -268,7 +271,11 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
               <div>
                 <div className="flex items-center gap-1.5 font-bold text-xs text-white">
                   <span>{product.creator.name}</span>
-                  {product.creator.verified && <CheckCircle2 className="w-3.5 h-3.5 text-slate-300" />}
+                  {product.creator.verified && (
+                    <span title="Verified Creator">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    </span>
+                  )}
                 </div>
                 <span className="text-zinc-400 text-xs">{product.creator.handle}</span>
               </div>
@@ -289,7 +296,7 @@ export const QuickLookModal: React.FC<QuickLookModalProps> = ({
             <div className="text-[11px] text-zinc-400">Digital Archive Package</div>
             <div className="text-xl font-extrabold text-white font-mono">
               {isFree ? (
-                <span className="text-white font-black">FREE DOWNLOAD</span>
+                <span className="text-emerald-400 font-black">FREE DOWNLOAD</span>
               ) : (
                 formatPrice(finalPrice)
               )}

@@ -236,13 +236,7 @@
 }
 
 /* 3. Micro Badges & Telemetry Seals */
-.badge-3d, .badge-metal, .badge-debossed,
-.badge-3d-neutral, .badge-metal-titanium,
-.badge-3d-amber, .badge-metal-bronze,
-.badge-3d-gold-solid, .badge-metal-gold-solid,
-.badge-3d-emerald, .badge-metal-emerald,
-.badge-3d-rose, .badge-metal-ruby,
-.badge-3d-indigo, .badge-metal-cobalt {
+.badge-3d {
   display: inline-flex;
   align-items: center;
   font-family: var(--font-mono);
@@ -253,9 +247,56 @@
   border-radius: 6px;
   background: #111111;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: none;
   padding: 2px 8px;
   color: #cbd5e1;
+}
+
+.badge-3d-neutral, .badge-metal-titanium {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #e2e8f0;
+}
+
+.badge-3d-indigo, .badge-metal-cobalt {
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.32);
+  color: #a5b4fc;
+}
+
+.badge-3d-emerald, .badge-metal-emerald {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.32);
+  color: #6ee7b7;
+}
+
+.badge-3d-amber, .badge-metal-bronze, .badge-3d-gold-solid, .badge-metal-gold-solid {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  color: #fcd34d;
+}
+
+.badge-3d-rose, .badge-metal-ruby {
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.32);
+  color: #fda4af;
+}
+
+.badge-3d-sky {
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(14, 165, 233, 0.32);
+  color: #7dd3fc;
+}
+
+.badge-3d-violet {
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.32);
+  color: #c4b5fd;
+}
+
+.badge-3d-teal {
+  background: rgba(20, 184, 166, 0.12);
+  border: 1px solid rgba(20, 184, 166, 0.32);
+  color: #5eead4;
 }
 
 /* 4. Native App Sheet Primitives */

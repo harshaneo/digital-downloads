@@ -41,8 +41,8 @@ export const EmptyState: React.FC<{
 }> = ({ query, onResetFilters }) => {
   return (
     <div className="py-20 text-center space-y-4 max-w-md mx-auto">
-      <div className="w-16 h-16 rounded-2xl bg-[var(--bg-surface-elevated)] border border-white/[0.08] flex items-center justify-center mx-auto text-zinc-500 shadow-sm">
-        <SearchX className="w-8 h-8 text-white" />
+      <div className="w-16 h-16 rounded-2xl bg-indigo-500/10 border border-indigo-500/25 flex items-center justify-center mx-auto text-indigo-400 shadow-sm">
+        <SearchX className="w-8 h-8 text-indigo-400" />
       </div>
 
       <div className="space-y-1.5">
@@ -60,7 +60,7 @@ export const EmptyState: React.FC<{
           onClick={onResetFilters}
           className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-[var(--bg-base)] text-xs font-bold transition-all shadow-sm cursor-pointer"
         >
-          <Filter className="w-3.5 h-3.5" />
+          <Filter className="w-3.5 h-3.5 text-black" />
           <span>Reset All Filters</span>
         </button>
       </div>
@@ -74,8 +74,8 @@ export const ErrorState: React.FC<{
 }> = ({ errorMessage, onRetry }) => {
   return (
     <div className="py-20 text-center space-y-4 max-w-md mx-auto">
-      <div className="w-16 h-16 rounded-2xl bg-white/[0.08] border border-white/20 flex items-center justify-center mx-auto text-white shadow-sm">
-        <AlertTriangle className="w-8 h-8 text-white" />
+      <div className="w-16 h-16 rounded-2xl bg-rose-500/10 border border-rose-500/25 flex items-center justify-center mx-auto text-rose-400 shadow-sm">
+        <AlertTriangle className="w-8 h-8 text-rose-400" />
       </div>
 
       <div className="space-y-1.5">
@@ -91,7 +91,7 @@ export const ErrorState: React.FC<{
           onClick={onRetry}
           className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[var(--bg-surface-elevated)] border border-white/[0.12] text-white hover:bg-white/[0.06] text-xs font-bold transition-all cursor-pointer shadow-xs"
         >
-          <RefreshCw className="w-3.5 h-3.5" />
+          <RefreshCw className="w-3.5 h-3.5 text-zinc-300" />
           <span>Retry Connection</span>
         </button>
       </div>

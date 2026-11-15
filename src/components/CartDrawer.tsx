@@ -74,7 +74,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             <div className="flex items-center gap-2">
               <ShoppingBag className="w-5 h-5 text-white" />
               <h2 className="font-extrabold text-base text-white">Your Cart</h2>
-              <span className="px-2 py-0.5 rounded-full bg-[#181818] text-zinc-300 border border-white/10 font-mono text-xs font-bold">
+              <span className="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-mono text-xs font-bold">
                 {cart.length} {cart.length === 1 ? 'item' : 'items'}
               </span>
             </div>
@@ -170,10 +170,10 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 </div>
 
                 {discountMsg && (
-                  <p className={`text-[11px] flex items-center gap-1 ${
-                    discountMsg.type === 'success' ? 'text-white' : 'text-slate-400'
+                  <p className={`text-[11px] flex items-center gap-1 font-mono ${
+                    discountMsg.type === 'success' ? 'text-emerald-400' : 'text-rose-400'
                   }`}>
-                    {discountMsg.type === 'success' ? <Check className="w-3 h-3 text-white" /> : <AlertCircle className="w-3 h-3 text-slate-400" />}
+                    {discountMsg.type === 'success' ? <Check className="w-3 h-3 text-emerald-400" /> : <AlertCircle className="w-3 h-3 text-rose-400" />}
                     <span>{discountMsg.text}</span>
                   </p>
                 )}
@@ -187,7 +187,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 </div>
 
                 {appliedDiscount > 0 && (
-                  <div className="flex justify-between text-white font-bold">
+                  <div className="flex justify-between text-emerald-400 font-bold">
                     <span>Discount</span>
                     <span>-{formatPrice(appliedDiscount)}</span>
                   </div>
@@ -195,7 +195,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
                 <div className="flex justify-between">
                   <span>Immediate Access</span>
-                  <span className="text-white font-bold">FREE DOWNLOAD</span>
+                  <span className="text-emerald-400 font-bold">FREE DOWNLOAD</span>
                 </div>
 
                 <div className="flex justify-between text-base font-extrabold text-white pt-2 border-t border-white/[0.08]">
@@ -208,14 +208,14 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               <button
                 type="button"
                 onClick={() => onCheckout(appliedDiscount)}
-                className="w-full py-3 px-4 rounded-xl btn-primary text-zinc-950 font-extrabold text-sm flex items-center justify-center gap-2 shadow-sm cursor-pointer"
+                className="w-full py-3 px-4 rounded-xl btn-primary text-zinc-950 font-extrabold text-sm flex items-center justify-center gap-2 shadow-sm cursor-pointer hover:bg-emerald-400 transition-colors"
               >
                 <span>Instant Checkout & Download</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
               <div className="flex items-center justify-center gap-2 text-[11px] text-zinc-400 text-center">
-                <ShieldCheck className="w-3.5 h-3.5 text-slate-300" />
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Immediate perpetual license and file access</span>
               </div>
 

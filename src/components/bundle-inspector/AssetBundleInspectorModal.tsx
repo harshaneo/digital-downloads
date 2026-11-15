@@ -206,7 +206,13 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
   // File extension badge styles
   const getExtensionBadge = (ext?: string) => {
     const e = (ext || '').toLowerCase();
-    return <span className="text-[11px] font-mono px-2 py-0.5 rounded-md badge-3d text-slate-200 font-bold uppercase">{e || 'raw'}</span>;
+    let badgeClass = 'badge-3d-neutral';
+    if (['ts', 'tsx', 'js', 'jsx'].includes(e)) badgeClass = 'badge-3d-sky';
+    else if (['json', 'yaml', 'yml'].includes(e)) badgeClass = 'badge-3d-amber';
+    else if (['md', 'pdf', 'txt', 'docx'].includes(e)) badgeClass = 'badge-3d-emerald';
+    else if (['fig', 'svg', 'png'].includes(e)) badgeClass = 'badge-3d-rose';
+    else if (['zip', 'gz'].includes(e)) badgeClass = 'badge-3d-violet';
+    return <span className={`text-[10px] font-mono px-2 py-0.5 rounded-md badge-3d font-bold uppercase ${badgeClass}`}>{e || 'raw'}</span>;
   };
 
 
@@ -235,18 +241,18 @@ export const AssetBundleInspectorModal: React.FC<AssetBundleInspectorModalProps>
 
             {isFolder ? (
               isExpanded ? (
-                <FolderOpen className="w-4 h-4 text-slate-300 shrink-0" />
+                <FolderOpen className="w-4 h-4 text-amber-400 shrink-0" />
               ) : (
-                <Folder className="w-4 h-4 text-slate-300 shrink-0" />
+                <Folder className="w-4 h-4 text-amber-400 shrink-0" />
               )
             ) : item.extension === 'tsx' || item.extension === 'ts' || item.extension === 'json' ? (
-              <FileCode className="w-4 h-4 text-slate-300 shrink-0" />
-            ) : item.extension === 'pdf' || item.extension === 'md' || item.extension === 'txt' ? (
-              <FileText className="w-4 h-4 text-zinc-400 shrink-0" />
+              <FileCode className="w-4 h-4 text-sky-400 shrink-0" />
+            ) : item.extension === 'pdf' || item.extension === 'md' || item.extension === 'txt' || item.extension === 'docx' ? (
+              <FileText className="w-4 h-4 text-emerald-400 shrink-0" />
             ) : item.extension === 'fig' || item.extension === 'blend' || item.extension === 'svg' ? (
-              <FileArchive className="w-4 h-4 text-slate-300 shrink-0" />
+              <FileArchive className="w-4 h-4 text-rose-400 shrink-0" />
             ) : (
-              <File className="w-4 h-4 text-zinc-500 shrink-0" />
+              <File className="w-4 h-4 text-zinc-400 shrink-0" />
             )}
 
             <span className={`text-xs truncate font-mono ${isFolder ? 'font-semibold text-zinc-200' : 'text-zinc-300'}`}>

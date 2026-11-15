@@ -64,8 +64,8 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
         {/* Header */}
         <div className="px-6 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[#090909]">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-white">
-              <DownloadCloud className="w-4 h-4" />
+            <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/25 flex items-center justify-center text-sky-400">
+              <DownloadCloud className="w-4 h-4 text-sky-400" />
             </div>
             <div>
               <h2 className="font-bold text-sm text-white tracking-tight">My Downloads Library</h2>
@@ -164,8 +164,8 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
                 {/* License Key line */}
                 <div className="flex items-center justify-between gap-2 p-2 rounded-lg bg-[var(--bg-surface)] border border-white/[0.06] font-mono text-xs">
                   <div className="flex items-center gap-2 text-zinc-400 min-w-0">
-                    <Key className="w-3.5 h-3.5 text-slate-300 shrink-0" />
-                    <span className="text-zinc-500 text-[11px] uppercase font-bold">Key:</span>
+                    <Key className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    <span className="text-amber-400/80 text-[11px] uppercase font-bold">Key:</span>
                     <span className="text-zinc-200 truncate text-[11px] font-semibold">{item.licenseKey}</span>
                   </div>
 
@@ -175,8 +175,8 @@ export const MyDownloadsModal: React.FC<MyDownloadsModalProps> = ({
                     className="p-1 text-zinc-400 hover:text-white transition-colors cursor-pointer shrink-0 flex items-center gap-1 text-[11px]"
                   >
                     {copiedKey === item.licenseKey ? (
-                      <span className="text-white font-sans font-bold flex items-center gap-1">
-                        <Check className="w-3 h-3 text-white" /> Copied
+                      <span className="text-emerald-400 font-sans font-bold flex items-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-400" /> Copied
                       </span>
                     ) : (
                       <span className="hover:text-white flex items-center gap-1">

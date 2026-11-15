@@ -463,8 +463,9 @@ export function App() {
             aria-labelledby="banner-heading" 
             className="relative rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-10 bg-[var(--bg-surface)] border border-white/[0.08] shadow-[0_12px_36px_rgba(0,0,0,0.7)] overflow-hidden border-t border-t-slate-200/[0.18] max-w-full"
           >
-            {/* Ambient Dark Platinum Light Pools */}
-            <div className="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-slate-200/5 via-white/[0.01] to-transparent blur-3xl pointer-events-none" />
+            {/* Ambient Multi-Dimensional Radiant Light Pools */}
+            <div className="absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-indigo-500/10 via-purple-500/5 to-transparent blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 left-1/4 w-96 h-96 rounded-full bg-gradient-to-tr from-emerald-500/10 via-teal-500/5 to-transparent blur-3xl pointer-events-none" />
 
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
@@ -472,11 +473,12 @@ export function App() {
               <div className="lg:col-span-7 space-y-4">
                 {/* Refined Category / Status Indicator */}
                 <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-                  <span className="px-2.5 py-1 rounded-md bg-[var(--bg-surface-elevated)] border border-slate-300/15 text-xs font-semibold text-slate-200">
+                  <span className="px-2.5 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/30 text-xs font-semibold text-indigo-300">
                     2026 ARCHIVE
                   </span>
                   <span className="text-zinc-600">•</span>
-                  <span className="text-xs font-medium text-slate-400">
+                  <span className="text-xs font-medium text-emerald-400 flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5" />
                     VERIFIED LEGAL & CODE ASSETS
                   </span>
                 </div>
@@ -514,7 +516,7 @@ export function App() {
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="text-zinc-600">•</span>
-                    <span className="font-bold text-white">Direct</span> Instant Download
+                    <span className="font-bold text-emerald-400">Direct</span> Instant Download
                   </div>
                 </div>
 
@@ -528,7 +530,7 @@ export function App() {
                   {/* Top Specimen Badge & Heart */}
                   <div className="px-2.5 py-1.5 flex items-center justify-between gap-2 border-b border-white/[0.08] mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="px-2.5 py-0.5 rounded-md badge-3d font-mono text-xs font-bold tracking-wide text-slate-200">
+                      <span className="px-2.5 py-0.5 rounded-md badge-3d badge-3d-amber font-mono text-xs font-bold tracking-wide">
                         FEATURED
                       </span>
                     </div>
@@ -538,13 +540,13 @@ export function App() {
                       onClick={() => handleToggleWishlist(flagshipProduct)}
                       className={`p-1.5 rounded-lg transition-all cursor-pointer ${
                         isFlagshipWishlisted
-                          ? 'bg-white text-black font-bold scale-105'
-                          : 'bg-white/[0.04] text-zinc-400 hover:text-white border border-white/10 hover:border-white/20'
+                          ? 'bg-rose-500/15 text-rose-400 border border-rose-500/30 font-bold scale-105'
+                          : 'bg-white/[0.04] text-zinc-400 hover:text-rose-400 border border-white/10 hover:border-rose-500/20'
                       }`}
                       title={isFlagshipWishlisted ? 'Remove from Wishlist' : 'Save to Wishlist'}
                       aria-label="Wishlist Flagship Specimen"
                     >
-                      <Heart className={`w-3.5 h-3.5 ${isFlagshipWishlisted ? 'fill-black text-black' : ''}`} />
+                      <Heart className={`w-3.5 h-3.5 ${isFlagshipWishlisted ? 'fill-rose-500 text-rose-500' : ''}`} />
                     </button>
                   </div>
 
@@ -555,35 +557,35 @@ export function App() {
                     <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:12px_12px] opacity-60 pointer-events-none" />
 
                     {/* 1. Tucked Flagship Specimen Document */}
-                    <div className="absolute inset-x-2.5 top-2 bottom-4 tucked-specimen-sheet z-10 rounded-xl overflow-hidden border border-white/[0.16] shadow-2xl bg-gradient-to-b from-[#0a0c10] to-[#030405] p-3 flex flex-col justify-between">
-                      <div className="flex items-center justify-between z-10 pb-1 border-b border-white/[0.08]">
-                        <span className="px-2.5 py-0.5 rounded-md badge-3d text-xs font-mono font-bold text-slate-200">
+                    <div className="absolute inset-x-2.5 top-2 bottom-4 tucked-specimen-sheet z-10 rounded-xl overflow-hidden border border-indigo-500/20 shadow-2xl bg-gradient-to-b from-[#0b1428] via-[#070d1a] to-[#03060c] p-3 flex flex-col justify-between">
+                      <div className="flex items-center justify-between z-10 pb-1 border-b border-indigo-500/20">
+                        <span className="px-2.5 py-0.5 rounded-md badge-3d badge-3d-indigo text-xs font-mono font-bold">
                           {flagshipProduct.fileFormat} MASTER KIT
                         </span>
                         <div className="flex items-center gap-1 font-mono text-xs text-white bg-black/70 px-2 py-0.5 rounded-full border border-white/10">
-                          <Star className="w-3 h-3 fill-white text-white" />
-                          <span className="font-bold">{flagshipProduct.rating}</span>
+                          <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+                          <span className="font-bold text-amber-300">{flagshipProduct.rating}</span>
                         </div>
                       </div>
 
                       {/* Executive Specimen Preview */}
-                      <div className="my-auto py-2 px-3 bg-[var(--bg-base)]/90 rounded-lg border border-white/[0.08] space-y-1.5 font-mono">
+                      <div className="my-auto py-2 px-3 bg-[#000000]/80 rounded-lg border border-indigo-500/20 space-y-1.5 font-mono">
                         <div className="flex items-center justify-between text-xs font-semibold text-slate-200">
-                          <span className="font-serif italic text-white text-[13px]">{flagshipProduct.title}</span>
-                          <span className="text-[11px] text-slate-400 font-mono">EXECUTION READY</span>
+                          <span className="font-serif italic text-indigo-100 text-[13px]">{flagshipProduct.title}</span>
+                          <span className="text-[11px] text-emerald-400 font-mono">EXECUTION READY</span>
                         </div>
                         <div className="text-[11px] text-slate-400 leading-snug line-clamp-2">
                           {flagshipProduct.subtitle}
                         </div>
-                        <div className="pt-1 flex items-center justify-between text-[11px] text-slate-400 border-t border-white/[0.05]">
-                          <span className="text-slate-300 font-medium">Jurisdiction: Delaware / NY / UK</span>
-                          <span>Enforceable Master Pack</span>
+                        <div className="pt-1 flex items-center justify-between text-[11px] text-slate-400 border-t border-indigo-500/15">
+                          <span className="text-indigo-300 font-medium">Jurisdiction: Delaware / NY / UK</span>
+                          <span className="text-zinc-400">Enforceable Master Pack</span>
                         </div>
                       </div>
 
-                      <div className="flex items-center justify-between text-xs font-mono text-zinc-400 z-10 pt-1 border-t border-white/[0.06]">
+                      <div className="flex items-center justify-between text-xs font-mono text-zinc-400 z-10 pt-1 border-t border-indigo-500/20">
                         <span className="text-zinc-300 font-semibold">{flagshipProduct.fileSize} • 4 Files</span>
-                        <span className="text-slate-300 font-bold">Attorney Verified</span>
+                        <span className="text-indigo-300 font-bold">Attorney Verified</span>
                       </div>
                     </div>
 
@@ -592,10 +594,10 @@ export function App() {
                       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
                       
                       <div className="flex items-center gap-1.5 pointer-events-auto">
-                        <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-md badge-3d text-slate-200 font-bold">
+                        <span className="text-xs font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-md badge-3d badge-3d-amber font-bold">
                           FEATURED ASSET
                         </span>
-                        <span className="text-xs font-mono text-zinc-400">
+                        <span className="text-xs font-mono text-emerald-400">
                           DIRECT ACCESS
                         </span>
                       </div>
@@ -616,7 +618,7 @@ export function App() {
                       <div className="mt-2 px-2.5 py-1.5 rounded-lg bg-[#050505] border border-white/[0.08] flex items-center justify-between gap-1.5 font-mono text-[10px]">
                         <div className="flex items-center gap-1.5 min-w-0">
                           <div className="flex items-center gap-1 text-zinc-400 shrink-0">
-                            <Fingerprint className="w-3 h-3 text-slate-400" />
+                            <Fingerprint className="w-3 h-3 text-cyan-400" />
                             <span className="uppercase tracking-wider font-semibold text-zinc-300">
                               VLT-{flagshipProduct.id.replace(/[^a-zA-Z0-9]/g, '').slice(0, 5).toUpperCase()}
                             </span>
@@ -633,7 +635,7 @@ export function App() {
                               {flagshipManifest.sha256.substring(0, 6)}...{flagshipManifest.sha256.substring(60)}
                             </span>
                             {flagshipCopiedHash ? (
-                              <Check className="w-2.5 h-2.5 text-white shrink-0 ml-0.5" />
+                              <Check className="w-2.5 h-2.5 text-emerald-400 shrink-0 ml-0.5" />
                             ) : (
                               <Copy className="w-2.5 h-2.5 text-zinc-600 group-hover/hash:text-zinc-300 shrink-0 ml-0.5 opacity-60 group-hover/hash:opacity-100 transition-opacity" />
                             )}
@@ -642,10 +644,10 @@ export function App() {
 
                         <div className="flex items-center gap-1 shrink-0">
                           <span className="relative flex h-1.5 w-1.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-30"></span>
-                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-slate-300"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.9)]"></span>
                           </span>
-                          <span className="text-[9px] uppercase tracking-wider font-semibold text-zinc-500">
+                          <span className="text-[9px] uppercase tracking-wider font-semibold text-emerald-400 font-mono">
                             256-BIT
                           </span>
                         </div>
@@ -668,20 +670,20 @@ export function App() {
                           <button
                             type="button"
                             onClick={() => handleOpenLegalDocument(flagshipProduct)}
-                            className="btn-secondary h-9 px-3 rounded-xl text-xs font-semibold text-zinc-200 inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all"
+                            className="btn-secondary h-9 px-3 rounded-xl text-xs font-semibold text-zinc-200 inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all hover:text-indigo-300 hover:border-indigo-500/30"
                             title="Read agreement clauses"
                           >
-                            <FileText className="w-3.5 h-3.5 text-slate-300" />
+                            <FileText className="w-3.5 h-3.5 text-indigo-400" />
                             <span>Clauses</span>
                           </button>
                         ) : (
                           <button
                             type="button"
                             onClick={() => setInspectingBundleProduct(flagshipProduct)}
-                            className="btn-secondary h-9 px-3 rounded-xl text-zinc-200 text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all"
+                            className="btn-secondary h-9 px-3 rounded-xl text-zinc-200 text-xs font-semibold inline-flex items-center gap-1.5 cursor-pointer active:scale-95 transition-all hover:text-sky-300 hover:border-sky-500/30"
                             title="Inspect package files"
                           >
-                            <FileText className="w-3.5 h-3.5 text-slate-300" />
+                            <FileText className="w-3.5 h-3.5 text-sky-400" />
                             <span>Files</span>
                           </button>
                         )}
@@ -701,7 +703,7 @@ export function App() {
                           <button
                             type="button"
                             onClick={() => handleInstantDownload(flagshipProduct)}
-                            className="btn-primary h-9 px-4 rounded-xl text-xs font-bold text-zinc-950 inline-flex items-center gap-1.5 cursor-pointer shadow-sm active:scale-95 transition-all"
+                            className="btn-primary h-9 px-4 rounded-xl text-xs font-bold text-zinc-950 inline-flex items-center gap-1.5 cursor-pointer shadow-sm active:scale-95 transition-all hover:bg-emerald-400"
                           >
                             <Download className="w-3.5 h-3.5 text-zinc-950" />
                             <span>Download</span>
@@ -710,9 +712,9 @@ export function App() {
                           <button
                             type="button"
                             disabled
-                            className="h-9 px-4 rounded-xl bg-zinc-800 text-zinc-400 border border-white/10 text-xs font-semibold inline-flex items-center gap-1.5 cursor-default"
+                            className="h-9 px-4 rounded-xl bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-xs font-semibold inline-flex items-center gap-1.5 cursor-default"
                           >
-                            <Check className="w-3.5 h-3.5 text-zinc-400" />
+                            <Check className="w-3.5 h-3.5 text-emerald-400" />
                             <span>In Bag</span>
                           </button>
                         ) : (

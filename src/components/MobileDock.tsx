@@ -67,9 +67,9 @@ export const MobileDock: React.FC<MobileDockProps> = ({
           className="relative flex flex-col items-center justify-center w-11 h-11 rounded-full text-zinc-400 hover:text-white hover:bg-white/[0.06] active:scale-90 transition-all cursor-pointer"
           aria-label="View Wishlist"
         >
-          <Heart className={`w-5 h-5 ${wishlistCount > 0 ? 'fill-white text-white' : 'text-zinc-400'}`} />
+          <Heart className={`w-5 h-5 ${wishlistCount > 0 ? 'fill-rose-500 text-rose-500' : 'text-zinc-400'}`} />
           {wishlistCount > 0 && (
-            <span className="absolute top-1 right-1 w-4 h-4 rounded-full badge-3d text-white font-mono font-bold text-[11px] flex items-center justify-center">
+            <span className="absolute top-1 right-1 w-4 h-4 rounded-full bg-rose-500 text-white font-mono font-bold text-[10px] flex items-center justify-center shadow-xs">
               {wishlistCount}
             </span>
           )}
@@ -84,7 +84,7 @@ export const MobileDock: React.FC<MobileDockProps> = ({
         >
           <DownloadCloud className="w-5 h-5 text-zinc-300" />
           {purchasedCount > 0 && (
-            <span className="absolute top-1 right-1 w-4 h-4 rounded-full badge-3d badge-3d-emerald text-white font-mono font-bold text-[11px] flex items-center justify-center">
+            <span className="absolute top-1 right-1 w-4 h-4 rounded-full bg-sky-500 text-white font-mono font-bold text-[10px] flex items-center justify-center shadow-xs">
               {purchasedCount}
             </span>
           )}
@@ -100,7 +100,7 @@ export const MobileDock: React.FC<MobileDockProps> = ({
           <ShoppingBag className="w-4 h-4 text-zinc-950" />
           <span>{cartCount > 0 ? formatPrice(cartTotal) : 'Bag'}</span>
           {cartCount > 0 && (
-            <span className="w-4 h-4 rounded-full bg-[var(--bg-base)] text-white font-mono font-bold text-[11px] flex items-center justify-center ml-0.5">
+            <span className="px-1.5 py-0.5 rounded-full bg-emerald-500 text-black font-extrabold text-[10px] ml-0.5">
               {cartCount}
             </span>
           )}

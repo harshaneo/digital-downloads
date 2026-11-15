@@ -127,16 +127,16 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
         {/* Modal Header */}
         <div className="px-5 py-4 border-b border-white/[0.08] bg-[#090909] flex items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-10 h-10 rounded-xl bg-[#141414] border border-white/10 text-slate-200 flex items-center justify-center shrink-0">
-              <Scale className="w-5 h-5 text-slate-300" />
+            <div className="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-500/30 text-indigo-400 flex items-center justify-center shrink-0">
+              <Scale className="w-5 h-5 text-indigo-400" />
             </div>
 
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md badge-3d text-slate-200">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md badge-3d badge-3d-indigo">
                   Full Document Preview
                 </span>
-                <span className="text-[11px] font-mono text-slate-300 font-bold px-2.5 py-0.5 rounded-md badge-3d">
+                <span className="text-[11px] font-mono text-indigo-300 font-bold px-2.5 py-0.5 rounded-md badge-3d badge-3d-neutral">
                   v{document.version}
                 </span>
                 <span className="text-xs text-zinc-400 hidden sm:inline font-mono">
@@ -159,8 +159,8 @@ export const LegalDocumentViewerModal: React.FC<LegalDocumentViewerModalProps> =
             >
               {copiedAll ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-white" />
-                  <span className="text-white">Copied Full Doc</span>
+                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <span className="text-emerald-400">Copied Full Doc</span>
                 </>
               ) : (
                 <>

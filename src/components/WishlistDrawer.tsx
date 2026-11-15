@@ -48,8 +48,8 @@ export const WishlistDrawer: React.FC<WishlistDrawerProps> = ({
           {/* Header */}
           <div className="px-5 py-4 border-b border-white/[0.08] flex items-center justify-between bg-[#090909]">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-[#141414] border border-white/10 flex items-center justify-center text-white">
-                <Heart className="w-4 h-4 fill-white text-white" />
+              <div className="w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/25 flex items-center justify-center text-rose-400">
+                <Heart className="w-4 h-4 fill-rose-500 text-rose-500" />
               </div>
               <div>
                 <h2 className="font-bold text-base text-white">Saved Wishlist</h2>

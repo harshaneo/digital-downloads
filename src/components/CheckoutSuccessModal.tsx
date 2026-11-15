@@ -55,12 +55,12 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
         {/* Header */}
         <div className="p-6 bg-[#090909] border-b border-white/[0.08] flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white/[0.08] border border-white/20 flex items-center justify-center text-white">
-              <CheckCircle2 className="w-5 h-5 text-white" />
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+              <CheckCircle2 className="w-5 h-5 text-emerald-400" />
             </div>
             <div>
               <h2 className="text-base font-bold text-white tracking-tight">Order Confirmed & Ready</h2>
-              <p className="text-xs text-slate-300 font-mono font-medium">
+              <p className="text-xs text-emerald-400 font-mono font-medium">
                 {purchases.length} digital {purchases.length === 1 ? 'asset' : 'assets'} unlocked
               </p>
             </div>
@@ -115,8 +115,8 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
                 {/* License Key Box */}
                 <div className="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-[var(--bg-surface)] border border-white/[0.06] font-mono text-xs">
                   <div className="flex items-center gap-2 text-zinc-400 min-w-0">
-                    <Key className="w-3.5 h-3.5 text-slate-300 shrink-0" />
-                    <span className="text-zinc-500 text-[11px] uppercase font-bold">Key:</span>
+                    <Key className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    <span className="text-amber-400/80 text-[11px] uppercase font-bold">Key:</span>
                     <span className="text-zinc-200 truncate font-semibold">{item.licenseKey}</span>
                   </div>
 
@@ -127,7 +127,7 @@ export const CheckoutSuccessModal: React.FC<CheckoutSuccessModalProps> = ({
                     title="Copy License Key"
                   >
                     {copiedKey === item.licenseKey ? (
-                      <Check className="w-3.5 h-3.5 text-white" />
+                      <Check className="w-3.5 h-3.5 text-emerald-400" />
                     ) : (
                       <Copy className="w-3.5 h-3.5" />
                     )}

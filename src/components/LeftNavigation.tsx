@@ -37,15 +37,19 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
     id: ProductCategory; 
     label: string; 
     icon: React.ComponentType<{ className?: string }>;
+    color: string;
+    activeBorder: string;
+    activeBg: string;
+    badgeClass: string;
   }[] = [
-    { id: 'all', label: 'All Artifacts', icon: LayoutGrid },
-    { id: 'legal-contracts', label: 'Legal & Contracts', icon: Scale },
-    { id: 'sales-proposals', label: 'Sales & Proposals', icon: Presentation },
-    { id: 'ops-sops', label: 'SOPs & Operations', icon: FolderGit2 },
-    { id: 'financial-models', label: 'Financial Models', icon: FileSpreadsheet },
-    { id: 'compliance-security', label: 'Compliance & Audit', icon: ShieldCheck },
-    { id: 'websites-ui', label: 'Websites & UI Kits', icon: Layout },
-    { id: 'resumes', label: 'Exec Resumes & CVs', icon: Briefcase },
+    { id: 'all', label: 'All Artifacts', icon: LayoutGrid, color: 'text-slate-200', activeBg: 'bg-white/10', activeBorder: 'border-white/20', badgeClass: 'badge-3d-neutral' },
+    { id: 'legal-contracts', label: 'Legal & Contracts', icon: Scale, color: 'text-indigo-400', activeBg: 'bg-indigo-500/15', activeBorder: 'border-indigo-500/30', badgeClass: 'badge-3d-indigo' },
+    { id: 'sales-proposals', label: 'Sales & Proposals', icon: Presentation, color: 'text-sky-400', activeBg: 'bg-sky-500/15', activeBorder: 'border-sky-500/30', badgeClass: 'badge-3d-sky' },
+    { id: 'ops-sops', label: 'SOPs & Operations', icon: FolderGit2, color: 'text-teal-400', activeBg: 'bg-teal-500/15', activeBorder: 'border-teal-500/30', badgeClass: 'badge-3d-teal' },
+    { id: 'financial-models', label: 'Financial Models', icon: FileSpreadsheet, color: 'text-emerald-400', activeBg: 'bg-emerald-500/15', activeBorder: 'border-emerald-500/30', badgeClass: 'badge-3d-emerald' },
+    { id: 'compliance-security', label: 'Compliance & Audit', icon: ShieldCheck, color: 'text-violet-400', activeBg: 'bg-violet-500/15', activeBorder: 'border-violet-500/30', badgeClass: 'badge-3d-violet' },
+    { id: 'websites-ui', label: 'Websites & UI Kits', icon: Layout, color: 'text-rose-400', activeBg: 'bg-rose-500/15', activeBorder: 'border-rose-500/30', badgeClass: 'badge-3d-rose' },
+    { id: 'resumes', label: 'Exec Resumes & CVs', icon: Briefcase, color: 'text-amber-400', activeBg: 'bg-amber-500/15', activeBorder: 'border-amber-400/30', badgeClass: 'badge-3d-amber' },
   ];
 
   const formats = ['All', '.DOCX', '.XLSX', '.PDF', '.NOTION', '.PPTX', '.FIG', '.ZIP', '.TSX'];
@@ -83,7 +87,7 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                   onClick={() => onFilterChange({ category: cat.id })}
                   className={`w-full flex items-center justify-between px-2.5 py-2 rounded-xl text-xs font-medium transition-all group cursor-pointer border ${
                     isActive 
-                      ? 'bg-[#121212] text-white font-bold border-white/20' 
+                      ? `${cat.activeBg} text-white font-bold ${cat.activeBorder} shadow-xs` 
                       : 'bg-transparent text-zinc-400 hover:text-white hover:bg-white/[0.05] border-transparent'
                   }`}
                   title={cat.label}
@@ -91,8 +95,8 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                   <div className="flex items-center gap-2.5 min-w-0">
                     <span className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all ${
                       isActive 
-                        ? 'bg-zinc-900 text-white border border-white/10' 
-                        : 'bg-[var(--bg-surface-elevated)] text-zinc-300 border border-white/10 group-hover:border-white/20'
+                        ? `${cat.activeBg} ${cat.color} border ${cat.activeBorder}` 
+                        : 'bg-[var(--bg-surface-elevated)] text-zinc-400 border border-white/10 group-hover:border-white/20 group-hover:text-zinc-200'
                     }`}>
                       <Icon className="w-3.5 h-3.5" />
                     </span>
@@ -103,8 +107,8 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                   {!collapsed && (
                     <span className={`text-[11px] font-mono px-2 py-0.5 rounded-full ${
                       isActive 
-                        ? 'bg-zinc-900 text-white border border-white/10 font-bold' 
-                        : 'badge-3d badge-3d-neutral text-slate-300'
+                        ? `${cat.badgeClass} font-bold` 
+                        : 'badge-3d badge-3d-neutral text-slate-400'
                     }`}>
                       {count}
                     </span>
@@ -165,12 +169,12 @@ export const LeftNavigation: React.FC<LeftNavigationProps> = ({
                     onClick={() => onFilterChange({ priceFilter: p.id as any })}
                     className={`w-full text-left px-2.5 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer flex items-center justify-between ${
                       isSelected
-                        ? 'bg-white/10 text-white font-semibold'
-                        : 'text-zinc-400 hover:text-white hover:bg-white/[0.04]'
+                        ? 'bg-indigo-500/15 text-indigo-200 border border-indigo-500/30 font-semibold'
+                        : 'text-zinc-400 hover:text-white hover:bg-white/[0.04] border border-transparent'
                     }`}
                   >
                     <span className="truncate">{p.label}</span>
-                    {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-white/80 shrink-0 ml-1" />}
+                    {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 shadow-[0_0_6px_rgba(99,102,241,0.8)] shrink-0 ml-1" />}
                   </button>
                 );
               })}

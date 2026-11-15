@@ -84,7 +84,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
                   cx="16" 
                   cy="16" 
                   r="3.5" 
-                  className="fill-slate-300" 
+                  className="fill-indigo-500" 
                 />
               </svg>
             </div>
@@ -92,7 +92,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
             <div>
               <div className="flex items-center gap-2 leading-none">
                 <span className="font-extrabold text-[15px] tracking-tight text-white font-sans">
-                  Nexus<span className="text-slate-400">.</span>Vault
+                  Nexus<span className="text-indigo-400">.</span>Vault
                 </span>
               </div>
               <p className="text-[11px] text-zinc-400 hidden sm:block mt-0.5 font-medium tracking-tight">
@@ -105,13 +105,13 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
         {/* Center: Tactile Pill Search Bar */}
         <div className="flex-1 min-w-0 max-w-lg mx-1 sm:mx-6">
           <div className="relative group w-full">
-            <Search className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-zinc-400 group-focus-within:text-white absolute left-3 sm:left-3.5 top-1/2 -translate-y-1/2 transition-colors pointer-events-none" />
+            <Search className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-zinc-400 group-focus-within:text-indigo-400 absolute left-3 sm:left-3.5 top-1/2 -translate-y-1/2 transition-colors pointer-events-none" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Search contracts, RFPs, SOPs, financial models..."
-              className="w-full pl-8 sm:pl-9 pr-8 sm:pr-16 py-1.5 sm:py-2 text-xs bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] focus:bg-[var(--bg-surface-elevated)] border border-white/10 focus:border-white/30 rounded-full text-[var(--text-primary)] placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/10 transition-all font-sans"
+              className="w-full pl-8 sm:pl-9 pr-8 sm:pr-16 py-1.5 sm:py-2 text-xs bg-[var(--bg-surface)] hover:bg-[var(--bg-surface-elevated)] focus:bg-[var(--bg-surface-elevated)] border border-white/10 focus:border-indigo-500/40 rounded-full text-[var(--text-primary)] placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/15 transition-all font-sans"
             />
             {searchQuery ? (
               <button 
@@ -164,15 +164,15 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
             onClick={onOpenWishlist}
             className={`hidden sm:inline-flex relative p-2 rounded-lg transition-all cursor-pointer active:scale-95 ${
               wishlistCount > 0 
-                ? 'badge-3d text-white' 
-                : 'btn-tactile-dark text-zinc-400 hover:text-white'
+                ? 'bg-rose-500/15 border border-rose-500/30 text-rose-400 hover:bg-rose-500/20' 
+                : 'btn-tactile-dark text-zinc-400 hover:text-white hover:border-rose-500/20'
             }`}
             title="Open Curated Wishlist"
             aria-label="Open Curated Wishlist"
           >
-            <Heart className={`w-4 h-4 ${wishlistCount > 0 ? 'fill-white text-white' : 'text-zinc-400'}`} />
+            <Heart className={`w-4 h-4 ${wishlistCount > 0 ? 'fill-rose-500 text-rose-500' : 'text-zinc-400'}`} />
             {wishlistCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full badge-3d text-white font-mono font-bold text-[11px] flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-rose-500 text-white font-mono font-bold text-[10px] flex items-center justify-center shadow-xs">
                 {wishlistCount}
               </span>
             )}
@@ -182,19 +182,23 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
           <button
             type="button"
             onClick={onOpenPurchases}
-            className="hidden sm:inline-flex relative p-2 rounded-lg btn-tactile-dark text-zinc-400 hover:text-white transition-all cursor-pointer active:scale-95"
+            className={`hidden sm:inline-flex relative p-2 rounded-lg transition-all cursor-pointer active:scale-95 ${
+              purchasedCount > 0
+                ? 'bg-sky-500/15 border border-sky-500/30 text-sky-300 hover:bg-sky-500/20'
+                : 'btn-tactile-dark text-zinc-400 hover:text-white'
+            }`}
             title="Archive Vault & Downloads"
             aria-label="Archive Vault & Downloads"
           >
             <DownloadCloud className="w-4 h-4" />
             {purchasedCount > 0 && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full badge-3d text-white font-mono font-bold text-[11px] flex items-center justify-center">
+              <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-sky-500 text-white font-mono font-bold text-[10px] flex items-center justify-center shadow-xs">
                 {purchasedCount}
               </span>
             )}
           </button>
 
-          {/* Shopping Bag Button (Crisp White Button like gym-workspace .btn-primary) */}
+          {/* Shopping Bag Button (Crisp White Button with Emerald Counter Badge) */}
           <button
             type="button"
             onClick={onOpenCart}
@@ -204,7 +208,7 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
             <ShoppingBag className="w-3.5 h-3.5 text-zinc-950" />
             <span className="hidden xs:inline">Bag</span>
             {cartCount > 0 && (
-              <span className="px-1.5 py-0.2 rounded-full bg-zinc-950 text-white font-extrabold text-[11px]">
+              <span className="px-1.5 py-0.2 rounded-full bg-emerald-500 text-black font-extrabold text-[11px]">
                 {cartCount}
               </span>
             )}
