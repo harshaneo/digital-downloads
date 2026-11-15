@@ -54,30 +54,9 @@ import {
   Heart,
   FileText,
   Fingerprint,
-  Copy,
-  Scale,
-  Presentation,
-  FolderGit2,
-  FileSpreadsheet,
-  Briefcase,
-  Layout
+  Copy
 } from 'lucide-react';
 import { getBundleManifest } from './data/bundle-manifests';
-
-const APP_CATEGORIES: { 
-  id: ProductCategory; 
-  label: string; 
-  icon: React.ComponentType<{ className?: string }>;
-}[] = [
-  { id: 'all', label: 'All Artifacts', icon: LayoutGrid },
-  { id: 'legal-contracts', label: 'Legal & Contracts', icon: Scale },
-  { id: 'sales-proposals', label: 'Sales & Proposals', icon: Presentation },
-  { id: 'ops-sops', label: 'SOPs & Operations', icon: FolderGit2 },
-  { id: 'financial-models', label: 'Financial Models', icon: FileSpreadsheet },
-  { id: 'compliance-security', label: 'Compliance & Audit', icon: ShieldCheck },
-  { id: 'websites-ui', label: 'Websites & UI Kits', icon: Layout },
-  { id: 'resumes', label: 'Exec Resumes & CVs', icon: Briefcase },
-];
 
 const CURRENCY_SYMBOLS: Record<Currency, string> = {
   USD: '$',
@@ -473,40 +452,9 @@ export function App() {
         </div>
       )}
 
-      {/* Main Native App Canvas (Centered & Focused, Family iOS Style) */}
+      {/* Main Native App Canvas */}
       <div className="flex-1 w-full max-w-6xl mx-auto px-3 sm:px-6 pt-3 pb-32 min-w-0">
         
-        {/* Native App-Style Horizontal Category Pill Carousel (Family / App Store) */}
-        <div className="mb-4">
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 scroll-smooth">
-            {APP_CATEGORIES.map((cat) => {
-              const isActive = filterState.category === cat.id;
-              const count = cat.id === 'all' ? DIGITAL_PRODUCTS.length : (categoryCounts[cat.id] || 0);
-              const Icon = cat.icon;
-              return (
-                <button
-                  key={cat.id}
-                  type="button"
-                  onClick={() => handleFilterChange({ category: cat.id })}
-                  className={`shrink-0 flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer border ${
-                    isActive 
-                      ? 'bg-white text-black border-white shadow-sm font-bold scale-[1.02]' 
-                      : 'bg-[#0c0c0c] text-zinc-400 hover:text-white hover:bg-[#181818] border-white/10'
-                  }`}
-                >
-                  <Icon className="w-3.5 h-3.5" />
-                  <span>{cat.label}</span>
-                  <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${
-                    isActive ? 'bg-zinc-200 text-black font-bold' : 'bg-white/10 text-zinc-400'
-                  }`}>
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
         {/* Center Main Canvas */}
         <main className="space-y-6">
           
