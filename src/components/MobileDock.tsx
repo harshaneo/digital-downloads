@@ -33,10 +33,10 @@ export const MobileDock: React.FC<MobileDockProps> = ({
   formatPrice
 }) => {
   return (
-    <div className="lg:hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-40 max-w-[92vw]">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 max-w-[95vw] sm:max-w-max pointer-events-auto">
       <nav 
-        aria-label="Mobile quick actions"
-        className="flex items-center gap-1.5 px-3 py-2 rounded-full backdrop-blur-2xl bg-[var(--bg-surface)]/95 border border-white/[0.10] shadow-[0_12px_32px_rgba(0,0,0,0.6)]"
+        aria-label="Universal floating app tray"
+        className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full backdrop-blur-2xl bg-[#090909]/90 border border-white/[0.14] shadow-[0_20px_48px_rgba(0,0,0,0.95)]"
       >
         {/* 1. Discover / Feed */}
         <button

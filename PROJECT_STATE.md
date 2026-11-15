@@ -11,3 +11,4 @@
 3. **Monochromatic Ratings & Icons**: Rating stars, checkmarks, verify badges, and icons render in luminous white/silver (`fill-white text-white` / `text-slate-300`).
 4. **Card Integrity**: Original luxury folder cards with silver borders, obsidian sleeves, and monochromatic sheets completely preserved.
 5. **Atlas Laser-Etched Telemetry (Mobbin-Inspired)**: Product specimen cards and flagship showcase feature recessed laser-etched telemetry bezels with authentic `VLT-` serials, one-click copyable cryptographic SHA-256 fingerprints, and live archival beacons.
+6. **Native Mobile App Architecture (Family iOS Style)**: Ported native mobile app UI architecture to the web: replaced clunky static desktop sidebar with a focused, centered app canvas (`max-w-6xl`), native horizontal touch pill carousel for frictionless category filtering, slide-over Vault Index drawer, and universal floating glass bottom dock (`MobileDock`).

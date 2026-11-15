@@ -54,9 +54,30 @@ import {
   Heart,
   FileText,
   Fingerprint,
-  Copy
+  Copy,
+  Scale,
+  Presentation,
+  FolderGit2,
+  FileSpreadsheet,
+  Briefcase,
+  Layout
 } from 'lucide-react';
 import { getBundleManifest } from './data/bundle-manifests';
+
+const APP_CATEGORIES: { 
+  id: ProductCategory; 
+  label: string; 
+  icon: React.ComponentType<{ className?: string }>;
+}[] = [
+  { id: 'all', label: 'All Artifacts', icon: LayoutGrid },
+  { id: 'legal-contracts', label: 'Legal & Contracts', icon: Scale },
+  { id: 'sales-proposals', label: 'Sales & Proposals', icon: Presentation },
+  { id: 'ops-sops', label: 'SOPs & Operations', icon: FolderGit2 },
+  { id: 'financial-models', label: 'Financial Models', icon: FileSpreadsheet },
+  { id: 'compliance-security', label: 'Compliance & Audit', icon: ShieldCheck },
+  { id: 'websites-ui', label: 'Websites & UI Kits', icon: Layout },
+  { id: 'resumes', label: 'Exec Resumes & CVs', icon: Briefcase },
+];
 
 const CURRENCY_SYMBOLS: Record<Currency, string> = {
   USD: '$',
@@ -418,25 +439,76 @@ export function App() {
         formatPrice={formatPrice}
       />
 
-      {/* Main Workspace Layout */}
-      <div className="flex-1 flex max-w-[1920px] w-full mx-auto min-w-0 overflow-x-hidden">
+      {/* Slide-over Categories Drawer (Accessible from dock or menu) */}
+      {mobileSidebarOpen && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex justify-start animate-in fade-in duration-200"
+          onClick={(e) => { if (e.target === e.currentTarget) setMobileSidebarOpen(false); }}
+        >
+          <div className="relative w-80 max-w-[85vw] h-full bg-[#070707] border-r border-white/10 p-4 shadow-2xl flex flex-col justify-between overflow-y-auto">
+            <div>
+              <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-3">
+                <span className="font-bold text-sm text-white font-mono uppercase tracking-wider">Vault Index</span>
+                <button
+                  type="button"
+                  onClick={() => setMobileSidebarOpen(false)}
+                  className="p-1.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              <LeftNavigation
+                filterState={filterState}
+                onFilterChange={(updates) => {
+                  handleFilterChange(updates);
+                  setMobileSidebarOpen(false);
+                }}
+                collapsed={false}
+                onToggleCollapse={() => {}}
+                categoryCounts={categoryCounts}
+                totalProductsCount={DIGITAL_PRODUCTS.length}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Main Native App Canvas (Centered & Focused, Family iOS Style) */}
+      <div className="flex-1 w-full max-w-6xl mx-auto px-3 sm:px-6 pt-3 pb-32 min-w-0">
         
-        {/* Universal Left Navigation with Archival Plinth Styling */}
-        <div className={`lg:block ${mobileSidebarOpen ? 'block fixed inset-0 z-40 bg-black/40 lg:relative lg:bg-transparent' : 'hidden'}`}>
-          <div className="relative h-full" onClick={(e) => { if (e.target === e.currentTarget) setMobileSidebarOpen(false); }}>
-            <LeftNavigation
-              filterState={filterState}
-              onFilterChange={handleFilterChange}
-              collapsed={sidebarCollapsed}
-              onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)}
-              categoryCounts={categoryCounts}
-              totalProductsCount={DIGITAL_PRODUCTS.length}
-            />
+        {/* Native App-Style Horizontal Category Pill Carousel (Family / App Store) */}
+        <div className="mb-4">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 scroll-smooth">
+            {APP_CATEGORIES.map((cat) => {
+              const isActive = filterState.category === cat.id;
+              const count = cat.id === 'all' ? DIGITAL_PRODUCTS.length : (categoryCounts[cat.id] || 0);
+              const Icon = cat.icon;
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => handleFilterChange({ category: cat.id })}
+                  className={`shrink-0 flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer border ${
+                    isActive 
+                      ? 'bg-white text-black border-white shadow-sm font-bold scale-[1.02]' 
+                      : 'bg-[#0c0c0c] text-zinc-400 hover:text-white hover:bg-[#181818] border-white/10'
+                  }`}
+                >
+                  <Icon className="w-3.5 h-3.5" />
+                  <span>{cat.label}</span>
+                  <span className={`text-[10px] font-mono px-1.5 py-0.5 rounded-full ${
+                    isActive ? 'bg-zinc-200 text-black font-bold' : 'bg-white/10 text-zinc-400'
+                  }`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
 
         {/* Center Main Canvas */}
-        <main className="flex-1 min-w-0 p-3 sm:p-6 lg:p-8 space-y-5 sm:space-y-6 max-w-full overflow-hidden">
+        <main className="space-y-6">
           
           {/* Asymmetric 60/40 Editorial Exhibition Plinth */}
           <section 
@@ -801,10 +873,10 @@ export function App() {
           ) : filteredProducts.length === 0 ? (
             <EmptyState query={filterState.search} onResetFilters={handleResetFilters} />
           ) : (
-            <div className={`grid gap-4 sm:gap-5 max-w-full overflow-hidden ${
+            <div className={`grid gap-5 sm:gap-6 max-w-full overflow-hidden ${
               viewMode === 'compact' 
-                ? 'grid-cols-1 md:grid-cols-2 xl:grid-cols-3' 
-                : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'
+                ? 'grid-cols-1 md:grid-cols-2' 
+                : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
             }`}>
               {filteredProducts.map((product) => (
                 <ProductTile

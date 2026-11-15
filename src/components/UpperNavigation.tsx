@@ -44,15 +44,16 @@ export const UpperNavigation: React.FC<UpperNavigationProps> = ({
 }) => {
   return (
     <header className="sticky top-0 z-40 w-full max-w-full overflow-hidden nav-frosted-capsule px-3 sm:px-6 lg:px-8 py-2.5 transition-all bg-[var(--bg-raised)]/95 backdrop-blur-md border-b border-white/[0.08]">
-      <div className="flex items-center justify-between gap-2 sm:gap-3 max-w-[1920px] mx-auto w-full min-w-0">
+      <div className="flex items-center justify-between gap-2 sm:gap-3 max-w-6xl mx-auto w-full min-w-0">
         
         {/* Left: Mobile Toggle & Curatorial Brand Stamp */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button 
             type="button"
             onClick={onToggleSidebarMobile}
-            className="lg:hidden p-2 rounded-xl bg-[var(--bg-surface-elevated)] hover:bg-[var(--bg-hover)] text-zinc-300 border border-white/10 transition-colors cursor-pointer"
-            aria-label="Toggle navigation"
+            className="p-2 rounded-xl bg-[#0c0c0c] hover:bg-[#181818] text-zinc-300 border border-white/10 transition-colors cursor-pointer"
+            aria-label="Toggle navigation drawer"
+            title="Open Vault Index"
           >
             <Menu className="w-4 h-4" />
           </button>
